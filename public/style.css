@@ -1,0 +1,574 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Colore di fallback */
+    color: #333;
+    line-height: 1.6;
+
+    /* NUOVE PROPRIETÀ PER LO SFONDO */
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/73/Jean-Marie_Vianney_church_in_Rome.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.92); /* Sfondo semi-trasparente per il contenuto */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px); /* Effetto sfocatura sullo sfondo dietro il container */
+}
+
+h1, h2, h3, h4 {
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+
+section {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.file-list {
+    list-style: none;
+    padding: 0;
+}
+
+.file-list li {
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.file-list li:hover {
+    background-color: #cfe2ff;
+}
+
+.file-list li.draggable {
+    cursor: grab;
+}
+
+.file-list li.dragging {
+    opacity: 0.5;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button.remove-btn {
+    background-color: #dc3545;
+}
+
+button.remove-btn:hover {
+    background-color: #c82333;
+}
+
+button.add-to-playlist-btn {
+    background-color: #28a745;
+}
+
+button.add-to-playlist-btn:hover {
+    background-color: #218838;
+}
+
+input[type="text"], input[type="file"] {
+    width: calc(100% - 110px); /* Adjust width considering button */
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#upload-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#search-input {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#upload-message, #playlist-message {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Nuovi stili per la paginazione */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.pagination-controls button {
+    padding: 8px 12px;
+    background-color: #6c757d;
+}
+
+.pagination-controls button:hover {
+    background-color: #5a6268;
+}
+
+.pagination-controls button:disabled {
+    background-color: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+.pagination-controls span {
+    font-weight: bold;
+    color: #0056b3;
+}
+/* ... (codice CSS precedente) ... */
+
+button.view-pdf-btn {
+    background-color: #17a2b8; /* Un colore diverso per distinguere */
+    margin-right: 5px; /* Spazio tra i pulsanti */
+}
+
+button.view-pdf-btn:hover {
+    background-color: #138496;
+}
+
+/* Aggiorna il contenitore dei pulsanti per gestirli meglio */
+.file-list li div {
+    display: flex;
+    gap: 5px; /* Aggiunge spazio tra i pulsanti all'interno dell'elemento lista */
+}
+
+/* ... (codice CSS precedente) ... */
+
+.playlist-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+#playlist-name-input {
+    flex-grow: 1;
+    width: auto; /* Sovrascrive la larghezza predefinita */
+    margin-right: 0;
+}
+
+#save-playlist-btn {
+    background-color: #ffc107; /* Colore giallo per il salvataggio */
+    color: #343a40;
+}
+
+#save-playlist-btn:hover {
+    background-color: #e0a800;
+}
+
+#playlist-save-message {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.saved-playlists {
+    margin-top: 30px;
+}
+
+#saved-playlists-list li {
+    background-color: #e2e6ea;
+    cursor: pointer;
+}
+
+#saved-playlists-list li:hover {
+    background-color: #d1d9e0;
+}
+
+#saved-playlists-list li div { /* Per contenere i pulsanti all'interno dell'elemento lista */
+    display: flex;
+    gap: 5px;
+}
+
+button.load-playlist-btn {
+    background-color: #17a2b8; /* Blu-verde per caricare */
+}
+
+button.load-playlist-btn:hover {
+    background-color: #138496;
+}
+
+button.delete-playlist-btn {
+    background-color: #6c757d; /* Grigio per eliminare */
+}
+
+button.delete-playlist-btn:hover {
+    background-color: #5a6268;
+}
+
+#saved-playlists-message {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.section-nav {
+    margin-bottom: 30px;
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.08);
+}
+
+.section-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permette ai link di andare a capo su schermi piccoli */
+    gap: 10px;
+}
+
+.section-nav li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap; /* Impedisce al testo di andare a capo */
+}
+
+.section-nav li a:hover {
+    background-color: #007bff;
+    color: white;
+}
+/* ... (codice CSS precedente) ... */
+
+/* Stili per le cartelle Anno/Mese */
+.year-folder, .month-folder {
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+.year-folder h3, .month-folder h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #0056b3;
+    cursor: pointer; /* Indica che sono cliccabili per espandere/collassare */
+}
+
+.year-folder h3:hover, .month-folder h4:hover {
+    text-decoration: underline;
+}
+
+.folder-content {
+    display: block; /* O flex-direction: column; */
+}
+
+.folder-content.hidden {
+    display: none;
+}
+
+#saved-playlists-list {
+    list-style: none;
+    padding: 0;
+    margin-left: 20px; /* Indentazione per le playlist all'interno delle cartelle */
+}
+/* ... (codice CSS precedente) ... */
+
+/* Stili per le icone "Torna all'inizio" */
+h2 {
+    position: relative; /* Rende l'h2 un contenitore di riferimento per il posizionamento assoluto */
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0056b3;
+}
+
+.return-to-top {
+    position: absolute;
+    right: 0; /* Posiziona a destra del contenitore h2 */
+    top: 50%; /* Allinea verticalmente al centro dell'h2 */
+    transform: translateY(-50%); /* Regola per un allineamento preciso */
+    text-decoration: none;
+    color: #007bff; /* Colore dell'icona */
+    font-size: 1em; /* Dimensione dell'icona, puoi aumentarla se vuoi */
+    padding: 5px; /* Spazio intorno all'icona */
+    border-radius: 50%; /* Rende l'area del click circolare */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    line-height: 1; /* Assicura che l'altezza della linea non influenzi l'icona */
+}
+
+.return-to-top:hover {
+    background-color: #e9ecef; /* Sfondo al passaggio del mouse */
+    color: #0056b3;
+}
+
+/* Regola il padding a destra dell'h2 se i titoli sono molto lunghi
+   e l'icona dovesse sovrapporsi al testo. */
+/* h2 {
+    padding-right: 30px;
+} */
+
+/* ... (codice CSS precedente) ... */
+
+#clear-playlist-btn {
+    background-color: #dc3545; /* Colore rosso per indicare un'azione di cancellazione */
+}
+
+#clear-playlist-btn:hover {
+    background-color: #c82333;
+}
+
+/* ... (codice CSS precedente) ... */
+
+/* Stili per il pulsante Download */
+.download-playlist-btn {
+    background-color: #28a745; /* Verde per il download */
+    margin-left: 5px; /* Spazio tra i pulsanti */
+}
+
+.download-playlist-btn:hover {
+    background-color: #218838;
+}
+
+/* Stili per il pop-up di anteprima */
+.playlist-preview-popup {
+    display: none; /* Nascosto di default */
+    position: fixed; /* O absolute, a seconda di dove vuoi che appaia */
+    z-index: 1000; /* Assicura che sia sopra gli altri elementi */
+    background-color: rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist-preview-popup.show {
+    display: flex; /* Mostra il pop-up */
+}
+
+.popup-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    max-height: 80%;
+    overflow-y: auto; /* Scorri se il contenuto è troppo lungo */
+    position: relative;
+}
+
+.popup-content h3 {
+    margin-top: 0;
+    color: #0056b3;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+#preview-file-list {
+    list-style: none; /* Rimuove i bullet points di default */
+    padding: 0;
+    margin: 0;
+}
+
+#preview-file-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    display: flex; /* Per allineare numero e nome */
+    gap: 10px;
+    align-items: center;
+}
+
+#preview-file-list li:last-child {
+    border-bottom: none;
+}
+
+.file-number {
+    font-weight: bold;
+    color: #555;
+    flex-shrink: 0; /* Impedisce al numero di restringersi */
+    width: 25px; /* Larghezza fissa per i numeri */
+    text-align: right;
+}
+/* ... (codice CSS precedente) ... */
+
+/* Rimuovi gli stili precedenti del pop-up hover se non li vuoi più */
+/* .playlist-preview-popup { ... } */
+/* .playlist-preview-popup.show { ... } */
+/* .popup-content { ... } */
+/* #preview-file-list { ... } */
+/* .file-number { ... } */
+
+/* Stili per la nuova anteprima al click */
+.clicked-playlist-preview {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    background-color: #e6f7ff; /* Sfondo chiaro per distinguere */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.clicked-playlist-preview.hidden {
+    display: none; /* Nasconde l'area di anteprima di default */
+}
+
+.clicked-playlist-preview h3 {
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #b3d9ff;
+    padding-bottom: 10px;
+}
+
+#clicked-preview-file-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#clicked-preview-file-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #cceeff;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#clicked-preview-file-list li:last-child {
+    border-bottom: none;
+}
+
+.clicked-playlist-preview .file-number { /* Riusa la classe file-number */
+    font-weight: bold;
+    color: #555;
+    flex-shrink: 0;
+    width: 25px;
+    text-align: right;
+}
+
+#close-preview-btn {
+    margin-top: 20px;
+    background-color: #6c757d; /* Grigio per chiudere */
+}
+
+#close-preview-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Assicurati che il .folder-content per i mesi possa contenere i pulsanti */
+.folder-content li div {
+    display: flex;
+    gap: 5px; /* Spazio tra i pulsanti */
+    margin-left: auto; /* Sposta i pulsanti a destra */
+}
+
+/* ... (codice CSS precedente) ... */
+
+/* Stili per l'icona dell'anteprima */
+.playlist-name-wrapper {
+    display: flex; /* Permette di allineare l'icona e il testo sulla stessa riga */
+    align-items: center; /* Centra verticalmente icona e testo */
+    gap: 8px; /* Spazio tra l'icona e il testo */
+    cursor: pointer; /* Indica che l'elemento è cliccabile */
+    flex-grow: 1; /* Permette allo span di occupare lo spazio disponibile */
+    padding: 5px 0; /* Aggiunge un po' di padding per l'area cliccabile */
+}
+
+.preview-icon {
+    font-size: 1.2em; /* Rende l'icona leggermente più grande del testo */
+    color: #007bff; /* Colore dell'icona (blu, come i link) */
+    line-height: 1; /* Assicura che l'altezza della riga non interferisca */
+}
+
+/* Assicurati che il .folder-content per i mesi possa contenere i pulsanti */
+.folder-content li {
+    display: flex; /* Per allineare il nome/icona e i pulsanti */
+    justify-content: space-between; /* Spinge i pulsanti a destra */
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #cceeff;
+}
+
+.folder-content li:last-child {
+    border-bottom: none;
+}
+
+.folder-content li div {
+    display: flex;
+    gap: 5px; /* Spazio tra i pulsanti */
+    flex-shrink: 0; /* Impedisce ai pulsanti di restringersi */
+}
+/* Stili per l'icona dell'anteprima */
+.playlist-name-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    flex-grow: 1;
+    padding: 5px 0;
+}
+
+.preview-icon {
+    font-size: 1.2em;
+    color: #007bff;
+    line-height: 1;
+}
+
+.folder-content li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #cceeff;
+}
+
+.folder-content li:last-child {
+    border-bottom: none;
+}
+
+.folder-content li div {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;
+}

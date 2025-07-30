@@ -1,0 +1,19 @@
+# Dipendenze Node.js
+node_modules/
+npm-debug.log
+.env
+
+# Dati generati localmente (non persistenti su Render/GCP)
+playlists.json
+users.json
+canti_liturgici/
+
+# Certificati SSL locali (solo per sviluppo HTTPS)
+key.pem
+cert.pem
+csr.pem
+
+# Altri file temporanei o di sistema
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,10 @@
+runtime: nodejs20
+env: standard
+instance_class: F1
+
+handlers:
+# Questa regola servirà index.html per la root e qualsiasi percorso non API.
+- url: /.*
+  static_files: public/index.html
+  upload: public/index.html
+  secure: always

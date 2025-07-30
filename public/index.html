@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S. Giovanni Maria Vianney - Curato D'ars</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="top">
+        <h1>S. Giovanni Maria Vianney - Curato D'ars</h1>
+
+        <nav class="section-nav">
+            <ul>
+                <li><a href="#search-section">Cerca PDF Disponibili</a></li>
+                <li><a href="#upload-section">Aggiungi un Nuovo PDF</a></li>
+                <li><a href="#playlist-section">La Tua Playlist</a></li>
+                <li><a href="#saved-playlists-section">Playlist Salvate</a></li>
+            </ul>
+        </nav>
+
+        <section id="search-section" class="file-search">
+            <h2>Cerca PDF Disponibili <a href="#top" class="return-to-top" title="Torna all'inizio">&#x2302;</a></h2>
+            <input type="text" id="search-input" placeholder="Cerca per titolo...">
+            <div id="search-results" class="file-list">
+                </div>
+            <div class="pagination-controls" id="search-pagination">
+                </div>
+        </section>
+
+        <section id="upload-section" class="file-upload">
+            <h2>Aggiungi un Nuovo PDF <a href="#top" class="return-to-top" title="Torna all'inizio">&#x2302;</a></h2>
+            <form id="upload-form">
+                <input type="file" id="pdf-upload" accept=".pdf">
+                <button type="submit">Carica PDF</button>
+            </form>
+            <p id="upload-message"></p>
+        </section>
+
+        <section id="playlist-section" class="playlist-section">
+            <h2>La Tua Playlist (Max 15 File) <a href="#top" class="return-to-top" title="Torna all'inizio">&#x2302;</a></h2>
+            <ul id="playlist" class="file-list">
+                </ul>
+            <p id="playlist-message"></p>
+            <div class="playlist-actions">
+                <input type="text" id="playlist-name-input" placeholder="Nome della playlist">
+                <button id="save-playlist-btn">Salva Playlist</button>
+                <button id="clear-playlist-btn">Svuota Playlist</button>
+                <p id="playlist-save-message"></p>
+            </div>
+        </section>
+
+        <section id="saved-playlists-section" class="saved-playlists">
+            <h2>Playlist Salvate <a href="#top" class="return-to-top" title="Torna all'inizio">&#x2302;</a></h2>
+            <ul id="saved-playlists-list">
+                </ul>
+            <p id="saved-playlists-message"></p>
+
+            <div id="clicked-playlist-preview" class="clicked-playlist-preview hidden">
+                <h3>Anteprima Playlist: <span id="preview-playlist-name"></span></h3>
+                <ul id="clicked-preview-file-list">
+                    </ul>
+                <button id="close-preview-btn">Chiudi Anteprima</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
