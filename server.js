@@ -10,7 +10,8 @@ const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+// Riga commentata per preparazione web service su Render
+//app.use(express.static(path.join(__dirname, 'public')));
 app.use('/canti_liturgici', express.static(path.join(__dirname, 'canti_liturgici')));
 
 const UPLOAD_DIR = path.join(__dirname, 'canti_liturgici');
@@ -251,8 +252,17 @@ app.get('/playlists/:id/download', async (req, res) => {
 });
 
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`Server Node.js avviato su porta ${process.env.PORT || 3000}`);
+    // ... altri console.log ...
     console.log(`Server avviato su http://localhost:${PORT}`);
     console.log(`Repository PDF in: ${UPLOAD_DIR}`);
     console.log(`Playlist salvate in: ${PLAYLISTS_FILE}`);
 });
+
+/*
+app.listen(PORT, () => {
+    console.log(`Server avviato su http://localhost:${PORT}`);
+    console.log(`Repository PDF in: ${UPLOAD_DIR}`);
+    console.log(`Playlist salvate in: ${PLAYLISTS_FILE}`);
+}); */
