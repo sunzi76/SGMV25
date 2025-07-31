@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const MAX_PLAYLIST_ITEMS = 15;
     
-    const API_BASE_URL = 'https://YOUR_BACKEND_SERVICE_NAME.onrender.com';
+    const API_BASE_URL = 'https://sgmv25-backend.onrender.com/';
     /* Configurazione per file in locale
     const API_BASE_URL = 'http://localhost:3000';
     */
