@@ -1,5 +1,5 @@
 {
-  "name": "SGMV",
+  "name": "SGMV25",
   "version": "1.0.0",
   "description": "...",
   "main": "server.js",
@@ -11,8 +11,5 @@
     "multer": "^1.4.5-lts.1",
     "cors": "^2.8.5",
     "archiver": "^7.0.1"
-    // Aggiungi qui anche bcrypt e express-session se li usi:
-    // "bcrypt": "^5.1.1",
-    // "express-session": "^1.18.0"
   }
 }

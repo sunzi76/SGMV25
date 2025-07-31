@@ -1,19 +1,21 @@
 # Dipendenze Node.js
 node_modules/
 npm-debug.log
-.env
 
-# Dati generati localmente (non persistenti su Render/GCP)
-playlists.json
-users.json
-canti_liturgici/
+# Dati sensibili o generati localmente
+.env                # Se hai variabili d'ambiente in un file .env
+playlists.json      # Le tue playlist locali, che Render non manterrebbe
+users.json          # I tuoi utenti locali, che Render non manterrebbe
+canti_liturgici/    # I file PDF caricati, che Render non manterrebbe
 
-# Certificati SSL locali (solo per sviluppo HTTPS)
+# Certificati SSL locali (se li hai usati per sviluppo HTTPS)
 key.pem
 cert.pem
 csr.pem
 
-# Altri file temporanei o di sistema
+# File di sistema macOS / Windows
 .DS_Store
 Thumbs.db
+
+# Log e altri file temporanei
 *.log

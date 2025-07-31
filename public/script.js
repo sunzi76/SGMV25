@@ -20,8 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closePreviewBtn = document.getElementById('close-preview-btn');
 
     const MAX_PLAYLIST_ITEMS = 15;
-    //const API_BASE_URL = 'http://localhost:3000';
-    const API_BASE_URL = 'https://YOUR_BACKEND_SERVICE_NAME.onrender.com';
+    const API_BASE_URL = 'http://localhost:3000';
 
     let availableFiles = [];
     let currentPlaylist = JSON.parse(localStorage.getItem('currentPlaylist')) || [];
