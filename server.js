@@ -13,7 +13,7 @@ const multerS3 = require('multer-s3');
 AWS.config.update({
     accessKeyId: process.env.AKIAY6FCCFJLLA4ONW73,
     secretAccessKey: process.env.gUJVQONuYrgLQhNyCddkAam, //nq40LLnfdSphV6gX,
-    region: process.env.eu-central-1 // Es: 'eu-central-1' o la tua regione
+    region: process.env.AWS_REGION // Es: 'eu-central-1' o la tua regione
 });
 
 const s3 = new AWS.S3();
