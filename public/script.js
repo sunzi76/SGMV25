@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const uploadForm = document.getElementById('upload-form');
-    const pdfUploadInput = document.getElementById('pdf-upload');
+    const uploadForm = document.getElementById('uploadPdfForm'); // ID del tuo form
+    const pdfFileInput = document.getElementById('pdfFileInput'); // ID del tuo input type="file"
     const uploadMessage = document.getElementById('upload-message');
     const searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const playlistElement = document.getElementById('playlist');
     const playlistMessage = document.getElementById('playlist-message');
     const playlistNameInput = document.getElementById('playlist-name-input');
+    const playlistForm = document.getElementById('playlistForm'); // Il form per creare/salvare playlist
     const savePlaylistBtn = document.getElementById('save-playlist-btn');
     const clearPlaylistBtn = document.getElementById('clear-playlist-btn');
     const playlistSaveMessage = document.getElementById('playlist-save-message');
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const MAX_PLAYLIST_ITEMS = 15;
     
-    const API_BASE_URL = 'https://sgmv25-backend.onrender.com/';
+    const API_BASE_URL = 'https://sgmv25-backend.onrender.com';
     /* Configurazione per file in locale
     const API_BASE_URL = 'http://localhost:3000';
     */
@@ -39,52 +40,32 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     if (uploadForm) {
-    uploadForm.addEventListener('submit', async (event) => {
-            event.preventDefault(); // Impedisce il refresh della pagina
-
+        uploadForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
             if (!pdfFileInput || !pdfFileInput.files || pdfFileInput.files.length === 0) {
                 console.log('Nessun file selezionato per il caricamento.');
                 return;
             }
-
             const file = pdfFileInput.files[0];
             const formData = new FormData();
-            formData.append('pdfFile', file); // 'pdfFile' DEVE corrispondere al nome usato in multer.single() nel backend (server.js)
-
-            // Qui puoi mostrare un messaggio di "Caricamento in corso..."
-            // ...
+            formData.append('pdfFile', file);
 
             try {
                 const response = await fetch(API_BASE_URL + '/upload', {
                     method: 'POST',
                     body: formData,
                 });
-
                 if (!response.ok) {
                     const errorText = await response.text();
                     throw new Error(`Errore HTTP nel caricamento: ${response.status} - ${errorText}`);
                 }
-
                 const data = await response.json();
                 console.log('File caricato con successo su S3:', data);
-
-                // *** CRUCIALE: data.url CONTIENE L'URL S3 DEL PDF ***
-                const pdfUrl = data.url;
-                const pdfFileName = data.fileName;
-
-                // QUI devi aggiornare la tua UI:
-                // Se gestisci una lista di canti o playlist, devi aggiungere questo pdfUrl ai dati.
-                // Esempio:
-                // addCantoToPlaylist({ name: pdfFileName, url: pdfUrl });
-                // updatePlaylistUI();
-                // Oppure, se lo apri subito: window.open(pdfUrl, '_blank');
-
-                // Qui puoi mostrare un messaggio di successo
-                // ...
-
+                // QUI: Aggiorna la UI per mostrare il PDF caricato.
+                // Potresti chiamare fetchAvailableFiles() qui per aggiornare la lista dei canti
+                fetchAvailableFiles();
             } catch (error) {
                 console.error('Errore durante il caricamento del PDF:', error);
-                // Qui puoi mostrare un messaggio di errore all'utente
             }
         });
     }
@@ -131,23 +112,44 @@ document.addEventListener('DOMContentLoaded', () => {
         // o quando è necessario aggiornare la lista (es. fetchCanti(); all'interno di DOMContentLoaded)
 
 
+    // --- Funzione per Recuperare i File PDF Disponibili da S3 (aggiornata per coerenza) ---
     async function fetchAvailableFiles() {
-        const searchTerm = searchInput.value;
         try {
-            const response = await fetch(`${API_BASE_URL}/files?page=${currentPage}&limit=${filesPerPage}&search=${encodeURIComponent(searchTerm)}`);
+            const response = await fetch(API_BASE_URL + '/files');
             if (!response.ok) {
-                throw new Error('Errore nel caricamento dei file disponibili.');
+                const errorText = await response.text();
+                throw new Error(`Errore nel caricamento dei file disponibili: ${response.status} - ${errorText}`);
             }
-            const data = await response.json();
-            availableFiles = data.files;
-            totalPages = data.totalPages;
-            renderSearchResults();
-            renderPaginationControls();
+            const files = await response.json();
+            console.log('File disponibili da S3:', files);
+            // QUI: Logica per popolare la UI con i file disponibili (canti)
+            // Assicurati che ogni 'file' abbia un 'name' e un 'url'
+            displayAvailableFiles(files); // Funzione da creare per mostrare i file nella UI
         } catch (error) {
-            console.error('Errore:', error);
-            searchResults.innerHTML = `<p style="color: red;">${error.message}</p>`;
+            console.error('Errore nel recupero dei file disponibili:', error);
         }
     }
+
+    // Funzione placeholder per mostrare i file disponibili
+    function displayAvailableFiles(files) {
+        const availableFilesList = document.getElementById('availableFilesList'); // Assicurati di avere questo ID in HTML
+        if (!availableFilesList) return;
+
+        availableFilesList.innerHTML = ''; // Pulisci la lista esistente
+        files.forEach(file => {
+            const listItem = document.createElement('li');
+            listItem.textContent = file.name;
+            const link = document.createElement('a');
+            link.href = file.url;
+            link.target = '_blank';
+            link.textContent = ' (Apri)';
+            listItem.appendChild(link);
+            // Aggiungi qui pulsanti per aggiungere il canto a una playlist se necessario
+            availableFilesList.appendChild(listItem);
+        });
+    }
+
+
 
     function renderFileList(container, files, isPlaylist = false) {
         container.innerHTML = '';
@@ -369,20 +371,73 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // 1. Funzione per recuperare tutte le playlist salvate
     async function fetchSavedPlaylists() {
         try {
-            const response = await fetch(`${API_BASE_URL}/playlists`);
+            const response = await fetch(API_BASE_URL + '/playlists'); // Assicurati che il backend abbia '/playlists'
             if (!response.ok) {
-                throw new Error('Errore nel caricamento delle playlist salvate.');
+                const errorText = await response.text();
+                throw new Error(`Errore nel caricamento delle playlist salvate: ${response.status} - ${errorText}`);
             }
-            const data = await response.json();
-            renderSavedPlaylistsGrouped(data.playlists);
+            const playlists = await response.json();
+            console.log('Playlist salvate:', playlists);
+            displayPlaylists(playlists); // Funzione per mostrare le playlist nella UI
         } catch (error) {
-            console.error('Errore:', error);
-            savedPlaylistsMessage.textContent = `Errore: ${error.message}`;
-            savedPlaylistsMessage.style.color = 'red';
+            console.error('Errore nel recupero delle playlist:', error);
         }
     }
+
+    // 2. Funzione per salvare una nuova playlist o aggiornarne una esistente
+    if (playlistForm) {
+        playlistForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const playlistName = playlistNameInput.value.trim();
+            if (!playlistName) {
+                alert('Il nome della playlist non può essere vuoto.');
+                return;
+            }
+
+            // Assumi che tu abbia un modo per selezionare i canti da includere nella playlist
+            // Per esempio, potresti avere un array di canti selezionati:
+            const selectedCanti = getSelectedCantiForPlaylist(); // Funzione da implementare
+            if (selectedCanti.length === 0) {
+                alert('Seleziona almeno un canto per la playlist.');
+                return;
+            }
+
+            const newPlaylist = {
+                name: playlistName,
+                canti: selectedCanti // canti dovrebbe essere un array di oggetti { name: string, url: string }
+            };
+
+            try {
+                const response = await fetch(API_BASE_URL + '/playlists', { // Assicurati che il backend abbia '/playlists'
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(newPlaylist),
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Errore nel salvataggio della playlist: ${response.status} - ${errorText}`);
+                }
+
+                const result = await response.json();
+                console.log('Playlist salvata:', result);
+                playlistNameInput.value = ''; // Pulisci l'input
+                // Aggiorna la lista delle playlist visualizzate
+                fetchSavedPlaylists();
+                alert('Playlist salvata con successo!');
+            } catch (error) {
+                console.error('Errore nel salvataggio della playlist:', error);
+                alert(`Errore nel salvataggio: ${error.message}`);
+            }
+        });
+    }
+
+
 
     function renderSavedPlaylistsGrouped(playlists) {
         savedPlaylistsListContainer.innerHTML = '';
@@ -520,27 +575,78 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    async function deletePlaylist(playlistId) {
-        if (!confirm('Sei sicuro di voler eliminare questa playlist?')) {
+    // 3. Funzione per eliminare una playlist
+    async function deletePlaylist(playlistName) {
+        if (!confirm(`Sei sicuro di voler eliminare la playlist "${playlistName}"?`)) {
             return;
         }
         try {
-            const response = await fetch(`${API_BASE_URL}/playlists/${playlistId}`, {
-                method: 'DELETE'
+            const response = await fetch(`${API_BASE_URL}/playlists/${encodeURIComponent(playlistName)}`, { // Endpoint es: /playlists/NomePlaylist
+                method: 'DELETE',
             });
-            const data = await response.json();
-            if (data.success) {
-                alert(data.message);
-                delete playlistsCache[playlistId];
-                fetchSavedPlaylists();
-            } else {
-                alert(`Errore nell'eliminazione: ${data.message}`);
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Errore nell'eliminazione della playlist: ${response.status} - ${errorText}`);
             }
+
+            console.log(`Playlist "${playlistName}" eliminata.`);
+            fetchSavedPlaylists(); // Aggiorna la lista
+            alert(`Playlist "${playlistName}" eliminata con successo.`);
         } catch (error) {
             console.error('Errore nell\'eliminazione della playlist:', error);
-            alert('Si è verificato un errore durante l\'eliminazione della playlist.');
+            alert(`Errore nell'eliminazione: ${error.message}`);
         }
     }
+
+
+    // 4. Funzione per mostrare le playlist nella UI
+    function displayPlaylists(playlists) {
+        if (!savedPlaylistsContainer) return;
+        savedPlaylistsContainer.innerHTML = '';
+        if (playlists.length === 0) {
+            savedPlaylistsContainer.innerHTML = '<p>Nessuna playlist salvata.</p>';
+            return;
+        }
+
+        playlists.forEach(playlist => {
+            const playlistDiv = document.createElement('div');
+            playlistDiv.classList.add('playlist-item');
+            playlistDiv.innerHTML = `
+                <h3>${playlist.name}</h3>
+                <button class="view-playlist-btn" data-name="${playlist.name}">Visualizza</button>
+                <button class="delete-playlist-btn" data-name="${playlist.name}">Elimina</button>
+                <ul>
+                    ${playlist.canti.map(canto => `<li><a href="${canto.url}" target="_blank">${canto.name}</a></li>`).join('')}
+                </ul>
+            `;
+            savedPlaylistsContainer.appendChild(playlistDiv);
+        });
+
+        // Aggiungi event listener per i pulsanti di eliminazione/visualizzazione
+        savedPlaylistsContainer.querySelectorAll('.delete-playlist-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const playlistName = e.target.dataset.name;
+                deletePlaylist(playlistName);
+            });
+        });
+        // Aggiungi event listener per visualizzare i dettagli della playlist se hai una logica per quello
+        // savedPlaylistsContainer.querySelectorAll('.view-playlist-btn').forEach(...);
+    }
+
+    // --- Funzione placeholder per ottenere i canti selezionati (adatta alla tua UI) ---
+    function getSelectedCantiForPlaylist() {
+        // Questa funzione deve raccogliere gli oggetti canto (con name e url)
+        // che l'utente ha selezionato per la playlist.
+        // Ad esempio, potresti avere checkbox accanto a ogni canto nella lista displayAvailableFiles
+        // e qui leggi quali sono stati spuntati.
+        // Per ora, restituisco un array vuoto o un esempio
+        console.warn("La funzione getSelectedCantiForPlaylist() deve essere implementata per la tua UI.");
+        // Esempio fittizio:
+        // return [{ name: "Canto di prova 1", url: "https://esempio.com/canto1.pdf" }];
+        return [];
+    }
+
 
     async function downloadPlaylist(playlistId) {
         try {
