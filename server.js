@@ -129,7 +129,7 @@ app.post('/upload', upload.single('pdfFile'), (req, res) => {
 // Rotta per ottenere la lista dei file PDF da S3
 app.get('/files', async (req, res) => {
     const params = {
-        Bucket: sgmv25-canti-liturgici,
+        Bucket: S3_BUCKET_NAME,
         Prefix: 'canti_liturgici/' // Filtra solo i file dentro la "cartella" virtuale canti_liturgici
     };
 
