@@ -27,7 +27,7 @@ const S3_BUCKET_NAME = process.env.S3_BUCKET_NAME;
 /* FINE AWS Costanti*/
 
 const app = express();
-//const PORT = 3000;
+const PORT = 3000;
 const port = process.env.PORT || 3000;
 
 // Configura AWS SDK V3
