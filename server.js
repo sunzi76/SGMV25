@@ -5,6 +5,9 @@ const fs = require('fs');
 const cors = require('cors');
 const archiver = require('archiver');
 /* AWS Costanti*/
+// NUOVE IMPORTAZIONI PER AWS SDK V3
+const { S3Client } = require('@aws-sdk/client-s3'); // Importa S3Client
+const { PutObjectCommand, GetObjectCommand, ListObjectsV2Command, DeleteObjectCommand } = require('@aws-sdk/client-s3'); // Importa i comandi specifici se li usi direttamente
 const AWS = require('aws-sdk');
 const multerS3 = require('multer-s3');
 
@@ -24,7 +27,20 @@ const S3_BUCKET_NAME = process.env.S3_BUCKET_NAME;
 /* FINE AWS Costanti*/
 
 const app = express();
-const PORT = 3000;
+//const PORT = 3000;
+const port = process.env.PORT || 3000;
+
+// Configura AWS SDK V3
+// Le credenziali verranno lette dalle variabili d'ambiente di Render
+// (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION)
+const s3Client = new S3Client({
+    region: process.env.AWS_REGION, // Assicurati che AWS_REGION sia definita su Render (es. 'eu-central-1')
+    credentials: {
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    }
+});
+
 
 app.use(cors());
 app.use(express.json());
@@ -58,15 +74,13 @@ const storage = multer.diskStorage({
 // Configura Multer per caricare i file su S3
 const upload = multer({
     storage: multerS3({
-        s3: s3,
+        s3: s3Client, // <--- CAMBIO CRUCIALE QUI! Usa l'istanza S3Client
         bucket: S3_BUCKET_NAME,
-        acl: 'public-read', // Permette la lettura pubblica del file caricato
-        contentType: multerS3.AUTO_CONTENT_TYPE, // Rileva automaticamente il tipo di file
+        acl: 'public-read',
+        contentType: multerS3.AUTO_CONTENT_TYPE,
         key: function (req, file, cb) {
-            // Definisce il nome del file su S3.
-            // Aggiungiamo un timestamp per evitare sovrascritture in caso di nomi uguali.
             const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-            const filename = 'canti_liturgici/' + uniqueSuffix + '-' + file.originalname; // Prefisso "canti_liturgici/" per organizzare
+            const filename = 'canti_liturgici/' + uniqueSuffix + '-' + file.originalname;
             cb(null, filename);
         }
     })
@@ -134,14 +148,15 @@ app.get('/files', async (req, res) => {
     };
 
     try {
-        const data = await s3.listObjectsV2(params).promise();
+        const { ListObjectsV2Command } = require('@aws-sdk/client-s3'); // Assicurati che sia importato in alto
         const files = data.Contents
             .filter(item => item.Size > 0) // Filtra gli oggetti "cartella" vuoti
             .map(item => ({
                 name: item.Key.replace('canti_liturgici/', ''), // Estrai solo il nome del file
                 url: `https://${sgmv25-canti-liturgici}.s3.${process.env.eu-central-1}.amazonaws.com/${item.Key}`
             }));
-
+        const command = new ListObjectsV2Command(params);
+        const data = await s3Client.send(command); // Usa s3Client e send con il comando
         res.json(files);
     } catch (err) {
         console.error("Errore nel listare i file da S3:", err);
