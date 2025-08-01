@@ -12,7 +12,7 @@ const multerS3 = require('multer-s3');
 // Queste credenziali verranno lette dalle variabili d'ambiente su Render
 AWS.config.update({
     accessKeyId: process.env.AKIAY6FCCFJLLA4ONW73,
-    secretAccessKey: process.env.gUJVQONuYrgLQhNyCddkAam/nq40LLnfdSphV6gX,
+    secretAccessKey: process.env.gUJVQONuYrgLQhNyCddkAam, //nq40LLnfdSphV6gX,
     region: process.env.eu-central-1 // Es: 'eu-central-1' o la tua regione
 });
 
