@@ -59,7 +59,7 @@ const storage = multer.diskStorage({
 const upload = multer({
     storage: multerS3({
         s3: s3,
-        bucket: sgmv25-canti-liturgici,
+        bucket: S3_BUCKET_NAME,
         acl: 'public-read', // Permette la lettura pubblica del file caricato
         contentType: multerS3.AUTO_CONTENT_TYPE, // Rileva automaticamente il tipo di file
         key: function (req, file, cb) {
