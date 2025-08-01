@@ -38,9 +38,98 @@ document.addEventListener('DOMContentLoaded', () => {
         "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"
     ];
 
+    if (uploadForm) {
+    uploadForm.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Impedisce il refresh della pagina
+
+            if (!pdfFileInput || !pdfFileInput.files || pdfFileInput.files.length === 0) {
+                console.log('Nessun file selezionato per il caricamento.');
+                return;
+            }
+
+            const file = pdfFileInput.files[0];
+            const formData = new FormData();
+            formData.append('pdfFile', file); // 'pdfFile' DEVE corrispondere al nome usato in multer.single() nel backend (server.js)
+
+            // Qui puoi mostrare un messaggio di "Caricamento in corso..."
+            // ...
+
+            try {
+                const response = await fetch(API_BASE_URL + '/upload', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Errore HTTP nel caricamento: ${response.status} - ${errorText}`);
+                }
+
+                const data = await response.json();
+                console.log('File caricato con successo su S3:', data);
+
+                // *** CRUCIALE: data.url CONTIENE L'URL S3 DEL PDF ***
+                const pdfUrl = data.url;
+                const pdfFileName = data.fileName;
+
+                // QUI devi aggiornare la tua UI:
+                // Se gestisci una lista di canti o playlist, devi aggiungere questo pdfUrl ai dati.
+                // Esempio:
+                // addCantoToPlaylist({ name: pdfFileName, url: pdfUrl });
+                // updatePlaylistUI();
+                // Oppure, se lo apri subito: window.open(pdfUrl, '_blank');
+
+                // Qui puoi mostrare un messaggio di successo
+                // ...
+
+            } catch (error) {
+                console.error('Errore durante il caricamento del PDF:', error);
+                // Qui puoi mostrare un messaggio di errore all'utente
+            }
+        });
+    }
+
+
     function savePlaylistStateLocal() {
         localStorage.setItem('currentPlaylist', JSON.stringify(currentPlaylist));
     }
+
+    // Esempio di funzione per recuperare i canti/PDF
+    async function fetchCanti() {
+        try {
+            const response = await fetch(API_BASE_URL + '/files'); // Chiamata al backend per listare da S3
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Errore HTTP nel recupero file: ${response.status} - ${errorText}`);
+            }
+
+            const canti = await response.json(); // Il backend dovrebbe inviare una lista di oggetti { name: '...', url: '...' }
+            console.log('Lista canti da S3:', canti);
+
+            // QUI devi aggiornare la tua UI per mostrare questi canti
+            // I link per aprire i PDF DEVONO usare direttamente il 'url' ricevuto
+            // Esempio:
+            // const cantiListElement = document.getElementById('cantiList');
+            // cantiListElement.innerHTML = ''; // Pulisci la lista esistente
+            // canti.forEach(canto => {
+            //     const listItem = document.createElement('li');
+            //     const link = document.createElement('a');
+            //     link.href = canto.url; // Usa direttamente l'URL S3
+            //     link.target = '_blank'; // Apri in una nuova scheda
+            //     link.textContent = canto.name;
+            //     listItem.appendChild(link);
+            //     cantiListElement.appendChild(listItem);
+            // });
+
+        } catch (error) {
+            console.error('Errore nel recupero dei canti:', error);
+        }
+    }
+
+        // Assicurati che questa funzione venga chiamata al caricamento della pagina
+        // o quando è necessario aggiornare la lista (es. fetchCanti(); all'interno di DOMContentLoaded)
+
 
     async function fetchAvailableFiles() {
         const searchTerm = searchInput.value;

@@ -4,6 +4,25 @@ const path = require('path');
 const fs = require('fs');
 const cors = require('cors');
 const archiver = require('archiver');
+/* AWS Costanti*/
+const AWS = require('aws-sdk');
+const multer = require('multer');
+const multerS3 = require('multer-s3');
+
+// Configura AWS SDK
+// Queste credenziali verranno lette dalle variabili d'ambiente su Render
+AWS.config.update({
+    accessKeyId: process.env.AKIAY6FCCFJLLA4ONW73,
+    secretAccessKey: process.env.gUJVQONuYrgLQhNyCddkAam/nq40LLnfdSphV6gX,
+    region: process.env.eu-central-1 // Es: 'eu-central-1' o la tua regione
+});
+
+const s3 = new AWS.S3();
+
+// Il nome del tuo bucket S3, letto dalla variabile d'ambiente
+const S3_BUCKET_NAME = process.env.sgmv25-canti-liturgici;
+
+/* FINE AWS Costanti*/
 
 const app = express();
 const PORT = 3000;
@@ -16,6 +35,9 @@ app.use('/canti_liturgici', express.static(path.join(__dirname, 'canti_liturgici
 
 const UPLOAD_DIR = path.join(__dirname, 'canti_liturgici');
 const PLAYLISTS_FILE = path.join(__dirname, 'playlists.json');
+
+
+
 
 if (!fs.existsSync(UPLOAD_DIR)) {
     fs.mkdirSync(UPLOAD_DIR);
@@ -34,7 +56,25 @@ const storage = multer.diskStorage({
     }
 });
 
+// Configura Multer per caricare i file su S3
 const upload = multer({
+    storage: multerS3({
+        s3: s3,
+        bucket: sgmv25-canti-liturgici,
+        acl: 'public-read', // Permette la lettura pubblica del file caricato
+        contentType: multerS3.AUTO_CONTENT_TYPE, // Rileva automaticamente il tipo di file
+        key: function (req, file, cb) {
+            // Definisce il nome del file su S3.
+            // Aggiungiamo un timestamp per evitare sovrascritture in caso di nomi uguali.
+            const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+            const filename = 'canti_liturgici/' + uniqueSuffix + '-' + file.originalname; // Prefisso "canti_liturgici/" per organizzare
+            cb(null, filename);
+        }
+    })
+});
+
+
+/*const upload = multer({
     storage: storage,
     fileFilter: (req, file, cb) => {
         const ext = path.extname(file.originalname).toLowerCase();
@@ -51,9 +91,26 @@ const upload = multer({
 
         cb(null, true);
     }
-}).single('pdfFile');
+}).single('pdfFile');*/
 
-app.post('/upload', (req, res) => {
+// Rotta per il caricamento dei file PDF
+app.post('/upload', upload.single('pdfFile'), (req, res) => {
+    // 'pdfFile' qui deve corrispondere al 'name' dell'input file nel tuo form HTML
+    // es: <input type="file" name="pdfFile">
+
+    if (!req.file) {
+        return res.status(400).send('Nessun file PDF caricato.');
+    }
+
+    // req.file.location conterrà l'URL pubblico del file su S3
+    const fileUrl = req.file.location;
+    const fileName = req.file.originalname; // Nome originale del file caricato
+
+    console.log(`File caricato su S3: ${fileUrl}`);
+    res.json({ message: 'File PDF caricato con successo!', url: fileUrl, fileName: fileName });
+});
+
+/*app.post('/upload', (req, res) => {
     upload(req, res, (err) => {
         if (req.fileValidationError) {
             return res.status(400).json({ success: false, message: req.fileValidationError });
@@ -68,9 +125,33 @@ app.post('/upload', (req, res) => {
         }
         res.json({ success: true, message: `"${req.file.originalname}" caricato con successo.`, file: { id: req.file.originalname, name: req.file.originalname } });
     });
+}); */
+
+// Rotta per ottenere la lista dei file PDF da S3
+app.get('/files', async (req, res) => {
+    const params = {
+        Bucket: sgmv25-canti-liturgici,
+        Prefix: 'canti_liturgici/' // Filtra solo i file dentro la "cartella" virtuale canti_liturgici
+    };
+
+    try {
+        const data = await s3.listObjectsV2(params).promise();
+        const files = data.Contents
+            .filter(item => item.Size > 0) // Filtra gli oggetti "cartella" vuoti
+            .map(item => ({
+                name: item.Key.replace('canti_liturgici/', ''), // Estrai solo il nome del file
+                url: `https://${sgmv25-canti-liturgici}.s3.${process.env.eu-central-1}.amazonaws.com/${item.Key}`
+            }));
+
+        res.json(files);
+    } catch (err) {
+        console.error("Errore nel listare i file da S3:", err);
+        res.status(500).send('Errore nel recupero dei file da S3.');
+    }
 });
 
-app.get('/files', (req, res) => {
+
+/*app.get('/files', (req, res) => {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 5;
     const searchTerm = req.query.search || '';
@@ -105,7 +186,7 @@ app.get('/files', (req, res) => {
             limit: limit
         });
     });
-});
+}); */
 
 app.delete('/files/:filename', (req, res) => {
     const filename = req.params.filename;
