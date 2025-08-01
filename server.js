@@ -19,7 +19,7 @@ AWS.config.update({
 const s3 = new AWS.S3();
 
 // Il nome del tuo bucket S3, letto dalla variabile d'ambiente
-const S3_BUCKET_NAME = process.env.sgmv25-canti-liturgici;
+const S3_BUCKET_NAME = process.env.S3_BUCKET_NAME;
 
 /* FINE AWS Costanti*/
 
