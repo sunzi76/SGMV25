@@ -42,7 +42,11 @@ const s3Client = new S3Client({
 });
 
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://sgmv25-frontend.onrender.com', // Sostituisci con l'URL esatto del tuo frontend su Render
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 // Riga commentata per preparazione web service su Render
 //app.use(express.static(path.join(__dirname, 'public')));
