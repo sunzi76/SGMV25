@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     */
     let allFiles = [];
     let currentPage = 1;
-    const itemsPerPage = 10;
+    const itemsPerPage = 6;
 
     let availableFiles = [];
     let currentPlaylist = JSON.parse(localStorage.getItem('currentPlaylist')) || [];
@@ -52,63 +52,71 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    function renderFilteredFiles() {
-    const searchInput = document.getElementById('search-input');
-    const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+    function renderFilteredFiles() { // Se hai una funzione separata per il filtraggio e rendering
+        const searchInput = document.getElementById('search-input');
+        const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
 
-    let filesToProcess = allFiles;
+        // 1. Applica il filtro della ricerca prima della paginazione
+        let filesToProcess = allFiles; // Inizia con tutti i file
+        if (searchTerm) {
+            filesToProcess = allFiles.filter(file =>
+                file.name.toLowerCase().includes(searchTerm)
+            );
+        }
 
-    if (searchTerm) {
-        filesToProcess = allFiles.filter(file =>
-            file.name.toLowerCase().includes(searchTerm)
-        );
+        const fileListContainer = document.getElementById('search-results');
+        fileListContainer.innerHTML = '';
+
+        // 2. Calcola startIndex e endIndex in base alla pagina corrente e itemsPerPage
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+
+        // 3. Applica la paginazione all'array filtrato (o completo se non c'è ricerca)
+        const filesToDisplay = filesToProcess.slice(startIndex, endIndex); // <-- Questo è cruciale
+
+        if (filesToDisplay.length > 0) {
+            filesToDisplay.forEach(file => {
+                const li = document.createElement('li');
+                li.classList.add('file-item');
+
+                const fileNameSpan = document.createElement('span');
+                fileNameSpan.textContent = file.name;
+                fileNameSpan.classList.add('file-name');
+
+                const viewLink = document.createElement('a');
+                viewLink.href = file.url;
+                viewLink.textContent = 'Visualizza';
+                viewLink.target = '_blank';
+                viewLink.classList.add('button-link');
+
+                const addToPlaylistButton = document.createElement('button');
+                addToPlaylistButton.textContent = 'Aggiungi a Playlist';
+                addToPlaylistButton.classList.add('add-to-playlist-btn');
+                addToPlaylistButton.addEventListener('click', () => addToPlaylist(file));
+
+                li.appendChild(fileNameSpan);
+                li.appendChild(viewLink);
+                li.appendChild(addToPlaylistButton);
+                fileListContainer.appendChild(li);
+            });
+        } else {
+            fileListContainer.innerHTML = '<li>Nessun file trovato.</li>';
+        }
+
+        // 4. Aggiorna i controlli di paginazione basandoti sull'array filtrato
+        updatePaginationControlsForFiltered(filesToProcess);
     }
 
-    const fileListContainer = document.getElementById('search-results');
-    fileListContainer.innerHTML = '';
 
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const filesToDisplay = filesToProcess.slice(startIndex, endIndex); // Applica paginazione ai filtrati
 
-    if (filesToDisplay.length > 0) {
-        filesToDisplay.forEach(file => {
-            const li = document.createElement('li');
-            li.classList.add('file-item');
 
-            const fileNameSpan = document.createElement('span');
-            fileNameSpan.textContent = file.name;
-            fileNameSpan.classList.add('file-name');
-
-            const viewLink = document.createElement('a');
-            viewLink.href = file.url;
-            viewLink.textContent = 'Visualizza';
-            viewLink.target = '_blank';
-            viewLink.classList.add('button-link');
-
-            const addToPlaylistButton = document.createElement('button');
-            addToPlaylistButton.textContent = 'Aggiungi a Playlist';
-            addToPlaylistButton.classList.add('add-to-playlist-btn');
-            addToPlaylistButton.addEventListener('click', () => addToPlaylist(file));
-
-            li.appendChild(fileNameSpan);
-            li.appendChild(viewLink);
-            li.appendChild(addToPlaylistButton);
-            fileListContainer.appendChild(li);
-        });
-    } else {
-        fileListContainer.innerHTML = '<li>Nessun file trovato per la ricerca.</li>';
-    }
-
-    // Aggiorna i controlli di paginazione per i file filtrati
-    updatePaginationControlsForFiltered(filesToProcess);
-    }
-
-    function updatePaginationControlsForFiltered(filteredFiles) {
+    function updatePaginationControlsForFiltered(filteredFiles) { // Passa l'array filtrato qui
         const searchPagination = document.getElementById('search-pagination');
         searchPagination.innerHTML = '';
 
-        const totalPages = Math.ceil(filteredFiles.length / itemsPerPage);
+        const totalPages = Math.ceil(filteredFiles.length / itemsPerPage); // Usa filteredFiles.length qui
+
+        // ... (il resto della logica per i pulsanti Precedente/Successivo e i numeri di pagina) ...
 
         if (totalPages > 1) {
             const prevButton = document.createElement('button');
@@ -116,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             prevButton.disabled = currentPage === 1;
             prevButton.addEventListener('click', () => {
                 currentPage--;
-                renderFilteredFiles(); // Richiama la funzione filtrata
+                renderFilteredFiles(); // Chiama la funzione che filtra E renderizza
             });
             searchPagination.appendChild(prevButton);
 
@@ -129,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nextButton.disabled = currentPage === totalPages;
             nextButton.addEventListener('click', () => {
                 currentPage++;
-                renderFilteredFiles(); // Richiama la funzione filtrata
+                renderFilteredFiles(); // Chiama la funzione che filtra E renderizza
             });
             searchPagination.appendChild(nextButton);
         }
