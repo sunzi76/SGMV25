@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const savePlaylistBtn = document.getElementById('save-playlist-btn');
     const clearPlaylistBtn = document.getElementById('clear-playlist-btn');
     const playlistSaveMessage = document.getElementById('playlist-save-message');
-    const savedPlaylistsListContainer = document.getElementById('saved-playlists-list');
+    const savedPlaylistsContainer = document.getElementById('saved-playlists-list');
     const savedPlaylistsMessage = document.getElementById('saved-playlists-message');
-
+    const fileListContainer = document.getElementById('search-results');
     const clickedPlaylistPreview = document.getElementById('clicked-playlist-preview');
     const previewPlaylistName = document.getElementById('preview-playlist-name');
     const clickedPreviewFileList = document.getElementById('clicked-preview-file-list');
@@ -122,8 +122,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const files = await response.json();
             console.log('File disponibili da S3:', files);
-            // QUI: Logica per popolare la UI con i file disponibili (canti)
-            // Assicurati che ogni 'file' abbia un 'name' e un 'url'
+            // Ora visualizzali:
+            if (fileListContainer) { // Controlla che l'elemento esista
+                fileListContainer.innerHTML = ''; // Pulisci prima di aggiungere
+                if (files.length > 0) {
+                    files.forEach(file => {
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        a.href = file.url; // Assicurati che 'file.url' sia l'URL completo di S3
+                        a.textContent = file.name;
+                        a.target = '_blank'; // Apre in una nuova tab
+                        li.appendChild(a);
+                        fileListContainer.appendChild(li);
+                    });
+                } else {
+                    fileListContainer.innerHTML = '<li>Nessun file disponibile.</li>';
+                }
+            } else {
+                console.error("Errore: Elemento HTML per la lista dei file non trovato.");
+            }
             displayAvailableFiles(files); // Funzione da creare per mostrare i file nella UI
         } catch (error) {
             console.error('Errore nel recupero dei file disponibili:', error);
@@ -602,7 +619,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Funzione per mostrare le playlist nella UI
     function displayPlaylists(playlists) {
-        if (!savedPlaylistsContainer) return;
+        if (!savedPlaylistsContainer) {
+            console.error("Errore: Elemento HTML con ID 'savedPlaylists' non trovato.");
+            return;
+        }
         savedPlaylistsContainer.innerHTML = '';
         if (playlists.length === 0) {
             savedPlaylistsContainer.innerHTML = '<p>Nessuna playlist salvata.</p>';
