@@ -572,3 +572,42 @@ h2 {
     gap: 5px;
     flex-shrink: 0;
 }
+/* Stile per i link che devono sembrare pulsanti */
+.button-link,
+.add-to-playlist-btn { /* Applica uno stile simile anche al pulsante "Aggiungi a Playlist" per coerenza */
+    display: inline-block; /* Permette di impostare padding, margin, width/height */
+    padding: 8px 15px; /* Spaziatura interna */
+    margin-left: 10px; /* Spazio tra gli elementi */
+    background-color: #007bff; /* Colore di sfondo blu (o il tuo colore primario) */
+    color: white; /* Colore del testo */
+    text-align: center;
+    text-decoration: none; /* Rimuovi la sottolineatura dei link */
+    border: none; /* Rimuovi il bordo predefinito */
+    border-radius: 5px; /* Bordi leggermente arrotondati */
+    cursor: pointer; /* Cambia il cursore in un puntatore */
+    font-size: 0.9em; /* Dimensione del font leggermente più piccola */
+    transition: background-color 0.3s ease; /* Transizione morbida al passaggio del mouse */
+}
+
+.button-link:hover,
+.add-to-playlist-btn:hover {
+    background-color: #0056b3; /* Colore più scuro al passaggio del mouse */
+}
+
+/* Puoi anche aggiungere un po' di stile agli elementi della lista per allineamento */
+.file-item {
+    display: flex; /* Utilizza flexbox per allineare gli elementi */
+    align-items: center; /* Allinea verticalmente al centro */
+    padding: 8px 0;
+    border-bottom: 1px solid #eee; /* Linea separatrice */
+}
+
+.file-item:last-child {
+    border-bottom: none; /* Rimuovi la linea all'ultimo elemento */
+}
+
+.file-item .file-name {
+    flex-grow: 1; /* Permette al nome del file di occupare lo spazio disponibile */
+    margin-right: 15px;
+    font-weight: bold;
+}

@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     viewLink.href = file.url;
                     viewLink.textContent = 'Visualizza'; // Testo del pulsante/link per aprire il PDF
                     viewLink.target = '_blank';
-                    viewLink.classList.add('view-pdf-btn'); // Considera di stilizzarlo come un pulsante
+                    viewLink.classList.add('button-link'); // Considera di stilizzarlo come un pulsante
 
                     const addToPlaylistButton = document.createElement('button');
                     addToPlaylistButton.textContent = 'Aggiungi a Playlist';
