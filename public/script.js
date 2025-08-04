@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const uploadForm = document.getElementById('uploadPdfForm'); // ID del tuo form
     const pdfFileInput = document.getElementById('pdfFileInput'); // ID del tuo input type="file"
     const uploadMessage = document.getElementById('upload-message');
-    const searchInput = document.getElementById('search-input');
+    
     const searchResults = document.getElementById('search-results');
     const searchPagination = document.getElementById('search-pagination');
     const playlistElement = document.getElementById('playlist');
@@ -26,18 +26,117 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Configurazione per file in locale
     const API_BASE_URL = 'http://localhost:3000';
     */
+    let allFiles = [];
+    let currentPage = 1;
+    const itemsPerPage = 10;
+
     let availableFiles = [];
     let currentPlaylist = JSON.parse(localStorage.getItem('currentPlaylist')) || [];
     let playlistsCache = {};
 
-    let currentPage = 1;
-    const filesPerPage = 5;
     let totalPages = 1;
 
     const monthNames = [
         "Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno",
         "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"
     ];
+
+    fetchAvailableFiles(); // Chiamata iniziale per caricare i file
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            currentPage = 1; // Resetta la paginazione quando si cerca
+            renderFilteredFiles(); // Chiama una nuova funzione per filtrare e renderizzare
+            updatePaginationControls(); // Aggiorna i controlli di paginazione
+        });
+    }
+
+
+    function renderFilteredFiles() {
+    const searchInput = document.getElementById('search-input');
+    const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+
+    let filesToProcess = allFiles;
+
+    if (searchTerm) {
+        filesToProcess = allFiles.filter(file =>
+            file.name.toLowerCase().includes(searchTerm)
+        );
+    }
+
+    const fileListContainer = document.getElementById('search-results');
+    fileListContainer.innerHTML = '';
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const filesToDisplay = filesToProcess.slice(startIndex, endIndex); // Applica paginazione ai filtrati
+
+    if (filesToDisplay.length > 0) {
+        filesToDisplay.forEach(file => {
+            const li = document.createElement('li');
+            li.classList.add('file-item');
+
+            const fileNameSpan = document.createElement('span');
+            fileNameSpan.textContent = file.name;
+            fileNameSpan.classList.add('file-name');
+
+            const viewLink = document.createElement('a');
+            viewLink.href = file.url;
+            viewLink.textContent = 'Visualizza';
+            viewLink.target = '_blank';
+            viewLink.classList.add('button-link');
+
+            const addToPlaylistButton = document.createElement('button');
+            addToPlaylistButton.textContent = 'Aggiungi a Playlist';
+            addToPlaylistButton.classList.add('add-to-playlist-btn');
+            addToPlaylistButton.addEventListener('click', () => addToPlaylist(file));
+
+            li.appendChild(fileNameSpan);
+            li.appendChild(viewLink);
+            li.appendChild(addToPlaylistButton);
+            fileListContainer.appendChild(li);
+        });
+    } else {
+        fileListContainer.innerHTML = '<li>Nessun file trovato per la ricerca.</li>';
+    }
+
+    // Aggiorna i controlli di paginazione per i file filtrati
+    updatePaginationControlsForFiltered(filesToProcess);
+    }
+
+    function updatePaginationControlsForFiltered(filteredFiles) {
+        const searchPagination = document.getElementById('search-pagination');
+        searchPagination.innerHTML = '';
+
+        const totalPages = Math.ceil(filteredFiles.length / itemsPerPage);
+
+        if (totalPages > 1) {
+            const prevButton = document.createElement('button');
+            prevButton.textContent = 'Precedente';
+            prevButton.disabled = currentPage === 1;
+            prevButton.addEventListener('click', () => {
+                currentPage--;
+                renderFilteredFiles(); // Richiama la funzione filtrata
+            });
+            searchPagination.appendChild(prevButton);
+
+            const pageInfo = document.createElement('span');
+            pageInfo.textContent = ` Pagina ${currentPage} di ${totalPages} `;
+            searchPagination.appendChild(pageInfo);
+
+            const nextButton = document.createElement('button');
+            nextButton.textContent = 'Successivo';
+            nextButton.disabled = currentPage === totalPages;
+            nextButton.addEventListener('click', () => {
+                currentPage++;
+                renderFilteredFiles(); // Richiama la funzione filtrata
+            });
+            searchPagination.appendChild(nextButton);
+        }
+    }
+
+
+
 
     if (uploadForm) {
         uploadForm.addEventListener('submit', async (event) => {
@@ -114,6 +213,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Funzione per Recuperare i File PDF Disponibili da S3 (aggiornata per coerenza) ---
     async function fetchAvailableFiles() {
+        
+        try {
+            const response = await fetch(`${backendUrl}/files`);
+            if (!response.ok) {
+                throw new Error(`Errore HTTP nel caricamento dei file: ${response.status} - ${await response.text()}`);
+            }
+            const files = await response.json();
+            console.log('File disponibili da S3:', files);
+
+            allFiles = files; // Salva tutti i file recuperati
+            renderFiles(); // Chiama una nuova funzione per gestire il rendering e il paging
+            updatePaginationControls(); // Aggiorna i controlli di paginazione
+        } catch (error) {
+            console.error('Errore nel recupero dei file disponibili:', error);
+            document.getElementById('search-results').innerHTML = '<li>Errore nel caricamento dei file.</li>';
+        }
+        
         try {
             const response = await fetch(API_BASE_URL + '/files');
             if (!response.ok) {
@@ -182,6 +298,85 @@ document.addEventListener('DOMContentLoaded', () => {
             availableFilesList.appendChild(listItem);
         });
     }
+
+
+    function renderFiles() {
+    const fileListContainer = document.getElementById('search-results');
+    fileListContainer.innerHTML = '';
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const filesToDisplay = allFiles.slice(startIndex, endIndex); // Applica il paging qui
+
+    if (filesToDisplay.length > 0) {
+        filesToDisplay.forEach(file => {
+            const li = document.createElement('li');
+            li.classList.add('file-item');
+
+            const fileNameSpan = document.createElement('span');
+            fileNameSpan.textContent = file.name;
+            fileNameSpan.classList.add('file-name');
+
+            const viewLink = document.createElement('a');
+            viewLink.href = file.url;
+            viewLink.textContent = 'Visualizza';
+            viewLink.target = '_blank';
+            viewLink.classList.add('button-link');
+
+            const addToPlaylistButton = document.createElement('button');
+            addToPlaylistButton.textContent = 'Aggiungi a Playlist';
+            addToPlaylistButton.classList.add('add-to-playlist-btn');
+            addToPlaylistButton.addEventListener('click', () => addToPlaylist(file));
+
+            li.appendChild(fileNameSpan);
+            li.appendChild(viewLink);
+            li.appendChild(addToPlaylistButton);
+            fileListContainer.appendChild(li);
+        });
+    } else {
+        fileListContainer.innerHTML = '<li>Nessun file disponibile.</li>';
+    }
+}
+
+function updatePaginationControls() {
+    const searchPagination = document.getElementById('search-pagination');
+    searchPagination.innerHTML = '';
+
+    const totalPages = Math.ceil(allFiles.length / itemsPerPage);
+
+    if (totalPages > 1) {
+        const prevButton = document.createElement('button');
+        prevButton.textContent = 'Precedente';
+        prevButton.disabled = currentPage === 1;
+        prevButton.addEventListener('click', () => {
+            currentPage--;
+            renderFiles();
+            updatePaginationControls();
+        });
+        searchPagination.appendChild(prevButton);
+
+        const pageInfo = document.createElement('span');
+        pageInfo.textContent = ` Pagina ${currentPage} di ${totalPages} `;
+        searchPagination.appendChild(pageInfo);
+
+        const nextButton = document.createElement('button');
+        nextButton.textContent = 'Successivo';
+        nextButton.disabled = currentPage === totalPages;
+        nextButton.addEventListener('click', () => {
+            currentPage++;
+            renderFiles();
+            updatePaginationControls();
+        });
+        searchPagination.appendChild(nextButton);
+    }
+}
+
+
+
+
+
+
+
 
 
 
