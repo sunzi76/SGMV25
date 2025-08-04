@@ -34,10 +34,10 @@ const port = process.env.PORT || 3000;
 // Le credenziali verranno lette dalle variabili d'ambiente di Render
 // (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION)
 const s3Client = new S3Client({
-    region: process.env.AWS_REGION, // Assicurati che AWS_REGION sia definita su Render (es. 'eu-central-1')
+    region: process.env.eu-central-1, // Assicurati che AWS_REGION sia definita su Render (es. 'eu-central-1')
     credentials: {
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+        accessKeyId: process.env.AKIAY6FCCFJLLA4ONW73,
+        secretAccessKey: process.env.gUJVQONuYrgLQhNyCddkAam    ,
     }
 });
 
