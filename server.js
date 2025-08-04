@@ -146,24 +146,22 @@ app.post('/upload', upload.single('pdfFile'), (req, res) => {
 
 // Rotta per ottenere la lista dei file PDF da S3
 app.get('/files', async (req, res) => {
-    const params = {
-        Bucket: S3_BUCKET_NAME,
-        Prefix: 'canti_liturgici/' // Filtra solo i file dentro la "cartella" virtuale canti_liturgici
-    };
+    let data = null; // <-- DICHIARA 'data' QUI CON UN VALORE INIZIALE
 
     try {
-        const { ListObjectsV2Command } = require('@aws-sdk/client-s3'); // Assicurati che sia importato in alto
-        const files = data.Contents
-            .filter(item => item.Size > 0) // Filtra gli oggetti "cartella" vuoti
-            .map(item => ({
-                name: item.Key.replace('canti_liturgici/', ''), // Estrai solo il nome del file
-                url: `https://${sgmv25-canti-liturgici}.s3.${process.env.eu-central-1}.amazonaws.com/${item.Key}`
-            }));
-        const command = new ListObjectsV2Command(params);
-        const data = await s3Client.send(command); // Usa s3Client e send con il comando
-        res.json(files);
-    } catch (err) {
-        console.error("Errore nel listare i file da S3:", err);
+        const params = { Bucket: S3_BUCKET_NAME, Prefix: 'canti_liturgici/' };
+        const command = new ListObjectsV2Command(params); // Per SDK v3
+        data = await s3Client.send(command); // <-- ASSEGNA IL VALORE QUI
+
+        const files = data.Contents.map(file => ({ // <--- L'ERRORE SI VERIFICA QUI SE 'data' NON È STATO ASSEGNATO
+            name: path.basename(file.Key),
+            url: `https://${S3_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${file.Key}`
+        }));
+        res.status(200).json(files);
+    } catch (error) {
+        console.error('Errore nel recupero dei file da S3:', error);
+        // Questo 'data' qui sotto non esisterebbe se fosse dichiarato solo nel try
+        // Esempio: if (data && data.Contents) { /* ... */ }
         res.status(500).send('Errore nel recupero dei file da S3.');
     }
 });
