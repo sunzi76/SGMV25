@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const uploadForm = document.getElementById('uploadPdfForm'); // ID del tuo form
     const pdfFileInput = document.getElementById('pdfFileInput'); // ID del tuo input type="file"
     const uploadMessage = document.getElementById('upload-message');
-    
+    const backendUrl = 'https://sgmv25-backend.onrender.com';
     const searchResults = document.getElementById('search-results');
     const searchPagination = document.getElementById('search-pagination');
     const playlistElement = document.getElementById('playlist');
