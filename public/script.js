@@ -126,16 +126,33 @@ document.addEventListener('DOMContentLoaded', () => {
             if (fileListContainer) { // Controlla che l'elemento esista
                 fileListContainer.innerHTML = ''; // Pulisci prima di aggiungere
                 if (files.length > 0) {
-                    files.forEach(file => {
-                        const li = document.createElement('li');
-                        const a = document.createElement('a');
-                        a.href = file.url; // Assicurati che 'file.url' sia l'URL completo di S3
-                        a.textContent = file.name;
-                        a.target = '_blank'; // Apre in una nuova tab
-                        li.appendChild(a);
-                        fileListContainer.appendChild(li);
-                    });
-                } else {
+                files.forEach(file => {
+                    const li = document.createElement('li');
+                    li.classList.add('file-item'); // Aggiungi una classe per styling se vuoi
+
+                    const fileNameSpan = document.createElement('span');
+                    fileNameSpan.textContent = file.name;
+                    fileNameSpan.classList.add('file-name');
+
+                    const viewLink = document.createElement('a');
+                    viewLink.href = file.url;
+                    viewLink.textContent = 'Visualizza'; // Testo del pulsante/link per aprire il PDF
+                    viewLink.target = '_blank';
+                    viewLink.classList.add('view-pdf-btn'); // Considera di stilizzarlo come un pulsante
+
+                    const addToPlaylistButton = document.createElement('button');
+                    addToPlaylistButton.textContent = 'Aggiungi a Playlist';
+                    addToPlaylistButton.classList.add('add-to-playlist-btn');
+                    // Assicurati che la funzione 'addToPlaylist' esista e sia accessibile (di solito definita nello stesso scope o globalmente)
+                    addToPlaylistButton.addEventListener('click', () => addToPlaylist(file));
+
+                    li.appendChild(fileNameSpan);
+                    li.appendChild(viewLink); // Invece di un semplice link testuale, lo rendiamo più esplicito
+                    li.appendChild(addToPlaylistButton);
+
+                    fileListContainer.appendChild(li);
+                });
+            } else {
                     fileListContainer.innerHTML = '<li>Nessun file disponibile.</li>';
                 }
             } else {
