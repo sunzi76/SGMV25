@@ -146,22 +146,25 @@ app.post('/upload', upload.single('pdfFile'), (req, res) => {
 
 // Rotta per ottenere la lista dei file PDF da S3
 app.get('/files', async (req, res) => {
-    let data = null; // <-- DICHIARA 'data' QUI CON UN VALORE INIZIALE
-
+    let data = null; // Dichiarazione di 'data' fuori dal try-catch
     try {
         const params = { Bucket: S3_BUCKET_NAME, Prefix: 'canti_liturgici/' };
         const command = new ListObjectsV2Command(params); // Per SDK v3
-        data = await s3Client.send(command); // <-- ASSEGNA IL VALORE QUI
+        data = await s3Client.send(command); // Assegnazione del valore qui
 
-        const files = data.Contents.map(file => ({ // <--- L'ERRORE SI VERIFICA QUI SE 'data' NON È STATO ASSEGNATO
-            name: path.basename(file.Key),
-            url: `https://${S3_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${file.Key}`
-        }));
+        // QUESTA È LA MODIFICA CRUCIALE:
+        // Controlla se 'data.Contents' esiste e se è un array
+        const files = (data && data.Contents && Array.isArray(data.Contents))
+            ? data.Contents.map(file => ({
+                name: path.basename(file.Key),
+                url: `https://${S3_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${file.Key}`
+            }))
+            : []; // Se non ci sono file, restituisci un array vuoto
+
         res.status(200).json(files);
+
     } catch (error) {
         console.error('Errore nel recupero dei file da S3:', error);
-        // Questo 'data' qui sotto non esisterebbe se fosse dichiarato solo nel try
-        // Esempio: if (data && data.Contents) { /* ... */ }
         res.status(500).send('Errore nel recupero dei file da S3.');
     }
 });
