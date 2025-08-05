@@ -336,6 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
+    // Funzione per recuperare le playlist salvate dal backend
     async function fetchSavedPlaylists() {
         try {
             const response = await fetch(`${backendUrl}/playlists`);
@@ -344,23 +345,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(`Errore nel caricamento delle playlist salvate: ${response.status} - ${errorText}`);
             }
             const playlists = await response.json();
+            console.log('Playlist ricevute dal backend:', playlists); // Log di debug
             displayPlaylists(playlists);
         } catch (error) {
             console.error('Errore nel recupero delle playlist:', error);
+            if (savedPlaylistsMessage) {
+                savedPlaylistsMessage.textContent = 'Errore nel caricamento delle playlist salvate.';
+                savedPlaylistsMessage.style.color = 'red';
+            }
         }
     }
     
+    // Funzione per visualizzare le playlist nella UI
     function displayPlaylists(playlists) {
         if (!savedPlaylistsContainer) {
             console.error("Errore: Elemento HTML con ID 'saved-playlists-list' non trovato.");
             return;
         }
         savedPlaylistsContainer.innerHTML = '';
+        
+        // Mostra un messaggio se non ci sono playlist
         if (playlists.length === 0) {
             savedPlaylistsMessage.textContent = 'Nessuna playlist salvata.';
             return;
         }
-    
+
+        // Se ci sono playlist, nascondi il messaggio di errore/assenza
+        savedPlaylistsMessage.textContent = '';
+
         playlists.forEach(playlist => {
             const li = document.createElement('li');
             li.innerHTML = `
@@ -373,16 +385,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button class="delete-playlist-btn">Elimina</button>
                 </div>
             `;
-            li.querySelector('.playlist-name-wrapper').addEventListener('click', (event) => {
-                showClickedPlaylistPreview(playlist.id);
+            li.querySelector('.playlist-name-wrapper').addEventListener('click', () => {
+                showClickedPlaylistPreview(playlist); // Passa l'intera playlist per la preview
             });
-            li.querySelector('.load-playlist-btn').addEventListener('click', (event) => {
+            li.querySelector('.load-playlist-btn').addEventListener('click', () => {
                 loadPlaylist(playlist.id);
             });
-            li.querySelector('.download-playlist-btn').addEventListener('click', (event) => {
+            li.querySelector('.download-playlist-btn').addEventListener('click', () => {
                 downloadPlaylist(playlist.id);
             });
-            li.querySelector('.delete-playlist-btn').addEventListener('click', (event) => {
+            li.querySelector('.delete-playlist-btn').addEventListener('click', () => {
                 deletePlaylist(playlist.id);
             });
             savedPlaylistsContainer.appendChild(li);
