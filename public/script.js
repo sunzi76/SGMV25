@@ -344,9 +344,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 const errorText = await response.text();
                 throw new Error(`Errore nel caricamento delle playlist salvate: ${response.status} - ${errorText}`);
             }
-            const playlists = await response.json();
-            console.log('Playlist ricevute dal backend:', playlists); // Log di debug
-            displayPlaylists(playlists);
+            const data = await response.json();
+            console.log('Dati ricevuti dal backend:', data); // Log di debug per l'intera risposta
+            
+            // Controlla se la risposta contiene un array di playlist
+            if (data.playlists && Array.isArray(data.playlists)) {
+                displayPlaylists(data.playlists); // <--- PASSA L'ARRAY CORRETTO
+            } else {
+                console.error('La risposta del backend non contiene un array di playlist valido.');
+                if (savedPlaylistsMessage) {
+                    savedPlaylistsMessage.textContent = 'Nessuna playlist salvata.';
+                    savedPlaylistsMessage.style.color = 'inherit';
+                }
+            }
+
         } catch (error) {
             console.error('Errore nel recupero delle playlist:', error);
             if (savedPlaylistsMessage) {
