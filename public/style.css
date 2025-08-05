@@ -611,3 +611,53 @@ h2 {
     margin-right: 15px;
     font-weight: bold;
 }
+
+/* Stile per gli elementi della lista nella playlist */
+#playlist li {
+    display: flex;
+    align-items: center; /* Allinea verticalmente gli elementi al centro */
+    justify-content: space-between; /* Spinge gli elementi ai lati opposti */
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Stile base per tutti i pulsanti della playlist */
+.button-link,
+.remove-btn {
+    width: 100px; /* Imposta una larghezza fissa per i pulsanti */
+    text-align: center;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-left: 5px; /* Aggiunge un piccolo margine tra i pulsanti */
+}
+
+/* Stile specifico per il pulsante 'Visualizza' */
+.button-link {
+    background-color: #007bff;
+    color: white;
+}
+
+.button-link:hover {
+    background-color: #0056b3;
+}
+
+/* Stile specifico per il pulsante 'Rimuovi' */
+.remove-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
+#playlist li span {
+    flex-grow: 1; /* Permette al nome del file di occupare lo spazio disponibile */
+    margin-right: 10px;
+    font-weight: bold;
+}
