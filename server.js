@@ -83,9 +83,7 @@ const upload = multer({
         acl: 'public-read',
         contentType: multerS3.AUTO_CONTENT_TYPE,
         key: function (req, file, cb) {
-            const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-            const filename = 'canti_liturgici/' + uniqueSuffix + '-' + file.originalname;
-            cb(null, filename);
+            cb(null, 'canti_liturgici/' + file.originalname);
         }
     })
 });
