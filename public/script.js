@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const uploadForm = document.getElementById('uploadPdfForm');
     const pdfFileInput = document.getElementById('pdfFileInput');
     const uploadMessage = document.getElementById('upload-message');
+    const uploadWarningMessage = document.getElementById('upload-warning-message');
     const searchInput = document.getElementById('search-input');
     const fileListContainer = document.getElementById('search-results');
     const searchPagination = document.getElementById('search-pagination');
@@ -32,6 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPage = 1;
     const itemsPerPage = 6;
     const monthNames = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
+
+     // Listener per l'input del file
+    if (pdfFileInput) {
+        pdfFileInput.addEventListener('change', () => {
+            if (pdfFileInput.files && pdfFileInput.files.length > 0) {
+                // Mostra il messaggio di avviso quando un file è selezionato
+                uploadWarningMessage.classList.add('visible');
+            } else {
+                // Nasconde il messaggio se non ci sono file selezionati
+                uploadWarningMessage.classList.remove('visible');
+            }
+        });
+    }
+
 
     // -------------------------------------------------------------
     // FUNZIONE UNIFICATA DI RENDERING, FILTRO E PAGINAZIONE

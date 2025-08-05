@@ -32,6 +32,9 @@
             <h2>Aggiungi un Nuovo PDF <a href="#top" class="return-to-top" title="Torna all'inizio">&#x2302;</a></h2>
             <form id="uploadPdfForm">
                 <input type="file" id="pdfFileInput" name="pdfFile" accept=".pdf">
+                <p id="upload-warning-message" class="hidden">
+                    ⚠️ Attenzione: Il file verrà salvato con il suo nome originale. Se esiste già un file con lo stesso nome, questo verrà sovrascritto.
+                </p>
                 <button type="submit">Carica PDF</button>
             </form>
             <p id="upload-message"></p>
