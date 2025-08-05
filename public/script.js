@@ -279,16 +279,33 @@ document.addEventListener('DOMContentLoaded', () => {
         renderAndPaginateFiles();
     }
 
+    // Funzione renderPlaylist() aggiornata
     function renderPlaylist() {
         if (!playlistElement) return;
-        playlistElement.innerHTML = '';
-        currentPlaylist.forEach(file => {
+            playlistElement.innerHTML = '';
+            currentPlaylist.forEach(file => {
             const li = document.createElement('li');
-            li.setAttribute('data-name', file.name); // Usa il nome come identificatore
+            li.setAttribute('data-name', file.name);
             li.classList.add('draggable');
             li.setAttribute('draggable', 'true');
-            li.innerHTML = `<span>${file.name}</span><button class="remove-btn">Rimuovi</button>`;
-            li.querySelector('.remove-btn').addEventListener('click', () => removeFromPlaylist(file));
+
+            const fileNameSpan = document.createElement('span');
+            fileNameSpan.textContent = file.name;
+
+            const viewLink = document.createElement('a');
+            viewLink.href = file.url; // <--- USA L'URL DEL FILE
+            viewLink.textContent = 'Visualizza';
+            viewLink.target = '_blank';
+            viewLink.classList.add('button-link');
+
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Rimuovi';
+            removeBtn.classList.add('remove-btn');
+            removeBtn.addEventListener('click', () => removeFromPlaylist(file));
+
+            li.appendChild(fileNameSpan);
+            li.appendChild(viewLink);
+            li.appendChild(removeBtn);
             playlistElement.appendChild(li);
         });
         updatePlaylistMessage();
