@@ -148,31 +148,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (uploadForm) {
         uploadForm.addEventListener('submit', async (event) => {
-            event.preventDefault();
-            if (!pdfFileInput || !pdfFileInput.files || pdfFileInput.files.length === 0) {
-                console.log('Nessun file selezionato per il caricamento.');
+            event.preventDefault(); // <-- QUESTA RIGA È FONDAMENTALE
+
+            // Qui dovrai inserire la tua logica per l'upload del file PDF
+            // che probabilmente avevi in precedenza. Ad esempio:
+            const pdfFileInput = document.getElementById('pdfFileInput');
+            const file = pdfFileInput.files[0];
+            if (!file) {
+                console.error('Nessun file selezionato.');
                 return;
             }
-            const file = pdfFileInput.files[0];
+
             const formData = new FormData();
             formData.append('pdfFile', file);
 
             try {
-                const response = await fetch(API_BASE_URL + '/upload', {
+                const response = await fetch(`${backendUrl}/upload`, {
                     method: 'POST',
                     body: formData,
                 });
-                if (!response.ok) {
+
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log('Upload riuscito:', result);
+                    // Aggiungi qui la logica per mostrare un messaggio di successo
+                    // e magari ricaricare l'elenco dei file
+                    fetchAvailableFiles();
+                } else {
                     const errorText = await response.text();
-                    throw new Error(`Errore HTTP nel caricamento: ${response.status} - ${errorText}`);
+                    throw new Error(`Errore di upload: ${response.status} - ${errorText}`);
                 }
-                const data = await response.json();
-                console.log('File caricato con successo su S3:', data);
-                // QUI: Aggiorna la UI per mostrare il PDF caricato.
-                // Potresti chiamare fetchAvailableFiles() qui per aggiornare la lista dei canti
-                fetchAvailableFiles();
             } catch (error) {
-                console.error('Errore durante il caricamento del PDF:', error);
+                console.error('Errore durante l\'upload:', error);
+                // Logica per mostrare un messaggio di errore all'utente
             }
         });
     }
