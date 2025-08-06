@@ -368,7 +368,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Funzione per visualizzare le playlist nella UI
-    // Funzione per visualizzare le playlist nella UI
     function displayPlaylists(playlists) {
         if (!savedPlaylistsContainer) {
             console.error("Errore: Elemento HTML con ID 'saved-playlists-list' non trovato.");
@@ -382,60 +381,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         savedPlaylistsMessage.textContent = '';
         
-        // Raggruppa le playlist per anno e poi per mese
-        const groupedPlaylists = playlists.reduce((acc, playlist) => {
-            let year, month;
-            try {
-                // Se l'ID è un timestamp, estrae anno e mese
-                const date = new Date(parseInt(playlist.id));
-                year = date.getFullYear();
-                month = date.getMonth(); // Mese 0-based
-            } catch (e) {
-                // Fallback se l'ID non è un timestamp, usa un valore predefinito
-                year = 'Senza Anno';
-                month = 'Senza Mese';
-            }
+        // Raggruppa le playlist sotto un'unica "cartella" dato che l'ID non è un timestamp valido
+        const year = 'Playlist salvate';
+        const month = '';
+        
+        const yearHeading = document.createElement('h3');
+        yearHeading.textContent = year;
+        savedPlaylistsContainer.appendChild(yearHeading);
+        
+        const monthHeading = document.createElement('h4');
+        monthHeading.textContent = month;
+        savedPlaylistsContainer.appendChild(monthHeading);
 
-            if (!acc[year]) acc[year] = {};
-            if (!acc[year][month]) acc[year][month] = [];
-            acc[year][month].push(playlist);
-            return acc;
-        }, {});
-
-        // Itera sui gruppi per renderizzare la lista
-        for (const year in groupedPlaylists) {
-            const yearHeading = document.createElement('h3');
-            yearHeading.textContent = `Anno: ${year}`;
-            savedPlaylistsContainer.appendChild(yearHeading);
-
-            for (const month in groupedPlaylists[year]) {
-                const monthName = (month === 'Senza Mese') ? 'Senza Mese' : new Date(year, month).toLocaleString('default', { month: 'long' });
-                const monthHeading = document.createElement('h4');
-                monthHeading.textContent = `Mese: ${monthName}`;
-                savedPlaylistsContainer.appendChild(monthHeading);
-
-                const ul = document.createElement('ul');
-                groupedPlaylists[year][month].forEach(playlist => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `
-                        <span class="playlist-name-wrapper" data-id="${playlist.id}">
-                            <span class="preview-icon">🔍</span><span>${playlist.name}</span>
-                        </span>
-                        <div class="button-container">
-                            <button class="load-playlist-btn">Carica</button>
-                            <button class="download-playlist-btn">Download ZIP</button>
-                            <button class="delete-playlist-btn">Elimina</button>
-                        </div>
-                    `;
-                    li.querySelector('.playlist-name-wrapper').addEventListener('click', () => showClickedPlaylistPreview(playlist));
-                    li.querySelector('.load-playlist-btn').addEventListener('click', () => loadPlaylist(playlist.id));
-                    li.querySelector('.download-playlist-btn').addEventListener('click', () => downloadPlaylist(playlist.id));
-                    li.querySelector('.delete-playlist-btn').addEventListener('click', () => deletePlaylist(playlist.id));
-                    ul.appendChild(li);
-                });
-                savedPlaylistsContainer.appendChild(ul);
-            }
-        }
+        const ul = document.createElement('ul');
+        playlists.forEach(playlist => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <span class="playlist-name-wrapper" data-id="${playlist.id}">
+                    <span class="preview-icon">🔍</span><span>${playlist.name}</span>
+                </span>
+                <div class="button-container">
+                    <button class="load-playlist-btn">Carica</button>
+                    <button class="download-playlist-btn">Download ZIP</button>
+                    <button class="delete-playlist-btn">Elimina</button>
+                </div>
+            `;
+            li.querySelector('.playlist-name-wrapper').addEventListener('click', () => showClickedPlaylistPreview(playlist));
+            li.querySelector('.load-playlist-btn').addEventListener('click', () => loadPlaylist(playlist.id));
+            li.querySelector('.download-playlist-btn').addEventListener('click', () => downloadPlaylist(playlist.id));
+            li.querySelector('.delete-playlist-btn').addEventListener('click', () => deletePlaylist(playlist.id));
+            ul.appendChild(li);
+        });
+        savedPlaylistsContainer.appendChild(ul);
     }
 
     async function loadPlaylist(playlistId) {
