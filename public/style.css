@@ -718,3 +718,12 @@ h2 {
     color: #666;
     padding-left: 20px;
 }
+
+/* Rendi più evidente che l'elemento sia cliccabile */
+.collapsible {
+    cursor: pointer;
+}
+
+.collapsible:hover {
+    background-color: #ddd;
+}

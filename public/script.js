@@ -449,12 +449,31 @@ document.addEventListener('DOMContentLoaded', () => {
         const collapsibles = savedPlaylistsContainer.querySelectorAll('.collapsible');
         collapsibles.forEach(collapsible => {
             collapsible.addEventListener('click', function() {
+                const isYearHeading = this.tagName.toLowerCase() === 'h3';
+                
+                // Se clicchi su un'intestazione di anno, comprime tutti i mesi sottostanti
+                if (isYearHeading) {
+                    let nextElement = this.nextElementSibling;
+                    while (nextElement && nextElement.tagName.toLowerCase() !== 'h3') {
+                        if (nextElement.classList.contains('collapsible')) {
+                            nextElement.classList.remove('active');
+                            const contentToHide = nextElement.nextElementSibling;
+                            if (contentToHide) {
+                                contentToHide.style.display = "none";
+                            }
+                        }
+                        nextElement = nextElement.nextElementSibling;
+                    }
+                }
+                
                 this.classList.toggle('active');
                 const content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
+                if (content) {
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
                 }
             });
         });
