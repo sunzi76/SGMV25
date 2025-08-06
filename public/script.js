@@ -375,13 +375,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         savedPlaylistsContainer.innerHTML = '';
         
-        // Mostra un messaggio se non ci sono playlist
         if (playlists.length === 0) {
             savedPlaylistsMessage.textContent = 'Nessuna playlist salvata.';
             return;
         }
 
-        // Se ci sono playlist, nascondi il messaggio di errore/assenza
         savedPlaylistsMessage.textContent = '';
 
         playlists.forEach(playlist => {
@@ -396,16 +394,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button class="delete-playlist-btn">Elimina</button>
                 </div>
             `;
-            li.querySelector('.playlist-name-wrapper').addEventListener('click', () => {
-                showClickedPlaylistPreview(playlist); // Passa l'intera playlist per la preview
+            // Passa l'intero oggetto `playlist` qui
+            li.querySelector('.playlist-name-wrapper').addEventListener('click', (event) => {
+                showClickedPlaylistPreview(playlist);
             });
-            li.querySelector('.load-playlist-btn').addEventListener('click', () => {
+            li.querySelector('.load-playlist-btn').addEventListener('click', (event) => {
                 loadPlaylist(playlist.id);
             });
-            li.querySelector('.download-playlist-btn').addEventListener('click', () => {
+            li.querySelector('.download-playlist-btn').addEventListener('click', (event) => {
                 downloadPlaylist(playlist.id);
             });
-            li.querySelector('.delete-playlist-btn').addEventListener('click', () => {
+            li.querySelector('.delete-playlist-btn').addEventListener('click', (event) => {
                 deletePlaylist(playlist.id);
             });
             savedPlaylistsContainer.appendChild(li);
@@ -474,17 +473,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function showClickedPlaylistPreview(playlistId) {
-        let playlistDetails = playlistsCache[playlistId];
-        if (!playlistDetails) {
-            // Logica per caricare i dettagli se non sono in cache
-            console.log("Carico i dettagli della playlist dal server...");
+    // Funzione per mostrare l'anteprima della playlist cliccata
+    function showClickedPlaylistPreview(playlist) {
+        if (!playlist) {
+            console.error("Errore: La playlist non è stata fornita.");
+            return;
         }
-
-        previewPlaylistName.textContent = playlistDetails.name;
+        
+        previewPlaylistName.textContent = playlist.name;
         clickedPreviewFileList.innerHTML = '';
-        if (playlistDetails.files && playlistDetails.files.length > 0) {
-            playlistDetails.files.forEach((file, index) => {
+        
+        if (playlist.files && playlist.files.length > 0) {
+            playlist.files.forEach((file, index) => {
                 const li = document.createElement('li');
                 li.innerHTML = `<span class="file-number">${index + 1}.</span> ${file.name}`;
                 clickedPreviewFileList.appendChild(li);
