@@ -678,3 +678,28 @@ h2 {
 #upload-warning-message.visible {
     display: block;
 }
+
+/* Contenitore per gli elementi della playlist */
+#playlist li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab; /* Indica che l'elemento è trascinabile */
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Stile per i pulsanti 'Visualizza' e 'Rimuovi' */
+.playlist-item-actions {
+    display: flex;
+    gap: 5px; /* Spazio tra i pulsanti */
+}
+
+/* Evita che il nome del file venga selezionato durante il drag */
+#playlist li span {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    flex-grow: 1;
+    font-weight: bold;
+}

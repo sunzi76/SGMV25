@@ -512,6 +512,83 @@ document.addEventListener('DOMContentLoaded', () => {
     // AVVIO APPLICAZIONE
     // -------------------------------------------------------------
     fetchAvailableFiles();
-    renderPlaylist();
+    
+
+    // Funzione renderPlaylist() aggiornata con drag and drop
+    function renderPlaylist() {
+        if (!playlistElement) return;
+        playlistElement.innerHTML = '';
+        currentPlaylist.forEach(file => {
+            const li = document.createElement('li');
+            li.setAttribute('data-name', file.name);
+            li.classList.add('draggable');
+            li.setAttribute('draggable', 'true');
+
+            const fileNameSpan = document.createElement('span');
+            fileNameSpan.textContent = file.name;
+            li.appendChild(fileNameSpan);
+            
+            const actionsContainer = document.createElement('div');
+            actionsContainer.classList.add('playlist-item-actions');
+
+            const viewLink = document.createElement('a');
+            viewLink.href = file.url;
+            viewLink.textContent = 'Visualizza';
+            viewLink.target = '_blank';
+            viewLink.classList.add('button-link');
+            actionsContainer.appendChild(viewLink);
+
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Rimuovi';
+            removeBtn.classList.add('remove-btn');
+            removeBtn.addEventListener('click', () => removeFromPlaylist(file));
+            actionsContainer.appendChild(removeBtn);
+
+            li.appendChild(actionsContainer);
+            playlistElement.appendChild(li);
+
+            // Aggiungi i listener del drag and drop
+            li.addEventListener('dragstart', handleDragStart);
+            li.addEventListener('dragover', handleDragOver);
+            li.addEventListener('drop', handleDrop);
+        });
+        updatePlaylistMessage();
+    }
+
+
+
     fetchSavedPlaylists();
+
+    let draggedItem = null;
+
+    // Gestione del drag and drop
+    function handleDragStart(e) {
+        draggedItem = this;
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/html', this.innerHTML);
+    }
+
+    function handleDragOver(e) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+    }
+
+    function handleDrop(e) {
+        e.preventDefault();
+        if (this !== draggedItem) {
+            let draggedIndex = Array.from(this.parentNode.children).indexOf(draggedItem);
+            let droppedIndex = Array.from(this.parentNode.children).indexOf(this);
+
+            // Riordina la playlist
+            let temp = currentPlaylist[draggedIndex];
+            currentPlaylist.splice(draggedIndex, 1);
+            currentPlaylist.splice(droppedIndex, 0, temp);
+
+            // Salva lo stato e aggiorna l'UI
+            savePlaylistStateLocal();
+            renderPlaylist();
+        }
+    }
+
+
 });
