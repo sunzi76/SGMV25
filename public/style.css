@@ -703,3 +703,18 @@ h2 {
     flex-grow: 1;
     font-weight: bold;
 }
+
+#saved-playlists-list h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+#saved-playlists-list h4 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1em;
+    color: #666;
+    padding-left: 20px;
+}
