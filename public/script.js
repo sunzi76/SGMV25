@@ -381,19 +381,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         savedPlaylistsMessage.textContent = '';
 
-        // Raggruppa le playlist per anno e poi per mese
         const groupedPlaylists = playlists.reduce((acc, playlist) => {
             let year, month;
             try {
-                // Estrae il timestamp dall'ID usando un'espressione regolare
                 const timestampMatch = playlist.id.match(/(\d+)$/);
                 if (timestampMatch) {
                     const timestamp = parseInt(timestampMatch[1], 10);
                     const date = new Date(timestamp);
                     year = date.getFullYear();
-                    month = date.getMonth(); // Mese 0-based
+                    month = date.getMonth();
                 } else {
-                    // Se non c'è un timestamp, usa un valore predefinito
                     year = 'Senza Anno';
                     month = 'Senza Mese';
                 }
@@ -409,10 +406,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return acc;
         }, {});
 
-        // Itera sui gruppi per renderizzare la lista
         for (const year in groupedPlaylists) {
             const yearHeading = document.createElement('h3');
             yearHeading.textContent = (year === 'Senza Anno') ? 'Senza Data' : `Anno: ${year}`;
+            yearHeading.classList.add('collapsible'); // Aggiungi classe per comprimere
             savedPlaylistsContainer.appendChild(yearHeading);
 
             for (const month in groupedPlaylists[year]) {
@@ -420,31 +417,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (monthName) {
                     const monthHeading = document.createElement('h4');
                     monthHeading.textContent = `Mese: ${monthName}`;
+                    monthHeading.classList.add('collapsible'); // Aggiungi classe
                     savedPlaylistsContainer.appendChild(monthHeading);
-                }
 
-                const ul = document.createElement('ul');
-                groupedPlaylists[year][month].forEach(playlist => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `
-                        <span class="playlist-name-wrapper" data-id="${playlist.id}">
-                            <span class="preview-icon">🔍</span><span>${playlist.name}</span>
-                        </span>
-                        <div class="button-container">
-                            <button class="load-playlist-btn">Carica</button>
-                            <button class="download-playlist-btn">Download ZIP</button>
-                            <button class="delete-playlist-btn">Elimina</button>
-                        </div>
-                    `;
-                    li.querySelector('.playlist-name-wrapper').addEventListener('click', () => showClickedPlaylistPreview(playlist));
-                    li.querySelector('.load-playlist-btn').addEventListener('click', () => loadPlaylist(playlist.id));
-                    li.querySelector('.download-playlist-btn').addEventListener('click', () => downloadPlaylist(playlist.id));
-                    li.querySelector('.delete-playlist-btn').addEventListener('click', () => deletePlaylist(playlist.id));
-                    ul.appendChild(li);
-                });
-                savedPlaylistsContainer.appendChild(ul);
+                    const ul = document.createElement('ul');
+                    ul.classList.add('content'); // Aggiungi classe per il contenuto
+                    groupedPlaylists[year][month].forEach(playlist => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `
+                            <span class="playlist-name-wrapper" data-id="${playlist.id}">
+                                <span class="preview-icon">🔍</span><span>${playlist.name}</span>
+                            </span>
+                            <div class="button-container">
+                                <button class="load-playlist-btn">Carica</button>
+                                <button class="download-playlist-btn">Download ZIP</button>
+                                <button class="delete-playlist-btn">Elimina</button>
+                            </div>
+                        `;
+                        li.querySelector('.playlist-name-wrapper').addEventListener('click', () => showClickedPlaylistPreview(playlist));
+                        li.querySelector('.load-playlist-btn').addEventListener('click', () => loadPlaylist(playlist.id));
+                        li.querySelector('.download-playlist-btn').addEventListener('click', () => downloadPlaylist(playlist.id));
+                        li.querySelector('.delete-playlist-btn').addEventListener('click', () => deletePlaylist(playlist.id));
+                        ul.appendChild(li);
+                    });
+                    savedPlaylistsContainer.appendChild(ul);
+                }
             }
         }
+        
+        // Logica di espansione/compressione (toggle)
+        const collapsibles = savedPlaylistsContainer.querySelectorAll('.collapsible');
+        collapsibles.forEach(collapsible => {
+            collapsible.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        });
     }
 
     async function loadPlaylist(playlistId) {
