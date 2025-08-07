@@ -1,17 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // -------------------------------------------------------------
-    // DICHIARAZIONI INIZIALI E VARIABILI DI CONFIGURAZIONE
-    // -------------------------------------------------------------
     const backendUrl = 'https://sgmv25-backend.onrender.com';
-    const MAX_PLAYLIST_ITEMS = 15;
-
-    // Elementi DOM
     const uploadForm = document.getElementById('uploadPdfForm');
     const pdfFileInput = document.getElementById('pdfFileInput');
     const uploadMessage = document.getElementById('upload-message');
-    const uploadWarningMessage = document.getElementById('upload-warning-message');
     const searchInput = document.getElementById('search-input');
-    const fileListContainer = document.getElementById('search-results');
+    const searchResults = document.getElementById('search-results');
     const searchPagination = document.getElementById('search-pagination');
     const playlistElement = document.getElementById('playlist');
     const playlistMessage = document.getElementById('playlist-message');
@@ -26,96 +19,66 @@ document.addEventListener('DOMContentLoaded', () => {
     const clickedPreviewFileList = document.getElementById('clicked-preview-file-list');
     const closePreviewBtn = document.getElementById('close-preview-btn');
 
-    // Variabili di stato
+    const MAX_PLAYLIST_ITEMS = 15;
+    const API_BASE_URL = 'https://sgmv25-backend.onrender.com';
     let allFiles = [];
-    let currentPlaylist = JSON.parse(localStorage.getItem('currentPlaylist')) || [];
-    let playlistsCache = {};
     let currentPage = 1;
     const itemsPerPage = 6;
+    let currentPlaylist = JSON.parse(localStorage.getItem('currentPlaylist')) || [];
+    let playlistsCache = {};
     const monthNames = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
 
-     // Listener per l'input del file
-    if (pdfFileInput) {
-        pdfFileInput.addEventListener('change', () => {
-            if (pdfFileInput.files && pdfFileInput.files.length > 0) {
-                // Mostra il messaggio di avviso quando un file è selezionato
-                uploadWarningMessage.classList.add('visible');
-            } else {
-                // Nasconde il messaggio se non ci sono file selezionati
-                uploadWarningMessage.classList.remove('visible');
-            }
-        });
+    function savePlaylistStateLocal() {
+        localStorage.setItem('currentPlaylist', JSON.stringify(currentPlaylist));
     }
 
+    async function fetchAvailableFiles() {
+        try {
+            const response = await fetch(`${API_BASE_URL}/files`);
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Errore HTTP nel caricamento dei file: ${response.status} - ${errorText}`);
+            }
+            const files = await response.json();
+            allFiles = files;
+            renderFilesAndPagination();
+        } catch (error) {
+            console.error('Errore nel recupero dei file disponibili:', error);
+            searchResults.innerHTML = '<li>Errore nel caricamento dei file.</li>';
+        }
+    }
 
-    // -------------------------------------------------------------
-    // FUNZIONE UNIFICATA DI RENDERING, FILTRO E PAGINAZIONE
-    // -------------------------------------------------------------
-    function renderAndPaginateFiles() {
+    function renderFilesAndPagination() {
         const searchTerm = searchInput.value.toLowerCase();
-        
-        // 1. Filtra i file in base al termine di ricerca
-        const filteredFiles = allFiles.filter(file =>
-            file.name.toLowerCase().includes(searchTerm)
-        );
-
-        // 2. Calcola indici di inizio e fine pagina
+        let filesToProcess = allFiles.filter(file => file.name.toLowerCase().includes(searchTerm));
         const startIndex = (currentPage - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
+        const filesToDisplay = filesToProcess.slice(startIndex, endIndex);
+        const totalPages = Math.ceil(filesToProcess.length / itemsPerPage);
 
-        // 3. Estrai i file da visualizzare nella pagina corrente
-        const filesToDisplay = filteredFiles.slice(startIndex, endIndex);
-
-        // 4. Pulisci il contenitore e popola la lista
-        fileListContainer.innerHTML = '';
+        searchResults.innerHTML = '';
         if (filesToDisplay.length > 0) {
             filesToDisplay.forEach(file => {
                 const li = document.createElement('li');
                 li.classList.add('file-item');
-
-                const fileNameSpan = document.createElement('span');
-                fileNameSpan.textContent = file.name;
-                fileNameSpan.classList.add('file-name');
-
-                const viewLink = document.createElement('a');
-                viewLink.href = file.url;
-                viewLink.textContent = 'Visualizza';
-                viewLink.target = '_blank';
-                viewLink.classList.add('button-link');
-
-                const addToPlaylistButton = document.createElement('button');
-                addToPlaylistButton.textContent = 'Aggiungi a Playlist';
-                addToPlaylistButton.classList.add('add-to-playlist-btn');
-                addToPlaylistButton.addEventListener('click', () => addToPlaylist(file));
-
-                li.appendChild(fileNameSpan);
-                li.appendChild(viewLink);
-                li.appendChild(addToPlaylistButton);
-                fileListContainer.appendChild(li);
+                li.innerHTML = `
+                    <span class="file-name">${file.name}</span>
+                    <a href="${file.url}" target="_blank" class="button-link">Visualizza</a>
+                    <button class="add-to-playlist-btn">Aggiungi a Playlist</button>
+                `;
+                li.querySelector('.add-to-playlist-btn').addEventListener('click', () => addToPlaylist(file));
+                searchResults.appendChild(li);
             });
         } else {
-            fileListContainer.innerHTML = '<li>Nessun file trovato.</li>';
+            searchResults.innerHTML = '<li>Nessun file trovato.</li>';
         }
 
-        // 5. Aggiorna i controlli di paginazione basati sui file filtrati
-        updatePaginationControls(filteredFiles.length);
-    }
-
-    // -------------------------------------------------------------
-    // FUNZIONE DI PAGINAZIONE
-    // -------------------------------------------------------------
-    function updatePaginationControls(totalItems) {
         searchPagination.innerHTML = '';
-        const totalPages = Math.ceil(totalItems / itemsPerPage);
-
         if (totalPages > 1) {
             const prevButton = document.createElement('button');
             prevButton.textContent = 'Precedente';
             prevButton.disabled = currentPage === 1;
-            prevButton.addEventListener('click', () => {
-                currentPage--;
-                renderAndPaginateFiles();
-            });
+            prevButton.addEventListener('click', () => { currentPage--; renderFilesAndPagination(); });
             searchPagination.appendChild(prevButton);
 
             const pageInfo = document.createElement('span');
@@ -125,160 +88,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const nextButton = document.createElement('button');
             nextButton.textContent = 'Successivo';
             nextButton.disabled = currentPage === totalPages;
-            nextButton.addEventListener('click', () => {
-                currentPage++;
-                renderAndPaginateFiles();
-            });
+            nextButton.addEventListener('click', () => { currentPage++; renderFilesAndPagination(); });
             searchPagination.appendChild(nextButton);
         }
     }
 
-    // -------------------------------------------------------------
-    // FUNZIONI DI CHIAMATA API E LOGICA PRINCIPALE
-    // -------------------------------------------------------------
-    async function fetchAvailableFiles() {
-        try {
-            const response = await fetch(`${backendUrl}/files`);
-            if (!response.ok) {
-                throw new Error(`Errore HTTP nel caricamento dei file: ${response.status} - ${await response.text()}`);
-            }
-            allFiles = await response.json();
-            // Dopo il fetch iniziale, l'elenco viene renderizzato.
-            // Non c'è bisogno di resettare currentPage qui, lo fa il listener di ricerca.
-            renderAndPaginateFiles(); 
-        } catch (error) {
-            console.error('Errore nel recupero dei file disponibili:', error);
-            fileListContainer.innerHTML = '<li>Errore nel caricamento dei file.</li>';
-        }
-    }
-
-    // -------------------------------------------------------------
-    // GESTIONE DEGLI EVENTI
-    // -------------------------------------------------------------
-    // Listener per il form di upload
-    if (uploadForm) {
-        uploadForm.addEventListener('submit', async (event) => {
-            event.preventDefault(); 
-            const file = pdfFileInput.files[0];
-            if (!file) {
-                uploadMessage.textContent = 'Seleziona un file da caricare.';
-                uploadMessage.style.color = 'red';
-                return;
-            }
-
-            const formData = new FormData();
-            formData.append('pdfFile', file);
-
-            try {
-                const response = await fetch(`${backendUrl}/upload`, {
-                    method: 'POST',
-                    body: formData,
-                });
-                const data = await response.json();
-
-                if (response.ok) {
-                    uploadMessage.textContent = data.message;
-                    uploadMessage.style.color = 'green';
-                    pdfFileInput.value = '';
-                    fetchAvailableFiles(); // Ricarica i file dopo l'upload
-                } else {
-                    uploadMessage.textContent = data.message;
-                    uploadMessage.style.color = 'red';
-                }
-            } catch (error) {
-                console.error('Errore durante l\'upload:', error);
-                uploadMessage.textContent = 'Si è verificato un errore durante il caricamento del file.';
-                uploadMessage.style.color = 'red';
-            }
-        });
-    }
-
-    // Listener per l'input di ricerca
-    if (searchInput) {
-        searchInput.addEventListener('input', () => {
-            currentPage = 1; // Resetta la pagina ogni volta che si digita
-            renderAndPaginateFiles();
-        });
-    }
-
-    // Listener per i bottoni "Precedente" e "Successivo" (la logica è nella funzione updatePaginationControls)
-    // Listener per i bottoni "Aggiungi a playlist" (la logica è nella funzione renderAndPaginateFiles)
-    // Listener per il bottone "Salva playlist"
-    if (savePlaylistBtn) {
-        savePlaylistBtn.addEventListener('click', async () => {
-            const playlistName = playlistNameInput.value.trim();
-            if (!playlistName) {
-                playlistSaveMessage.textContent = 'Inserisci un nome per la playlist.';
-                playlistSaveMessage.style.color = 'red';
-                return;
-            }
-            if (currentPlaylist.length === 0) {
-                playlistSaveMessage.textContent = 'La playlist è vuota. Aggiungi dei file prima di salvarla.';
-                playlistSaveMessage.style.color = 'orange';
-                return;
-            }
-
-            try {
-                const response = await fetch(`${backendUrl}/playlists`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name: playlistName, files: currentPlaylist })
-                });
-
-                const data = await response.json();
-                if (response.ok) {
-                    playlistSaveMessage.textContent = data.message;
-                    playlistSaveMessage.style.color = 'green';
-                    playlistNameInput.value = '';
-                    fetchSavedPlaylists();
-                } else {
-                    playlistSaveMessage.textContent = data.message;
-                    playlistSaveMessage.style.color = 'red';
-                }
-            } catch (error) {
-                console.error('Errore nel salvataggio della playlist:', error);
-                playlistSaveMessage.textContent = 'Errore durante il salvataggio della playlist.';
-                playlistSaveMessage.style.color = 'red';
-            }
-        });
-    }
-
-    // Listener per il bottone "Svuota playlist"
-    if (clearPlaylistBtn) {
-        clearPlaylistBtn.addEventListener('click', () => {
-            if (currentPlaylist.length === 0) {
-                alert('La playlist è già vuota.');
-                return;
-            }
-            if (confirm('Sei sicuro di voler svuotare la playlist corrente?')) {
-                currentPlaylist = [];
-                savePlaylistStateLocal();
-                renderPlaylist();
-                renderAndPaginateFiles(); // Rende anche i file che erano stati rimossi dalla playlist
-                alert('La playlist è stata svuotata.');
-            }
-        });
-    }
-    
-    // Listener per il bottone "Chiudi anteprima"
-    if(closePreviewBtn) {
-        closePreviewBtn.addEventListener('click', hideClickedPlaylistPreview);
-    }
-
-    // -------------------------------------------------------------
-    // FUNZIONI DI GESTIONE PLAYLIST (NON TOCCATE, SEMBRANO OK)
-    // -------------------------------------------------------------
-    function savePlaylistStateLocal() {
-        localStorage.setItem('currentPlaylist', JSON.stringify(currentPlaylist));
-    }
-    
     function addToPlaylist(file) {
         if (currentPlaylist.length < MAX_PLAYLIST_ITEMS) {
             if (!currentPlaylist.some(item => item.name === file.name)) {
                 currentPlaylist.push(file);
                 savePlaylistStateLocal();
                 renderPlaylist();
-                renderAndPaginateFiles(); // Aggiorna anche la lista principale
             } else {
                 alert('Questo file è già nella playlist!');
             }
@@ -287,45 +107,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function removeFromPlaylist(file) {
-        currentPlaylist = currentPlaylist.filter(item => item.name !== file.name);
+    function removeFromPlaylist(fileName) {
+        currentPlaylist = currentPlaylist.filter(file => file.name !== fileName);
         savePlaylistStateLocal();
         renderPlaylist();
-        renderAndPaginateFiles();
     }
 
-    // Funzione renderPlaylist() aggiornata
     function renderPlaylist() {
-        if (!playlistElement) return;
-            playlistElement.innerHTML = '';
-            currentPlaylist.forEach(file => {
+        playlistElement.innerHTML = '';
+        currentPlaylist.forEach((file, index) => {
             const li = document.createElement('li');
             li.setAttribute('data-name', file.name);
             li.classList.add('draggable');
             li.setAttribute('draggable', 'true');
-
-            const fileNameSpan = document.createElement('span');
-            fileNameSpan.textContent = file.name;
-
-            const viewLink = document.createElement('a');
-            viewLink.href = file.url; // <--- USA L'URL DEL FILE
-            viewLink.textContent = 'Visualizza';
-            viewLink.target = '_blank';
-            viewLink.classList.add('button-link');
-
-            const removeBtn = document.createElement('button');
-            removeBtn.textContent = 'Rimuovi';
-            removeBtn.classList.add('remove-btn');
-            removeBtn.addEventListener('click', () => removeFromPlaylist(file));
-
-            li.appendChild(fileNameSpan);
-            li.appendChild(viewLink);
-            li.appendChild(removeBtn);
+            li.innerHTML = `
+                <span>${file.name}</span>
+                <div class="button-container">
+                    <button class="remove-btn">Rimuovi</button>
+                </div>
+            `;
+            li.querySelector('.remove-btn').addEventListener('click', () => removeFromPlaylist(file.name));
             playlistElement.appendChild(li);
         });
         updatePlaylistMessage();
     }
-    
+
     function updatePlaylistMessage() {
         if (currentPlaylist.length === MAX_PLAYLIST_ITEMS) {
             playlistMessage.textContent = `La playlist ha raggiunto il limite massimo di ${MAX_PLAYLIST_ITEMS} file.`;
@@ -335,52 +141,81 @@ document.addEventListener('DOMContentLoaded', () => {
             playlistMessage.style.color = 'inherit';
         }
     }
-    
-    // Funzione per recuperare le playlist salvate dal backend
+
+    clearPlaylistBtn.addEventListener('click', () => {
+        if (currentPlaylist.length === 0) {
+            alert('La playlist è già vuota.');
+            return;
+        }
+        if (confirm('Sei sicuro di voler svuotare la playlist corrente?')) {
+            currentPlaylist = [];
+            savePlaylistStateLocal();
+            renderPlaylist();
+            alert('La playlist è stata svuotata.');
+        }
+    });
+
+    savePlaylistBtn.addEventListener('click', async () => {
+        const playlistName = playlistNameInput.value.trim();
+        if (!playlistName) {
+            playlistSaveMessage.textContent = 'Inserisci un nome per la playlist.';
+            playlistSaveMessage.style.color = 'red';
+            return;
+        }
+        if (currentPlaylist.length === 0) {
+            playlistSaveMessage.textContent = 'La playlist è vuota. Aggiungi dei file prima di salvarla.';
+            playlistSaveMessage.style.color = 'orange';
+            return;
+        }
+        try {
+            const response = await fetch(`${API_BASE_URL}/playlists`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: playlistName, files: currentPlaylist })
+            });
+            const data = await response.json();
+            if (data.success) {
+                playlistSaveMessage.textContent = data.message;
+                playlistSaveMessage.style.color = 'green';
+                playlistNameInput.value = '';
+                fetchSavedPlaylists();
+            } else {
+                playlistSaveMessage.textContent = data.message;
+                playlistSaveMessage.style.color = 'red';
+            }
+        } catch (error) {
+            console.error('Errore nel salvataggio della playlist:', error);
+            playlistSaveMessage.textContent = 'Errore durante il salvataggio della playlist.';
+            playlistSaveMessage.style.color = 'red';
+        }
+    });
+
     async function fetchSavedPlaylists() {
         try {
-            const response = await fetch(`${backendUrl}/playlists`);
+            const response = await fetch(`${API_BASE_URL}/playlists`);
             if (!response.ok) {
                 const errorText = await response.text();
                 throw new Error(`Errore nel caricamento delle playlist salvate: ${response.status} - ${errorText}`);
             }
             const data = await response.json();
-            console.log('Dati ricevuti dal backend:', data); // Log di debug per l'intera risposta
-            
-            // Controlla se la risposta contiene un array di playlist
-            if (data.playlists && Array.isArray(data.playlists)) {
-                displayPlaylists(data.playlists); // <--- PASSA L'ARRAY CORRETTO
-            } else {
-                console.error('La risposta del backend non contiene un array di playlist valido.');
-                if (savedPlaylistsMessage) {
-                    savedPlaylistsMessage.textContent = 'Nessuna playlist salvata.';
-                    savedPlaylistsMessage.style.color = 'inherit';
-                }
-            }
-
+            displayPlaylists(data.playlists);
         } catch (error) {
             console.error('Errore nel recupero delle playlist:', error);
-            if (savedPlaylistsMessage) {
-                savedPlaylistsMessage.textContent = 'Errore nel caricamento delle playlist salvate.';
-                savedPlaylistsMessage.style.color = 'red';
-            }
+            savedPlaylistsContainer.innerHTML = '<li>Errore nel caricamento delle playlist.</li>';
         }
     }
     
-    // Funzione per visualizzare le playlist nella UI
     function displayPlaylists(playlists) {
         if (!savedPlaylistsContainer) {
             console.error("Errore: Elemento HTML con ID 'saved-playlists-list' non trovato.");
             return;
         }
         savedPlaylistsContainer.innerHTML = '';
-
         if (playlists.length === 0) {
             savedPlaylistsMessage.textContent = 'Nessuna playlist salvata.';
             return;
         }
         savedPlaylistsMessage.textContent = '';
-
         const groupedPlaylists = playlists.reduce((acc, playlist) => {
             let year, month;
             try {
@@ -399,29 +234,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 year = 'Senza Anno';
                 month = 'Senza Mese';
             }
-
             if (!acc[year]) acc[year] = {};
             if (!acc[year][month]) acc[year][month] = [];
             acc[year][month].push(playlist);
             return acc;
         }, {});
-
         for (const year in groupedPlaylists) {
             const yearHeading = document.createElement('h3');
             yearHeading.textContent = (year === 'Senza Anno') ? 'Senza Data' : `Anno: ${year}`;
-            yearHeading.classList.add('collapsible'); // Aggiungi classe per comprimere
+            yearHeading.classList.add('collapsible');
             savedPlaylistsContainer.appendChild(yearHeading);
-
             for (const month in groupedPlaylists[year]) {
-                const monthName = (month === 'Senza Mese') ? '' : new Date(year, month).toLocaleString('default', { month: 'long' });
+                const monthName = (month === 'Senza Mese') ? '' : monthNames[month];
                 if (monthName) {
                     const monthHeading = document.createElement('h4');
                     monthHeading.textContent = `Mese: ${monthName}`;
-                    monthHeading.classList.add('collapsible'); // Aggiungi classe
+                    monthHeading.classList.add('collapsible');
                     savedPlaylistsContainer.appendChild(monthHeading);
-
                     const ul = document.createElement('ul');
-                    ul.classList.add('content'); // Aggiungi classe per il contenuto
+                    ul.classList.add('content');
                     groupedPlaylists[year][month].forEach(playlist => {
                         const li = document.createElement('li');
                         li.innerHTML = `
@@ -434,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <button class="delete-playlist-btn">Elimina</button>
                             </div>
                         `;
-                        li.querySelector('.playlist-name-wrapper').addEventListener('click', () => showClickedPlaylistPreview(playlist));
+                        li.querySelector('.playlist-name-wrapper').addEventListener('click', () => showClickedPlaylistPreview(playlist.id));
                         li.querySelector('.load-playlist-btn').addEventListener('click', () => loadPlaylist(playlist.id));
                         li.querySelector('.download-playlist-btn').addEventListener('click', () => downloadPlaylist(playlist.id));
                         li.querySelector('.delete-playlist-btn').addEventListener('click', () => deletePlaylist(playlist.id));
@@ -444,14 +275,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-        
-        // Logica di espansione/compressione (toggle)
         const collapsibles = savedPlaylistsContainer.querySelectorAll('.collapsible');
         collapsibles.forEach(collapsible => {
             collapsible.addEventListener('click', function() {
                 const isYearHeading = this.tagName.toLowerCase() === 'h3';
-                
-                // Se clicchi su un'intestazione di anno, comprime tutti i mesi sottostanti
                 if (isYearHeading) {
                     let nextElement = this.nextElementSibling;
                     while (nextElement && nextElement.tagName.toLowerCase() !== 'h3') {
@@ -465,7 +292,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         nextElement = nextElement.nextElementSibling;
                     }
                 }
-                
                 this.classList.toggle('active');
                 const content = this.nextElementSibling;
                 if (content) {
@@ -480,79 +306,99 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function loadPlaylist(playlistId) {
-        if (!confirm('Sei sicuro di voler caricare questa playlist? La playlist corrente non salvata verrà persa.')) { return; }
+        if (!confirm('Sei sicuro di voler caricare questa playlist? La playlist corrente non salvata verrà persa.')) {
+            return;
+        }
         try {
-            const response = await fetch(`${backendUrl}/playlists/${playlistId}`);
-            if (!response.ok) throw new Error('Errore nel caricamento della playlist.');
+            const response = await fetch(`${API_BASE_URL}/playlists/${playlistId}`);
+            if (!response.ok) {
+                throw new Error('Errore nel caricamento della playlist.');
+            }
             const data = await response.json();
-            currentPlaylist = data.playlist.files;
+            const playlistDetails = data.playlist;
+            currentPlaylist = playlistDetails.files;
             savePlaylistStateLocal();
             renderPlaylist();
-            renderAndPaginateFiles();
-            alert(`Playlist "${data.playlist.name}" caricata con successo!`);
+            fetchAvailableFiles();
+            alert(`Playlist "${playlistDetails.name}" caricata con successo!`);
         } catch (error) {
             console.error('Errore nel caricamento della playlist:', error);
             alert(`Impossibile caricare la playlist: ${error.message}`);
         }
     }
 
-    async function downloadPlaylist(playlistId) {
-        try {
-            const response = await fetch(`${backendUrl}/playlists/${playlistId}/download`);
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.message || response.statusText);
-            }
-            const blob = await response.blob();
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            const contentDisposition = response.headers.get('Content-Disposition');
-            let filename = 'playlist.zip';
-            if (contentDisposition && contentDisposition.indexOf('filename=') !== -1) {
-                filename = contentDisposition.split('filename=')[1].trim().replace(/"/g, '');
-            }
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-            window.URL.revokeObjectURL(url);
-            alert(`Download di "${filename}" avviato.`);
-        } catch (error) {
-            console.error('Errore nel download della playlist:', error);
-            alert(`Errore durante il download: ${error.message}`);
-        }
-    }
-
     async function deletePlaylist(playlistId) {
-        if (!confirm('Sei sicuro di voler eliminare questa playlist?')) { return; }
-        try {
-            const response = await fetch(`${backendUrl}/playlists/${playlistId}`, { method: 'DELETE' });
-            if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(`Errore nell'eliminazione della playlist: ${response.status} - ${errorText}`);
-            }
-            console.log(`Playlist eliminata.`);
-            fetchSavedPlaylists();
-            alert('Playlist eliminata con successo.');
-        } catch (error) {
-            console.error('Errore nell\'eliminazione della playlist:', error);
-            alert(`Errore nell'eliminazione: ${error.message}`);
-        }
-    }
-
-    // Funzione per mostrare l'anteprima della playlist cliccata
-    function showClickedPlaylistPreview(playlist) {
-        if (!playlist) {
-            console.error("Errore: La playlist non è stata fornita.");
+        if (!confirm('Sei sicuro di voler eliminare questa playlist?')) {
             return;
         }
-        
-        previewPlaylistName.textContent = playlist.name;
+        try {
+            const response = await fetch(`${API_BASE_URL}/playlists/${playlistId}`, {
+                method: 'DELETE',
+            });
+            const data = await response.json();
+            if (response.ok) {
+                console.log('Playlist eliminata:', data.message);
+                fetchSavedPlaylists();
+                alert(data.message);
+            } else {
+                throw new Error(data.message || 'Errore sconosciuto.');
+            }
+        } catch (error) {
+            console.error('Errore nell\'eliminazione della playlist:', error);
+            alert(`Impossibile eliminare la playlist: ${error.message}`);
+        }
+    }
+
+    async function downloadPlaylist(playlistId) {
+        try {
+            const response = await fetch(`${API_BASE_URL}/playlists/${playlistId}/download`);
+            if (response.ok) {
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                const contentDisposition = response.headers.get('Content-Disposition');
+                let filename = 'playlist.zip';
+                if (contentDisposition && contentDisposition.indexOf('filename=') !== -1) {
+                    filename = contentDisposition.split('filename=')[1].trim().replace(/"/g, '');
+                }
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                window.URL.revokeObjectURL(url);
+                alert(`Download di "${filename}" avviato.`);
+            } else {
+                const errorData = await response.json();
+                alert(`Errore durante il download della playlist: ${errorData.message || response.statusText}`);
+            }
+        } catch (error) {
+            console.error('Errore nel download della playlist:', error);
+            alert('Si è verificato un errore durante l\'avvio del download.');
+        }
+    }
+
+    async function showClickedPlaylistPreview(playlistId) {
+        let playlistDetails = playlistsCache[playlistId];
+        if (!playlistDetails) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/playlists/${playlistId}`);
+                if (!response.ok) {
+                    throw new Error('Errore nel caricamento dei dettagli della playlist.');
+                }
+                const data = await response.json();
+                playlistDetails = data.playlist;
+                playlistsCache[playlistId] = playlistDetails;
+            } catch (error) {
+                console.error('Errore nel recupero dettagli playlist per anteprima:', error);
+                alert('Impossibile caricare l\'anteprima della playlist.');
+                return;
+            }
+        }
+        previewPlaylistName.textContent = playlistDetails.name;
         clickedPreviewFileList.innerHTML = '';
-        
-        if (playlist.files && playlist.files.length > 0) {
-            playlist.files.forEach((file, index) => {
+        if (playlistDetails.files && playlistDetails.files.length > 0) {
+            playlistDetails.files.forEach((file, index) => {
                 const li = document.createElement('li');
                 li.innerHTML = `<span class="file-number">${index + 1}.</span> ${file.name}`;
                 clickedPreviewFileList.appendChild(li);
@@ -567,96 +413,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function hideClickedPlaylistPreview() {
         clickedPlaylistPreview.classList.add('hidden');
-        previewPlaylistName.textContent = '';
-        clickedPreviewFileList.innerHTML = '';
     }
 
-    // -------------------------------------------------------------
-    // LOGICA DRAG & DROP
-    // -------------------------------------------------------------
-    // ... la tua logica drag & drop è stata mantenuta e dovrebbe funzionare ...
-
-    // -------------------------------------------------------------
-    // AVVIO APPLICAZIONE
-    // -------------------------------------------------------------
-    fetchAvailableFiles();
-    
-
-    // Funzione renderPlaylist() aggiornata con drag and drop
-    function renderPlaylist() {
-        if (!playlistElement) return;
-        playlistElement.innerHTML = '';
-        currentPlaylist.forEach(file => {
-            const li = document.createElement('li');
-            li.setAttribute('data-name', file.name);
-            li.classList.add('draggable');
-            li.setAttribute('draggable', 'true');
-
-            const fileNameSpan = document.createElement('span');
-            fileNameSpan.textContent = file.name;
-            li.appendChild(fileNameSpan);
-            
-            const actionsContainer = document.createElement('div');
-            actionsContainer.classList.add('playlist-item-actions');
-
-            const viewLink = document.createElement('a');
-            viewLink.href = file.url;
-            viewLink.textContent = 'Visualizza';
-            viewLink.target = '_blank';
-            viewLink.classList.add('button-link');
-            actionsContainer.appendChild(viewLink);
-
-            const removeBtn = document.createElement('button');
-            removeBtn.textContent = 'Rimuovi';
-            removeBtn.classList.add('remove-btn');
-            removeBtn.addEventListener('click', () => removeFromPlaylist(file));
-            actionsContainer.appendChild(removeBtn);
-
-            li.appendChild(actionsContainer);
-            playlistElement.appendChild(li);
-
-            // Aggiungi i listener del drag and drop
-            li.addEventListener('dragstart', handleDragStart);
-            li.addEventListener('dragover', handleDragOver);
-            li.addEventListener('drop', handleDrop);
-        });
-        updatePlaylistMessage();
-    }
-
-
-
-    fetchSavedPlaylists();
+    closePreviewBtn.addEventListener('click', hideClickedPlaylistPreview);
 
     let draggedItem = null;
-
-    // Gestione del drag and drop
-    function handleDragStart(e) {
-        draggedItem = this;
-        e.dataTransfer.effectAllowed = 'move';
-        e.dataTransfer.setData('text/html', this.innerHTML);
-    }
-
-    function handleDragOver(e) {
-        e.preventDefault();
-        e.dataTransfer.dropEffect = 'move';
-    }
-
-    function handleDrop(e) {
-        e.preventDefault();
-        if (this !== draggedItem) {
-            let draggedIndex = Array.from(this.parentNode.children).indexOf(draggedItem);
-            let droppedIndex = Array.from(this.parentNode.children).indexOf(this);
-
-            // Riordina la playlist
-            let temp = currentPlaylist[draggedIndex];
-            currentPlaylist.splice(draggedIndex, 1);
-            currentPlaylist.splice(droppedIndex, 0, temp);
-
-            // Salva lo stato e aggiorna l'UI
-            savePlaylistStateLocal();
-            renderPlaylist();
+    playlistElement.addEventListener('dragstart', (e) => {
+        if (e.target.classList.contains('draggable')) {
+            draggedItem = e.target;
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/plain', e.target.dataset.name);
+            setTimeout(() => { e.target.classList.add('dragging'); }, 0);
         }
-    }
+    });
 
+    playlistElement.addEventListener('dragend', (e) => {
+        if (draggedItem) {
+            draggedItem.classList.remove('dragging');
+            draggedItem = null;
+        }
+    });
 
+    playlistElement.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        const targetItem = e.target.closest('li');
+        if (draggedItem && draggedItem !== targetItem && targetItem && targetItem.classList.contains('draggable')) {
+            const rect = targetItem.getBoundingClientRect();
+            const offsetY = e.clientY - rect.top;
+            if (offsetY < rect.height / 2) {
+                playlistElement.insertBefore(draggedItem, targetItem);
+            } else {
+                playlistElement.insertBefore(draggedItem, targetItem.nextSibling);
+            }
+        }
+    });
+
+    playlistElement.addEventListener('drop', (e) => {
+        e.preventDefault();
+        if (draggedItem) {
+            const newOrderNames = Array.from(playlistElement.children).map(li => li.dataset.name);
+            currentPlaylist.sort((a, b) => newOrderNames.indexOf(a.name) - newOrderNames.indexOf(b.name));
+            savePlaylistStateLocal();
+        }
+    });
+
+    searchInput.addEventListener('input', () => { currentPage = 1; renderFilesAndPagination(); });
+    renderPlaylist();
+    fetchAvailableFiles();
+    fetchSavedPlaylists();
 });
