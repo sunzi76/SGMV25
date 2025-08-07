@@ -750,3 +750,16 @@ h2 {
     color: #aaa;
     font-size: 20px;
 }
+
+/* Stile per il contenitore di input e pulsante */
+.upload-controls {
+    display: flex;
+    gap: 10px; /* Spazio tra il campo di input e il pulsante */
+    align-items: center; /* Allinea verticalmente gli elementi al centro */
+    margin-bottom: 10px; /* Aggiunge uno spazio sotto il gruppo */
+}
+
+/* Regola lo stile del pulsante per renderlo più leggibile */
+#uploadPdfForm button {
+    white-space: nowrap; /* Impedisce al testo del pulsante di andare a capo */
+}
