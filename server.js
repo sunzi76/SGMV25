@@ -133,8 +133,11 @@ app.get('/files', async (req, res) => {
             Bucket: bucketName
         };
         const result = await s3.listObjectsV2(s3Params).promise();
-        
+
         // Filtra la lista per escludere il file della playlist
+        if (!result.Contents) {
+            return res.json([]);
+        }
         const files = result.Contents.filter(item => item.Key !== 'playlists/playlists.json');
 
         res.json(files);
@@ -160,9 +163,9 @@ app.delete('/files/:filename', (req, res) => {
 
 app.post('/playlists', async (req, res) => {
     const { name, files } = req.body;
-    
+
     try {
-        // Recupera le playlist esistenti da S3
+        // Recupera le playlist esistenti da S3 in modo sicuro
         let existingPlaylists = [];
         try {
             const data = await s3.getObject({
@@ -171,7 +174,7 @@ app.post('/playlists', async (req, res) => {
             }).promise();
             existingPlaylists = JSON.parse(data.Body.toString('utf-8'));
         } catch (error) {
-            // Ignora l'errore se il file non esiste
+            // Ignora l'errore se il file non esiste, creando un array vuoto
             if (error.code !== 'NoSuchKey') {
                 throw error;
             }
@@ -205,11 +208,11 @@ app.get('/playlists', async (req, res) => {
             Bucket: bucketName,
             Key: 'playlists/playlists.json',
         };
-
         const data = await s3.getObject(s3Params).promise();
         const playlists = JSON.parse(data.Body.toString('utf-8'));
         res.json({ success: true, playlists });
     } catch (error) {
+        // Se il file non esiste (NoSuchKey), restituisce un array vuoto senza errore
         if (error.code === 'NoSuchKey') {
             return res.json({ success: true, playlists: [] });
         }
