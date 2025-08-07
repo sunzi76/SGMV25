@@ -727,3 +727,26 @@ h2 {
 .collapsible:hover {
     background-color: #ddd;
 }
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 30px; /* Spazio per la 'x' */
+}
+
+.clear-search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #aaa;
+    font-size: 20px;
+}

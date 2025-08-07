@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const previewPlaylistName = document.getElementById('preview-playlist-name');
     const clickedPreviewFileList = document.getElementById('clicked-preview-file-list');
     const closePreviewBtn = document.getElementById('close-preview-btn');
+    const clearSearchBtn = document.getElementById('clear-search-btn');
 
     const MAX_PLAYLIST_ITEMS = 15;
     const API_BASE_URL = 'https://sgmv25-backend.onrender.com';
@@ -457,7 +458,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    searchInput.addEventListener('input', () => { currentPage = 1; renderFilesAndPagination(); });
+    searchInput.addEventListener('input', () => {
+        currentPage = 1; 
+        renderFilesAndPagination();
+        if (searchInput.value.length > 0) {
+            clearSearchBtn.style.display = 'block';
+        } else {
+            clearSearchBtn.style.display = 'none';
+        }
+    });
+
+    clearSearchBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        clearSearchBtn.style.display = 'none';
+        currentPage = 1;
+        renderFilesAndPagination();
+    });
+
     renderPlaylist();
     fetchAvailableFiles();
     fetchSavedPlaylists();
