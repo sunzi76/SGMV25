@@ -744,7 +744,7 @@ h2 {
 .clear-search-btn {
     position: absolute;
     right: 10px;
-    top: 50%;
+    top: 35%;
     transform: translateY(-50%);
     cursor: pointer;
     color: #aaa;
