@@ -2,7 +2,6 @@ const express = require('express');
 const multer = require('multer');
 const multerS3 = require('multer-s3');
 const { S3Client, GetObjectCommand, PutObjectCommand, ListObjectsV2Command, DeleteObjectCommand } = require('@aws-sdk/client-s3');
-const { getSignedUrl } = require('@aws-sdk/s3-request-presigner');
 const archiver = require('archiver');
 const cors = require('cors');
 const path = require('path');
@@ -13,6 +12,9 @@ const port = process.env.PORT || 3000;
 // Configurazione di AWS S3 (V3 SDK)
 const bucketName = process.env.AWS_BUCKET_NAME;
 const region = process.env.AWS_REGION;
+
+// Log di debug per verificare che il bucketName sia caricato
+console.log('AWS Bucket Name:', bucketName);
 
 const s3Client = new S3Client({
     region,
@@ -183,18 +185,14 @@ app.get('/playlists/:id/download', async (req, res) => {
         if (!playlist) {
             return res.status(404).json({ success: false, message: 'Playlist non trovata.' });
         }
-
         if (!playlist.files || playlist.files.length === 0) {
             return res.status(400).json({ success: false, message: 'La playlist è vuota, nessun file da scaricare.' });
         }
-
         const archive = archiver('zip', {
             zlib: { level: 9 }
         });
-
         res.attachment(`${playlist.name}.zip`);
         archive.pipe(res);
-
         for (const file of playlist.files) {
             const getFileCommand = new GetObjectCommand({
                 Bucket: bucketName,
@@ -203,9 +201,7 @@ app.get('/playlists/:id/download', async (req, res) => {
             const fileData = await s3Client.send(getFileCommand);
             archive.append(fileData.Body, { name: file.name });
         }
-
         await archive.finalize();
-
     } catch (error) {
         console.error('Errore nel download della playlist:', error);
         res.status(500).json({ success: false, message: 'Errore interno del server durante il download della playlist.' });
