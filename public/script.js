@@ -659,4 +659,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+
+    app.post('/playlists', (req, res) => {
+        const { playlistName, files } = req.body;
+        
+        // Log per verificare i dati ricevuti
+        console.log('Dati ricevuti dal frontend per salvare la playlist:');
+        console.log(`- Nome playlist: ${playlistName}`);
+        console.log(`- File nella playlist: ${files.length} elementi`);
+
+        // Il resto del tuo codice per salvare la playlist
+        // ...
+        // Esempio:
+        fs.readFile(playlistsFilePath, 'utf8', (err, data) => {
+            // ...
+            // Log per verificare se il file è stato letto
+            console.log('File playlists.json letto con successo.');
+
+            // Dopo aver scritto il file
+            fs.writeFile(playlistsFilePath, JSON.stringify(playlists, null, 2), (err) => {
+                if (err) {
+                    console.error('Errore durante la scrittura del file:', err);
+                    return res.status(500).json({ message: 'Errore nel salvataggio della playlist.' });
+                }
+                console.log('Playlist salvata con successo. File aggiornato!');
+                res.status(201).json({ message: 'Playlist salvata con successo!' });
+            });
+        });
+    });
+
+    app.get('/playlists', (req, res) => {
+        fs.readFile(playlistsFilePath, 'utf8', (err, data) => {
+            if (err) {
+                console.error('Errore nella lettura del file playlists.json:', err);
+                // ...
+            }
+            
+            console.log('Lettura del file playlists.json completata.');
+            // Logga i dati letti dal file
+            console.log('Contenuto del file:', data);
+            
+            // ... Il resto del tuo codice
+        });
+    });
+
 });
