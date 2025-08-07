@@ -459,7 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     searchInput.addEventListener('input', () => {
-        currentPage = 1; 
+        currentPage = 1;
         renderFilesAndPagination();
         if (searchInput.value.length > 0) {
             clearSearchBtn.style.display = 'block';

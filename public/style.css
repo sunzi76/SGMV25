@@ -731,8 +731,8 @@ h2 {
 .search-container {
     position: relative;
     width: 100%;
-    max-width: 400px;
-    margin-bottom: 20px;
+    max-width: 400px; /* Imposta una larghezza massima per il contenitore */
+    margin: 0 auto;  /* Centra il contenitore, se necessario */
 }
 
 #search-input {
