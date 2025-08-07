@@ -125,85 +125,25 @@ app.post('/upload', upload.single('pdfFile'), (req, res) => {
     res.json({ message: 'File PDF caricato con successo!', url: fileUrl, fileName: fileName });
 });
 
-/*app.post('/upload', (req, res) => {
-    upload(req, res, (err) => {
-        if (req.fileValidationError) {
-            return res.status(400).json({ success: false, message: req.fileValidationError });
-        }
-        if (err instanceof multer.MulterError) {
-            return res.status(500).json({ success: false, message: 'Errore di caricamento (Multer): ' + err.message });
-        } else if (err) {
-            return res.status(500).json({ success: false, message: 'Errore generico di caricamento: ' + err.message });
-        }
-        if (!req.file) {
-            return res.status(400).json({ success: false, message: 'Nessun file selezionato.' });
-        }
-        res.json({ success: true, message: `"${req.file.originalname}" caricato con successo.`, file: { id: req.file.originalname, name: req.file.originalname } });
-    });
-}); */
 
 // Rotta per ottenere la lista dei file PDF da S3
 app.get('/files', async (req, res) => {
-    let data = null; // Dichiarazione di 'data' fuori dal try-catch
     try {
-        const params = { Bucket: S3_BUCKET_NAME, Prefix: 'canti_liturgici/' };
-        const command = new ListObjectsV2Command(params); // Per SDK v3
-        data = await s3Client.send(command); // Assegnazione del valore qui
+        const s3Params = {
+            Bucket: bucketName
+        };
+        const result = await s3.listObjectsV2(s3Params).promise();
+        
+        // Filtra la lista per escludere il file della playlist
+        const files = result.Contents.filter(item => item.Key !== 'playlists/playlists.json');
 
-        // QUESTA È LA MODIFICA CRUCIALE:
-        // Controlla se 'data.Contents' esiste e se è un array
-        const files = (data && data.Contents && Array.isArray(data.Contents))
-            ? data.Contents.map(file => ({
-                name: path.basename(file.Key),
-                url: `https://${S3_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${file.Key}`
-            }))
-            : []; // Se non ci sono file, restituisci un array vuoto
-
-        res.status(200).json(files);
-
+        res.json(files);
     } catch (error) {
         console.error('Errore nel recupero dei file da S3:', error);
-        res.status(500).send('Errore nel recupero dei file da S3.');
+        res.status(500).send('Errore interno del server.');
     }
 });
 
-
-/*app.get('/files', (req, res) => {
-    const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 5;
-    const searchTerm = req.query.search || '';
-
-    fs.readdir(UPLOAD_DIR, (err, files) => {
-        if (err) {
-            console.error('Errore nella lettura della directory:', err);
-            return res.status(500).json({ success: false, message: 'Impossibile leggere i file dal repository.' });
-        }
-
-        let pdfFiles = files.filter(file => path.extname(file).toLowerCase() === '.pdf')
-                            .map(file => ({ id: file, name: file }));
-
-        if (searchTerm) {
-            const lowerCaseSearchTerm = searchTerm.toLowerCase();
-            pdfFiles = pdfFiles.filter(file => file.name.toLowerCase().includes(lowerCaseSearchTerm));
-        }
-
-        const totalFiles = pdfFiles.length;
-        const totalPages = Math.ceil(totalFiles / limit);
-
-        const startIndex = (page - 1) * limit;
-        const endIndex = page * limit;
-        const paginatedFiles = pdfFiles.slice(startIndex, endIndex);
-
-        res.json({
-            success: true,
-            files: paginatedFiles,
-            currentPage: page,
-            totalPages: totalPages,
-            totalFiles: totalFiles,
-            limit: limit
-        });
-    });
-}); */
 
 app.delete('/files/:filename', (req, res) => {
     const filename = req.params.filename;
@@ -218,49 +158,63 @@ app.delete('/files/:filename', (req, res) => {
     });
 });
 
-app.post('/playlists', (req, res) => {
+app.post('/playlists', async (req, res) => {
     const { name, files } = req.body;
-
-    if (!name || !Array.isArray(files)) {
-        return res.status(400).json({ success: false, message: 'Nome playlist e file sono richiesti.' });
-    }
-
+    
     try {
-        let playlists = JSON.parse(fs.readFileSync(PLAYLISTS_FILE, 'utf8'));
-
-        const existingPlaylistIndex = playlists.findIndex(pl => pl.name.toLowerCase() === name.toLowerCase());
-
-        const now = new Date();
-        const newPlaylist = {
-            id: existingPlaylistIndex !== -1 ? playlists[existingPlaylistIndex].id : `playlist-${Date.now()}`,
-            name: name,
-            files: files.map(f => ({ id: f.id, name: f.name })),
-            createdAt: existingPlaylistIndex !== -1 ? playlists[existingPlaylistIndex].createdAt : now.toISOString(),
-            updatedAt: now.toISOString()
-        };
-
-        if (existingPlaylistIndex !== -1) {
-            playlists[existingPlaylistIndex] = newPlaylist;
-        } else {
-            playlists.push(newPlaylist);
+        // Recupera le playlist esistenti da S3
+        let existingPlaylists = [];
+        try {
+            const data = await s3.getObject({
+                Bucket: bucketName,
+                Key: 'playlists/playlists.json',
+            }).promise();
+            existingPlaylists = JSON.parse(data.Body.toString('utf-8'));
+        } catch (error) {
+            // Ignora l'errore se il file non esiste
+            if (error.code !== 'NoSuchKey') {
+                throw error;
+            }
         }
 
-        fs.writeFileSync(PLAYLISTS_FILE, JSON.stringify(playlists, null, 2), 'utf8');
-        res.json({ success: true, message: 'Playlist salvata con successo!', playlist: newPlaylist });
+        const newPlaylist = {
+            id: `playlist-${Date.now()}`,
+            name,
+            files
+        };
+        existingPlaylists.push(newPlaylist);
+
+        const s3Params = {
+            Bucket: bucketName,
+            Key: 'playlists/playlists.json',
+            Body: JSON.stringify(existingPlaylists, null, 2),
+            ContentType: 'application/json',
+        };
+
+        await s3.putObject(s3Params).promise();
+        res.status(201).json({ message: 'Playlist salvata con successo!', playlist: newPlaylist });
     } catch (error) {
-        console.error('Errore nel salvataggio della playlist:', error);
-        res.status(500).json({ success: false, message: 'Errore interno del server durante il salvataggio della playlist.' });
+        console.error('Errore nel salvataggio della playlist su S3:', error);
+        res.status(500).json({ message: 'Errore interno del server.' });
     }
 });
 
-app.get('/playlists', (req, res) => {
+app.get('/playlists', async (req, res) => {
     try {
-        const playlists = JSON.parse(fs.readFileSync(PLAYLISTS_FILE, 'utf8'));
-        // *** MODIFICA QUI: Restituisci l'intera playlist, non solo un sottoinsieme ***
-        res.json({ success: true, playlists: playlists });
+        const s3Params = {
+            Bucket: bucketName,
+            Key: 'playlists/playlists.json',
+        };
+
+        const data = await s3.getObject(s3Params).promise();
+        const playlists = JSON.parse(data.Body.toString('utf-8'));
+        res.json({ success: true, playlists });
     } catch (error) {
-        console.error('Errore nel recupero delle playlist:', error);
-        res.status(500).json({ success: false, message: 'Errore interno del server durante il recupero delle playlist.' });
+        if (error.code === 'NoSuchKey') {
+            return res.json({ success: true, playlists: [] });
+        }
+        console.error('Errore nel recupero delle playlist da S3:', error);
+        res.status(500).json({ message: 'Errore interno del server.' });
     }
 });
 
