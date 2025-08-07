@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Configurazione di AWS S3 (V3 SDK)
-const bucketName = process.env.AWS_BUCKET_NAME;
+const bucketName = process.env.S3_BUCKET_NAME;
 const region = process.env.AWS_REGION;
 
 // Log di debug per verificare che il bucketName sia caricato
