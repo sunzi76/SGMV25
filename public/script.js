@@ -20,6 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const closePreviewBtn = document.getElementById('close-preview-btn');
     const clearSearchBtn = document.getElementById('clear-search-btn');
 
+    /* Gestione diagrammi Tablatura */
+    const diagramsModal = document.getElementById('diagrams-modal');
+    const closeDiagramsBtn = diagramsModal.querySelector('.close-btn');
+    const diagramsFilename = document.getElementById('diagrams-filename');
+    const diagramsContainer = document.getElementById('diagrams-container');
+
+
     const MAX_PLAYLIST_ITEMS = 15;
     const API_BASE_URL = 'https://sgmv25-backend.onrender.com';
     let allFiles = [];
@@ -64,11 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 li.classList.add('file-item');
                 li.innerHTML = `
                     <span class="file-name">${file.name}</span>
-                    <a href="${file.url}" target="_blank" class="button-link">Visualizza</a>
-                    <button class="add-to-playlist-btn">Aggiungi a Playlist</button>
+                    <div class="button-container">
+                        <button class="show-diagrams-btn">Diagrammi</button>
+                        <a href="${file.url}" target="_blank" class="button-link">Visualizza</a>
+                        <button class="add-to-playlist-btn">Aggiungi a Playlist</button>
+                    </div>
                 `;
-                li.querySelector('.add-to-playlist-btn').addEventListener('click', () => addToPlaylist(file));
-                searchResults.appendChild(li);
+                li.querySelector('.show-diagrams-btn').addEventListener('click', () => {
+                    showChordDiagrams(file.name);
+                });
             });
         } else {
             searchResults.innerHTML = '<li>Nessun file trovato.</li>';
@@ -92,6 +103,28 @@ document.addEventListener('DOMContentLoaded', () => {
             nextButton.addEventListener('click', () => { currentPage++; renderFilesAndPagination(); });
             searchPagination.appendChild(nextButton);
         }
+
+        filesToDisplay.forEach(file => {
+            const li = document.createElement('li');
+            li.classList.add('file-item');
+            li.innerHTML = `
+                <span class="file-name">${file.name}</span>
+                <div class="button-container">
+                    <button class="show-diagrams-btn">Diagrammi</button>
+                    <a href="${file.url}" target="_blank" class="button-link">Visualizza</a>
+                    <button class="add-to-playlist-btn">Aggiungi a Playlist</button>
+                </div>
+            `;
+            
+            // Aggiungi questo nuovo gestore di eventi
+            li.querySelector('.show-diagrams-btn').addEventListener('click', () => {
+                showChordDiagrams(file.name);
+            });
+
+            li.querySelector('.add-to-playlist-btn').addEventListener('click', () => addToPlaylist(file));
+            searchResults.appendChild(li);
+        });
+
     }
 
     function addToPlaylist(file) {
@@ -411,6 +444,78 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         clickedPlaylistPreview.classList.remove('hidden');
     }
+
+    async function showChordDiagrams(filename) {
+        diagramsFilename.textContent = filename;
+        diagramsContainer.innerHTML = 'Caricamento diagrammi...';
+        diagramsModal.classList.remove('hidden');
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/diagrams/${filename}`);
+            if (!response.ok) {
+                throw new Error('Nessuna nota musicale trovata per questo file.');
+            }
+            const data = await response.json();
+            const chords = data.notes;
+
+            if (chords.length === 0) {
+                diagramsContainer.innerHTML = '<p>Nessuna nota musicale trovata in questo file.</p>';
+                return;
+            }
+
+            let diagramsHtml = '';
+            for (const chord of chords) {
+                const diagramImage = generateChordDiagram(chord);
+                if (diagramImage) {
+                    diagramsHtml += `
+                        <div class="chord-diagram-item">
+                            <h4>Accordo di ${chord}</h4>
+                            <img src="${diagramImage}" alt="Diagramma accordo di ${chord}">
+                        </div>
+                    `;
+                }
+            }
+            diagramsContainer.innerHTML = diagramsHtml;
+        } catch (error) {
+            console.error('Errore nel recupero dei diagrammi:', error);
+            diagramsContainer.innerHTML = `<p>${error.message}</p>`;
+        }
+    }
+
+    // Funzione per generare l'URL dell'immagine del diagramma
+    function generateChordDiagram(chord) {
+        // Questa funzione genera l'URL dell'immagine su S3
+        const fileName = chord.replace(/ /g, '');
+        const bucketName = 'sgmv25-canti-liturgici'; 
+        const region = 'eu-north-1';      
+        const imageUrl = `https://${bucketName}.s3.${region}.amazonaws.com/chord-diagrams/${fileName}.jpg`;
+
+        return imageUrl;
+    }
+
+    closeDiagramsBtn.addEventListener('click', () => {
+        diagramsModal.classList.add('hidden');
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === diagramsModal) {
+            diagramsModal.classList.add('hidden');
+        }
+    });
+
+// Gestore di eventi per chiudere la modale
+closeDiagramsBtn.addEventListener('click', () => {
+    diagramsModal.classList.add('hidden');
+});
+
+// Gestore di eventi per chiudere la modale cliccando fuori
+window.addEventListener('click', (event) => {
+    if (event.target === diagramsModal) {
+        diagramsModal.classList.add('hidden');
+    }
+});
+
+
 
     function hideClickedPlaylistPreview() {
         clickedPlaylistPreview.classList.add('hidden');

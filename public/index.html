@@ -26,6 +26,15 @@
                 <span id="clear-search-btn" class="clear-search-btn" style="display: none;">&times;</span>
             </div>
             <div id="search-results" class="file-list">
+                <li class="file-item">
+                    <span class="file-name">NomeFile.pdf</span>
+                    <div class="button-container">
+                        <button class="show-diagrams-btn">Diagrammi</button>
+                        <a href="URL_DEL_FILE" target="_blank" class="button-link">Visualizza</a>
+                        <button class="add-to-playlist-btn">Aggiungi a Playlist</button>
+                    </div>
+                </li>
+            </div>
             </div>
             <div class="pagination-controls" id="search-pagination">
             </div>
@@ -73,5 +82,19 @@
     </div>
 
     <script src="script.js"></script>
+
+    <section id="upload-section" class="file-upload">
+    </section>
+
+    <div id="diagrams-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Diagrammi Accordi per: <span id="diagrams-filename"></span></h3>
+            <div id="diagrams-container">
+            </div>
+        </div>
+    </div>
+
+
 </body>
 </html>

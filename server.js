@@ -208,6 +208,33 @@ app.get('/playlists/:id/download', async (req, res) => {
     }
 });
 
+// Rotta per la lettura delle note e trasformazione in tablatura per chitarra
+app.get('/diagrams/:filename', async (req, res) => {
+    const filename = req.params.filename;
+    const key = `canti_liturgici/${filename}`;
+
+    try {
+        const command = new GetObjectCommand({ Bucket: bucketName, Key: key });
+        const { Body } = await s3Client.send(command);
+        const pdfText = await Body.transformToString();
+
+        // Regex per trovare note comuni e accordi
+        const noteRegex = /(Re|La|Si-|Sol|Mi-|Re4|La4)\b/g;
+        const matches = [...pdfText.matchAll(noteRegex)];
+        const uniqueNotes = [...new Set(matches.map(match => match[0]))];
+
+        if (uniqueNotes.length > 0) {
+            res.json({ success: true, notes: uniqueNotes });
+        } else {
+            res.status(404).json({ success: false, message: 'Nessuna nota musicale trovata nel file.' });
+        }
+    } catch (error) {
+        console.error(`Errore nel recupero del file per i diagrammi: ${filename}`, error);
+        res.status(500).json({ success: false, message: 'Errore interno del server.' });
+    }
+});
+
+
 app.listen(port, () => {
     console.log(`Server Node.js avviato sulla porta ${port}`);
 });
