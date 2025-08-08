@@ -464,19 +464,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            let diagramsHtml = '';
+            diagramsContainer.innerHTML = ''; // Svuota il contenitore prima di riempirlo
+
             for (const chord of chords) {
                 const diagramImage = generateChordDiagram(chord);
-                diagramsHtml += `
-                    <div class="chord-diagram-item">
-                        <h4>Accordo di ${chord}</h4>
-                        <img src="${diagramImage}" alt="Diagramma accordo di ${chord}" 
-                            onload="this.style.display='block'" 
-                            onerror="this.style.display='none'; this.parentNode.innerHTML += '<p>Diagramma non disponibile</p>';">
-                    </div>
-                `;
+                
+                const diagramItem = document.createElement('div');
+                diagramItem.classList.add('chord-diagram-item');
+                diagramItem.innerHTML = `<h4>Accordo di ${chord}</h4>`;
+
+                const img = new Image();
+                img.src = diagramImage;
+                img.alt = `Diagramma accordo di ${chord}`;
+                
+                img.onload = () => {
+                    diagramItem.appendChild(img);
+                    diagramsContainer.appendChild(diagramItem);
+                };
+
+                img.onerror = () => {
+                    const errorMessage = document.createElement('p');
+                    errorMessage.textContent = 'Diagramma non disponibile';
+                    diagramItem.appendChild(errorMessage);
+                    diagramsContainer.appendChild(diagramItem);
+                };
             }
-            diagramsContainer.innerHTML = diagramsHtml;
 
         } catch (error) {
             console.error('Errore nel recupero dei diagrammi:', error);
