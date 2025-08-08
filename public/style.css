@@ -106,7 +106,6 @@ button.add-to-playlist-btn:hover {
 
 input[type="text"], input[type="file"] {
     width: auto; /* Adjust width considering button */
-    flex-grow: 1;
     padding: 10px;
     margin-right: 10px;
     border: 1px solid #ccc;
