@@ -229,7 +229,6 @@ app.get('/diagrams/:filename', async (req, res) => {
         let uniqueNotes = [];
 
         // Tentativo di analisi per la struttura più recente (<text:span> con style-name="T*")
-        // Questa regex è più precisa e gestisce il pattern che hai identificato.
         const newRegex = /<text:span text:style-name="T\d+">(.*?)<\/text:span>/g;
         const matches = [...xmlText.matchAll(newRegex)];
 
@@ -240,10 +239,10 @@ app.get('/diagrams/:filename', async (req, res) => {
                 return cleanedText;
             }).join(' ');
 
-            const notesArray = notesFromMatches.split(' ');
+            const notesArray = notesFromMatches.split(' ').filter(n => n);
             
-            // Filtra solo le stringhe che sembrano accordi (es. "Do", "Re", "Mi-7", ecc.)
-            const chordRegex = /^[A-G](b|#|sus|add|maj|min|m)?[0-9]*(-|)?(7|9|11|13)?$/i;
+            // Nuova e più precisa regex per gli accordi
+            const chordRegex = /^(La|Si|Do|Re|Mi|Fa|Sol)(b|#|sus|add|maj|min|m)?(-)?(7|9|11|13)?$/i;
             uniqueNotes = [...new Set(notesArray.filter(n => chordRegex.test(n)))];
         }
 
@@ -256,7 +255,8 @@ app.get('/diagrams/:filename', async (req, res) => {
             if (redColorStyles.length > 0) {
                 const noteRegex = new RegExp(`<text:span text:style-name="(${redColorStyles.join('|')})">(.*?)<\/text:span>`, 'g');
                 const matches = [...xmlText.matchAll(noteRegex)];
-                uniqueNotes = [...new Set(matches.map(match => match[2].trim()))];
+                const notes = matches.map(match => match[2].trim());
+                uniqueNotes = [...new Set(notes.flatMap(n => n.split(/\s+/)).filter(n => n))];
             }
         }
         

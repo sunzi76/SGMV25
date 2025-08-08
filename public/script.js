@@ -461,11 +461,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const chords = data.notes;
 
             if (chords.length === 0) {
-                diagramsContainer.innerHTML = '<h4>Note estratte per il debug:</h4><p>Nessuna nota musicale trovata in questo file.</p>';
+                diagramsContainer.innerHTML = '<h4>Risultato del debug:</h4><p>Nessuna nota musicale trovata in questo file.</p>';
                 return;
             }
 
-            let notesHtml = '<h4>Note estratte per il debug:</h4><ul>';
+            let notesHtml = '<h4>Risultato del debug:</h4><p>Note estratte dallo script:</p><ul>';
             chords.forEach(note => {
                 notesHtml += `<li>${note}</li>`;
             });
@@ -475,7 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (error) {
             console.error('Errore nel recupero delle note per il debug:', error);
-            diagramsContainer.innerHTML = `<h4>Errore durante il debug:</h4><p>${error.message}</p>`;
+            diagramsContainer.innerHTML = `<h4>Errore:</h4><p>${error.message}</p>`;
         }
     }
 
