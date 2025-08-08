@@ -211,25 +211,28 @@ app.get('/playlists/:id/download', async (req, res) => {
 // Rotta per la lettura delle note e trasformazione in tablatura per chitarra
 app.get('/diagrams/:filename', async (req, res) => {
     const filename = req.params.filename;
-    const key = `canti_liturgici/${filename}`;
+    // Assicurati che il nome del file sia corretto per l'XML
+    const key = `canti_liturgici/${filename.replace('.pdf', '.xml')}`;
 
     try {
         const command = new GetObjectCommand({ Bucket: bucketName, Key: key });
         const { Body } = await s3Client.send(command);
-        const pdfText = await Body.transformToString();
+        const xmlText = await Body.transformToString();
 
-        // Regex per trovare note comuni e accordi
-        const noteRegex = /(Re|La|Si-|Sol|Mi-|Re4|La4)\b/g;
-        const matches = [...pdfText.matchAll(noteRegex)];
-        const uniqueNotes = [...new Set(matches.map(match => match[0]))];
+        // Regex per trovare i tag <Glyphs> con il colore specifico per gli accordi
+        const noteRegex = /<Glyphs RenderTransform=".*?" Brush=".*?Color="#FF0000CC">.*?<Text>(.*?)<\/Text>/g;
+        const matches = [...xmlText.matchAll(noteRegex)];
+        
+        // Estrai e unisci il testo delle note, eliminando i duplicati
+        const uniqueNotes = [...new Set(matches.map(match => match[1].trim()))];
 
         if (uniqueNotes.length > 0) {
             res.json({ success: true, notes: uniqueNotes });
         } else {
-            res.status(404).json({ success: false, message: 'Nessuna nota musicale trovata nel file.' });
+            res.status(404).json({ success: false, message: 'Nessuna nota musicale colorata trovata nel file XML.' });
         }
     } catch (error) {
-        console.error(`Errore nel recupero del file per i diagrammi: ${filename}`, error);
+        console.error(`Errore nel recupero del file XML per i diagrammi: ${key}`, error);
         res.status(500).json({ success: false, message: 'Errore interno del server.' });
     }
 });

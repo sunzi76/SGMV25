@@ -1,0 +1,1754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<office:document xmlns:officeooo="http://openoffice.org/2009/office" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xmlns:smil="urn:oasis:names:tc:opendocument:xmlns:smil-compatible:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.graphics">
+ <office:meta><meta:document-statistic meta:object-count="147"/><meta:generator>LibreOffice/7.3.7.2$Linux_X86_64 LibreOffice_project/e114eadc50a9ff8d8c8a0567d6da8f454beeb84f</meta:generator></office:meta>
+ <office:settings>
+  <config:config-item-set config:name="ooo:view-settings">
+   <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
+   <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">14099</config:config-item>
+   <config:config-item config:name="VisibleAreaHeight" config:type="int">9999</config:config-item>
+  </config:config-item-set>
+  <config:config-item-set config:name="ooo:configuration-settings">
+   <config:config-item config:name="ApplyUserData" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="BitmapTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.sob</config:config-item>
+   <config:config-item config:name="CharacterCompressionType" config:type="short">0</config:config-item>
+   <config:config-item config:name="ColorTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.soc</config:config-item>
+   <config:config-item config:name="DashTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.sod</config:config-item>
+   <config:config-item config:name="DefaultTabStop" config:type="int">1270</config:config-item>
+   <config:config-item config:name="EmbedAsianScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedComplexScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="EmbedLatinScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedOnlyUsedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="GradientTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.sog</config:config-item>
+   <config:config-item config:name="HatchTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.soh</config:config-item>
+   <config:config-item config:name="IsKernAsianPunctuation" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintBooklet" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintBookletBack" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsPrintBookletFront" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsPrintDate" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintFitPage" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintHiddenPages" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsPrintPageName" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintTilePage" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintTime" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="LineEndTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.soe</config:config-item>
+   <config:config-item config:name="LoadReadonly" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="MeasureUnit" config:type="short">7</config:config-item>
+   <config:config-item config:name="PageNumberFormat" config:type="int">4</config:config-item>
+   <config:config-item config:name="ParagraphSummation" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintQuality" config:type="int">0</config:config-item>
+   <config:config-item config:name="PrinterIndependentLayout" config:type="string">low-resolution</config:config-item>
+   <config:config-item config:name="PrinterName" config:type="string"/>
+   <config:config-item config:name="PrinterPaperFromSetup" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrinterSetup" config:type="base64Binary"/>
+   <config:config-item config:name="SaveThumbnail" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="SaveVersionOnClose" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="ScaleDenominator" config:type="int">1</config:config-item>
+   <config:config-item config:name="ScaleNumerator" config:type="int">1</config:config-item>
+   <config:config-item config:name="UpdateFromTemplate" config:type="boolean">true</config:config-item>
+  </config:config-item-set>
+ </office:settings>
+ <office:scripts>
+  <office:script script:language="ooo:Basic">
+   <ooo:libraries xmlns:ooo="http://openoffice.org/2004/office" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+  </office:script>
+ </office:scripts>
+ <office:font-face-decls>
+  <style:font-face style:name="Arial" svg:font-family="Arial" style:font-pitch="variable"/>
+  <style:font-face style:name="Arial1" svg:font-family="Arial"/>
+  <style:font-face style:name="DejaVu Sans" svg:font-family="&apos;DejaVu Sans&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="DejaVu Sans1" svg:font-family="&apos;DejaVu Sans&apos;" style:font-pitch="variable"/>
+  <style:font-face style:name="DroidSansMono" svg:font-family="DroidSansMono" style:font-pitch="variable"/>
+  <style:font-face style:name="DroidSansMono1" svg:font-family="DroidSansMono"/>
+  <style:font-face style:name="Liberation Sans" svg:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  <style:font-face style:name="Liberation Serif" svg:font-family="&apos;Liberation Serif&apos;" style:font-pitch="variable"/>
+  <style:font-face style:name="Liberation Serif1" svg:font-family="&apos;Liberation Serif&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  <style:font-face style:name="Noto Sans" svg:font-family="&apos;Noto Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  <style:font-face style:name="Noto Sans Devanagari" svg:font-family="&apos;Noto Sans Devanagari&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="Roboto" svg:font-family="Roboto"/>
+  <style:font-face style:name="Roboto1" svg:font-family="Roboto" style:font-pitch="variable"/>
+  <style:font-face style:name="icomoon" svg:font-family="icomoon" style:font-pitch="variable"/>
+  <style:font-face style:name="icomoon1" svg:font-family="icomoon"/>
+ </office:font-face-decls>
+ <office:styles>
+  <draw:gradient draw:name="Filled" draw:style="linear" draw:start-color="#ffffff" draw:end-color="#cccccc" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="30deg" draw:border="0%"/>
+  <draw:gradient draw:name="Filled_20_Blue" draw:display-name="Filled Blue" draw:style="linear" draw:start-color="#729fcf" draw:end-color="#355269" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="30deg" draw:border="0%"/>
+  <draw:gradient draw:name="Filled_20_Green" draw:display-name="Filled Green" draw:style="linear" draw:start-color="#77bc65" draw:end-color="#127622" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="30deg" draw:border="0%"/>
+  <draw:gradient draw:name="Filled_20_Red" draw:display-name="Filled Red" draw:style="linear" draw:start-color="#ff6d6d" draw:end-color="#c9211e" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="30deg" draw:border="0%"/>
+  <draw:gradient draw:name="Filled_20_Yellow" draw:display-name="Filled Yellow" draw:style="linear" draw:start-color="#ffde59" draw:end-color="#b47804" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="30deg" draw:border="0%"/>
+  <draw:gradient draw:name="Shapes" draw:style="rectangular" draw:cx="50%" draw:cy="50%" draw:start-color="#cccccc" draw:end-color="#ffffff" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="0deg" draw:border="0%"/>
+  <draw:marker draw:name="Arrow" svg:viewBox="0 0 20 30" svg:d="M10 0l-10 30h20z"/>
+  <style:default-style style:family="graphic">
+   <style:graphic-properties svg:stroke-color="#3465a4" draw:fill-color="#729fcf" fo:wrap-option="no-wrap"/>
+   <style:paragraph-properties style:text-autospace="ideograph-alpha" style:punctuation-wrap="simple" style:line-break="strict" style:writing-mode="lr-tb" style:font-independent-line-spacing="false">
+    <style:tab-stops/>
+   </style:paragraph-properties>
+   <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:font-name="Liberation Serif1" fo:font-size="24pt" fo:language="en" fo:country="US" style:font-name-asian="DejaVu Sans" style:font-size-asian="24pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="DejaVu Sans" style:font-size-complex="24pt" style:language-complex="hi" style:country-complex="IN"/>
+  </style:default-style>
+  <style:style style:name="standard" style:family="graphic"/>
+  <style:style style:name="objectwithoutfill" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:fill="none"/>
+  </style:style>
+  <style:style style:name="Object_20_with_20_no_20_fill_20_and_20_no_20_line" style:display-name="Object with no fill and no line" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none"/>
+  </style:style>
+  <style:style style:name="Text" style:family="graphic">
+   <style:graphic-properties draw:stroke="solid" svg:stroke-color="#cccccc" draw:fill="solid" draw:fill-color="#eeeeee"/>
+   <style:text-properties style:font-name="Noto Sans" fo:font-family="&apos;Noto Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  </style:style>
+  <style:style style:name="A4" style:family="graphic" style:parent-style-name="Text">
+   <style:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="18pt"/>
+  </style:style>
+  <style:style style:name="Title_20_A4" style:display-name="Title A4" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+   <style:text-properties fo:font-size="44pt"/>
+  </style:style>
+  <style:style style:name="Heading_20_A4" style:display-name="Heading A4" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+   <style:text-properties fo:font-size="24pt"/>
+  </style:style>
+  <style:style style:name="Text_20_A4" style:display-name="Text A4" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+  </style:style>
+  <style:style style:name="A4" style:family="graphic" style:parent-style-name="Text">
+   <style:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="18pt"/>
+  </style:style>
+  <style:style style:name="Title_20_A0" style:display-name="Title A0" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+   <style:text-properties fo:font-size="96pt"/>
+  </style:style>
+  <style:style style:name="Heading_20_A0" style:display-name="Heading A0" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+   <style:text-properties fo:font-size="71.9000015258789pt"/>
+  </style:style>
+  <style:style style:name="Text_20_A0" style:display-name="Text A0" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+  </style:style>
+  <style:style style:name="Graphic" style:family="graphic">
+   <style:graphic-properties draw:fill="solid" draw:fill-color="#ffffff"/>
+   <style:text-properties style:font-name="Liberation Sans" fo:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="18pt"/>
+  </style:style>
+  <style:style style:name="Shapes" style:family="graphic" style:parent-style-name="Graphic">
+   <style:graphic-properties draw:stroke="none" draw:fill="gradient" draw:fill-gradient-name="Shapes"/>
+   <style:text-properties fo:font-size="14pt" fo:font-weight="bold"/>
+  </style:style>
+  <style:style style:name="Filled" style:family="graphic" style:parent-style-name="Shapes">
+   <style:graphic-properties draw:fill="gradient" draw:fill-gradient-name="Filled"/>
+  </style:style>
+  <style:style style:name="Filled_20_Blue" style:display-name="Filled Blue" style:family="graphic" style:parent-style-name="Filled">
+   <style:graphic-properties draw:fill-gradient-name="Filled_20_Blue"/>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Filled_20_Green" style:display-name="Filled Green" style:family="graphic" style:parent-style-name="Filled">
+   <style:graphic-properties draw:fill-gradient-name="Filled_20_Green"/>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%" style:font-name="Liberation Sans" fo:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  </style:style>
+  <style:style style:name="Filled_20_Red" style:display-name="Filled Red" style:family="graphic" style:parent-style-name="Filled">
+   <style:graphic-properties draw:fill-gradient-name="Filled_20_Red"/>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Filled_20_Yellow" style:display-name="Filled Yellow" style:family="graphic" style:parent-style-name="Filled">
+   <style:graphic-properties draw:fill-gradient-name="Filled_20_Yellow"/>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Outlined" style:family="graphic" style:parent-style-name="Shapes">
+   <style:graphic-properties draw:stroke="solid" svg:stroke-width="0.081cm" svg:stroke-color="#000000" draw:fill="none"/>
+  </style:style>
+  <style:style style:name="Outlined_20_Blue" style:display-name="Outlined Blue" style:family="graphic" style:parent-style-name="Outlined">
+   <style:graphic-properties svg:stroke-color="#355269"/>
+   <style:text-properties fo:color="#355269" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Outlined_20_Green" style:display-name="Outlined Green" style:family="graphic" style:parent-style-name="Outlined">
+   <style:graphic-properties svg:stroke-color="#127622"/>
+   <style:text-properties fo:color="#127622" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Outlined_20_Red" style:display-name="Outlined Red" style:family="graphic" style:parent-style-name="Outlined">
+   <style:graphic-properties svg:stroke-color="#c9211e"/>
+   <style:text-properties fo:color="#c9211e" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Outlined_20_Yellow" style:display-name="Outlined Yellow" style:family="graphic" style:parent-style-name="Outlined">
+   <style:graphic-properties draw:stroke="solid" svg:stroke-color="#b47804"/>
+   <style:text-properties fo:color="#b47804" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Lines" style:family="graphic" style:parent-style-name="Graphic">
+   <style:graphic-properties draw:stroke="solid" svg:stroke-color="#000000" draw:fill="none"/>
+  </style:style>
+  <style:style style:name="Arrow_20_Line" style:display-name="Arrow Line" style:family="graphic" style:parent-style-name="Lines">
+   <style:graphic-properties draw:marker-start="Arrow" draw:marker-start-width="0.2cm" draw:marker-end="Arrow" draw:marker-end-width="0.2cm" draw:show-unit="true"/>
+  </style:style>
+  <style:style style:name="Arrow_20_Dashed" style:display-name="Arrow Dashed" style:family="graphic" style:parent-style-name="Lines">
+   <style:graphic-properties draw:stroke="dash"/>
+  </style:style>
+ </office:styles>
+ <office:automatic-styles>
+  <style:page-layout style:name="PM0">
+   <style:page-layout-properties fo:margin-top="0.9cm" fo:margin-bottom="1cm" fo:margin-left="0.9cm" fo:margin-right="1cm" fo:page-width="21.022cm" fo:page-height="29.701cm" style:print-orientation="portrait"/>
+  </style:page-layout>
+  <style:style style:name="dp1" style:family="drawing-page">
+   <style:drawing-page-properties draw:background-size="border" draw:fill="none"/>
+  </style:style>
+  <style:style style:name="dp2" style:family="drawing-page"/>
+  <style:style style:name="gr1" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="solid" draw:fill-color="#ffffff"/>
+  </style:style>
+  <style:style style:name="gr2" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="solid" draw:fill-color="#e6e6e6"/>
+  </style:style>
+  <style:style style:name="gr3" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0.528cm" fo:min-width="0.528cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm"/>
+   <style:paragraph-properties style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="gr4" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0.74cm" fo:min-width="0.74cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm"/>
+   <style:paragraph-properties style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="gr5" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0cm" fo:min-width="0cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm" style:mirror="none"/>
+  </style:style>
+  <style:style style:name="gr6" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0.369cm" fo:min-width="0.369cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm"/>
+   <style:paragraph-properties style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="gr7" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="solid" draw:fill-color="#444444"/>
+  </style:style>
+  <style:style style:name="gr8" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0.29cm" fo:min-width="0.29cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm"/>
+   <style:paragraph-properties style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="P1" style:family="paragraph">
+   <loext:graphic-properties draw:fill="solid" draw:fill-color="#ffffff"/>
+  </style:style>
+  <style:style style:name="P2" style:family="paragraph">
+   <loext:graphic-properties draw:fill="solid" draw:fill-color="#e6e6e6"/>
+  </style:style>
+  <style:style style:name="P3" style:family="paragraph">
+   <style:paragraph-properties fo:text-align="start" style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="P4" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="15pt" style:font-size-asian="15pt" style:font-size-complex="15pt"/>
+  </style:style>
+  <style:style style:name="P5" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="21pt" style:font-size-asian="21pt" style:font-size-complex="21pt"/>
+  </style:style>
+  <style:style style:name="P6" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+  </style:style>
+  <style:style style:name="P7" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="10.5pt" style:font-size-asian="10.5pt" style:font-size-complex="10.5pt"/>
+  </style:style>
+  <style:style style:name="P8" style:family="paragraph">
+   <loext:graphic-properties draw:fill="solid" draw:fill-color="#444444"/>
+  </style:style>
+  <style:style style:name="P9" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="8.19999980926514pt" style:font-size-asian="8.19999980926514pt" style:font-size-complex="8.19999980926514pt"/>
+  </style:style>
+  <style:style style:name="T1" style:family="text">
+   <style:text-properties fo:color="#ababab" loext:opacity="100%" style:font-name="icomoon1" fo:font-size="15pt" fo:font-weight="normal" style:font-size-asian="15pt" style:font-weight-asian="normal" style:font-name-complex="icomoon1" style:font-size-complex="15pt" style:font-weight-complex="normal"/>
+  </style:style>
+  <style:style style:name="T2" style:family="text">
+   <style:text-properties fo:color="#222222" loext:opacity="100%" style:font-name="Arial1" fo:font-size="21pt" fo:font-weight="normal" style:font-size-asian="21pt" style:font-weight-asian="normal" style:font-name-complex="Arial1" style:font-size-complex="21pt" style:font-weight-complex="normal"/>
+  </style:style>
+  <style:style style:name="T3" style:family="text">
+   <style:text-properties fo:color="#222222" loext:opacity="100%" style:font-name="Roboto" fo:font-size="10.5pt" fo:font-weight="normal" style:font-size-asian="10.5pt" style:font-weight-asian="normal" style:font-name-complex="Roboto" style:font-size-complex="10.5pt" style:font-weight-complex="normal"/>
+  </style:style>
+  <style:style style:name="T4" style:family="text">
+   <style:text-properties fo:color="#444444" loext:opacity="100%" style:font-name="Roboto" fo:font-size="8.19999980926514pt" fo:font-style="italic" fo:font-weight="normal" style:font-size-asian="8.19999980926514pt" style:font-style-asian="italic" style:font-weight-asian="normal" style:font-name-complex="Roboto" style:font-size-complex="8.19999980926514pt" style:font-style-complex="italic" style:font-weight-complex="normal"/>
+  </style:style>
+  <style:style style:name="T5" style:family="text">
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="DroidSansMono1" fo:font-size="10.5pt" fo:font-weight="normal" style:font-size-asian="10.5pt" style:font-weight-asian="normal" style:font-name-complex="DroidSansMono1" style:font-size-complex="10.5pt" style:font-weight-complex="normal"/>
+  </style:style>
+  <style:style style:name="T6" style:family="text">
+   <style:text-properties fo:color="#444444" loext:opacity="100%" style:font-name="DroidSansMono1" fo:font-size="10.5pt" fo:font-weight="normal" style:font-size-asian="10.5pt" style:font-weight-asian="normal" style:font-name-complex="DroidSansMono1" style:font-size-complex="10.5pt" style:font-weight-complex="normal"/>
+  </style:style>
+  <text:list-style style:name="L1">
+   <text:list-level-style-bullet text:level="1" text:bullet-char="●">
+    <style:list-level-properties text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="2" text:bullet-char="●">
+    <style:list-level-properties text:space-before="0.6cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="3" text:bullet-char="●">
+    <style:list-level-properties text:space-before="1.2cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="4" text:bullet-char="●">
+    <style:list-level-properties text:space-before="1.8cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="5" text:bullet-char="●">
+    <style:list-level-properties text:space-before="2.4cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="6" text:bullet-char="●">
+    <style:list-level-properties text:space-before="3cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="7" text:bullet-char="●">
+    <style:list-level-properties text:space-before="3.6cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="8" text:bullet-char="●">
+    <style:list-level-properties text:space-before="4.2cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="9" text:bullet-char="●">
+    <style:list-level-properties text:space-before="4.8cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="10" text:bullet-char="●">
+    <style:list-level-properties text:space-before="5.4cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+  </text:list-style>
+ </office:automatic-styles>
+ <office:master-styles>
+  <draw:layer-set>
+   <draw:layer draw:name="layout"/>
+   <draw:layer draw:name="background"/>
+   <draw:layer draw:name="backgroundobjects"/>
+   <draw:layer draw:name="controls"/>
+   <draw:layer draw:name="measurelines"/>
+  </draw:layer-set>
+  <style:master-page style:name="master-page38" style:page-layout-name="PM0" draw:style-name="dp1"/>
+  <style:master-page style:name="master-page3" style:page-layout-name="PM0" draw:style-name="dp1"/>
+ </office:master-styles>
+ <office:body>
+  <office:drawing>
+   <draw:page draw:name="page1" draw:style-name="dp2" draw:master-page-name="master-page3">
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="19.05cm" svg:height="66.755cm" svg:x="0.987cm" svg:y="0.987cm" svg:viewBox="0 0 19051 66756" draw:points="0,0 19051,0 19051,66756 0,66756">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="19.05cm" svg:height="66.755cm" svg:x="0.987cm" svg:y="0.987cm" svg:viewBox="0 0 19051 66756" draw:points="0,0 19051,0 19051,66756 0,66756">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="19.05cm" svg:height="66.755cm" svg:x="0.987cm" svg:y="0.987cm" svg:viewBox="0 0 19051 66756" draw:points="0,0 19051,0 19051,66756 0,66756">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr2" draw:text-style-name="P2" draw:layer="layout" svg:width="19.05cm" svg:height="0.026cm" svg:x="0.987cm" svg:y="2.76cm" svg:viewBox="0 0 19051 27" draw:points="0,0 19051,0 19051,27 0,27">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="18.521cm" svg:height="54.478cm" svg:x="1.252cm" svg:y="12.867cm" svg:viewBox="0 0 18522 54479" draw:points="0,0 18522,0 18522,54479 0,54479">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr3" draw:text-style-name="P4" draw:layer="layout" svg:width="0.528cm" svg:height="0.615cm" svg:x="19.138cm" svg:y="27.775cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T1"></text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr4" draw:text-style-name="P5" draw:layer="layout" svg:width="5.027cm" svg:height="0.827cm" svg:x="1.252cm" svg:y="1.614cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T2">Vieni e seguimi</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="10.582cm" svg:height="6.799cm" svg:x="5.221cm" svg:y="4.877cm">
+     <draw:image draw:mime-type="image/png">
+      <office:binary-data>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
+      </office:binary-data>
+      <text:p/>
+     </draw:image>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="6.784cm" svg:height="0.433cm" svg:x="1.252cm" svg:y="3.687cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">Testo Accordi Chitarra Canti Liturgici</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="3.299cm" svg:height="0.284cm" svg:x="1.541cm" svg:y="13.116cm" svg:viewBox="0 0 3300 285" svg:d="M0 281v-281h69c42 0 73 13 96 37 23 25 34 59 34 102 0 45-12 81-35 105-24 25-58 37-102 37zM49 46v191h10c60 0 89-32 89-97 0-63-27-94-82-94zM317 285c-29 0-52-10-70-31-18-20-27-47-27-80 0-34 8-61 26-80 18-20 42-30 72-30 28 0 52 10 70 30s27 47 27 80c0 34-9 61-27 81s-41 30-71 30zM317 242c33 0 49-23 49-68s-16-68-49-68c-32 0-48 23-48 68s16 68 48 68zM726 172v109h-49v-281h72c68 0 102 28 102 84 0 38-16 63-49 75l74 122h-57l-64-109zM726 128h22c19 0 32-3 40-10 9-6 13-17 13-32s-4-25-12-31-22-9-42-9h-21zM1079 188h-140c1 35 19 53 55 53 22 0 47-6 74-18v46c-24 10-48 16-73 16-32 0-57-10-77-29-19-20-28-47-28-80 0-34 9-61 26-82 18-20 42-30 71-30 28 0 50 9 67 26 17 18 25 41 25 70zM941 146h87c0-26-14-40-41-40-29 0-44 14-46 40zM1265 281v-135c0-17-2-27-4-32s-5-8-10-8c-7 0-12 4-16 12s-6 24-6 46v117h-44v-135c0-27-5-40-15-40-7 0-12 4-16 12-3 7-5 25-5 53v110h-44v-214h37v33l-2-1c6-24 19-35 38-35 24 0 37 13 40 39h-1c6-26 20-39 40-39 19 0 32 6 40 19s12 33 12 61v137zM1367 281l101-234h-132v-47h185v36l-103 245zM1779 281v-281h70c40 0 72 13 94 37 23 25 35 59 35 102 0 45-12 81-36 105-23 25-57 37-101 37zM1828 46v191h10c59 0 89-32 89-97 0-63-28-94-82-94zM2095 285c-28 0-52-10-70-31-18-20-27-47-27-80 0-34 9-61 26-80 18-20 42-30 72-30 29 0 52 10 70 30s28 47 28 80c0 34-9 61-27 81s-42 30-72 30zM2096 242c32 0 48-23 48-68s-16-68-49-68c-32 0-48 23-48 68s16 68 49 68zM2504 172v109h-49v-281h72c68 0 102 28 102 84 0 38-16 63-48 75l74 122h-58l-63-109zM2504 128h22c19 0 33-3 41-10 8-6 12-17 12-32s-4-25-12-31-22-9-41-9h-22zM2857 188h-139c0 35 19 53 54 53 22 0 47-6 75-18v46c-24 10-49 16-74 16-32 0-57-10-76-29-19-20-29-47-29-80 0-34 9-61 27-82 17-20 41-30 71-30 27 0 50 9 66 26 17 18 25 41 25 70zM2719 146h87c0-26-13-40-41-40s-44 14-46 40zM3043 281v-135c0-17-1-27-4-32-2-5-5-8-9-8-7 0-13 4-17 12s-6 24-6 46v117h-44v-135c0-27-5-40-15-40-7 0-12 4-15 12-4 7-6 25-6 53v110h-44v-214h37v33l-2-1c6-24 19-35 39-35 23 0 36 13 39 39h-1c6-26 20-39 41-39 18 0 31 6 39 19s13 33 13 61v137zM3145 281l102-234h-133v-47h186v36l-103 245z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr8" draw:text-style-name="P9" draw:layer="layout" svg:width="2.026cm" svg:height="0.34cm" svg:x="14.073cm" svg:y="11.83cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T4">Canti Liturgici</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.643cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="13.053cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5">Do Rem7 Do Rem7</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="8.852cm" svg:height="0.284cm" svg:x="1.772cm" svg:y="14.386cm" svg:viewBox="0 0 8853 285" svg:d="M50 171v110h-50v-281h73c67 0 101 28 101 83 0 38-16 63-48 75l74 123h-58l-63-110zM50 127h22c18 0 32-3 40-10 8-6 12-17 12-32s-4-25-12-31-22-9-41-9h-21zM403 187h-140c1 36 19 54 54 54 23 0 47-6 75-18v46c-24 10-49 16-74 16-31 0-57-10-76-29-19-20-29-47-29-81s9-61 27-82c17-20 41-30 71-30 28 0 50 9 67 26 16 18 25 41 25 70zM264 145h88c0-26-14-40-42-40s-44 14-46 40zM588 281v-136c0-17-1-27-3-32-3-5-6-8-10-8-7 0-13 4-17 12s-5 24-5 46v118h-45v-136c0-27-5-40-15-40-7 0-12 4-15 12-4 7-5 25-5 53v111h-45v-215h37v33l-2-1c6-24 19-35 39-35 23 0 36 13 39 39h-1c7-26 20-39 41-39 18 0 31 6 39 19 9 13 13 33 13 61v138zM690 281l102-235h-133v-46h186v36l-103 245zM1769 281v-281h70c40 0 72 13 95 37 22 24 34 58 34 101 0 45-12 82-36 106-23 25-57 37-100 37zM1819 45v192h9c59 0 89-32 89-98 0-63-27-94-82-94zM2085 285c-28 0-51-10-70-31-18-20-27-47-27-81s9-61 27-80c17-20 41-30 71-30 29 0 52 10 70 30 19 20 28 47 28 80 0 35-9 62-27 82s-42 30-72 30zM2086 242c32 0 48-23 48-69 0-45-16-68-48-68s-49 23-49 68c0 46 17 69 49 69zM4496 171v110h-49v-281h72c68 0 102 28 102 83 0 38-16 63-48 75l74 123h-58l-63-110zM4496 127h22c19 0 33-3 41-10 8-6 12-17 12-32s-4-25-12-31-22-9-42-9h-21zM4849 187h-139c0 36 18 54 54 54 22 0 47-6 74-18v46c-24 10-48 16-73 16-32 0-57-10-76-29-20-20-29-47-29-81s9-61 26-82c18-20 42-30 72-30 27 0 50 9 66 26 17 18 25 41 25 70zM4711 145h87c0-26-13-40-41-40-29 0-44 14-46 40zM5035 281v-136c0-17-1-27-4-32-2-5-5-8-9-8-8 0-13 4-17 12s-6 24-6 46v118h-44v-136c0-27-5-40-15-40-7 0-12 4-16 12-3 7-5 25-5 53v111h-44v-215h37v33l-2-1c6-24 19-35 38-35 24 0 37 13 40 39h-1c6-26 20-39 41-39 18 0 31 6 39 19s12 33 12 61v138zM5137 281l101-235h-132v-46h186v36l-103 245zM8439 281v-281h70c40 0 72 13 94 37 23 24 34 58 34 101 0 45-11 82-35 106-23 25-57 37-101 37zM8488 45v192h10c59 0 88-32 88-98 0-63-27-94-81-94zM8755 285c-28 0-52-10-70-31-18-20-27-47-27-81s9-61 26-80c18-20 42-30 72-30 29 0 52 10 70 30s27 47 27 80c0 35-9 62-27 82-17 20-41 30-71 30zM8756 242c32 0 48-23 48-69 0-45-16-68-49-68-32 0-48 23-48 68 0 46 16 69 49 69z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="1.272cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="13.688cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6">(Intro) </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="6.725cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="14.323cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s/></text:span><text:span text:style-name="T5">Rem7 <text:s text:c="3"/>Do <text:s text:c="9"/>Rem7 <text:s text:c="13"/>Do</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="6.857cm" svg:height="0.301cm" svg:x="3.315cm" svg:y="15.639cm" svg:viewBox="0 0 6858 302" svg:d="M77 298l-45-238 1-1c7 31 10 56 10 73v166h-43v-281h59l39 223h-1l41-223h60v281h-43v-168c0-12 3-36 9-70h1l-46 238zM325 2c18 0 27 9 27 28 0 9-3 16-8 21s-12 7-19 7c-18 0-27-9-27-28s9-28 27-28zM301 125l-49-4v-38h97v174l64 4v37h-174v-37l62-4zM602 298v-135c0-17-1-27-3-32-3-5-6-8-10-8-7 0-13 4-17 12s-5 24-5 46v117h-45v-135c0-27-5-40-15-40-7 0-12 4-15 12-4 7-5 25-5 53v110h-45v-215h37v34l-2-1c6-25 19-36 39-36 23 0 36 13 39 40h-1c7-27 20-40 41-40 18 0 31 6 39 19 9 14 13 34 13 62v137zM2913 298v-281h49v236h115v45zM3256 298l-2-33 2 1c-7 14-16 23-27 28s-25 8-41 8c-22 0-39-6-52-18-12-12-19-28-19-49 0-45 33-68 100-71l29-1v-5c0-23-12-35-36-35-17 0-38 6-63 18l-18-40c29-14 55-21 79-21 29 0 51 6 65 17 14 12 21 32 21 58v143zM3246 201l-21 1c-23 1-38 4-46 10-8 5-12 13-12 23 0 17 9 25 28 25 16 0 28-4 37-13 9-8 14-20 14-36zM3492 298v-135c0-17-1-27-4-32-2-5-5-8-9-8-8 0-13 4-17 12s-6 24-6 46v117h-44v-135c0-27-5-40-15-40-7 0-12 4-16 12-3 7-5 25-5 53v110h-44v-215h37v34l-2-1c6-25 19-36 38-36 24 0 37 13 40 40h-1c6-27 20-40 41-40 18 0 31 6 39 19 8 14 12 34 12 62v137zM6230 287v-49c32 13 59 19 83 19 37 0 55-12 55-35 0-10-3-18-10-24-8-6-24-13-49-22-26-9-45-21-57-34-12-14-18-32-18-54 0-23 8-41 25-55 18-13 41-19 69-19 29 0 57 6 85 17l-17 44c-27-11-50-16-69-16-30 0-45 10-45 30 0 10 3 18 10 25 6 7 22 14 45 22 31 11 52 23 63 36 11 12 17 28 17 48 0 25-9 46-28 60-18 15-44 22-76 22-33 0-61-5-83-15zM6545 302c-28 0-52-10-70-31-18-20-27-47-27-80 0-34 9-61 26-81 18-20 42-30 72-30 29 0 52 10 70 30 18 21 28 48 28 81 0 34-9 61-27 81s-42 30-72 30zM6546 259c32 0 48-23 48-68s-16-68-49-68c-32 0-48 23-48 68s16 68 49 68zM6746 41l-49-4v-37h97v257l64 4v37h-175v-37l63-4z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="8.13cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="14.958cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">Lascia che il mondo vada per la sua strada </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.802cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="15.593cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="8"/></text:span><text:span text:style-name="T5">Mim <text:s text:c="9"/>Lam <text:s text:c="11"/>Sol</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="7.286cm" svg:height="0.284cm" svg:x="3.561cm" svg:y="16.926cm" svg:viewBox="0 0 7287 285" svg:d="M49 281h-49v-281h169v45h-120v78h113v45h-113zM343 281l-2-33 1 1c-7 14-16 23-27 28-10 5-24 8-41 8-21 0-38-6-51-18s-19-28-19-49c0-46 33-69 99-72l30-1v-5c0-23-12-35-37-35-16 0-37 6-63 18l-18-39c30-14 56-21 80-21 29 0 51 6 64 17 14 12 21 31 21 57v144zM332 183l-21 1c-22 1-37 4-46 10-8 6-12 14-12 24 0 17 10 25 29 25 16 0 28-4 37-13 9-8 13-20 13-37zM6872 281v-281h70c40 0 72 13 95 37 22 24 34 58 34 101 0 45-12 82-36 106-23 25-57 37-101 37zM6922 45v192h9c59 0 89-32 89-98 0-63-27-94-82-94zM7188 285c-28 0-51-10-70-31-18-20-27-47-27-81s9-61 27-80c17-20 41-30 71-30 29 0 52 10 70 30 19 20 28 47 28 80 0 35-9 62-27 82s-42 30-72 30zM7189 242c32 0 48-23 48-69 0-45-16-68-48-68-33 0-49 23-49 68 0 46 17 69 49 69z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="7.157cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="16.228cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">lascia che l&apos;uomo ritorni alla sua casa </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.57cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="16.863cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="9"/></text:span><text:span text:style-name="T5">Fa <text:s text:c="28"/>Do</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="3.747cm" svg:height="0.301cm" svg:x="2.876cm" svg:y="18.179cm" svg:viewBox="0 0 3748 302" svg:d="M0 287v-50c31 13 59 19 82 19 37 0 56-12 56-35 0-10-4-18-11-24s-23-13-48-22c-27-9-46-21-58-34-12-14-18-31-18-53 0-23 9-41 26-55 17-13 40-19 69-19 28 0 57 6 85 17l-17 44c-27-11-51-16-70-16-30 0-45 10-45 30 0 10 3 18 10 24 7 7 22 14 46 22 31 11 52 23 63 36 11 12 16 28 16 48 0 25-9 46-27 61-19 15-44 22-77 22s-60-5-82-15zM314 302c-28 0-51-10-69-32-19-20-28-47-28-80 0-34 9-61 27-80 18-20 42-30 72-30 28 0 51 10 70 30 18 20 27 47 27 80 0 34-9 61-27 82-18 20-42 30-72 30zM315 258c32 0 49-23 49-68s-17-68-49-68-48 23-48 68 16 68 48 68zM515 41l-49-4v-37h97v256l64 4v38h-174v-38l62-4zM1846 298h-49v-281h167v45h-118v78h111v45h-111zM2138 298l-2-34 2 1c-7 15-16 24-27 29s-25 8-41 8c-22 0-39-6-52-18-12-12-19-29-19-50 0-45 33-68 100-71l29-1v-5c0-23-12-35-36-35-17 0-38 6-63 18l-18-39c29-14 55-21 79-21 29 0 51 6 65 17 14 12 21 31 21 57v144zM2128 200l-22 1c-22 1-37 4-45 10-8 5-12 13-12 23 0 17 9 25 28 25 16 0 28-4 37-13 9-8 14-20 14-36zM3334 298v-281h69c41 0 72 13 95 37s34 58 34 101c0 45-12 81-35 105-24 26-57 38-101 38zM3383 62v191h10c59 0 88-32 88-97 0-63-27-94-81-94zM3650 302c-29 0-52-10-70-32-18-20-27-47-27-80 0-34 8-61 26-80 18-20 42-30 72-30 28 0 52 10 70 30s27 47 27 80c0 34-9 61-27 82-18 20-41 30-71 30zM3650 258c33 0 49-23 49-68s-16-68-49-68c-32 0-48 23-48 68s16 68 48 68z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="8.266cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="17.498cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">lascia che la gente accumuli la sua fortuna. </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.52cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="18.133cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="6"/></text:span><text:span text:style-name="T5">Sol <text:s text:c="4"/>Fa <text:s text:c="4"/>Do</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="3.081cm" svg:height="0.301cm" svg:x="2.209cm" svg:y="19.449cm" svg:viewBox="0 0 3082 302" svg:d="M0 287v-49c31 13 59 19 82 19 37 0 56-12 56-35 0-10-4-18-11-25-7-6-23-13-48-22-27-9-46-21-58-34-12-14-18-31-18-53 0-23 9-41 26-55 17-13 40-19 69-19s57 6 85 17l-17 44c-27-11-50-16-70-16-30 0-45 10-45 30 0 10 4 18 10 24 7 7 22 14 46 22 31 11 52 23 63 36 11 12 16 28 16 49 0 25-9 46-27 60-19 15-44 22-77 22s-60-5-82-15zM315 302c-29 0-52-10-70-31-19-20-28-47-28-81s9-61 27-80c18-20 42-30 72-30 28 0 52 10 70 30s27 47 27 80c0 35-9 62-27 82s-42 30-71 30zM315 259c33 0 49-23 49-69 0-45-17-68-49-68s-48 23-48 68c0 46 16 69 48 69zM515 41l-48-4v-37h97v257l63 4v37h-174v-37l62-4zM1179 298h-49v-281h167v45h-118v78h111v45h-111zM1472 298l-3-33 2 1c-7 14-16 23-27 28s-24 8-41 8c-22 0-39-6-51-18-13-12-20-28-20-49 0-46 34-69 100-72l29-1v-5c0-23-12-35-36-35-17 0-38 6-63 18l-18-39c29-14 56-21 80-21 29 0 50 6 64 17 14 12 21 31 21 57v144zM1461 200l-21 2c-22 1-38 4-46 10-8 5-12 13-12 23 0 17 9 25 28 25 16 0 29-4 38-13 9-8 13-20 13-36zM2667 298v-281h70c40 0 72 13 94 37 23 24 35 58 35 101 0 45-12 82-36 106-23 25-57 37-101 37zM2716 62v192h10c59 0 89-32 89-98 0-63-28-94-82-94zM2983 302c-28 0-52-10-70-31-18-20-27-47-27-81s9-61 26-80c18-20 42-30 72-30 29 0 52 10 70 30s28 47 28 80c0 35-9 62-27 82s-42 30-72 30zM2984 259c32 0 48-23 48-69 0-45-16-68-49-68-32 0-48 23-48 68 0 46 16 69 49 69z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.04cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="18.768cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s text:c="3"/></text:span><text:span text:style-name="T6">Ma tu, tu vieni e seguimi </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="2.81cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="19.403cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="3"/></text:span><text:span text:style-name="T5">Sol <text:s/>Fa <text:s text:c="4"/>Do</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="9.075cm" svg:height="0.284cm" svg:x="1.772cm" svg:y="20.736cm" svg:viewBox="0 0 9076 285" svg:d="M50 172v109h-50v-281h73c67 0 101 28 101 84 0 38-16 63-48 75l74 122h-58l-63-109zM50 128h22c18 0 32-3 40-10 8-6 12-17 12-32s-4-26-12-32-22-9-41-9h-21zM403 188h-140c1 35 19 53 54 53 23 0 47-6 75-18v46c-24 10-49 16-74 16-31 0-57-10-76-29-19-20-29-47-29-80 0-34 9-61 27-82 17-20 41-31 71-31 28 0 50 10 67 27 16 18 25 41 25 70zM264 146h88c0-26-14-40-42-40s-44 14-46 40zM588 281v-135c0-17-1-27-3-32-3-5-6-8-10-8-7 0-13 4-17 12s-5 24-5 46v117h-45v-135c0-27-5-40-15-40-7 0-12 4-15 12-4 7-5 25-5 53v110h-45v-214h37v33l-2-1c6-24 19-36 39-36 23 0 36 14 39 40h-1c7-26 20-40 41-40 18 0 31 7 39 20 9 13 13 33 13 61v137zM690 281l102-235h-133v-46h186v36l-103 245zM1769 281v-281h70c40 0 72 13 95 37 22 24 34 59 34 102 0 45-12 81-36 105-23 25-57 37-100 37zM1819 45v192h9c59 0 89-32 89-97 0-63-27-95-82-95zM2085 285c-28 0-51-10-70-31-18-20-27-47-27-80 0-34 9-61 27-80 17-20 41-31 71-31 29 0 52 11 70 31 19 20 28 47 28 80 0 34-9 61-27 81s-42 30-72 30zM2086 242c32 0 48-23 48-68s-16-68-48-68-49 23-49 68 17 68 49 68zM5163 172v109h-49v-281h72c68 0 102 28 102 84 0 38-16 63-49 75l74 122h-57l-64-109zM5163 128h22c19 0 32-3 40-10 9-6 13-17 13-32s-4-26-12-32-22-9-42-9h-21zM5516 188h-140c1 35 19 53 55 53 22 0 47-6 74-18v46c-24 10-48 16-73 16-32 0-57-10-77-29-19-20-28-47-28-80 0-34 9-61 26-82 18-20 42-31 71-31 28 0 50 10 67 27 17 18 25 41 25 70zM5378 146h87c0-26-14-40-41-40-29 0-44 14-46 40zM5702 281v-135c0-17-2-27-4-32s-5-8-10-8c-7 0-12 4-16 12s-6 24-6 46v117h-44v-135c0-27-5-40-15-40-7 0-12 4-16 12-3 7-5 25-5 53v110h-44v-214h37v33l-2-1c6-24 19-36 38-36 24 0 37 14 40 40h-1c6-26 20-40 40-40 19 0 32 7 40 20s12 33 12 61v137zM5804 281l101-235h-132v-46h185v36l-103 245zM8661 281v-281h70c40 0 72 13 95 37 22 24 34 59 34 102 0 45-12 81-36 105-23 25-57 37-101 37zM8711 45v192h9c59 0 89-32 89-97 0-63-27-95-82-95zM8977 285c-28 0-51-10-70-31-18-20-27-47-27-80 0-34 9-61 27-80 17-20 41-31 71-31 29 0 52 11 70 31 19 20 28 47 28 80 0 34-9 61-27 81s-42 30-72 30zM8978 242c32 0 48-23 48-68s-16-68-48-68c-33 0-49 23-49 68s17 68 49 68z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="4.003cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="20.038cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s text:c="3"/></text:span><text:span text:style-name="T6">tu, vieni e seguimi. </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="6.844cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="20.673cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s/></text:span><text:span text:style-name="T5">Rem7 <text:s text:c="3"/>Do <text:s text:c="12"/>Rem7 <text:s text:c="11"/>Do</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="7.524cm" svg:height="0.301cm" svg:x="3.315cm" svg:y="21.989cm" svg:viewBox="0 0 7525 302" svg:d="M77 298l-45-238 1-1c7 32 10 56 10 73v166h-43v-281h59l39 223h-1l40-223h60v281h-43v-168c0-12 3-35 9-70h1l-46 238zM324 2c18 0 27 9 27 28 0 9-3 16-8 21s-12 7-19 7c-18 0-27-9-27-28s9-28 27-28zM300 125l-49-4v-37h97v173l64 4v37h-174v-37l62-4zM602 298v-135c0-17-1-27-3-32-3-5-6-8-10-8-7 0-13 4-17 12s-5 24-5 46v117h-45v-135c0-27-5-40-15-40-7 0-12 4-15 12-4 7-5 25-5 53v110h-46v-214h38v33l-2-1c6-24 19-35 39-35 23 0 36 13 39 39h-1c7-26 20-39 41-39 18 0 31 6 39 19 9 13 13 33 13 61v137zM2690 298v-281h50v236h114v45zM3034 298l-2-33 1 1c-7 14-16 23-26 28-11 5-25 8-42 8-21 0-38-6-51-18s-19-28-19-49c0-45 33-68 100-71l29-1v-5c0-23-12-35-37-35-16 0-37 6-63 18l-17-39c29-14 55-21 79-21 29 0 51 6 65 17 13 12 20 31 20 57v143zM3023 201l-21 1c-22 1-37 4-45 10-9 5-13 13-13 23 0 17 10 25 29 25 16 0 28-4 37-13 9-8 13-20 13-36zM3269 298v-135c0-17-1-27-3-32s-5-8-10-8c-7 0-12 4-16 12s-6 24-6 46v117h-44v-135c0-27-5-40-15-40-7 0-12 4-16 12-3 7-5 25-5 53v110h-45v-214h37l1 33-2-1c6-24 18-35 38-35 24 0 37 13 40 39h-1c6-26 20-39 40-39 19 0 32 6 40 19s12 33 12 61v137zM6897 287v-49c32 13 59 19 83 19 37 0 55-12 55-35 0-10-3-18-11-24-7-6-23-13-48-22-26-9-45-21-57-34-12-14-18-31-18-53 0-23 8-42 25-56 17-13 40-19 69-19s57 6 85 17l-17 45c-27-11-50-17-69-17-30 0-46 11-46 31 0 10 4 18 11 24 6 7 21 14 45 22 31 11 52 23 63 36 11 12 17 28 17 48 0 25-10 46-28 60-18 15-44 22-76 22-33 0-61-5-83-15zM7212 302c-28 0-52-10-70-31-18-20-27-47-27-80 0-34 9-61 26-80 18-20 42-30 72-30 29 0 52 10 70 30s27 47 27 80c0 34-9 61-27 81-17 20-41 30-71 30zM7213 259c32 0 48-23 48-68s-16-68-49-68c-32 0-48 23-48 68s16 68 49 68zM7412 41l-48-4v-37h97v257l64 4v37h-175v-37l62-4z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="8.08cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="21.308cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">Lascia che la barca in mare spieghi la vela </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="6.157cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="21.943cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="8"/></text:span><text:span text:style-name="T5">Mim <text:s text:c="8"/>Lam <text:s text:c="15"/>Sol</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="7.73cm" svg:height="0.284cm" svg:x="3.561cm" svg:y="23.276cm" svg:viewBox="0 0 7731 285" svg:d="M49 281h-49v-281h168v45h-119v79h112v45h-112zM343 281l-2-33 1 1c-7 14-16 23-27 28s-25 8-42 8c-21 0-38-6-51-18s-19-28-19-49c0-45 33-68 99-71l31-1v-5c0-23-12-35-38-35-16 0-37 6-63 18l-18-39c30-15 56-22 80-22 30 0 52 6 65 18 14 12 21 31 21 57v143zM332 184l-21 1c-23 1-38 4-47 10-8 5-12 13-12 23 0 17 10 25 29 25 16 0 29-4 38-13 9-8 13-20 13-36zM7317 281v-281h69c41 0 72 13 95 37s34 59 34 102c0 45-11 81-35 105-24 25-57 37-101 37zM7366 45v192h10c59 0 88-32 88-97 0-63-27-95-81-95zM7633 285c-29 0-52-10-70-31-18-20-27-47-27-80 0-34 8-61 26-80 18-20 42-31 72-31 28 0 52 11 70 31s27 47 27 80c0 34-9 61-27 81s-41 30-71 30zM7633 242c33 0 49-23 49-68s-16-68-49-68c-32 0-48 23-48 68s16 68 48 68z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="7.733cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="22.578cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">lascia che trovi affetto chi segue il cuore </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.807cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="23.213cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="9"/></text:span><text:span text:style-name="T5">Fa <text:s text:c="30"/>Do</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="3.747cm" svg:height="0.301cm" svg:x="2.876cm" svg:y="24.529cm" svg:viewBox="0 0 3748 302" svg:d="M0 287v-49c31 13 59 19 82 19 37 0 56-12 56-35 0-11-4-19-11-25s-23-13-48-22c-27-9-46-21-58-34-12-14-18-31-18-53 0-23 9-41 26-55 17-13 40-19 69-19 28 0 57 6 85 17l-17 44c-27-11-51-16-70-16-30 0-45 10-45 30 0 10 3 18 10 24 7 7 22 14 46 22 31 11 52 23 63 36 11 12 16 28 16 48 0 26-9 47-27 61-19 15-44 22-77 22s-60-5-82-15zM314 302c-28 0-51-10-69-31-19-20-28-47-28-81s9-61 27-80c18-20 42-30 72-30 28 0 51 10 70 30 18 20 27 47 27 80 0 35-9 62-27 82s-42 30-72 30zM315 259c32 0 49-23 49-69 0-45-17-68-49-68s-48 23-48 68c0 46 16 69 48 69zM515 41l-49-4v-37h97v257l64 4v37h-174v-37l62-4zM1846 298h-49v-281h167v45h-118v78h111v45h-111zM2138 298l-2-33 2 1c-7 14-16 23-27 28s-25 8-41 8c-22 0-39-6-52-18-12-12-19-28-19-49 0-46 33-69 100-72l29-1v-5c0-23-12-35-36-35-17 0-38 6-63 18l-18-39c29-14 55-21 79-21 29 0 51 6 65 17 14 12 21 31 21 57v144zM2128 200l-22 1c-22 1-37 4-45 10-8 5-12 14-12 24 0 17 9 25 28 25 16 0 28-4 37-13 9-8 14-20 14-37zM3334 298v-281h69c41 0 72 13 95 37s34 58 34 101c0 45-12 82-35 106-24 25-57 37-101 37zM3383 62v192h10c59 0 88-32 88-98 0-63-27-94-81-94zM3650 302c-29 0-52-10-70-31-18-20-27-47-27-81s8-61 26-80c18-20 42-30 72-30 28 0 52 10 70 30s27 47 27 80c0 35-9 62-27 82s-41 30-71 30zM3650 259c33 0 49-23 49-69 0-45-16-68-49-68-32 0-48 23-48 68 0 46 16 69 48 69z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="8.27cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="23.848cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">lascia che dall&apos;albero cadano i frutti maturi. </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.52cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="24.483cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="6"/></text:span><text:span text:style-name="T5">Sol <text:s text:c="4"/>Fa <text:s text:c="4"/>Do</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="3.308cm" svg:height="0.301cm" svg:x="2.209cm" svg:y="25.799cm" svg:viewBox="0 0 3309 302" svg:d="M0 287v-49c31 13 59 19 82 19 37 0 56-12 56-35 0-10-4-18-11-24s-23-13-48-22c-27-9-46-21-58-35s-18-31-18-53c0-23 9-41 26-55 17-13 40-19 69-19s57 6 85 17l-17 44c-27-11-50-16-70-16-30 0-45 10-45 30 0 10 4 18 10 24 7 7 22 14 46 22 31 11 52 24 63 37 11 12 16 28 16 48 0 25-9 46-27 60-19 15-44 22-77 22s-60-5-82-15zM315 302c-29 0-52-10-70-31-19-20-28-47-28-80 0-34 9-62 27-81 18-20 42-30 72-30 28 0 52 10 70 30s27 48 27 81c0 34-9 61-27 81s-42 30-71 30zM315 259c33 0 49-23 49-68 0-46-17-69-49-69s-48 23-48 69c0 45 16 68 48 68zM515 41l-48-4v-37h97v257l63 4v37h-174v-37l62-4zM1179 298h-49v-281h167v45h-118v78h111v46h-111zM1472 298l-3-33 2 1c-7 14-16 23-27 28s-24 8-41 8c-22 0-39-6-51-18-13-12-20-28-20-49 0-45 34-68 100-71l29-1v-5c0-24-12-36-36-36-17 0-38 6-63 18l-18-39c29-14 56-21 80-21 29 0 50 6 64 17 14 12 21 31 21 58v143zM1461 201l-21 1c-22 1-38 4-46 10-8 5-12 13-12 23 0 17 9 25 28 25 16 0 29-4 38-13 9-8 13-20 13-36zM2684 298v-281h49v236h116v45zM3029 298l-3-33 2 1c-7 14-16 23-27 28s-24 8-41 8c-22 0-39-6-51-18-13-12-20-28-20-49 0-45 34-68 100-71l29-1v-5c0-24-12-36-36-36-17 0-38 6-63 18l-18-39c29-14 56-21 80-21 29 0 50 6 64 17 14 12 21 31 21 58v143zM3018 201l-21 1c-22 1-38 4-46 10-8 5-12 13-12 23 0 17 9 25 28 25 16 0 29-4 38-13 9-8 13-20 13-36zM3264 298v-135c0-18-1-28-3-33-3-5-6-8-10-8-7 0-13 4-17 12s-5 25-5 47v117h-45v-135c0-28-5-41-15-41-7 0-12 4-15 12-4 7-5 26-5 54v110h-45v-215h37v33l-2-1c6-24 19-35 39-35 23 0 36 13 39 39h-1c7-26 20-39 41-39 18 0 31 6 39 19 9 13 13 33 13 62v137z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.04cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="25.118cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s text:c="3"/></text:span><text:span text:style-name="T6">Ma tu, tu vieni e seguimi </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.089cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="25.753cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="3"/></text:span><text:span text:style-name="T5">Sol <text:s/>Fa <text:s text:c="4"/>Lam</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="5.062cm" svg:height="0.284cm" svg:x="1.781cm" svg:y="27.086cm" svg:viewBox="0 0 5063 285" svg:d="M0 281v-281h49v236h115v45zM344 281l-3-33 2 1c-7 14-16 23-27 28s-24 8-41 8c-22 0-39-6-51-18-13-12-20-28-20-50 0-45 34-68 100-71l29-1v-5c0-23-12-35-36-35-17 0-38 6-63 18l-18-39c29-14 56-21 80-21 29 0 50 6 64 17 14 12 21 31 21 57v144zM333 183l-21 1c-22 1-38 4-46 10-8 5-12 13-12 23 0 18 9 26 28 26 16 0 29-4 38-13s13-21 13-37zM579 281v-136c0-17-1-27-3-32-3-5-6-8-10-8-7 0-13 4-17 12s-5 24-5 46v118h-45v-136c0-27-5-40-15-40-7 0-12 4-15 12-4 7-5 25-5 53v111h-45v-215h37v33l-2-1c6-24 19-35 39-35 23 0 36 13 39 39h-1c7-26 20-39 41-39 18 0 31 6 39 19 9 13 13 33 13 61v138zM1779 281v-281h49v236h115v45zM2123 281l-2-33 1 1c-7 14-16 23-27 28-10 5-24 8-41 8-21 0-38-6-51-18s-19-28-19-50c0-45 33-68 99-71l30-1v-5c0-23-12-35-37-35-16 0-37 6-63 18l-18-39c30-14 56-21 80-21 29 0 51 6 64 17 14 12 21 31 21 57v144zM2112 183l-21 1c-22 1-37 4-46 10-8 5-12 13-12 23 0 18 10 26 29 26 16 0 28-4 37-13s13-21 13-37zM4710 171v110h-50v-281h73c67 0 101 28 101 83 0 38-16 63-48 75l74 123h-58l-63-110zM4710 127h22c18 0 32-3 40-10 8-6 12-17 12-32s-4-25-12-31-22-9-41-9h-21zM5063 187h-140c1 35 19 54 54 54 23 0 47-6 75-19v47c-24 10-49 16-74 16-31 0-57-10-76-29-19-20-29-48-29-81 0-34 9-61 27-82 17-20 41-30 71-30 28 0 50 9 67 26 16 18 25 41 25 70zM4924 145h88c0-26-14-40-42-40s-44 14-46 40z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="4.003cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="26.388cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s text:c="3"/></text:span><text:span text:style-name="T6">tu, vieni e seguimi. </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.834cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="27.023cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s/></text:span><text:span text:style-name="T5">Lam <text:s text:c="4"/>La <text:s text:c="10"/>Re</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.027cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="27.658cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">E sarai luce per gli uomini </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+   </draw:page>
+   <draw:page draw:name="page2" draw:style-name="dp2" draw:master-page-name="master-page38">
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="19.05cm" svg:height="66.754cm" svg:x="0.987cm" svg:y="-26.741cm" svg:viewBox="0 0 19051 66755" draw:points="0,0 19051,0 19051,66755 0,66755">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="19.05cm" svg:height="66.754cm" svg:x="0.987cm" svg:y="-26.741cm" svg:viewBox="0 0 19051 66755" draw:points="0,0 19051,0 19051,66755 0,66755">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="19.05cm" svg:height="66.754cm" svg:x="0.987cm" svg:y="-26.741cm" svg:viewBox="0 0 19051 66755" draw:points="0,0 19051,0 19051,66755 0,66755">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="18.521cm" svg:height="54.477cm" svg:x="1.252cm" svg:y="-14.861cm" svg:viewBox="0 0 18522 54478" draw:points="0,0 18522,0 18522,54478 0,54478">
+     <text:p/>
+    </draw:polygon>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="4.18cm" svg:height="0.299cm" svg:x="2.67cm" svg:y="1.115cm" svg:viewBox="0 0 4181 300" svg:d="M0 297v-281h49v235h115v46zM344 297l-2-34 1 1c-7 14-16 24-27 29s-24 7-41 7c-21 0-39-6-51-17-13-12-19-29-19-50 0-46 33-69 99-71l30-1v-5c0-24-13-35-37-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18s21 30 21 56v145zM333 199l-21 1c-22 1-38 4-46 9s-12 13-12 25c0 16 10 24 29 24 15 0 28-4 37-12 9-9 13-22 13-37zM3613 297l-46-239h1c6 31 10 55 10 72v167h-43v-281h58l41 223h-1l40-223h60v281h-43v-170c0-12 3-35 8-69l2 1-47 238zM3860 0c18 0 27 9 27 28 0 9-3 17-8 21-6 5-12 8-19 8-18 0-27-10-27-29s9-28 27-28zM3836 123l-49-4v-37h97v174l64 3v38h-175v-38l63-3zM4137 297v-137c0-16-1-27-4-32-2-5-5-7-9-7-8 0-13 4-17 12s-6 23-6 45v119h-44v-137c0-26-5-39-15-39-7 0-12 4-16 11-3 8-5 25-5 53v112h-44v-215h37v32l-2-1c6-23 19-35 38-35 24 0 37 13 40 39h-1c6-26 20-39 41-39 18 0 31 7 39 20s12 33 12 60v139z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr3" draw:text-style-name="P4" draw:layer="layout" svg:width="0.528cm" svg:height="0.615cm" svg:x="19.138cm" svg:y="27.775cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T1"></text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.58cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="1.067cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="5"/></text:span><text:span text:style-name="T5">La <text:s text:c="13"/>Mim</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="3.51cm" svg:height="0.3cm" svg:x="1.764cm" svg:y="2.384cm" svg:viewBox="0 0 3511 301" svg:d="M0 286v-49c32 13 59 20 83 20 37 0 55-12 55-36 0-10-3-18-10-24-8-5-24-13-49-22-26-10-45-21-57-35-12-13-18-31-18-52 0-24 8-42 25-55 18-13 41-20 69-20 29 0 57 6 85 18l-17 44c-27-11-50-17-69-17-30 0-45 10-45 30 0 10 3 18 10 25 6 6 22 13 45 22 31 11 52 22 63 36 11 12 17 29 17 48 0 26-9 46-28 60-18 15-44 22-76 22-33 0-61-5-83-15zM315 301c-28 0-52-10-70-30-18-21-27-47-27-81s9-61 26-81c18-20 42-30 72-30 29 0 52 10 70 30 18 21 28 47 28 81s-9 61-27 81-42 30-72 30zM316 259c32 0 48-23 48-69s-16-68-49-68c-32 0-48 22-48 68s16 69 49 69zM516 41l-49-4v-37h97v257l64 3v38h-175v-38l63-3zM3129 298v-281h49v235h115v46zM3473 298l-3-34 2 1c-7 14-16 24-27 29s-24 7-41 7c-22 0-39-6-51-17-13-12-20-29-20-50 0-45 34-69 100-71l29-1v-5c0-24-12-35-36-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18 15 12 22 30 22 56v145zM3462 201l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 9 24 28 24 16 0 29-4 38-12 9-9 13-21 13-36z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="4.541cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="1.702cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">e sarai sale per la terra </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="2.53cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="2.337cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s/></text:span><text:span text:style-name="T5">Sol <text:s text:c="10"/>La</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="0.402cm" svg:height="0.283cm" svg:x="3.106cm" svg:y="3.671cm" svg:viewBox="0 0 403 284" svg:d="M49 171v110h-49v-281h72c68 0 102 27 102 83 0 38-16 63-48 76l74 122h-58l-63-110zM49 126h22c19 0 33-3 41-9 8-7 12-18 12-33 0-14-4-25-12-31s-22-9-42-9h-21zM403 188h-140c0 35 18 52 55 52 22 0 47-6 74-18v46c-24 11-48 16-73 16-33 0-58-10-77-29-20-20-29-46-29-80 0-35 9-62 26-82 18-21 42-31 73-31 27 0 50 9 66 27 17 17 25 41 25 71zM264 145h88c0-27-14-40-42-40-29 0-44 13-46 40z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.37cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="2.972cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">e nel mondo deserto aprirai </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="1.434cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="3.607cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="7"/></text:span><text:span text:style-name="T5">Re</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="5.062cm" svg:height="0.283cm" svg:x="1.781cm" svg:y="4.941cm" svg:viewBox="0 0 5063 284" svg:d="M0 281v-281h49v235h115v46zM344 281l-3-34 2 1c-7 14-16 24-27 29s-24 7-41 7c-22 0-39-6-51-17-13-12-20-29-20-50 0-45 34-68 100-70l29-1v-5c0-24-12-35-36-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18s21 30 21 56v144zM333 184l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 9 24 28 24 16 0 29-4 38-12 9-9 13-21 13-36zM579 281v-136c0-16-1-27-3-32-3-5-6-7-10-7-7 0-13 4-17 12s-5 23-5 45v118h-45v-136c0-26-5-39-15-39-7 0-12 4-15 11-4 8-5 25-5 53v111h-45v-214h37v32l-2-1c6-23 19-35 39-35 23 0 36 13 39 39h-1c7-26 20-39 41-39 18 0 31 7 39 20 9 13 13 33 13 60v138zM1779 281v-281h49v235h115v46zM2123 281l-2-34 1 1c-7 14-16 24-27 29-10 5-24 7-41 7-21 0-38-6-51-17-13-12-19-29-19-50 0-45 33-68 99-70l30-1v-5c0-24-12-35-37-35-16 0-37 5-63 17l-18-39c30-14 56-21 80-21 29 0 51 6 64 18 14 12 21 30 21 56v144zM2112 184l-21 1c-22 1-37 4-46 9-8 5-12 13-12 24 0 16 10 24 29 24 16 0 28-4 37-12 9-9 13-21 13-36zM4710 171v110h-50v-281h73c67 0 101 28 101 84 0 38-16 63-48 75l74 122h-58l-63-110zM4710 127h22c18 0 32-3 40-9 8-7 12-18 12-33 0-14-4-25-12-31s-22-9-41-9h-21zM5063 188h-140c1 35 19 52 54 52 23 0 47-6 75-18v46c-24 11-49 16-74 16-31 0-57-10-76-29-19-20-29-46-29-80s9-61 27-81c17-21 41-31 71-31 28 0 50 9 67 27 16 17 25 41 25 70zM4924 146h88c0-27-14-40-42-40s-44 13-46 40z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.465cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="4.242cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">una strada nuova </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.834cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="4.877cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s/></text:span><text:span text:style-name="T5">Lam <text:s text:c="4"/>La <text:s text:c="10"/>Re</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="4.18cm" svg:height="0.299cm" svg:x="2.67cm" svg:y="6.195cm" svg:viewBox="0 0 4181 300" svg:d="M0 297v-281h49v235h115v46zM344 297l-2-34 1 1c-7 14-16 24-27 29s-24 7-41 7c-21 0-39-6-51-17-13-12-19-29-19-51 0-45 33-68 99-70l30-1v-5c0-24-13-35-37-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18s21 30 21 56v145zM333 199l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 17 10 25 29 25 15 0 28-4 37-12 9-9 13-22 13-37zM3613 297l-46-239h1c6 31 10 55 10 72v167h-43v-281h58l41 223h-1l40-223h60v281h-43v-170c0-12 3-35 8-69l2 1-47 238zM3860 0c18 0 27 9 27 28 0 9-3 17-8 21-6 5-12 8-19 8-18 0-27-10-27-29s9-28 27-28zM3836 123l-49-4v-37h97v174l64 3v38h-175v-38l63-3zM4137 297v-137c0-16-1-27-4-32-2-5-5-7-9-7-8 0-13 4-17 12s-6 23-6 45v119h-44v-137c0-26-5-39-15-39-7 0-12 4-16 11-3 8-5 25-5 53v112h-44v-215h37v32l-2-1c6-23 19-35 38-35 24 0 37 13 40 39h-1c6-26 20-39 41-39 18 0 31 7 39 20s12 33 12 60v139z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.023cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="5.512cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">e sarai luce per gli uomini </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.58cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="6.147cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="5"/></text:span><text:span text:style-name="T5">La <text:s text:c="13"/>Mim</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="3.51cm" svg:height="0.3cm" svg:x="1.764cm" svg:y="7.464cm" svg:viewBox="0 0 3511 301" svg:d="M0 286v-49c32 13 59 20 83 20 37 0 55-12 55-36 0-10-3-18-10-24-8-5-24-14-49-23-26-9-45-20-57-34-12-13-18-31-18-52 0-24 8-42 25-55 18-13 41-20 69-20 29 0 57 6 85 18l-17 44c-27-11-50-17-69-17-30 0-45 10-45 30 0 10 3 18 10 25 6 6 22 13 45 22 31 11 52 22 63 35 11 12 17 30 17 49 0 26-9 46-28 60-18 15-44 22-76 22-33 0-61-5-83-15zM315 301c-28 0-52-10-70-30-18-21-27-47-27-81s9-61 26-81c18-20 42-30 72-30 29 0 52 10 70 30 18 21 28 47 28 81s-9 61-27 81-42 30-72 30zM316 259c32 0 48-23 48-69s-16-68-49-68c-32 0-48 22-48 68s16 69 49 69zM516 41l-49-4v-37h97v257l64 3v38h-175v-38l63-3zM3129 298v-281h49v235h115v46zM3473 298l-3-34 2 1c-7 14-16 24-27 29s-24 7-41 7c-22 0-39-6-51-17-13-12-20-29-20-50 0-45 34-69 100-71l29-1v-5c0-24-12-35-36-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18 15 12 22 30 22 56v145zM3462 201l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 9 24 28 24 16 0 29-4 38-12 9-9 13-21 13-36z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="4.541cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="6.782cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">e sarai sale per la terra </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="2.53cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="7.417cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s/></text:span><text:span text:style-name="T5">Sol <text:s text:c="10"/>La</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="0.402cm" svg:height="0.283cm" svg:x="3.106cm" svg:y="8.751cm" svg:viewBox="0 0 403 284" svg:d="M49 171v110h-49v-281h72c68 0 102 27 102 83 0 38-16 63-48 75l74 123h-58l-63-110zM49 126h22c19 0 33-3 41-9 8-7 12-18 12-33 0-14-4-25-12-31s-22-9-42-9h-21zM403 188h-140c0 35 18 52 55 52 22 0 47-6 74-18v46c-24 11-48 16-73 16-33 0-58-10-77-29-20-20-29-46-29-80 0-35 9-62 26-82 18-21 42-31 73-31 27 0 50 9 66 27 17 17 25 41 25 70zM264 145h88c0-27-14-40-42-40-29 0-44 13-46 40z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.37cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="8.052cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">e nel mondo deserto aprirai </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="1.434cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="8.687cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="7"/></text:span><text:span text:style-name="T5">Re</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="4.382cm" svg:height="0.299cm" svg:x="3.337cm" svg:y="10.005cm" svg:viewBox="0 0 4383 300" svg:d="M0 297v-280h49v234h115v46zM344 297l-3-34 2 1c-7 14-16 24-27 29s-24 7-41 7c-22 0-39-6-51-17-13-12-20-29-20-50 0-45 34-68 100-70l29-1v-5c0-24-12-35-36-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18s21 30 21 56v144zM333 200l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 9 24 28 24 16 0 29-4 38-12 9-9 13-21 13-36zM2873 285v-49c32 13 59 20 83 20 37 0 55-12 55-36 0-10-3-18-11-24-7-5-23-13-48-22-26-9-46-20-58-34-12-13-18-31-18-52 0-24 9-42 26-55s40-20 69-20 57 6 85 18l-17 44c-27-11-50-17-69-17-31 0-46 10-46 30 0 10 4 18 10 25 7 6 22 13 46 22 31 11 52 22 63 35 11 12 16 29 16 48 0 26-9 46-27 60-18 15-44 22-76 22-34 0-61-5-83-15zM3192 0c18 0 27 9 27 29 0 9-3 17-8 21-6 5-12 8-19 8-18 0-27-10-27-29 0-20 9-29 27-29zM3168 124l-49-4v-37h97v173l65 3v38h-176v-38l63-3zM3470 297v-136c0-16-1-27-4-32-2-5-5-7-9-7-8 0-13 4-17 12s-6 23-6 45v118h-44v-136c0-26-5-39-15-39-7 0-12 4-16 11-3 8-5 25-5 53v111h-44v-214h37v32l-2-1c6-23 19-35 38-35 24 0 37 13 40 39h-1c6-26 20-39 41-39 18 0 31 7 39 20s12 33 12 60v138zM3572 297l101-235h-132v-45h186v35l-103 245zM4002 297v-280h49v234h115v46zM4346 297l-2-34 1 1c-7 14-16 24-27 29s-24 7-41 7c-21 0-39-6-51-17-13-12-19-29-19-50 0-45 33-68 99-70l30-1v-5c0-24-13-35-37-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18s21 30 21 56v144zM4335 200l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 10 24 29 24 15 0 28-4 37-12 9-9 13-21 13-36z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.465cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="9.322cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">una strada nuova </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="4.274cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="9.957cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="8"/></text:span><text:span text:style-name="T5">La <text:s text:c="10"/>Sim7 La</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="6.185cm" svg:height="0.283cm" svg:x="2.217cm" svg:y="11.291cm" svg:viewBox="0 0 6186 284" svg:d="M49 170v111h-49v-281h72c68 0 102 27 102 83 0 38-16 63-49 75l74 123h-57l-64-111zM49 126h22c19 0 32-3 40-9 9-7 13-18 13-33 0-14-4-25-12-31s-22-9-42-9h-21zM402 188h-140c1 35 19 52 55 52 22 0 47-6 74-18v46c-24 11-48 16-73 16-32 0-57-10-77-29-19-20-28-46-28-80 0-35 9-62 26-82 18-21 42-31 71-31 28 0 50 9 67 27 17 17 25 41 25 70zM264 145h87c0-27-14-40-41-40-29 0-44 13-46 40zM5122 281v-281h49v235h115v46zM5466 281l-2-34 1 1c-7 14-16 24-27 29s-24 7-41 7c-21 0-39-6-51-17-13-12-19-29-19-50 0-45 33-69 99-71l30-1v-5c0-24-13-35-37-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18s21 30 21 56v145zM5455 184l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 10 24 29 24 15 0 28-4 37-12 9-9 13-21 13-36zM5771 281v-281h70c40 0 72 12 94 36 23 25 35 58 35 101 0 47-12 82-36 107-23 24-57 37-101 37zM5820 44v192h10c59 0 89-32 89-98 0-63-28-94-82-94zM6087 284c-28 0-52-10-70-30-18-21-27-47-27-81s9-61 26-81c18-20 42-30 72-30 29 0 52 10 70 30 18 21 28 47 28 81s-9 61-27 81-42 30-72 30zM6088 242c32 0 48-23 48-69s-16-68-49-68c-32 0-48 22-48 68s16 69 49 69z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.095cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="10.592cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">e per questa strada va, va </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="4.503cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="11.227cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="3"/></text:span><text:span text:style-name="T5">Re <text:s text:c="20"/>La Do</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="7.083cm" svg:height="0.283cm" svg:x="3.541cm" svg:y="12.561cm" svg:viewBox="0 0 7084 284" svg:d="M0 281v-281h70c40 0 72 12 95 37 22 25 34 58 34 101 0 46-12 81-36 106-23 24-57 37-100 37zM50 45v191h9c59 0 89-32 89-97 0-63-27-94-82-94zM316 284c-28 0-51-10-70-30-18-21-27-47-27-81 0-33 9-60 27-80 17-20 41-30 71-30 29 0 52 10 70 30 19 21 28 47 28 80 0 34-9 61-27 81s-42 30-72 30zM317 242c32 0 48-23 48-69 0-45-16-67-48-67s-49 22-49 67c0 46 17 69 49 69zM2726 171v110h-49v-281h72c68 0 102 27 102 84 0 38-16 63-48 75l74 122h-58l-63-110zM2726 127h22c19 0 33-3 41-9 8-7 12-18 12-33 0-14-4-25-12-31s-22-9-42-9h-21zM3079 188h-139c0 35 18 52 54 52 22 0 47-6 74-18v46c-24 11-48 16-73 16-32 0-57-10-76-29-20-20-29-46-29-80s9-61 26-81c18-21 42-31 72-31 27 0 50 9 66 27 17 17 25 41 25 70zM2941 146h87c0-27-13-40-41-40-29 0-44 13-46 40zM3265 281v-136c0-16-1-27-4-32-2-5-5-7-9-7-8 0-13 4-17 12s-6 23-6 45v118h-44v-136c0-26-5-39-15-39-7 0-12 4-16 11-3 8-5 25-5 53v111h-44v-214h37v32l-2-1c6-23 19-35 38-35 24 0 37 13 40 39h-1c6-26 20-39 41-39 18 0 31 7 39 20s12 33 12 60v138zM3367 281l101-235h-132v-46h186v36l-103 245zM6669 281v-281h70c40 0 72 12 94 37 23 25 34 58 34 101 0 46-11 81-35 106-23 24-57 37-101 37zM6718 45v191h10c59 0 88-32 88-97 0-63-27-94-81-94zM6985 284c-28 0-52-10-70-30-18-21-27-47-27-81 0-33 9-60 26-80 18-20 42-30 72-30 29 0 52 10 70 30 18 21 28 47 28 80 0 34-10 61-28 81-17 20-41 30-71 30zM6986 242c32 0 48-23 48-69 0-45-16-67-49-67-32 0-48 22-48 67 0 46 16 69 49 69z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.036cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="11.862cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">e non voltarti indietro, va. </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="6.124cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="12.497cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="9"/></text:span><text:span text:style-name="T5">Do <text:s text:c="9"/>Rem7 <text:s text:c="13"/>Do</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="6.857cm" svg:height="0.3cm" svg:x="3.315cm" svg:y="13.814cm" svg:viewBox="0 0 6858 301" svg:d="M77 298l-45-239h1c7 31 10 55 10 72v167h-43v-281h59l39 223h-1l41-223h60v281h-43v-170c0-12 3-35 9-69l1 1-46 238zM325 1c18 0 27 9 27 28 0 9-3 17-8 21-5 5-12 8-19 8-18 0-27-10-27-29s9-28 27-28zM301 124l-49-4v-37h97v174l64 3v38h-174v-38l62-3zM602 298v-136c0-16-1-28-3-33-3-5-6-7-10-7-7 0-13 4-17 12-4 9-5 24-5 46v118h-45v-136c0-27-5-40-15-40-7 0-12 4-15 11-4 9-5 26-5 54v111h-45v-215h37v32l-2-1c6-23 19-35 39-35 23 0 36 13 39 39h-1c7-26 20-39 41-39 18 0 31 7 39 20 9 13 13 33 13 61v138zM2913 298v-281h49v235h115v46zM3256 298l-2-34 2 1c-7 14-16 24-27 29s-25 7-41 7c-22 0-39-6-52-17-12-12-19-29-19-50 0-45 33-68 100-70l29-1v-5c0-25-12-36-36-36-17 0-38 5-63 18l-18-40c29-14 55-21 79-21 29 0 51 6 65 18s21 30 21 57v144zM3246 201l-21 1c-23 1-38 4-46 9s-12 13-12 24c0 16 9 24 28 24 16 0 28-4 37-12 9-9 14-21 14-36zM3492 298v-136c0-16-1-28-4-33-2-5-5-7-9-7-8 0-13 4-17 12-4 9-6 24-6 46v118h-44v-136c0-27-5-40-15-40-7 0-12 4-16 11-3 9-5 26-5 54v111h-44v-215h37v32l-2-1c6-23 19-35 38-35 24 0 37 13 40 39h-1c6-26 20-39 41-39 18 0 31 7 39 20s12 33 12 61v138zM6230 286v-49c32 13 59 20 83 20 37 0 55-12 55-36 0-10-3-18-10-24-8-5-24-13-49-22-26-9-45-20-57-34s-18-32-18-53c0-24 8-42 25-55 18-13 41-20 69-20 29 0 57 6 85 18l-17 44c-27-11-50-17-69-17-30 0-45 10-45 30 0 10 3 18 10 25 6 6 22 13 45 22 31 12 52 23 63 36 11 12 17 29 17 48 0 26-9 46-28 60-18 15-44 22-76 22-33 0-61-5-83-15zM6545 301c-28 0-52-10-70-30-18-21-27-47-27-81 0-33 9-61 26-81 18-20 42-30 72-30 29 0 52 10 70 30 18 21 28 48 28 81 0 34-9 61-27 81s-42 30-72 30zM6546 259c32 0 48-23 48-69 0-45-16-68-49-68-32 0-48 23-48 68 0 46 16 69 49 69zM6746 41l-49-4v-37h97v257l64 3v38h-175v-38l63-3z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="8.13cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="13.132cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">Lascia che il mondo vada per la sua strada </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.802cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="13.767cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="8"/></text:span><text:span text:style-name="T5">Mim <text:s text:c="9"/>Lam <text:s text:c="11"/>Sol</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="7.286cm" svg:height="0.283cm" svg:x="3.561cm" svg:y="15.101cm" svg:viewBox="0 0 7287 284" svg:d="M49 281h-49v-281h169v46h-120v78h113v45h-113zM343 281l-2-34 1 1c-7 14-16 24-27 29-10 5-24 7-41 7-21 0-38-6-51-17-13-12-19-29-19-50 0-45 33-68 99-70l30-1v-5c0-24-12-35-37-35-16 0-37 5-63 17l-18-39c30-14 56-21 80-21 29 0 51 6 64 18 14 12 21 30 21 56v144zM332 184l-21 1c-22 1-37 4-46 9-8 5-12 13-12 24 0 16 10 24 29 24 16 0 28-4 37-12 9-9 13-21 13-36zM6872 281v-281h70c40 0 72 12 95 36 22 26 34 59 34 102 0 46-12 81-36 106-23 24-57 37-101 37zM6922 45v191h9c59 0 89-32 89-97 0-63-27-94-82-94zM7188 284c-28 0-51-10-70-30-18-21-27-47-27-81 0-33 9-60 27-80 17-20 41-30 71-30 29 0 52 10 70 30 19 21 28 47 28 80 0 34-9 61-27 81s-42 30-72 30zM7189 242c32 0 48-23 48-69 0-45-16-67-48-67-33 0-49 22-49 67 0 46 17 69 49 69z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="7.157cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="14.402cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">lascia che l&apos;uomo ritorni alla sua casa </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.57cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="15.037cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="9"/></text:span><text:span text:style-name="T5">Fa <text:s text:c="28"/>Do</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="3.747cm" svg:height="0.3cm" svg:x="2.876cm" svg:y="16.354cm" svg:viewBox="0 0 3748 301" svg:d="M0 285v-49c31 13 59 20 82 20 37 0 56-12 56-36 0-10-4-18-11-24-7-5-23-13-48-22-27-9-46-20-58-34-12-13-18-31-18-52 0-24 9-42 26-55s40-20 69-20c28 0 57 6 85 18l-17 44c-27-11-51-17-70-17-30 0-45 10-45 30 0 10 3 18 10 25 7 6 22 13 46 22 31 11 52 22 63 35 11 12 16 29 16 48 0 26-9 46-27 60-19 15-44 23-77 23s-60-6-82-16zM314 301c-28 0-51-11-69-31-19-21-28-47-28-81 0-33 9-60 27-80s42-30 72-30c28 0 51 10 70 30 18 21 27 47 27 80 0 34-9 61-27 81s-42 31-72 31zM315 258c32 0 49-23 49-69 0-45-17-67-49-67s-48 22-48 67c0 46 16 69 48 69zM515 41l-49-4v-37h97v256l64 3v39h-174v-39l62-3zM1846 298h-49v-281h167v45h-118v78h111v45h-111zM2138 298l-2-35 2 1c-7 14-16 24-27 29-11 6-25 8-41 8-22 0-39-7-52-18-12-12-19-29-19-50 0-45 33-68 100-70l29-1v-5c0-24-12-35-36-35-17 0-38 5-63 17l-18-39c29-14 55-21 79-21 29 0 51 6 65 18s21 30 21 56v145zM2128 200l-22 1c-22 1-37 4-45 9s-12 13-12 24c0 16 9 24 28 24 16 0 28-4 37-12 9-9 14-21 14-36zM3334 298v-281h69c41 0 72 12 95 36 23 25 34 58 34 101 0 46-12 81-35 106-24 24-57 38-101 38zM3383 61v191h10c59 0 88-32 88-97 0-63-27-94-81-94zM3650 301c-29 0-52-11-70-31-18-21-27-47-27-81 0-33 8-60 26-80s42-30 72-30c28 0 52 10 70 30 18 21 27 47 27 80 0 34-9 61-27 81s-41 31-71 31zM3650 258c33 0 49-23 49-69 0-45-16-67-49-67-32 0-48 22-48 67 0 46 16 69 48 69z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="8.266cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="15.672cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">lascia che la gente accumuli la sua fortuna. </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.52cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="16.307cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="6"/></text:span><text:span text:style-name="T5">Sol <text:s text:c="4"/>Fa <text:s text:c="4"/>Do</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="3.081cm" svg:height="0.3cm" svg:x="2.209cm" svg:y="17.624cm" svg:viewBox="0 0 3082 301" svg:d="M0 286v-49c31 13 59 20 82 20 37 0 56-12 56-37 0-10-4-18-11-24-7-5-23-13-48-22-27-9-46-20-58-34-12-13-18-31-18-52 0-24 9-42 26-55s40-20 69-20 57 6 85 18l-17 44c-27-11-50-17-70-17-30 0-45 10-45 30 0 10 4 18 10 25 7 6 22 13 46 22 31 11 52 22 63 35 11 12 16 29 16 48 0 27-9 47-27 61-19 15-44 22-77 22s-60-5-82-15zM315 301c-29 0-52-10-70-30-19-21-28-48-28-82 0-33 9-60 27-80s42-30 72-30c28 0 52 10 70 30 18 21 27 47 27 80 0 34-9 62-27 82s-42 30-71 30zM315 259c33 0 49-23 49-70 0-45-17-67-49-67s-48 22-48 67c0 47 16 70 48 70zM515 41l-48-4v-37h97v257l63 3v38h-174v-38l62-3zM1179 298h-49v-281h167v45h-118v78h111v45h-111zM1472 298l-3-34 2 1c-7 14-16 24-27 29s-24 7-41 7c-22 0-39-6-51-17-13-12-20-29-20-50 0-46 34-69 100-71l29-1v-5c0-24-12-35-36-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18s21 30 21 56v145zM1461 200l-21 1c-22 1-38 4-46 9s-12 13-12 25c0 16 9 24 28 24 16 0 29-4 38-12 9-9 13-22 13-37zM2667 298v-281h70c40 0 72 12 94 36 23 25 35 58 35 101 0 46-12 82-36 107-23 24-57 37-101 37zM2716 61v192h10c59 0 89-33 89-98 0-63-28-94-82-94zM2983 301c-28 0-52-10-70-30-18-21-27-48-27-82 0-33 9-60 26-80 18-20 42-30 72-30 29 0 52 10 70 30 18 21 28 47 28 80 0 34-9 62-27 82s-42 30-72 30zM2984 259c32 0 48-23 48-70 0-45-16-67-49-67-32 0-48 22-48 67 0 47 16 70 49 70z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.04cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="16.942cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s text:c="3"/></text:span><text:span text:style-name="T6">Ma tu, tu vieni e seguimi </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="2.81cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="17.577cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="3"/></text:span><text:span text:style-name="T5">Sol <text:s/>Fa <text:s text:c="4"/>Do</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="9.075cm" svg:height="0.283cm" svg:x="1.772cm" svg:y="18.911cm" svg:viewBox="0 0 9076 284" svg:d="M50 170v111h-50v-281h73c67 0 101 27 101 83 0 38-16 63-48 75l74 123h-58l-63-111zM50 126h22c18 0 32-3 40-9 8-7 12-18 12-33 0-14-4-25-12-31s-22-9-41-9h-21zM403 187h-140c1 36 19 53 54 53 23 0 47-6 75-18v46c-24 11-49 16-74 16-31 0-57-10-76-29-19-20-29-46-29-81 0-34 9-61 27-81 17-21 41-31 71-31 28 0 50 9 67 27 16 17 25 41 25 70zM264 145h88c0-27-14-40-42-40s-44 13-46 40zM588 281v-137c0-16-1-27-3-32-3-5-6-7-10-7-7 0-13 4-17 12s-5 23-5 45v119h-45v-137c0-26-5-39-15-39-7 0-12 4-15 11-4 8-5 25-5 53v112h-45v-215h37v32l-2-1c6-23 19-35 39-35 23 0 36 13 39 39h-1c7-26 20-39 41-39 18 0 31 7 39 20 9 13 13 33 13 60v139zM690 281l102-236h-133v-45h186v35l-103 246zM1769 281v-281h70c40 0 72 12 95 36 22 25 34 58 34 101 0 46-12 82-36 107-23 24-57 37-100 37zM1819 44v192h9c59 0 89-32 89-98 0-63-27-94-82-94zM2085 284c-28 0-51-10-70-30-18-21-27-47-27-82 0-33 9-60 27-80 17-20 41-30 71-30 29 0 52 10 70 30 19 21 28 47 28 80 0 35-9 62-27 82s-42 30-72 30zM2086 242c32 0 48-23 48-70 0-45-16-67-48-67s-49 22-49 67c0 47 17 70 49 70zM5163 170v111h-49v-281h72c68 0 102 27 102 83 0 38-16 63-49 75l74 123h-57l-64-111zM5163 126h22c19 0 32-3 40-9 9-7 13-18 13-33 0-14-4-25-12-31s-22-9-42-9h-21zM5516 187h-140c1 36 19 53 55 53 22 0 47-6 74-18v46c-24 11-48 16-73 16-32 0-57-10-77-29-19-20-28-46-28-81 0-34 9-61 26-81 18-21 42-31 71-31 28 0 50 9 67 27 17 17 25 41 25 70zM5378 145h87c0-27-14-40-41-40-29 0-44 13-46 40zM5702 281v-137c0-16-2-27-4-32s-5-7-10-7c-7 0-12 4-16 12s-6 23-6 45v119h-44v-137c0-26-5-39-15-39-7 0-12 4-16 11-3 8-5 25-5 53v112h-44v-215h37v32l-2-1c6-23 19-35 38-35 24 0 37 13 40 39h-1c6-26 20-39 40-39 19 0 32 7 40 20s12 33 12 60v139zM5804 281l101-236h-132v-45h185v35l-103 246zM8661 281v-281h70c40 0 72 12 95 36 22 25 34 58 34 101 0 46-12 82-36 107-23 24-57 37-101 37zM8711 44v192h9c59 0 89-32 89-98 0-63-27-94-82-94zM8977 284c-28 0-51-10-70-30-18-21-27-47-27-82 0-33 9-60 27-80 17-20 41-30 71-30 29 0 52 10 70 30 19 21 28 47 28 80 0 35-9 62-27 82s-42 30-72 30zM8978 242c32 0 48-23 48-70 0-45-16-67-48-67-33 0-49 22-49 67 0 47 17 70 49 70z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="4.003cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="18.212cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s text:c="3"/></text:span><text:span text:style-name="T6">tu, vieni e seguimi. </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="6.844cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="18.847cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s/></text:span><text:span text:style-name="T5">Rem7 <text:s text:c="3"/>Do <text:s text:c="12"/>Rem7 <text:s text:c="11"/>Do</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="7.524cm" svg:height="0.3cm" svg:x="3.315cm" svg:y="20.164cm" svg:viewBox="0 0 7525 301" svg:d="M77 298l-45-239h1c7 32 10 56 10 73v166h-43v-281h59l39 223h-1l40-223h60v281h-43v-169c0-12 3-35 9-70l1 1-46 238zM324 1c18 0 27 9 27 28 0 9-3 17-8 21-5 5-12 8-19 8-18 0-27-10-27-29s9-28 27-28zM300 125l-49-4v-38h97v174l64 3v38h-174v-38l62-3zM602 298v-136c0-16-1-27-3-32-3-5-6-7-10-7-7 0-13 4-17 12s-5 23-5 45v118h-45v-136c0-26-5-39-15-39-7 0-12 4-15 11-4 8-5 25-5 53v111h-46v-215h38v33l-2-1c6-23 19-36 39-36 23 0 36 14 39 40h-1c7-26 20-40 41-40 18 0 31 8 39 21 9 13 13 33 13 60v138zM2690 298v-281h50v235h114v46zM3034 298l-2-34 1 1c-7 14-16 24-26 29-11 5-25 7-42 7-21 0-38-6-51-17-13-12-19-29-19-50 0-45 33-68 100-70l29-1v-5c0-24-12-35-37-35-16 0-37 5-63 17l-17-39c29-14 55-22 79-22 29 0 51 6 65 19 13 12 20 30 20 56v144zM3023 201l-21 1c-22 1-37 4-45 9-9 5-13 13-13 24 0 16 10 24 29 24 16 0 28-4 37-12 9-9 13-21 13-36zM3269 298v-136c0-16-1-27-3-32s-5-7-10-7c-7 0-12 4-16 12s-6 23-6 45v118h-44v-136c0-26-5-39-15-39-7 0-12 4-16 11-3 8-5 25-5 53v111h-45v-215h37l1 33-2-1c6-23 18-36 38-36 24 0 37 14 40 40h-1c6-26 20-40 40-40 19 0 32 8 40 21s12 33 12 60v138zM6897 286v-49c32 13 59 20 83 20 37 0 55-12 55-36 0-10-3-18-11-24-7-5-23-13-48-22-26-9-45-20-57-34-12-13-18-31-18-52 0-25 8-43 25-56s40-20 69-20 57 6 85 18l-17 44c-27-11-50-17-69-17-30 0-46 10-46 31 0 10 4 18 11 25 6 6 21 13 45 22 31 11 52 22 63 35 11 12 17 29 17 48 0 26-10 46-28 60-18 15-44 22-76 22-33 0-61-5-83-15zM7212 301c-28 0-52-10-70-30-18-21-27-47-27-81 0-33 9-60 26-80 18-20 42-31 72-31 29 0 52 11 70 31 18 21 27 47 27 80 0 34-9 61-27 81-17 20-41 30-71 30zM7213 259c32 0 48-23 48-69 0-45-16-67-49-67-32 0-48 22-48 67 0 46 16 69 49 69zM7412 41l-48-4v-37h97v257l64 3v38h-175v-38l62-3z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="8.08cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="19.482cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">Lascia che la barca in mare spieghi la vela </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="6.157cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="20.117cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="8"/></text:span><text:span text:style-name="T5">Mim <text:s text:c="8"/>Lam <text:s text:c="15"/>Sol</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="7.73cm" svg:height="0.283cm" svg:x="3.561cm" svg:y="21.451cm" svg:viewBox="0 0 7731 284" svg:d="M49 281h-49v-281h168v45h-119v78h112v45h-112zM343 281l-2-34 1 1c-7 14-16 24-27 29s-25 7-42 7c-21 0-38-6-51-17-13-12-19-29-19-50 0-46 33-69 99-71l31-1v-5c0-24-12-35-38-35-16 0-37 5-63 17l-18-39c30-14 56-21 80-21 30 0 52 6 65 18 14 12 21 30 21 56v145zM332 183l-21 1c-23 1-38 4-47 9-8 5-12 14-12 25 0 16 10 24 29 24 16 0 29-4 38-12 9-9 13-21 13-37zM7317 281v-281h69c41 0 72 12 95 36 23 25 34 58 34 101 0 46-11 82-35 107-24 24-57 37-101 37zM7366 44v192h10c59 0 88-32 88-98 0-63-27-94-81-94zM7633 284c-29 0-52-10-70-30-18-21-27-47-27-82 0-33 8-60 26-80s42-30 72-30c28 0 52 10 70 30 18 21 27 47 27 80 0 35-9 62-27 82s-41 30-71 30zM7633 242c33 0 49-23 49-70 0-45-16-67-49-67-32 0-48 22-48 67 0 47 16 70 48 70z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="7.733cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="20.752cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">lascia che trovi affetto chi segue il cuore </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.807cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="21.387cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="9"/></text:span><text:span text:style-name="T5">Fa <text:s text:c="30"/>Do</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="3.747cm" svg:height="0.3cm" svg:x="2.876cm" svg:y="22.704cm" svg:viewBox="0 0 3748 301" svg:d="M0 286v-50c31 14 59 21 82 21 37 0 56-13 56-37 0-10-4-18-11-24-7-5-23-13-48-22-27-9-46-20-58-34-12-13-18-31-18-52 0-24 9-42 26-55s40-20 69-20c28 0 57 6 85 18l-17 44c-27-11-51-17-70-17-30 0-45 10-45 30 0 10 3 18 10 25 7 6 22 13 46 22 31 11 52 22 63 35 11 12 16 29 16 48 0 26-9 47-27 61-19 15-44 22-77 22s-60-5-82-15zM314 301c-28 0-51-10-69-30-19-21-28-48-28-82 0-33 9-60 27-80s42-30 72-30c28 0 51 10 70 30 18 21 27 47 27 80 0 34-9 62-27 82s-42 30-72 30zM315 259c32 0 49-24 49-70 0-45-17-67-49-67s-48 22-48 67c0 46 16 70 48 70zM515 41l-49-4v-37h97v257l64 3v38h-174v-38l62-3zM1846 298h-49v-281h167v45h-118v78h111v45h-111zM2138 298l-2-34 2 1c-7 14-16 24-27 29s-25 7-41 7c-22 0-39-6-52-17-12-12-19-29-19-51 0-45 33-68 100-70l29-1v-5c0-24-12-35-36-35-17 0-38 5-63 17l-18-39c29-14 55-21 79-21 29 0 51 6 65 18s21 30 21 56v145zM2128 200l-22 1c-22 1-37 4-45 9s-12 13-12 24c0 17 9 25 28 25 16 0 28-4 37-12 9-10 14-22 14-37zM3334 298v-281h69c41 0 72 12 95 36 23 25 34 58 34 101 0 46-12 81-35 107-24 24-57 37-101 37zM3383 61v192h10c59 0 88-33 88-98 0-63-27-94-81-94zM3650 301c-29 0-52-10-70-30-18-21-27-48-27-82 0-33 8-60 26-80s42-30 72-30c28 0 52 10 70 30 18 21 27 47 27 80 0 34-9 62-27 82s-41 30-71 30zM3650 259c33 0 49-24 49-70 0-45-16-67-49-67-32 0-48 22-48 67 0 46 16 70 48 70z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="8.27cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="22.022cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">lascia che dall&apos;albero cadano i frutti maturi. </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.52cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="22.657cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="6"/></text:span><text:span text:style-name="T5">Sol <text:s text:c="4"/>Fa <text:s text:c="4"/>Do</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="3.308cm" svg:height="0.3cm" svg:x="2.209cm" svg:y="23.974cm" svg:viewBox="0 0 3309 301" svg:d="M0 286v-49c31 13 59 20 82 20 37 0 56-12 56-36 0-10-4-18-11-24-7-5-23-13-48-23-27-9-46-20-58-34-12-13-18-31-18-52 0-24 9-42 26-55s40-20 69-20 57 6 85 18l-17 44c-27-11-50-17-70-17-30 0-45 10-45 30 0 10 4 18 10 25 7 6 22 13 46 22 31 11 52 22 63 35s16 30 16 49c0 26-9 46-27 60-19 15-44 22-77 22s-60-5-82-15zM315 301c-29 0-52-10-70-30-19-21-28-47-28-81s9-61 27-81 42-30 72-30c28 0 52 10 70 30 18 21 27 47 27 81s-9 61-27 81-42 30-71 30zM315 259c33 0 49-23 49-69s-17-68-49-68-48 22-48 68 16 69 48 69zM515 41l-48-4v-37h97v257l63 3v38h-174v-38l62-3zM1179 298h-49v-281h167v45h-118v78h111v46h-111zM1472 298l-3-34 2 1c-7 14-16 24-27 29s-24 7-41 7c-22 0-39-6-51-17-13-12-20-29-20-50 0-45 34-69 100-71l29-1v-5c0-24-12-35-36-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18s21 30 21 56v145zM1461 201l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 9 24 28 24 16 0 29-4 38-12 9-9 13-21 13-36zM2684 298v-281h49v235h116v46zM3029 298l-3-34 2 1c-7 14-16 24-27 29s-24 7-41 7c-22 0-39-6-51-17-13-12-20-29-20-50 0-45 34-69 100-71l29-1v-5c0-24-12-35-36-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18s21 30 21 56v145zM3018 201l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 9 24 28 24 16 0 29-4 38-12 9-9 13-21 13-36zM3264 298v-137c0-16-1-27-3-32-3-5-6-7-10-7-7 0-13 4-17 12s-5 23-5 46v118h-45v-137c0-26-5-39-15-39-7 0-12 4-15 11-4 8-5 25-5 54v111h-45v-215h37v32l-2-1c6-23 19-35 39-35 23 0 36 13 39 39h-1c7-26 20-39 41-39 18 0 31 7 39 20 9 13 13 33 13 60v139z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.04cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="23.292cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s text:c="3"/></text:span><text:span text:style-name="T6">Ma tu, tu vieni e seguimi </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.089cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="23.927cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="3"/></text:span><text:span text:style-name="T5">Sol <text:s/>Fa <text:s text:c="4"/>Lam</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="5.062cm" svg:height="0.283cm" svg:x="1.781cm" svg:y="25.261cm" svg:viewBox="0 0 5063 284" svg:d="M0 281v-281h49v235h115v46zM344 281l-3-34 2 1c-7 14-16 24-27 29s-24 7-41 7c-22 0-39-6-51-17-13-12-20-29-20-50 0-45 34-68 100-70l29-1v-5c0-24-12-35-36-35-17 0-38 5-63 17l-18-39c29-14 56-22 80-22 29 0 50 7 64 19s21 30 21 56v144zM333 184l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 9 24 28 24 16 0 29-4 38-12 9-9 13-21 13-36zM579 281v-136c0-16-1-27-3-32-3-5-6-7-10-7-7 0-13 4-17 12s-5 23-5 45v118h-45v-136c0-26-5-39-15-39-7 0-12 4-15 11-4 8-5 25-5 53v111h-45v-215h37v33l-2-1c6-23 19-36 39-36 23 0 36 14 39 40h-1c7-26 20-40 41-40 18 0 31 8 39 21 9 13 13 33 13 60v138zM1779 281v-281h49v235h115v46zM2123 281l-2-34 1 1c-7 14-16 24-27 29-10 5-24 7-41 7-21 0-38-6-51-17-13-12-19-29-19-50 0-45 33-68 99-70l30-1v-5c0-24-12-35-37-35-16 0-37 5-63 17l-18-39c30-14 56-22 80-22 29 0 51 7 64 19 14 12 21 30 21 56v144zM2112 184l-21 1c-22 1-37 4-46 9-8 5-12 13-12 24 0 16 10 24 29 24 16 0 28-4 37-12 9-9 13-21 13-36zM4710 171v110h-50v-281h73c67 0 101 27 101 84 0 38-16 63-48 75l74 122h-58l-63-110zM4710 127h22c18 0 32-3 40-9 8-7 12-18 12-33 0-14-4-26-12-32s-22-9-41-9h-21zM5063 188h-140c1 35 19 52 54 52 23 0 47-6 75-18v46c-24 11-49 16-74 16-31 0-57-10-76-29-19-20-29-46-29-80s9-61 27-81c17-21 41-32 71-32 28 0 50 10 67 28 16 17 25 41 25 70zM4924 146h88c0-27-14-40-42-40s-44 13-46 40z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="4.003cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="24.562cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s text:c="3"/></text:span><text:span text:style-name="T6">tu, vieni e seguimi. </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.834cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="25.197cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s/></text:span><text:span text:style-name="T5">Lam <text:s text:c="4"/>La <text:s text:c="10"/>Re</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="4.18cm" svg:height="0.299cm" svg:x="2.67cm" svg:y="26.515cm" svg:viewBox="0 0 4181 300" svg:d="M0 297v-281h49v235h115v46zM344 297l-2-34 1 1c-7 14-16 24-27 29s-24 7-41 7c-21 0-39-6-51-17-13-12-19-29-19-51 0-45 33-68 99-70l30-1v-5c0-24-13-35-37-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18s21 30 21 56v145zM333 199l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 17 10 25 29 25 15 0 28-4 37-13s13-21 13-36zM3613 297l-46-239h1c6 31 10 55 10 72v167h-43v-281h58l41 222h-1l40-222h60v281h-43v-170c0-12 3-35 8-69l2 1-47 238zM3860 0c18 0 27 9 27 28 0 9-3 17-8 21-6 5-12 8-19 8-18 0-27-10-27-29s9-28 27-28zM3836 123l-49-4v-37h97v174l64 3v38h-175v-38l63-3zM4137 297v-137c0-16-1-27-4-32-2-5-5-7-9-7-8 0-13 4-17 12s-6 23-6 45v119h-44v-137c0-26-5-39-15-39-7 0-12 4-16 11-3 8-5 25-5 53v112h-44v-215h37v32l-2-1c6-23 19-35 38-35 24 0 37 13 40 39h-1c6-26 20-39 41-39 18 0 31 7 39 20s12 33 12 60v139z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.027cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="25.832cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">E sarai luce per gli uomini </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.58cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="26.467cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="5"/></text:span><text:span text:style-name="T5">La <text:s text:c="13"/>Mim</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="3.51cm" svg:height="0.3cm" svg:x="1.764cm" svg:y="27.784cm" svg:viewBox="0 0 3511 301" svg:d="M0 286v-50c32 13 59 20 83 20 37 0 55-12 55-36 0-10-3-18-10-24-8-5-24-13-49-22-26-9-45-20-57-34-12-13-18-31-18-52 0-24 8-42 25-55 18-13 41-20 69-20 29 0 57 6 85 18l-17 44c-27-11-50-17-69-17-30 0-45 10-45 30 0 10 3 18 10 25 6 6 22 13 45 22 31 11 52 22 63 35 11 12 17 29 17 48 0 26-9 46-28 61-18 15-44 22-76 22-33 0-61-5-83-15zM315 301c-28 0-52-10-70-30-18-22-27-48-27-82 0-33 9-60 26-80 18-20 42-30 72-30 29 0 52 10 70 30 18 21 28 47 28 80 0 34-9 61-27 82-18 20-42 30-72 30zM316 258c32 0 48-23 48-69 0-45-16-67-49-67-32 0-48 22-48 67 0 46 16 69 49 69zM516 41l-49-4v-37h97v256l64 3v39h-175v-39l63-3zM3129 298v-281h49v234h115v47zM3473 298l-3-35 2 1c-7 15-16 25-27 30s-24 7-41 7c-22 0-39-6-51-17-13-12-20-30-20-51 0-45 34-68 100-70l29-1v-5c0-24-12-35-36-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18 15 12 22 30 22 56v145zM3462 200l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 9 24 28 24 16 0 29-4 38-12 9-9 13-21 13-36z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="4.541cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="27.102cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">e sarai sale per la terra </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="2.53cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="27.737cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s/></text:span><text:span text:style-name="T5">Sol <text:s text:c="10"/>La</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+   </draw:page>
+   <draw:page draw:name="page3" draw:style-name="dp2" draw:master-page-name="master-page38">
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="19.05cm" svg:height="66.754cm" svg:x="0.987cm" svg:y="-54.469cm" svg:viewBox="0 0 19051 66755" draw:points="0,0 19051,0 19051,66755 0,66755">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="19.05cm" svg:height="66.754cm" svg:x="0.987cm" svg:y="-54.469cm" svg:viewBox="0 0 19051 66755" draw:points="0,0 19051,0 19051,66755 0,66755">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="19.05cm" svg:height="66.754cm" svg:x="0.987cm" svg:y="-54.469cm" svg:viewBox="0 0 19051 66755" draw:points="0,0 19051,0 19051,66755 0,66755">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr2" draw:text-style-name="P2" draw:layer="layout" svg:width="19.05cm" svg:height="0.026cm" svg:x="0.987cm" svg:y="12.259cm" svg:viewBox="0 0 19051 27" draw:points="0,0 19051,0 19051,27 0,27">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="18.521cm" svg:height="54.478cm" svg:x="1.252cm" svg:y="-42.59cm" svg:viewBox="0 0 18522 54479" draw:points="0,0 18522,0 18522,54479 0,54479">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr3" draw:text-style-name="P4" draw:layer="layout" svg:width="0.528cm" svg:height="0.615cm" svg:x="19.138cm" svg:y="27.775cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T1"></text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="0.402cm" svg:height="0.283cm" svg:x="3.106cm" svg:y="1.766cm" svg:viewBox="0 0 403 284" svg:d="M49 171v110h-49v-281h72c68 0 102 27 102 84 0 38-16 63-48 75l74 122h-58l-63-110zM49 127h22c19 0 33-3 41-9 8-7 12-18 12-33s-4-26-12-32-22-9-42-9h-21zM403 188h-140c0 35 18 52 55 52 22 0 47-6 74-18v46c-24 11-48 16-73 16-33 0-58-10-77-29-20-20-29-46-29-80s9-61 26-81c18-22 42-32 73-32 27 0 50 9 66 28 17 17 25 41 25 70zM264 146h88c0-27-14-40-42-40-29 0-44 13-46 40z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.37cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="1.067cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">e nel mondo deserto aprirai </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="1.434cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="1.702cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="7"/></text:span><text:span text:style-name="T5">Re</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="5.062cm" svg:height="0.283cm" svg:x="1.781cm" svg:y="3.036cm" svg:viewBox="0 0 5063 284" svg:d="M0 281v-281h49v235h115v46zM344 281l-3-34 2 1c-7 14-16 24-27 29s-24 7-41 7c-22 0-39-6-51-17-13-12-20-29-20-51 0-45 34-68 100-70l29-1v-5c0-24-12-35-36-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18s21 30 21 56v145zM333 183l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 17 9 25 28 25 16 0 29-4 38-12 9-9 13-22 13-37zM579 281v-137c0-16-1-27-3-32-3-5-6-7-10-7-7 0-13 4-17 12s-5 23-5 45v119h-45v-137c0-26-5-39-15-39-7 0-12 4-15 11-4 8-5 25-5 53v112h-45v-215h37v32l-2-1c6-23 19-35 39-35 23 0 36 13 39 39h-1c7-26 20-39 41-39 18 0 31 7 39 20 9 13 13 33 13 60v139zM1779 281v-281h49v235h115v46zM2123 281l-2-34 1 1c-7 14-16 24-27 29-10 5-24 7-41 7-21 0-38-6-51-17-13-12-19-29-19-51 0-45 33-68 99-70l30-1v-5c0-24-12-35-37-35-16 0-37 5-63 17l-18-39c30-14 56-21 80-21 29 0 51 6 64 18 14 12 21 30 21 56v145zM2112 183l-21 1c-22 1-37 4-46 9-8 5-12 13-12 24 0 17 10 25 29 25 16 0 28-4 37-12 9-9 13-22 13-37zM4710 170v111h-50v-281h73c67 0 101 27 101 83 0 38-16 63-48 75l74 123h-58l-63-111zM4710 126h22c18 0 32-3 40-9 8-7 12-18 12-33 0-14-4-25-12-31s-22-9-41-9h-21zM5063 187h-140c1 36 19 53 54 53 23 0 47-6 75-18v46c-24 11-49 16-74 16-31 0-57-10-76-29-19-20-29-47-29-81s9-61 27-81c17-21 41-31 71-31 28 0 50 9 67 27 16 17 25 41 25 70zM4924 145h88c0-27-14-40-42-40s-44 13-46 40z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.465cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="2.337cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">una strada nuova </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.834cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="2.972cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s/></text:span><text:span text:style-name="T5">Lam <text:s text:c="4"/>La <text:s text:c="10"/>Re</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="4.18cm" svg:height="0.299cm" svg:x="2.67cm" svg:y="4.29cm" svg:viewBox="0 0 4181 300" svg:d="M0 297v-281h49v235h115v46zM344 297l-2-34 1 1c-7 14-16 24-27 29s-24 7-41 7c-21 0-39-6-51-17-13-12-19-29-19-50 0-45 33-68 99-70l30-1v-5c0-24-13-35-37-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18s21 30 21 56v144zM333 200l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 10 24 29 24 15 0 28-4 37-12 9-9 13-21 13-36zM3613 297l-46-238h1c6 31 10 55 10 72v166h-43v-281h58l41 223h-1l40-223h60v281h-43v-169c0-12 3-35 8-69l2 1-47 237zM3860 0c18 0 27 9 27 28 0 9-3 17-8 22-6 5-12 8-19 8-18 0-27-10-27-30 0-19 9-28 27-28zM3836 124l-49-4v-37h97v173l64 3v38h-175v-38l63-3zM4137 297v-136c0-16-1-27-4-32-2-5-5-7-9-7-8 0-13 4-17 12s-6 23-6 45v118h-44v-136c0-26-5-39-15-39-7 0-12 4-16 11-3 8-5 25-5 53v111h-44v-214h37v32l-2-1c6-23 19-35 38-35 24 0 37 13 40 39h-1c6-26 20-39 41-39 18 0 31 7 39 20s12 33 12 60v138z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.023cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="3.607cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">e sarai luce per gli uomini </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.58cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="4.242cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="5"/></text:span><text:span text:style-name="T5">La <text:s text:c="13"/>Mim</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="3.51cm" svg:height="0.3cm" svg:x="1.764cm" svg:y="5.559cm" svg:viewBox="0 0 3511 301" svg:d="M0 285v-49c32 13 59 20 83 20 37 0 55-12 55-36 0-10-3-18-10-24-8-5-24-13-49-22-26-9-45-20-57-34-12-13-18-31-18-52 0-24 8-42 25-55 18-13 41-20 69-20 29 0 57 6 85 18l-17 44c-27-11-50-17-69-17-30 0-45 10-45 30 0 10 3 18 10 25 6 6 22 13 45 22 31 11 52 22 63 35 11 12 17 29 17 48 0 26-9 46-28 60-18 16-44 23-76 23-33 0-61-5-83-16zM315 301c-28 0-52-11-70-31-18-21-27-47-27-81 0-33 9-60 26-80 18-20 42-30 72-30 29 0 52 10 70 30 18 21 28 47 28 80 0 34-9 61-27 81s-42 31-72 31zM316 258c32 0 48-23 48-69 0-45-16-67-49-67-32 0-48 22-48 67 0 46 16 69 49 69zM516 41l-49-4v-37h97v256l64 3v39h-175v-39l63-3zM3129 298v-281h49v234h115v47zM3473 298l-3-35 2 1c-7 14-16 24-27 30-11 5-24 7-41 7-22 0-39-6-51-18-13-12-20-29-20-50 0-45 34-68 100-70l29-1v-5c0-24-12-35-36-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18 15 12 22 30 22 56v145zM3462 200l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 9 24 28 24 16 0 29-4 38-12 9-9 13-21 13-36z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="4.541cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="4.877cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">e sarai sale per la terra </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="2.53cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="5.512cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s/></text:span><text:span text:style-name="T5">Sol <text:s text:c="10"/>La</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="0.402cm" svg:height="0.283cm" svg:x="3.106cm" svg:y="6.846cm" svg:viewBox="0 0 403 284" svg:d="M49 171v110h-49v-281h72c68 0 102 27 102 83 0 39-16 64-48 76l74 122h-58l-63-110zM49 127h22c19 0 33-3 41-9 8-7 12-18 12-34 0-14-4-25-12-31s-22-9-42-9h-21zM403 188h-140c0 35 18 52 55 52 22 0 47-6 74-18v46c-24 11-48 16-73 16-33 0-58-10-77-29-20-20-29-46-29-80s9-61 26-81c18-22 42-32 73-32 27 0 50 9 66 28 17 17 25 41 25 70zM264 146h88c0-27-14-40-42-40-29 0-44 13-46 40z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.37cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="6.147cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">e nel mondo deserto aprirai </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="1.434cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="6.782cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="7"/></text:span><text:span text:style-name="T5">Re</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="4.382cm" svg:height="0.299cm" svg:x="3.337cm" svg:y="8.1cm" svg:viewBox="0 0 4383 300" svg:d="M0 297v-281h49v235h115v46zM344 297l-3-34 2 1c-7 14-16 24-27 29s-24 7-41 7c-22 0-39-6-51-17-13-12-20-29-20-50 0-45 34-68 100-70l29-1v-5c0-24-12-36-36-36-17 0-38 6-63 18l-18-40c29-14 56-21 80-21 29 0 50 6 64 18s21 31 21 57v144zM333 200l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 9 24 28 24 16 0 29-4 38-12 9-9 13-21 13-36zM2873 285v-49c32 13 59 20 83 20 37 0 55-12 55-36 0-10-3-18-11-24-7-5-23-13-48-22-26-9-46-20-58-34-12-13-18-32-18-53 0-24 9-42 26-55s40-20 69-20 57 6 85 18l-17 44c-27-11-50-17-69-17-31 0-46 10-46 30 0 10 4 18 10 25 7 6 22 14 46 23 31 11 52 22 63 35 11 12 16 29 16 48 0 26-9 46-27 60-18 15-44 22-76 22-34 0-61-5-83-15zM3192 0c18 0 27 9 27 28 0 9-3 17-8 21-6 5-12 8-19 8-18 0-27-10-27-29s9-28 27-28zM3168 124l-49-5v-37h97v174l65 3v38h-176v-38l63-3zM3470 297v-136c0-16-1-27-4-32-2-5-5-8-9-8-8 0-13 5-17 13s-6 23-6 45v118h-44v-136c0-26-5-40-15-40-7 0-12 5-16 12-3 8-5 25-5 53v111h-44v-215h37v32l-2-1c6-23 19-35 38-35 24 0 37 13 40 39h-1c6-26 20-39 41-39 18 0 31 7 39 20s12 34 12 61v138zM3572 297l101-236h-132v-45h186v35l-103 246zM4002 297v-281h49v235h115v46zM4346 297l-2-34 1 1c-7 14-16 24-27 29s-24 7-41 7c-21 0-39-6-51-17-13-12-19-29-19-50 0-45 33-68 99-70l30-1v-5c0-24-13-36-37-36-17 0-38 6-63 18l-18-40c29-14 56-21 80-21 29 0 50 6 64 18s21 31 21 57v144zM4335 200l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 10 24 29 24 15 0 28-4 37-12 9-9 13-21 13-36z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.465cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="7.417cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">una strada nuova </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="4.274cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="8.052cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="8"/></text:span><text:span text:style-name="T5">La <text:s text:c="10"/>Sim7 La</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="5.502cm" svg:height="0.283cm" svg:x="2.217cm" svg:y="9.386cm" svg:viewBox="0 0 5503 284" svg:d="M49 171v110h-49v-281h72c68 0 102 27 102 83 0 39-16 64-49 76l74 122h-57l-64-110zM49 127h22c19 0 32-3 40-9 9-7 13-18 13-34 0-14-4-25-12-31s-22-9-42-9h-21zM402 188h-140c1 35 19 52 55 52 22 0 47-6 74-18v46c-24 11-48 16-73 16-32 0-57-10-77-29-19-20-28-46-28-80s9-61 26-82c18-21 42-31 71-31 28 0 50 9 67 27s25 42 25 71zM264 146h87c0-27-14-40-41-40-29 0-44 13-46 40zM5122 281v-281h49v235h115v46zM5466 281l-2-34 1 1c-7 14-16 24-27 29s-24 7-41 7c-21 0-39-6-51-17-13-12-19-29-19-50 0-45 33-68 99-70l30-1v-5c0-24-13-35-37-35-17 0-38 5-63 17l-18-40c29-14 56-21 80-21 29 0 50 6 64 18s21 31 21 57v144zM5455 184l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 10 24 29 24 15 0 28-4 37-12 9-9 13-21 13-36z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.095cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="8.687cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">e per questa strada va, va </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.876cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="9.322cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="3"/></text:span><text:span text:style-name="T5">Re <text:s text:c="20"/>La</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:path draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="4.613cm" svg:height="0.283cm" svg:x="2.217cm" svg:y="10.656cm" svg:viewBox="0 0 4614 284" svg:d="M49 170v111h-49v-281h72c69 0 103 27 103 83 0 38-16 63-49 75l74 123h-57l-65-111zM49 126h22c20 0 33-3 41-9 9-7 13-18 13-33 0-14-4-25-12-31s-22-9-43-9h-21zM403 187h-140c1 35 19 52 55 52 22 0 47-6 74-18v47c-24 11-48 16-73 16-32 0-57-10-77-29-19-21-28-47-28-81s9-61 26-81c18-21 42-31 71-31 28 0 50 9 67 27 17 17 25 41 25 70zM265 145h87c0-27-14-40-41-40-29 0-44 13-46 40zM4233 281v-281h49v234h115v47zM4577 281l-3-34 2 1c-7 14-16 24-27 29s-24 7-41 7c-22 0-39-6-51-17-13-12-20-30-20-51 0-45 34-68 100-70l29-1v-5c0-24-12-35-36-35-17 0-38 5-63 17l-18-39c29-14 56-21 80-21 29 0 50 6 64 18s21 30 21 56v145zM4566 183l-21 1c-22 1-38 4-46 9s-12 13-12 24c0 16 9 25 28 25 16 0 29-5 38-13 9-9 13-21 13-36z">
+     <text:p/>
+    </draw:path>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="5.036cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="9.957cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">e non voltarti indietro, va, </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="3.402cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="10.592cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5"><text:s text:c="3"/></text:span><text:span text:style-name="T5">Re <text:s text:c="16"/>La</text:span><text:span text:style-name="T6"> </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="4.359cm" svg:height="0.433cm" svg:x="1.517cm" svg:y="11.227cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6"><text:s/></text:span><text:span text:style-name="T6">e non voltarti indietro. </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+   </draw:page>
+  </office:drawing>
+ </office:body>
+</office:document>

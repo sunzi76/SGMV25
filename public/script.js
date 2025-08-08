@@ -452,9 +452,11 @@ document.addEventListener('DOMContentLoaded', () => {
         diagramsModal.classList.remove('hidden');
 
         try {
+            // Chiama la nuova rotta API che analizza l'XML
             const response = await fetch(`${API_BASE_URL}/diagrams/${filename}`);
             if (!response.ok) {
-                throw new Error('Nessuna nota musicale trovata per questo file.');
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Nessuna nota musicale trovata per questo file.');
             }
             const data = await response.json();
             const chords = data.notes;
@@ -464,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            diagramsContainer.innerHTML = ''; // Svuota il contenitore prima di riempirlo
+            diagramsContainer.innerHTML = ''; // Svuota il contenitore
 
             for (const chord of chords) {
                 const diagramImage = generateChordDiagram(chord);

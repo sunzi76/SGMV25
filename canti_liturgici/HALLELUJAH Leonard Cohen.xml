@@ -1,0 +1,2133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<office:document xmlns:officeooo="http://openoffice.org/2009/office" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xmlns:smil="urn:oasis:names:tc:opendocument:xmlns:smil-compatible:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.graphics">
+ <office:meta><meta:document-statistic meta:object-count="292"/><meta:generator>LibreOffice/7.3.7.2$Linux_X86_64 LibreOffice_project/e114eadc50a9ff8d8c8a0567d6da8f454beeb84f</meta:generator></office:meta>
+ <office:settings>
+  <config:config-item-set config:name="ooo:view-settings">
+   <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
+   <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">14099</config:config-item>
+   <config:config-item config:name="VisibleAreaHeight" config:type="int">9999</config:config-item>
+  </config:config-item-set>
+  <config:config-item-set config:name="ooo:configuration-settings">
+   <config:config-item config:name="ApplyUserData" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="BitmapTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.sob</config:config-item>
+   <config:config-item config:name="CharacterCompressionType" config:type="short">0</config:config-item>
+   <config:config-item config:name="ColorTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.soc</config:config-item>
+   <config:config-item config:name="DashTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.sod</config:config-item>
+   <config:config-item config:name="DefaultTabStop" config:type="int">1270</config:config-item>
+   <config:config-item config:name="EmbedAsianScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedComplexScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="EmbedLatinScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedOnlyUsedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="GradientTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.sog</config:config-item>
+   <config:config-item config:name="HatchTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.soh</config:config-item>
+   <config:config-item config:name="IsKernAsianPunctuation" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintBooklet" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintBookletBack" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsPrintBookletFront" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsPrintDate" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintFitPage" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintHiddenPages" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsPrintPageName" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintTilePage" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintTime" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="LineEndTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.soe</config:config-item>
+   <config:config-item config:name="LoadReadonly" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="MeasureUnit" config:type="short">7</config:config-item>
+   <config:config-item config:name="PageNumberFormat" config:type="int">4</config:config-item>
+   <config:config-item config:name="ParagraphSummation" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintQuality" config:type="int">0</config:config-item>
+   <config:config-item config:name="PrinterIndependentLayout" config:type="string">low-resolution</config:config-item>
+   <config:config-item config:name="PrinterName" config:type="string"/>
+   <config:config-item config:name="PrinterPaperFromSetup" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrinterSetup" config:type="base64Binary"/>
+   <config:config-item config:name="SaveThumbnail" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="SaveVersionOnClose" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="ScaleDenominator" config:type="int">1</config:config-item>
+   <config:config-item config:name="ScaleNumerator" config:type="int">1</config:config-item>
+   <config:config-item config:name="UpdateFromTemplate" config:type="boolean">true</config:config-item>
+  </config:config-item-set>
+ </office:settings>
+ <office:scripts>
+  <office:script script:language="ooo:Basic">
+   <ooo:libraries xmlns:ooo="http://openoffice.org/2004/office" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+  </office:script>
+ </office:scripts>
+ <office:font-face-decls>
+  <style:font-face style:name="Arial" svg:font-family="Arial"/>
+  <style:font-face style:name="Arial1" svg:font-family="Arial" style:font-pitch="variable"/>
+  <style:font-face style:name="DejaVu Sans" svg:font-family="&apos;DejaVu Sans&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="DejaVu Sans1" svg:font-family="&apos;DejaVu Sans&apos;" style:font-pitch="variable"/>
+  <style:font-face style:name="Liberation Sans" svg:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  <style:font-face style:name="Liberation Serif" svg:font-family="&apos;Liberation Serif&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  <style:font-face style:name="Liberation Serif1" svg:font-family="&apos;Liberation Serif&apos;" style:font-pitch="variable"/>
+  <style:font-face style:name="Noto Sans" svg:font-family="&apos;Noto Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  <style:font-face style:name="Noto Sans Devanagari" svg:font-family="&apos;Noto Sans Devanagari&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="Oswald" svg:font-family="Oswald"/>
+  <style:font-face style:name="Oswald1" svg:font-family="Oswald" style:font-pitch="variable"/>
+  <style:font-face style:name="Poppins" svg:font-family="Poppins" style:font-pitch="variable"/>
+  <style:font-face style:name="Poppins1" svg:font-family="Poppins"/>
+ </office:font-face-decls>
+ <office:styles>
+  <draw:gradient draw:name="Filled" draw:style="linear" draw:start-color="#ffffff" draw:end-color="#cccccc" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="30deg" draw:border="0%"/>
+  <draw:gradient draw:name="Filled_20_Blue" draw:display-name="Filled Blue" draw:style="linear" draw:start-color="#729fcf" draw:end-color="#355269" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="30deg" draw:border="0%"/>
+  <draw:gradient draw:name="Filled_20_Green" draw:display-name="Filled Green" draw:style="linear" draw:start-color="#77bc65" draw:end-color="#127622" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="30deg" draw:border="0%"/>
+  <draw:gradient draw:name="Filled_20_Red" draw:display-name="Filled Red" draw:style="linear" draw:start-color="#ff6d6d" draw:end-color="#c9211e" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="30deg" draw:border="0%"/>
+  <draw:gradient draw:name="Filled_20_Yellow" draw:display-name="Filled Yellow" draw:style="linear" draw:start-color="#ffde59" draw:end-color="#b47804" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="30deg" draw:border="0%"/>
+  <draw:gradient draw:name="Shapes" draw:style="rectangular" draw:cx="50%" draw:cy="50%" draw:start-color="#cccccc" draw:end-color="#ffffff" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="0deg" draw:border="0%"/>
+  <draw:marker draw:name="Arrow" svg:viewBox="0 0 20 30" svg:d="M10 0l-10 30h20z"/>
+  <style:default-style style:family="graphic">
+   <style:graphic-properties svg:stroke-color="#3465a4" draw:fill-color="#729fcf" fo:wrap-option="no-wrap"/>
+   <style:paragraph-properties style:text-autospace="ideograph-alpha" style:punctuation-wrap="simple" style:line-break="strict" style:writing-mode="lr-tb" style:font-independent-line-spacing="false">
+    <style:tab-stops/>
+   </style:paragraph-properties>
+   <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:font-name="Liberation Serif" fo:font-size="24pt" fo:language="en" fo:country="US" style:font-name-asian="DejaVu Sans" style:font-size-asian="24pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="DejaVu Sans" style:font-size-complex="24pt" style:language-complex="hi" style:country-complex="IN"/>
+  </style:default-style>
+  <style:style style:name="standard" style:family="graphic"/>
+  <style:style style:name="objectwithoutfill" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:fill="none"/>
+  </style:style>
+  <style:style style:name="Object_20_with_20_no_20_fill_20_and_20_no_20_line" style:display-name="Object with no fill and no line" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none"/>
+  </style:style>
+  <style:style style:name="Text" style:family="graphic">
+   <style:graphic-properties draw:stroke="solid" svg:stroke-color="#cccccc" draw:fill="solid" draw:fill-color="#eeeeee"/>
+   <style:text-properties style:font-name="Noto Sans" fo:font-family="&apos;Noto Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  </style:style>
+  <style:style style:name="A4" style:family="graphic" style:parent-style-name="Text">
+   <style:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="18pt"/>
+  </style:style>
+  <style:style style:name="Title_20_A4" style:display-name="Title A4" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+   <style:text-properties fo:font-size="44pt"/>
+  </style:style>
+  <style:style style:name="Heading_20_A4" style:display-name="Heading A4" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+   <style:text-properties fo:font-size="24pt"/>
+  </style:style>
+  <style:style style:name="Text_20_A4" style:display-name="Text A4" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+  </style:style>
+  <style:style style:name="A4" style:family="graphic" style:parent-style-name="Text">
+   <style:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="18pt"/>
+  </style:style>
+  <style:style style:name="Title_20_A0" style:display-name="Title A0" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+   <style:text-properties fo:font-size="96pt"/>
+  </style:style>
+  <style:style style:name="Heading_20_A0" style:display-name="Heading A0" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+   <style:text-properties fo:font-size="71.9000015258789pt"/>
+  </style:style>
+  <style:style style:name="Text_20_A0" style:display-name="Text A0" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+  </style:style>
+  <style:style style:name="Graphic" style:family="graphic">
+   <style:graphic-properties draw:fill="solid" draw:fill-color="#ffffff"/>
+   <style:text-properties style:font-name="Liberation Sans" fo:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="18pt"/>
+  </style:style>
+  <style:style style:name="Shapes" style:family="graphic" style:parent-style-name="Graphic">
+   <style:graphic-properties draw:stroke="none" draw:fill="gradient" draw:fill-gradient-name="Shapes"/>
+   <style:text-properties fo:font-size="14pt" fo:font-weight="bold"/>
+  </style:style>
+  <style:style style:name="Filled" style:family="graphic" style:parent-style-name="Shapes">
+   <style:graphic-properties draw:fill="gradient" draw:fill-gradient-name="Filled"/>
+  </style:style>
+  <style:style style:name="Filled_20_Blue" style:display-name="Filled Blue" style:family="graphic" style:parent-style-name="Filled">
+   <style:graphic-properties draw:fill-gradient-name="Filled_20_Blue"/>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Filled_20_Green" style:display-name="Filled Green" style:family="graphic" style:parent-style-name="Filled">
+   <style:graphic-properties draw:fill-gradient-name="Filled_20_Green"/>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%" style:font-name="Liberation Sans" fo:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  </style:style>
+  <style:style style:name="Filled_20_Red" style:display-name="Filled Red" style:family="graphic" style:parent-style-name="Filled">
+   <style:graphic-properties draw:fill-gradient-name="Filled_20_Red"/>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Filled_20_Yellow" style:display-name="Filled Yellow" style:family="graphic" style:parent-style-name="Filled">
+   <style:graphic-properties draw:fill-gradient-name="Filled_20_Yellow"/>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Outlined" style:family="graphic" style:parent-style-name="Shapes">
+   <style:graphic-properties draw:stroke="solid" svg:stroke-width="0.081cm" svg:stroke-color="#000000" draw:fill="none"/>
+  </style:style>
+  <style:style style:name="Outlined_20_Blue" style:display-name="Outlined Blue" style:family="graphic" style:parent-style-name="Outlined">
+   <style:graphic-properties svg:stroke-color="#355269"/>
+   <style:text-properties fo:color="#355269" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Outlined_20_Green" style:display-name="Outlined Green" style:family="graphic" style:parent-style-name="Outlined">
+   <style:graphic-properties svg:stroke-color="#127622"/>
+   <style:text-properties fo:color="#127622" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Outlined_20_Red" style:display-name="Outlined Red" style:family="graphic" style:parent-style-name="Outlined">
+   <style:graphic-properties svg:stroke-color="#c9211e"/>
+   <style:text-properties fo:color="#c9211e" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Outlined_20_Yellow" style:display-name="Outlined Yellow" style:family="graphic" style:parent-style-name="Outlined">
+   <style:graphic-properties draw:stroke="solid" svg:stroke-color="#b47804"/>
+   <style:text-properties fo:color="#b47804" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Lines" style:family="graphic" style:parent-style-name="Graphic">
+   <style:graphic-properties draw:stroke="solid" svg:stroke-color="#000000" draw:fill="none"/>
+  </style:style>
+  <style:style style:name="Arrow_20_Line" style:display-name="Arrow Line" style:family="graphic" style:parent-style-name="Lines">
+   <style:graphic-properties draw:marker-start="Arrow" draw:marker-start-width="0.2cm" draw:marker-end="Arrow" draw:marker-end-width="0.2cm" draw:show-unit="true"/>
+  </style:style>
+  <style:style style:name="Arrow_20_Dashed" style:display-name="Arrow Dashed" style:family="graphic" style:parent-style-name="Lines">
+   <style:graphic-properties draw:stroke="dash"/>
+  </style:style>
+ </office:styles>
+ <office:automatic-styles>
+  <style:page-layout style:name="PM0">
+   <style:page-layout-properties fo:margin-top="0cm" fo:margin-bottom="1cm" fo:margin-left="1.7cm" fo:margin-right="1cm" fo:page-width="20.99cm" fo:page-height="29.668cm" style:print-orientation="portrait"/>
+  </style:page-layout>
+  <style:style style:name="dp1" style:family="drawing-page">
+   <style:drawing-page-properties draw:background-size="border" draw:fill="none"/>
+  </style:style>
+  <style:style style:name="dp2" style:family="drawing-page"/>
+  <style:style style:name="gr1" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="solid" draw:fill-color="#ffffff"/>
+  </style:style>
+  <style:style style:name="gr2" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="solid" draw:fill-color="#222222"/>
+  </style:style>
+  <style:style style:name="gr3" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0.952cm" fo:min-width="0.952cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm"/>
+   <style:paragraph-properties style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="gr4" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0.634cm" fo:min-width="0.634cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm"/>
+   <style:paragraph-properties style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="gr5" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0.555cm" fo:min-width="0.555cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm"/>
+   <style:paragraph-properties style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="gr6" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0cm" fo:min-width="0cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm" style:mirror="none"/>
+  </style:style>
+  <style:style style:name="gr7" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="solid" draw:fill-color="#999999"/>
+  </style:style>
+  <style:style style:name="gr8" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0.443cm" fo:min-width="0.443cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm"/>
+   <style:paragraph-properties style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="gr9" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0.37cm" fo:min-width="0.37cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm"/>
+   <style:paragraph-properties style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="P1" style:family="paragraph">
+   <loext:graphic-properties draw:fill="solid" draw:fill-color="#ffffff"/>
+  </style:style>
+  <style:style style:name="P2" style:family="paragraph">
+   <loext:graphic-properties draw:fill="solid" draw:fill-color="#222222"/>
+  </style:style>
+  <style:style style:name="P3" style:family="paragraph">
+   <style:paragraph-properties fo:text-align="start" style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="P4" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="27pt" style:font-size-asian="27pt" style:font-size-complex="27pt"/>
+  </style:style>
+  <style:style style:name="P5" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="18pt" style:font-size-asian="18pt" style:font-size-complex="18pt"/>
+  </style:style>
+  <style:style style:name="P6" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="15.8000001907349pt" style:font-size-asian="15.8000001907349pt" style:font-size-complex="15.8000001907349pt"/>
+  </style:style>
+  <style:style style:name="P7" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+  </style:style>
+  <style:style style:name="P8" style:family="paragraph">
+   <loext:graphic-properties draw:fill="solid" draw:fill-color="#999999"/>
+  </style:style>
+  <style:style style:name="P9" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="12.6000003814697pt" style:font-size-asian="12.6000003814697pt" style:font-size-complex="12.6000003814697pt"/>
+  </style:style>
+  <style:style style:name="P10" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="10.5pt" style:font-size-asian="10.5pt" style:font-size-complex="10.5pt"/>
+  </style:style>
+  <style:style style:name="T1" style:family="text">
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Oswald" fo:font-size="27pt" fo:font-weight="bold" style:font-size-asian="27pt" style:font-weight-asian="bold" style:font-name-complex="Oswald" style:font-size-complex="27pt" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="T2" style:family="text">
+   <style:text-properties fo:color="#222222" loext:opacity="100%" style:font-name="Oswald" fo:font-size="18pt" fo:font-weight="bold" style:font-size-asian="18pt" style:font-weight-asian="bold" style:font-name-complex="Oswald" style:font-size-complex="18pt" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="T3" style:family="text">
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Arial" fo:font-size="15.8000001907349pt" fo:font-weight="normal" style:font-size-asian="15.8000001907349pt" style:font-weight-asian="normal" style:font-name-complex="Arial" style:font-size-complex="15.8000001907349pt" style:font-weight-complex="normal"/>
+  </style:style>
+  <style:style style:name="T4" style:family="text">
+   <style:text-properties fo:color="#454545" loext:opacity="100%" style:font-name="Oswald" fo:font-size="12.6000003814697pt" fo:font-weight="bold" style:font-size-asian="12.6000003814697pt" style:font-weight-asian="bold" style:font-name-complex="Oswald" style:font-size-complex="12.6000003814697pt" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="T5" style:family="text">
+   <style:text-properties fo:color="#454545" loext:opacity="100%" style:font-name="Poppins1" fo:font-size="10.5pt" fo:font-weight="bold" style:font-size-asian="10.5pt" style:font-weight-asian="bold" style:font-name-complex="Poppins1" style:font-size-complex="10.5pt" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="T6" style:family="text">
+   <style:text-properties fo:color="#454545" loext:opacity="100%" style:font-name="Poppins1" fo:font-size="10.5pt" fo:font-weight="normal" style:font-size-asian="10.5pt" style:font-weight-asian="normal" style:font-name-complex="Poppins1" style:font-size-complex="10.5pt" style:font-weight-complex="normal"/>
+  </style:style>
+  <text:list-style style:name="L1">
+   <text:list-level-style-bullet text:level="1" text:bullet-char="●">
+    <style:list-level-properties text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="2" text:bullet-char="●">
+    <style:list-level-properties text:space-before="0.6cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="3" text:bullet-char="●">
+    <style:list-level-properties text:space-before="1.2cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="4" text:bullet-char="●">
+    <style:list-level-properties text:space-before="1.8cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="5" text:bullet-char="●">
+    <style:list-level-properties text:space-before="2.4cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="6" text:bullet-char="●">
+    <style:list-level-properties text:space-before="3cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="7" text:bullet-char="●">
+    <style:list-level-properties text:space-before="3.6cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="8" text:bullet-char="●">
+    <style:list-level-properties text:space-before="4.2cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="9" text:bullet-char="●">
+    <style:list-level-properties text:space-before="4.8cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="10" text:bullet-char="●">
+    <style:list-level-properties text:space-before="5.4cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+  </text:list-style>
+ </office:automatic-styles>
+ <office:master-styles>
+  <draw:layer-set>
+   <draw:layer draw:name="layout"/>
+   <draw:layer draw:name="background"/>
+   <draw:layer draw:name="backgroundobjects"/>
+   <draw:layer draw:name="controls"/>
+   <draw:layer draw:name="measurelines"/>
+  </draw:layer-set>
+  <style:master-page style:name="master-page3" style:page-layout-name="PM0" draw:style-name="dp1"/>
+  <style:master-page style:name="master-page28" style:page-layout-name="PM0" draw:style-name="dp1"/>
+ </office:master-styles>
+ <office:body>
+  <office:drawing>
+   <draw:page draw:name="page1" draw:style-name="dp2" draw:master-page-name="master-page3">
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="17.392cm" svg:height="27.081cm" svg:x="1.799cm" svg:y="1.378cm" svg:viewBox="0 0 17393 27082" draw:points="0,0 17393,0 17393,27082 0,27082">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr2" draw:text-style-name="P2" draw:layer="layout" svg:width="17.392cm" svg:height="0.053cm" svg:x="1.799cm" svg:y="4.396cm" svg:viewBox="0 0 17393 54" draw:points="0,0 17393,0 17393,54 0,54">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="17.392cm" svg:height="27.292cm" svg:x="1.799cm" svg:y="28.459cm" svg:viewBox="0 0 17393 27293" draw:points="0,0 17393,0 17393,27293 0,27293">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr3" draw:text-style-name="P4" draw:layer="layout" svg:width="6.665cm" svg:height="1.11cm" svg:x="1.799cm" svg:y="3.115cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T1">HALLELUJAH</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr4" draw:text-style-name="P5" draw:layer="layout" svg:width="5.603cm" svg:height="0.738cm" svg:x="3.388cm" svg:y="5.157cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T2"><text:s/></text:span><text:span text:style-name="T2">Leonard Cohen</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.741cm" svg:x="2.434cm" svg:y="8.605cm" svg:viewBox="0 0 663 742" draw:points="0,0 663,0 663,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.264cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="7.758cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">Intro:</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="3.758cm" svg:y="8.605cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="8.685cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.689cm" svg:height="0.741cm" svg:x="5.425cm" svg:y="8.605cm" svg:viewBox="0 0 690 742" draw:points="0,0 690,0 690,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="3.77cm" svg:y="8.685cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="6.775cm" svg:y="8.605cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="5.439cm" svg:y="8.685cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="3.096cm" svg:y="10.431cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="6.774cm" svg:y="8.685cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="9.105cm" svg:y="10.431cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="3.102cm" svg:y="10.511cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="9.107cm" svg:y="10.511cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="4.102cm" svg:y="12.284cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="7.965cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="11.438cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">I heard there was a secret chord</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="10.773cm" svg:y="12.284cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="12.364cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="10.775cm" svg:y="12.364cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.688cm" svg:height="0.742cm" svg:x="3.758cm" svg:y="14.137cm" svg:viewBox="0 0 689 743" draw:points="0,0 689,0 689,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="10.086cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="13.291cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">That David played and it pleased the lord</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.979cm" svg:height="0.742cm" svg:x="9.449cm" svg:y="14.137cm" svg:viewBox="0 0 980 743" draw:points="0,0 980,0 980,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="3.769cm" svg:y="14.217cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.688cm" svg:height="0.742cm" svg:x="14.77cm" svg:y="14.137cm" svg:viewBox="0 0 689 743" draw:points="0,0 689,0 689,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="9.441cm" svg:y="14.217cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="17.443cm" svg:y="14.137cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="14.779cm" svg:y="14.217cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="17.448cm" svg:y="14.217cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.661cm" svg:height="0.742cm" svg:x="5.108cm" svg:y="15.99cm" svg:viewBox="0 0 662 743" draw:points="0,0 662,0 662,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="10.776cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="15.144cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">But you don&apos;t really care for music, do you? </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.689cm" svg:height="0.742cm" svg:x="11.434cm" svg:y="15.99cm" svg:viewBox="0 0 690 743" draw:points="0,0 690,0 690,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="5.104cm" svg:y="16.07cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.979cm" svg:height="0.742cm" svg:x="15.458cm" svg:y="15.99cm" svg:viewBox="0 0 980 743" draw:points="0,0 980,0 980,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="11.443cm" svg:y="16.07cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="15.447cm" svg:y="16.07cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="3.758cm" svg:y="17.843cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="9.48cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="16.997cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">Well it goes like this the fourth, the fifth</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="10.111cm" svg:y="17.843cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="3.769cm" svg:y="17.923cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="10.108cm" svg:y="17.923cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="3.758cm" svg:y="19.696cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="7.605cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="18.85cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">The minor fall and the major lift</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="9.105cm" svg:y="19.696cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="3.769cm" svg:y="19.776cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="13.102cm" svg:y="19.696cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.925cm" svg:height="0.624cm" svg:x="9.107cm" svg:y="19.776cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">MI7</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="13.111cm" svg:y="19.776cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.741cm" svg:x="4.102cm" svg:y="22.45cm" svg:viewBox="0 0 663 742" draw:points="0,0 663,0 663,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="9.286cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="20.703cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">The baffled king composing hallelujah</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="8.099cm" svg:y="22.45cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="22.529cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.661cm" svg:height="0.741cm" svg:x="12.123cm" svg:y="22.45cm" svg:viewBox="0 0 662 742" draw:points="0,0 662,0 662,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="8.107cm" svg:y="22.529cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="12.11cm" svg:y="22.529cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.741cm" svg:x="4.102cm" svg:y="24.303cm" svg:viewBox="0 0 663 742" draw:points="0,0 663,0 663,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="7.741cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="23.456cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">Hallelujah, hallelujah, hallelujah</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="6.431cm" svg:y="24.303cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="24.382cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.741cm" svg:x="7.781cm" svg:y="24.303cm" svg:viewBox="0 0 663 742" draw:points="0,0 663,0 663,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="2.098cm" svg:height="0.624cm" svg:x="6.438cm" svg:y="24.382cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.741cm" svg:x="5.769cm" svg:y="27.082cm" svg:viewBox="0 0 663 742" draw:points="0,0 663,0 663,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="5.154cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="25.309cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">hallelu-u-u-u---jah ....</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="14.108cm" svg:y="27.082cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="5.771cm" svg:y="27.162cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="6.357cm" svg:height="0.99cm" svg:x="1.795cm" svg:y="1.373cm">
+     <draw:image draw:mime-type="image/png">
+      <office:binary-data>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
+      </office:binary-data>
+      <text:p/>
+     </draw:image>
+    </draw:frame>
+    <draw:frame draw:style-name="gr6" draw:text-style-name="P7" draw:layer="layout" svg:width="1.599cm" svg:height="1.625cm" svg:x="1.795cm" svg:y="4.734cm">
+     <draw:image draw:mime-type="image/png">
+      <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAAL0AAADACAYAAABRa2IvAABIBElEQVR42u3dC7idVXkn8AOB
+       hBiJSokGLxUFr6idVkcdbLWPtfVaL6081kGrljrqqKM+aNV6aWvVUauOdrw7yGgrPNqqU61o
+       hVoqVi3eEEIgN3KFoAkkJISEELJn/T6+N/342Jf17bP3OXvv7PU8K/vknL2//V3+613/9/++
+       610zM9M2bdM2bdM2bdM2bdM2bXdsCxcunFm8ePHMscceO7N06dKZu9zlLjN3vetdi9d69/tq
+       v9vd7naHHn9zLP3Od77z9CZP29y3O93pTodAXQVtCchl6W+npr/9YepvT7//UOqfSf1LCejn
+       p35x6lem/1+T+p4E7FZ63ZFeN6Z+aerfTf281M9N/ZOpvy+9//XpPc9Kxz+l3WCJAbFkyZLp
+       w5m22TfWtm6dASwB/5Hp5xem/o70nnPS3/49ve4C4jnoG9P3XpBeP5Fez0yvT0+AX14dEAbA
+       McccM32A09a7LVu27BCtCBCl/98lAf2p6ee/TP3bqd84R+Bu1NN5bTAAU39l+vlX0+UsMPu4
+       DrPTokWLpg942m5rgBF0BeAT8B+Q/v+iBJZPpf+vSAA6OIogz+i7zQhmo3RtT06XutQMwOfg
+       e0zbYcjLA+wsYfr5Ien1XQkgV40pwHNmggPpGr+VrvnF6RYc6x6Y2ZYvXz5z8sknT0ExqS1A
+       XvLye6af/ySB4ZJJBXqnnq57b+p/n+7HcxLgFwF/KEjTNiENn2XZAJ6lSw/3osMN6N1oULov
+       /ye9Pjx8GUZh2saYwnjFZ0urfvUU5F0p0D8nwD8lnN8p9x8jmTEsFgqTHuIH5lBOnJR+GWc+
+       3c6jSZ9T+XNEW01mNFX/7TyqJj886qijzk+n9bXU/yn1f0n9u6n/e+o/Tf2y1Felvjb1K1L/
+       Weo/Sv37qf9r6v+c+jdT//rixYsvTMdbM0+W/5r0+iYzJcs/pT0j1FgiVCY9pPty0ObKGUy+
+       wo/T1/9bCeYVqW9OfXfqB1NvDbDfkvp1qV9VDprvLViw4HsJhFfMEfh3pO/6HxWjMgXdfLXg
+       nqktSQ/if6YHsm+YkdAEtItKi7wx9X0DBnY/3eDakfpKM0m6Fz+I9IYhDfRV6fUZ4exOc4Hm
+       WHqMhK7Uz0gP+hdDeMg3HHHEEd8sacm6EQF57iBAny5Ig+DiIVn+C+QCTdMd5pC3l9LjqYPW
+       2NPx9icujqpcWtKUgYDxlFNOaT3xiU9sPfKRj/QdrfQdczkItqZ+cQLp2kEHu+T/pGMfD/jT
+       NIchqjLD4O3poa0sgb5zGOD7yU9+0vre977XesMb3tB66EMfWnznPMwCt5Y+x4/T/ds2yBlR
+       JiilJzJQp20A1r2Sc/6KQT2sNDWjK6tLB3FoYDvhhBNaa9eubV188cWtM888s3Wf+9ynlYAx
+       3zRof+obEn1bb+YZ0D29NF3Xg4J2TtssuHupGNw13dR/HMTDSdP89lIF2T9scN3vfvdrve99
+       72udddZZrdNPP7113/vedxT9gBsM/nSfDwyA8tyUjvPyqqGatgYNR+QoJeA/rtSLZ0thKC7r
+       Uz8wV4C6xz3u0Tr77LNb55xzTutXfuVXRt0JvpEKlEA7CPXnHxmq0veagjmHzpQy5FFl5uOt
+       s3kARx999OXpWJuGoJ337L/+67/e+uAHP9j6zGc+U4D+yCOPHHXgt0qVamWaEX8x28AWg8Vw
+       TZ3cHrp7OKup/2iWnH1DSWOGCvZ73eterd/8zd8suHu7vx933HFmmeJnXP4JT3hCMQAWLlw4
+       6uC/WaQ4PZN9swD+renz70zHWcCQTelOG8CX/TSh/FkEUHaXOvX+uQBHsoiFHPmkJz2p7d/T
+       TNNKDmPR/awbKFQc9GcMLP+OdO6XzjKo9f1SdZumMtT5e7opfzWbm5sOdUnJTecMFED/+Mc/
+       vvXc5z73dhq8nzmyAL548eKi/9Iv/VLr4Q9/eOue97znOFj6et+crPXmWTyfnQnwj43Z/LBu
+       yfIFf//iLJzU9WUQZqgPvhMnf9rTntZ6/etf33rIQx5yCMxew7qPgEQ5qE4EuMJs2ifd2Zf6
+       M2NWP+xarNdM7c7pRlzYz01MYBJw2VIGXobyoAPEvo9jSmev/v2kk05qPfCBD7wDpwf4nOOO
+       aTebXt0n8A+SNQ874JOx9AT8e1h83c/NSwNm+7AiqHVH9a//+q8LZxV1CfriHNAVgwCV4ay2
+       4+gsvfemqb04Fqs/JipOTorDxnRdB/vk+e8+bJSdKE6UHv4D08Vv7pO709xvGdYDBVTWmzUG
+       1Je//OWtpzzlKR3B2gvE+LyZwLEe9KAHtX75l395UuiOvpMB6hP4X0RtS4o72QoNh4Zj0/Qm
+       pc/RkK8Z9oPkmJ522mmtu9/97gVYH/CABxxyRAHXa+6xWHYOLaA7nuNMEOCraQ3r+qQ7F6K4
+       Ewn8yjK+J/Vzc9I0yFHdNcyHh7oAJlA/+tGPLoD/rGc9q6AwziEGALmx+jn0JjT5mCkAnVLz
+       iEc8YhJB3qlv7CeXR0yGmzdRwK+suHlEP4scklO4Zi7SB1hjacC/8zu/U3QWXyDJYAhuDvhe
+       URq/91oNQJEwDQqDJgbBYda3pxl5Vz+L0gWxJobjl+U37pcubHsf/P2KuQA8sALpr/3arxXS
+       I+BKEOOABqBzupz5Rz3qUeOuzsy270o0bls/HL9c9jkROvyydFGb+gT8UNMIHvvYxxZWGW1B
+       SQA9eHcv2bHeX/3qVxezw2EM9mq/KQ38zX1Y/I+M9TrcEvB3bipLksFmbqsUMNQHg6qw6pxT
+       cmNTkNf7M5/5zEL1QYWmoL/NwU30r59SiW+JGv3jCPij04n/W8Mpbl8ZcBrqA8HVRVIHtYrJ
+       DPGCF7ygcHrNFBMUhR1EFHd1H8A/faxydcrFwkekaeprDS28YNO2uXgYz372s1tPfvKTD+XC
+       NJEhO4E+8m9CqpwC/naBrDVN1+Cqtozjj7xzW0ZaOSN/2RDwQts7hnnzWeEXvvCFRXqvIBHn
+       FY/XmyotVBt0yGBBaX7v936veJ0CvGtvCvw9CfAnH3/88aNbWbkSbT21SV33NI2Jrm4f5g3n
+       qH784x9vvfe972299KUvbT3jGc8o0oGBP6w8ax10h2LTS4HhtL74xS8uaJIcnCmoBw98/qDK
+       ymk2Hl09PoH+uPR6bUOndfOwb7Y1qh/5yEeKgBMtHkir6QP+z6ENZ7ZXmQ5BLI6r45opJiSf
+       Zq6qMjR1bj/B2o/c0sNKiY5vN5Qlrxr2jX7c4x7X+vM///PWq171qkJHb0dVgB7Q6fI5Ko5I
+       7Ste8YpC7pwCublzu2DBgg0NM2qfPVK5+EZhKTG9uSHg1wz6huLVeDvryxrj7+9617sKZaXX
+       4ux2UiOuX/LLwgfwOwPjda97XUGPZitzHsb9ZqklDfCyy+qrcv30/Fv4BAzAf1STRdzD0uEB
+       /sorr2w973nPKxZ2ACfQU1ZESoFX76auAD8NP1KGgbyaTYkivexlL7tDYtkUyI373iVLlmxv
+       4NgqXnv0vKs5pYW/S+pbck8+TW0bZwa48KNqbYF91apVrZ///OdFgaW/+Iu/KBxXC0BCTpyp
+       LORgvXtp9QJYj3nMYwp5U37O05/+9ClgB9evJ2Q08AE/SB2cN/2+srv1NxqctEzJPcNyVrdv
+       397SfvCDH7Te+c53FspKk9yZToNJwEnU1jXUsyxHvRvcI57SvKGhvP3UeaM5Rlw6iRc05PFD
+       WcvKip933nmtz372s623v/3trde85jWFlR+kqhIl+QSzxgXwuY75CPT1DWjOL6S3zDnNKaOu
+       i5tUH5u5rXbkUG7aK1/5ytbHPvax2+nlz3/+8++g0tDk+wGBzxpYPtuJDk2d2tnl6TRZgZUo
+       0futsZ4z4Jd7r7Ly75kvHj9TW/zBUeXExjpVFg61qb+PFi9Q1Q/oe71nmmg2+xo76bndmltW
+       PQH+JGxjTlq5Akp+/P755PE08re97W2tT37yk4fkSBIj4HM86wVTh5njPlVvBrf6qoG1txn0
+       8LV7Fp6lb1JFeBg8XiXgz33uc4VWbkkeVQW9UG2MVNnN2ZwkizyhlGpTA37/zKFbezwqAf+J
+       883jf/jDH7bWr19faPB4POeSoylSajEHGhOqS+TRRPmNES2Z3VV9qQ7UaoqE6+NrmOEmaNH5
+       TYoA5O4Flt6/cGjbAJVOw1HpJq9rUL3gpkHfFEGmj370o60PfehDRSqAXBrRV692+2D9URxg
+       EWTyOodb3szaP2G9+SRmL/fRtbmeCJbpUT1tSnNuW3TC2g/F4htNidq8cb7zaoA9SmpUubsc
+       eYoNKw/set0BrUZYB8Hzc+gFIAuC+S7n08kiO7eoi4OyKTAl519iG6fc/12vYJnZbcLVooPp
+       fvw8NwU5AX75wANWpZU/Jnf3bSc8M4QF3az5n/7pnxYgEBkNGqOz+hLKRE5ZwWqOvFwcFAio
+       qpLjsLMjARmtqlZGqxd7cp5RcgTAX/KSl7T++I//uAiucdLVtxdzeO1rX9t605veVMizcoki
+       F2iCe5PF5R8b+NY/QJ8O+poGVn6g+fHUGWkFSuwBcICI1WM5LfAOsM+1BWxHnVhiqQ8Gobx7
+       +fu///u/X3Tyqrz+b37zm60VK1a0fvSjHxXXZkO2zZs3t3bs2NG68cYbix7t1ltvbe3du7fw
+       Y7z3K1/5SrE+QIqF+2EA1NMsJqRvyLX2CfB3G5i1L638Ebn5NU50GItA/u7v/q6Y9qsFlPwM
+       YBZzoA+c2bksvxFZmFW6A+gssnRmVll/97vfXZz/+eef37rkkkta1113XatpO3DgQGvnzp1F
+       XpH8Isf64he/WESf+THKl0wg6G9KM2WuNP7WgfH6sm7NaZl5z/uH4bwqvgTYLHu1QjD6oNYk
+       FUe0dS43OkCNqoMMbbFs8D3veU8hqb7//e8vNlq79NJLC7AOqt18883F8TZs2FDMDgbTO97x
+       jtYZZ5xR+DmHq7W3eGkgSk7s8Jf6xfMlUaI2wIMa4LWRHhxL9uzRii7Q5udStsPVI03ZtaMa
+       X/rSl1qf+tSnihgCCoK+DLqx+Pv3729t27at6FKpv/71r7c+/elPF478uEmyOautkgX/RSbN
+       +aNZJ6OVa14f1yDyunfQF82ZE3Di4AE59YVF55R+5zvfKYDA2lU57bBL6sUqKz6EV0CzqRqe
+       rgNhPxSmSdu3b1+RVbpu3brC4n/ta18rZhcO/TglxWX2dZnWfuWsSofEtvTp9csNKpINPF0Y
+       iD7wgQ8UHBn48XhW1f+vvvrqwtqxctVUgF66/Gx5f+Tio1RmIpza1plmHZw9UpyH2Ti6nFvO
+       78qVKwuH2DrgD3/4w0Ue0qQtMUzPd1um8X3KrECf+ok5K6LKigYDt/KCUGgNCyZlGGeOFVL/
+       8A//0LrhhhsKGmE2mKnUpQwpkqpjdhDQ6mSt6ykKOYEsvgTVhMzovMw0c93QnGh79uwpBtp3
+       v/vdglpZMUbenTDgr8609ueXDKW/PBu1BTOt/KphXCgLbkMEIKeChMbtoZreNZwW8NtlRb75
+       zW8+FLCa6VDaz7raKANitsiZBQwWzrXZ5sILLyxmm/loBw8eLLpG6gzH1nUb7BNWmmR/ej43
+       ZQoqD26s2VeCUbsznIfYh2jgF0qXZ+kpN7hqaPAcW42lN72zbpzYqkbv3Fh9kVoURFWEdhYb
+       /28a6GHlAR6lqFrc+WjUHG337t2FAfjqV7/aeutb31pEcCewPn5uicBPNJYvm8iUw1rkDcQi
+       kSw1dQafj7/hsPGgJZ95X1WuDEvParPIBiYQ1B282Nu16bmJmNLJqwGk+Wy4PfBTi771rW8V
+       qRr8oerGcBOStrDXBnsZhvi69N4jGy0yKanNlzKt/A3DuEARVikHqMxFF110uzLYAjTRaNYC
+       NMDrfKpaNdB3kvCAoJ9ENN8hNaB6DvPZRGtRPZ2lR7c+//nPFwOzSm9c64Tk/a/PdGifli1f
+       luL+sQ32cB1KDXnOq1A79QZXZb2E81GVahOksZhEPo58ejx9WBmI6MKZZ57ZGsUG/Fu2bCnU
+       I5Fayyf5QnXqxi+KfW4nOScnGafPZlOcsgDrC+fTgdXPPffcwim79tpri4f67W9/u4i+ijyS
+       KnFpnXWjkbP2qpgNqvx2J8BfdtllIwl6Dq3Zx/lx7Mm87kk9wW0CNnQ+mDCas4+tuNHRaYBn
+       yZRWRn09E/RD2/xMdFOQJxy1NWvWFCF+wF67dm2RfyL5CuhZNjMBSz+MTEnJY+TTK664ojXK
+       jY+xcePGQrqk2csBmtDispdnqjjPKTfp7r7o+663tQO9DpgsxpphXhgQK+uBswObCOc3vvGN
+       QhsHdLVtOJOAT62g7gzjPDiEvmscGtmSmoXiiGPISTr11FMncQ+snZma/Rd6Upwyz+a/jULx
+       VVbKA5RnEiqJh4nXozq4PqmSbIgGyT/vpMf32znFZpxxaQwDOhhZmPKA5OjPdtOJUeyLFi26
+       JoPXS348pqOKo/C9Yqw5lYfLEtv7hnlRFlaINFa16O9///vFOlgyJe76hS98oZDrOLoesoht
+       rxIfpFCDIycxi8Yvt2Vcmllx69athXNvBqTZK3VICZvARSdXZao4f9BRxTnhhBMAf1FO2kHy
+       /IdeYhuX5qhy0AL8Fn2Hkyudlj5vQJjWURBrZKtTueV17aw3+RNPF43V/Y6aUV1J5bMG0zg1
+       siVrb4ak2ZMvzYBUnHb3Ysz7jTmbNaf3fK5jdDY9eNTmtzOpzbq5uDBWVtQ1LD0+7/ekTJ2a
+       gt9rrL48mOrnLSmsbm4cqQeW2+HqnDwDQNSXFFpVfryHBDhODRUEeiqOc3f/3CfGAM3pt67n
+       CFeKWJ8B+vVycdpa+9KJfUcm6HfMxUXh7uTJsPQWSvs9sNOhPVDWTDv77LOLYFYEYpynB02e
+       qyacefAUILn5pn0DiTLj2NUFKrIVad/j1BgH6g2w4/buHWWLQ4v6TSC3X5mD1wT4EwRcO+nz
+       Pfl8+vCWmSFvahzdw2LJrQ3VJJ35PYDi8DpnFg3iA+Cvsgt1Fj5Az4pLEmPZ0Rl+ARDQ3s0O
+       Etsi8BXRWgNuHFpkWAK69AzOPkeWxIvfu0eMg3s3gbk41+Ty+jtkXZbe7YJk7fdmWPlL5+qi
+       SJEeJvmN44qf+r11qEApHQBgWXtgBurYql7eSdSzlHPDgbWO1IDhxLLqqA0rT9OWEx8zib8P
+       confMBqA8zlo8pQsFl2KtViGWY+P4575u2rO1unyYyZsf6ybc+pfJlx/9A68noCfPvyY+do2
+       p1thJ5YLwD3IyJQEbGtPrZxCT0QZRWWdH/By2iSgUXJY+nrefOTceK/1rGiR2SFWX/EPRim9
+       AG3hnArWmZlEpc1WsWkc38XuKGifXCWOq/dIMTYTomrSOnB792SSdPt0LesyeP3P7qDXl/r8
+       6zNBv3MuL4o1txROmrFMSQ8MNWHBSHJRy5KV8+ABF+gNBBYeVelUHMlnqUCSs4LvWoaIF48K
+       4GVNGoRmJH6IAW8guz6zl/M2g5nV0DlZqUDPqluLYJAAu4FN7fK+CSs4e2UG6FXMvn1N+zL9
+       4P9l8Pkdc8Xno5uW5ZJwPqPMhYcJ8GYAgEdTVEowMKo7/sl773Zsn0VpzChRXWyUEsro7Sy3
+       5ZHAXC/zId5AeRLIs8YA/QNuIJenxE+x2Zz0jBe96EXF7/1uwhzarX1lXZb15jdmWPnL5/KC
+       WGfWCW9nvarqCstnuuegkR+D9lStdp3WtKtogDIpwARUaIJUh1GJrhrUrHe7qKpzFq+IqLV4
+       BodfF7wTyPN3syOVCvhdo3s1YZp9brHXtxzi9WUW2sJR2fe1vuwPKFl7i0hCp9dxeKBg4SKT
+       EF1hDfFd3LVXxqUoJRBYmWVQsY4Wpsx3o7NzTqlXAFunI+gaZaabdCm+wdll/c2MDII8HDOD
+       hTWTpOIcc8wxObz+7EO17OXPp4d/Sibot8zHRZHdKDT4vQeoHAhgAL2pH8jRmrCGaE04a92c
+       NgPEYEIJRHtHgctTjf7mb/6m4OSccXEFAxiFi2JSnPvISRKEouIYJPKE3BMOPvXG4hszl/tm
+       zYEBboZwDyds4fhPM/B70SHQ0y/tyDxKQal2acYeLFnO0kGKBP2eFTNtAz11h0zpPAEmx1mj
+       3pgpWHggicjvfOvusktZZAOZ48mfMTiBniKD1rkXZjuzlPiCVAp+jftRrXRskAC964ygnAHg
+       PROUj3NZTgW0QwGqXOUmvUeC2S3zcVGUGgGYyJtHQeTUc1xp+RZLAAK1Rs/NtmRBDRjOHbrQ
+       ZJF3FFXVWVyD0jmofSM4JB0av46qDU1SCSz341ADKYpDmaLCkFdZeRacv+N9URalvg42NpYD
+       bEE7BsL9EpOwwMSxe+2iPmkLxg+V/SsXjXwyY2ng2vm6qMhnlyrrYWlSij10tEdKAumxujaW
+       1et1XIBg8TjLwBvlNHrRD4OQoiToE9/NgaaScBb5IP6mAJRsRyVCcmcRg8Tgjlo/nFF0h2xp
+       EBlY6vnEoK1eZ5RKqUdeDQYD27maEYkAZgA0Z0LqX27NXEL4q4WCU8qV384YJSvm66JkUQJl
+       1MBhlU3XLB8rGBXQqmX9UJxeKcacZIAnf/ay6vJYWFnUgw9AAkRBfE/sMcu6xuYK0pIBjc/B
+       uhqkuaDHywHULObczB78Da8stuPW5Uv8n1EQ0wBoNMb5UbCcEw4fFZRZfDPmBBWF2pO5qOS0
+       gteXcuXm+Sjbl7sRg4YyWB315S9/uQAfjitwg+P6PfBW9fewhp06sNK3gRhd6NSichgwGWDo
+       BhWJAsLKCobVF6KL+BpUrCjFBNhYbAMnh9O7rljuF2uEXb//S8lwHBFX4Hd/SJAcXcZBi4Uk
+       zhn1i724UCYigHsnH4exINP2knbHYd1sAnROIag3hzO7cJTSievdw6RZs3QsmYfJgWPJKBYA
+       yMp7uJEvT73pJlfK0zHFc4hRpDqt8X+c3ABjFc0qUWveTMOxtlqLFfYK0MCoAyw6RiunOvkd
+       y23g9AK9GUX3WTQkVm2Z5Ryr2+Ds1Kg7cnBQJjTJNTlf5+ln947R4ACPM/CTkVmdQW8+U4Be
+       vcpM0G+cj4tBaWjOeDHLxZqFI4bn4q9+H0VLUY1eeeMisDg3VQMY6pZWXg+AoAL4OoWEdQQS
+       waBO61MpShLkqkWgDFKyoXNEcXpVM+YzWADiMwYVwPtMv8qS74zllV6dIwNCwzc4XSfKVC2m
+       Nab9Jxk4Pi/oTa5Gf818XIworAeHx1NI0A16s6ma5Qd20zmOy2Frt3FyvUs9YEn5BCxxvYwG
+       648X47zUEe/tFrRyThxMAArLD+SxIQOwGWSAHDuRdKqO5lgsM8vuGADq2vtRgQxQ9M0sI9XY
+       AIrgVdS+5JCb9SSljTno/z3D0n+nAH2D7Mrt83ExJEgWiYWKVf54KY5Kb8bdOXgGBwuPDlFR
+       uoXaWW5W20zBAlatMjVILMCxvQ/3BZh2ljbqR7KaQAxksVQP0IDdufkOASMAdHzH61T0FbgN
+       FvTD+w1oOThoisHSTVYNKVcKglnCvQpaVadwvh+Fc24GNR+iV67SiPcfZoD+J0UqQu5myMOs
+       cdNrJxIPErA8dBIgCyz4Qo/nSFIiOHQUDGF7YKWedNqgATUKfos/h5UHTLOHWYTyYcmgvwN2
+       FTQspMGA/hh8/AkONf7PcgJ2lb/HLAFkBi5L7udOlMWgMGCAFuhdN4pnQHhlpc0geuxG4pyc
+       v/vDSLhf4di2KwxlkJpBvN/MFAtpxhj0F2eoN6sK0NtqPBP0e+fjYgCapQMi1g6oUAh0gkoD
+       9BSSqmUH/G7HpH/j8yiHARVAZvGoMwYVnmtg4OiognOQuhxpDgBlUFBx5MLUa8dHcKoT9wd8
+       M0sshaw3gwMdGlaBKYMnFpEbLK6Voz7GxaEuzrD0Vwe9eX4m6A/MV2AKF0UTPCD6NTDgobEW
+       1mxQzcAM696pXqOBxMp70JG4hZKEU0fRoBCxgAaDVwlbnao2oFNNyu8Bve/TO63QMshdJ39m
+       0OkRzgHo3Vc+hPMwq1BxqqnZY9Z/nIHjGwrQJ3P/0owRsn+esucKa+jBePisMitNuqtuMcPa
+       V1cERYnqTioOK2+2qIIe9zUYqDVAT9WJIFE7rhvbZ6JBYgRN0hdiZ0C9U5Ib+uH7Q3EZ9OIU
+       xw+axJgwKgJuYwz6SzNwfEuRf5N+eG3Gm3fOx4WgLCwSYHpAOC3lBsjsJlitSY/SCLKIigbV
+       6ZReTJ8Hejq442sUG1Ioq66jTwBXj+yWNRKL2UWwCnCbWmKUhbNqFkNjur2PimNADnrNLuCj
+       N3oUh+LrEAbGtKLxykzGslg09k0Zq06unY8L4VB68Hg86246Rms4qWTHamKZASAwBfyCT1Gh
+       rN3esrg7S66Hbg7gBgI1g2qCWhgU1Wil4xkwBoUZqN/GursutMKg6SRH4vuxQiwnmtu0cbBJ
+       tHwP50GmRdU67ccra3OEt+xckwn643MzLK+bjwtBZciHHEhA48jSzaUE1zMEURxOmIEQ/F52
+       Ybvt4ykvjkeyDIWD4gJcHj4qRfYzOOIzwv7+PojtdgCYI8vKs/jdYgBAz/8Yxp60BptzAXrn
+       wo8R4e6UpYr6tdvGaFzWypaspdg28+WZacVzfiGmWZmQorIeOgvJwpsBKDadglnAj98LuNQz
+       DuXEsPBoA6se6knQnIiKAhsqRcrD/dspMe1azqAgM0YCG4vfbaM23Ds0/txzaNL4S3wGA12w
+       TpJb/d7i+rJI/U2uzoiC/opMS38EevOCUVZvdPydk4kD4/N08U4bBKMjUeKDpa5rzwYDC89x
+       EwCqR0YjdRjYAa2JIpI7C0QdeVZe71UkFjDNMmIGnSTOflUc1xuBP9cM2PV7xnjIFvU3s+yI
+       gn5FhpXfVziyDVZNzYuCI4MRzxSFjQUQAlOdqnUZDKHioEbtVv7j7iw960aDD8cO+HB5Wj0/
+       otsaVNQALYn6kU2ta4DeOXAkezUKi/cOavtOgOcjRaVj58KHEXAzw8XKM/zevWBsVFMY4fW1
+       l2SAfntIlrlFW+eF4qAjoq24ptRaPJ+i4sG0WwARejqwSyVotzqIMhP5KPWAkIUfnNXYSI31
+       Bg7/Bw5c3OcAF2D6qXcZW4H6Pj5ElVr1Un18fwzUQbRIn+DDAD2KQw4m+0rME4BzTyhVos+c
+       2XFNOEuA31CAPo3o/zLKaQhBSTwED4OCgu6YZttZce8N6dJiDynIddmSE8tHqG9nz9KjPZ3C
+       94Nqod4AMAubO1N4n0GSMzM0WZMr1YFkaQZEI1EZawUAHpUUuWbtGZFOQboxWRx+WQH69MPD
+       M0F/3ShcHKrTa1VUTM2WArJcVSpk5sBRu+njw24GXOTIePX/3D1p0RtOdjU24OfIoGyq1Qfo
+       +QssvWWK9HpW3v0jGuDyaKWZdoRB/7MMQeb7Re5N+uf+maDfNgoXF1vbA2+n94Qji4NyAKtr
+       Sn0e10dvBukUNmmRHCb2wJn2/9zZxfuAsxqljV0W0ZScdb5VaoOikYINQBadVi8dAXcnT6oU
+       IRdJlNoA6JXXNMqcPmH9/AL0yVG5eyboN4zKBbrx3arvAjapk76PL3tl7UmZpm2DIWdBxzAa
+       UIY+D2iRGZkrRwI9n4OMWj9/FEQOvnSNHF+DM47ihZPsuHwmQEcfGQlypczTWHfbaxnmfPVk
+       6C7P4PRfieWCR+bsJqjMwqhcoNThbkWcUCC8nw+gsWBWBlmwbXo2fePv/VCC2TZWGZeX+hup
+       xn7OBT2rDIAoBw5ebWiK33E8XV8vCdUARJdie1ISr1mQwyo2IvqK4hhglkyy9L2o5Xz1JUuW
+       5NSq/1gBeiWMk8m/ctTqWHbrIqrdipByvlh1SgNg4/UeHgXIWlCDpltZvGGDHiBj8YmOTwNd
+       LjUSKBJtBsJ6lQXXS3alUNXVqXZ8nqX3Pg4848Dfcf8C9CgOahPK2YiqN/szo7GvDclS0tlX
+       M/aNvXKULlTmY32z5OpAiHowEsk4foAihQFQPDgSXdMleLNtpEbfCWSRdwO0uD3fI/h9O9oF
+       zAYGAKIYMkjxblafEYhFI4DMgqM4ZEYDyvHq12rwoX7OJXZnjNRqnN6gMjOaMX2HXHvWfkR1
+       +p2ZRVyfftxxx90G+qVLl34gY/fl60ftYsmX7Tim9AULTKg4+LtIY9R7EUZnwQACrx5GaL+T
+       ZQ26wdKjNgAv5weXFngDLk6qAYl2AK8ZKZb1OX85QKREQSOFpVhfjqb8HKD3fp/loAJzZIL6
+       f9Vxj/hD1MI06GJtMCqIGvKdSMUCU77D6rDYrWXE+uYc0C9btuwBEZEF/JeN8uqpbpsb0+Lr
+       Ojy+zwkDftIb7ZkTxiELSyVvXF494M9Fq/oPwaNZYTEDjjbn2/la4M7nwM0NiFiW6D1ALjLt
+       1UymGCtw+p0oMqoSjmkMLNdusPgug6Ia2Io0BOeC3shgjcoI1gnEEkxypcHgPMwAY7oxgzSa
+       I4sKZ5DfYJ3stlG7YKChMIRMGdQnqI7XsFSxEVuUuwYYFjRXI58NrakrMEDIugJruw2fBdgA
+       z2xmgFKfpF84Z8qKwYF6sLzeh/bExsk6IEcmJ2tvtkN56s47isO/MMBkWQpAoYD8H8dn6c0m
+       jmFQON92maujnkufznn1oQKukL948eJ7Z4J+06iB3oOwuqmqH7P0KAzAUxs8QJyUxQMev/dA
+       gYi1n01ufD9Zl34nmY3TyGGMAeucJHtVV2r5GcicN5/EtbD6wM438Wows+gsPKDzFwL0BoAI
+       MPqDvtS1fAMer+dPsORmTo6sNI+w9AwGS+8+66PG69P9y0kr/vqhUt3lJmuc2X0ZoF87aqCn
+       ypjSqQzVXBzAZgHJb8qCmA1YMWmzZEtg8irk3k/lsCYpB+0a7s6/qJ4zYAIe3u7cYjC4Fk47
+       wOPzrgul0QHQ+yk2LD2w8xXwdLMJQEdpEpSJjl91lPF8fwN6jiopFL2hcLlvEvhCvUFzDNSo
+       NDEqPeF3d4al/1+322GwrFz8b70+aCe3UdRohc5xWFMwq0SWZB1N2VSJsPY4MIcRgGL3krBk
+       w6I13XYd50Q7PzRHoMqrAchSoyLOH9Xgl6A7sb+W66BGoRpR1yb2jeWjoDSOS6+P4FdEff0f
+       sOtBKvzfIhGBKc4/ax95TgYXJ9YMM4L59Ddk7jn1h7cDffql/t6MD9ql7eZRAz1rqZnO8VKO
+       oGmfKiLYEnvK4sEsaX0zAr8fRgPCur8QzqO/GaisrplKFiduzcnV/c6AQUlQF1SGUgV8FsFE
+       QMvn4ng68FN/VDeIdcCA7nf+5pj0+HpDgyIaG1tzmkXNOO6f13a+xwj09ZkVi++P0dxut/D0
+       h98d5fJ+vXoAKurWozKsJgeOdZKvE3svdfp8u4jlbFo7OTRK+gEfKiKKWs1rj0QyswRAC6yJ
+       M0QRKZ+P5YWO4/NR9AmVMnAAPKo9mP387F6YFZyTWaUeC/BdYc1ZeaA3o3RaoTZCfVUG4LeW
+       m4/8B+iL3RlmZu6cCforRvHiAwgBINM1EJHiTOesFdqDHuSCvu6INhkE3lt3kMPKoxlAj5YA
+       LV4dC1PqAwTlYYVdX33W8JmoamDWMDu45siN5+Qb9IwAy895RnOcl9d68hlZN4rVcvyV+B7x
+       nQgPHnvssTsyQP+F21n52raaKzIis6tH8QagM50WVwCAh4gieJDtSlx0A28ArAnwo858fSki
+       8EZpPtYVaDsdMyKrvXY8NFh04GfxI8JKmTJT0PpRPaA3E6KBBlO9sfCxBhlFRAlHOJU4OxKb
+       AP/q21n5Gq//xLjy+ujttrhnxUztHraHT4lg9avpyTl554CVm47su6p70vosoA9rgYoBEoVj
+       0Rp+ALWFesWCoy4oEqXGLNMu14dcyemPDRxIoSNc/aDY4jUz5+Y/3W7j5JqCc3omxdk6qjdC
+       6kE7xSQoAmUDZWGFqThRx6VbUCmoR6yL7VXcCbABrEohWHeDz6AJOjPb5hhR7BWFQeMEr1hr
+       UiZfJlIJzHDVhTPtFtHg8Tg8edfMSB6lHI0w6Ndl4HW3Cgglhb8j6FO/bybo146yc6OWZbuA
+       U+SbxHI7s4KQfmzx04nTAyxqEtba77rRHM4i0Ef002dxd6D3WWCdbf0c0mTkvwOpwBV1hZLV
+       rpwhrb1uBNpZeoPEscwO7s0I05tbkoE7kIHXbxyKxHYAvX51RvLZTfO1vWaTkoDd6IoOfOQ/
+       D7vXQgs9OHOvEnuRNRmzBYBRVWLDuCiVPRsqE1sCsegCSKia2EQ7wLsXdcvebqaRrsEAkCrx
+       e7GNTlUnRqBvycysfMuhSGwn4Ofw+tLaXz3q9Q1zGkdRwKobVYk6moDv526ABUi57Dh9DDBS
+       YgScospCblqz94d277sjpYBmrxKZZ8E/kUskR6e+dxQKV99iqFMTlJJOjBbh9SK/glOj+GyP
+       OOKINbnbaPYEfepPyAT9qlEHfXVrnW5lNWRfdqtAEFY+qvx2c2a9jyMZlRZCphRMQkn4Gz7f
+       iyIFhaE8UWFiX1m57mRXFhjfRkGkBtDX6epRQz+6QFRumRKKjXiGSKyIbwysEXy2+5YuXXow
+       A/DrgsF0BX0p4l+boX3ePGqpxu26RKluVhlIu6UK4PP0dPo3Xh6Wt1MT/axu6YNG+DzQs/6c
+       23ZL+fyfjxEVxlhc6cYoS5kCUuTgUFUcw/mQHylR6FndwlNe6lp8r8S4WDgii1MgL7YMHWPV
+       5s/aSpXtgJ9G0Qczrf2acSjjDHCd1A+cu5uSAgwB+qhBGbJjOwsqahpb+vh7BKI41rg+oHJ0
+       A/QGlWASiRFw5ddEopm8IPkw6Je/CzbFMkdcPtKngZRqQ4kyYMxcvqeXvl9Xqlh430+mjLSD
+       blUn5quLFWWmHtwvC/T0+uOPP/5ROQc98sgjV4wD6D282bTg1FEuA3XppL7IYgRuswgaE/nt
+       rLzBwPqSGTm20gFETKkv1R3AY8M4abzRUDWDAqi9ssKcTc4nOuWYBgWH1WxkVmqyHNLg5PC6
+       VwBvAJF/e21POg99R6aV//EdUg86tQT4CFRtyghUHUwfuXEcgM8xy6kg1mlGAHpWNva+MgDa
+       RYBjA2WDQgdCXTCI9dVFS/FwdAJ4gSuixHg6ZcbMEGUEgZtVB0g/Wxdg8Dg+sEbePEfZgPQa
+       s0ku8L1fCUScPsqlSMwbwQ0a1mRa+TdYFZjdvDmNlL8c5Z3E++ndirKGbt9JjmQ9Y0EG0Ps/
+       +lC3+Dg9uRJtia12ADgqA1vpxfmkilTLmChUS3oUEBLJVY4Dfwf0WA4oj6gTYCMuYeAG+Mmj
+       4TT34vOOzWkFdrKln6NS3Aj1A0uWLLkxB5eJlt2roz7frsm6XLRo0UmZeQ03z1dF4356p/Lb
+       6AiFpJ5rXtXrUYZI363Kj+3KdJgZYibwCvB09XbbAUXHp1ly61RlRhpcVb+h+nPseljn5THD
+       BMUx+HqB3vvk6AhscWT5EmjNCFr5zZna/EUSzCyQym4J8LFg/AeTEKGtV1DotMJJdqHebmBE
+       qm/kwes+006zr2v5QOdzrLd8GDOKvH7pz2TIWHjtFc9nueXIVIFuUKJZvdIXnKfvCp+hE2WL
+       4Jxz810cZjNNlD7kTJt9RujZ3ZoG4rZMavPStrk2vZoPpQ+flvMlaYDsnM9NGwYRtBLAsXRQ
+       jor02k6ZkyFxAkpsYd+u1Ssit1svix5VNX9WuYni0q7FpmlmGzQpUh/a+SkRJzA4XHOAvlrj
+       f4T6pkwHVqmaoxnuxq380BHpIFdlWvurxgX0VZoQS+UAnoIi9wSnZZXbWUdgZuWBC+BFWttZ
+       30Hv/Zq7HleWJb9CVFhgq9Mgii01XYPUY4Eo143Td9pobT7z5pOV35RJt9+GnvfdZKalA70q
+       58vSzLDFFDQOoPdQOYbWkJIMyX7VXQQpJfh1pyWAIUNScoB+vkoExkBEu8w8YgSUI8ExyWiR
+       9NYu8muGcf5kVNSGakMmxelH0Mpfk2nlb7KRWpZM2Q30XkwZmdZ+4zhuvNsp6thuLSmnLxQc
+       QKOaDGsr+xyJlYPMuqMo6Iy8HE6wJYbd6mOiUpxt8qmUYqCXVmymq68hHoESHyszQf+/e6Yd
+       5AI/V75M1n7TqGdfDoL/czRZ+ih+yrK24/D9ZE+iWwAJ0L4nFokbaPR4TjCViQ+CvrDmrDvn
+       W06919hlvNu2Po4tt8caWqnE4gXonRmPajNC4N+SCfhbpcbPGvAVa78sHezmTGu/YpJA384J
+       BECSJWsfpTpY+0Hx+FBpqssLHZ9Fp/MLgLHsvjd6BMUiGNZrQzaDFvenGglKATkHllQZqQgj
+       kGx2YPHixRsyFZsvlPWbZgbSyvWzn8z88l3zuT/VoDvuX28RYY3kMZYV6ABzUDXvY4tOgI/v
+       QFnQERa6uslz8HgzgYEYGaHdGl/EOZNoURug5+vwZ6QoS0muVlob5b1h9YTRUxpFYHOS0FI/
+       MfWDmdb+J5MAeFaPY1dNE9ZiiR4Ly/r6GU2IejSDaqx9VBUGalFTPkTsWeX3fsdiG4g5M01s
+       pYn+cOTl/QhKoTeeHclSbg9LP+gFJO6nQdVtF5lK38WAZlKbf4HRRhHYHNA7YHr9v7kjT/Rs
+       3AFPvnMt0gaqwR/UAHeODnRkP4uvSZ2xDndQBaMMJABHq2IDBUltEs38PmrdU2N6NXQJ9XGO
+       CmPJ1uTIG9w4PCtv5RTgD3rXEbOJGSRz36of52JNgmRRd37QreT2x6cbtCcz92HVOAWsdBbI
+       +lrRSFFJ1b6sHopU31gCCGCsuqxGcp9XlphqIoVAJqSkMXRntgWj2qVDVBd2A7yBGE5rrH2l
+       MsVrVFojb/rZ4OH0WpAimxKXx+OpN1ZNGQgA7/+DojhSlM0osY7XPdI7RH1z0w0M2L9llCVK
+       DqUJWMlea2DtLx830EuyYvXkyUgLqCZdWVhRBX0UVAJwDibgeyUBBvDRk0FudhyrvejrwMty
+       V2vsx8KRqtU3E+m0+cgZkqMvyxMYXSPwiUY7b/n56E3s3TWIe6siA3VIEIylFwFWtaGN1ee8
+       rs4E/J4lS5YsHyiX7xClPSp92ZpJdGo9eLTGSiSSnqBV9aGgAVHTBq1BZeTPozaoAscQzzcY
+       AN7yPSAEstnSnUgj1iKjMnKEqrlC8bdqteQInpkdDFYDRd5PdReXAL2BHZXgosLzbO+rYJfj
+       8Rv4CY6pMy4GWa3MyOpco5r6m0RfZxWBzc3JWbp06dNyTyxd8JXjpN17KMDB0QPoulaN4kQV
+       sageBuT4tQ74UYnYIpDY7WQQOr7jVANOAXCcH30J6oLqVNMjIhXBQKYAsfaoTVRujjr4sUBF
+       JTjVzbwOAvTokxQH1JHhQHE4tBatWNMrddr3LV++/BfJUN6SaeWltB/Vtp7NoBsttMzA/FYD
+       mvPTcQA8EJD7gAuYAan+HounI7UXhwdsyk2E/ll/eS9Ab2BIVTYQ2qUC99NwcecF6AZfVF3w
+       /2pGZfW76jWAnI+AVESiWWK+iw7oOL0B4LW6oqvfDvCMiWNFbo9ZxPfFd6X7ujf9fmsDK/+M
+       oVv4dvn26ablbmVohdWmUQZ8tRgSK4+uADNLR9FgmSInpfo+lly6Ai6POgA88AMn/Rz/NgDM
+       Cng1R7MfLZ+1NhBZcVJjaPEGFgdVSkRY9iqV4sgGzw/n1iAIOZLDLt1aNxBQHFw++P0gCriy
+       9EAu2OU++tnxWXeBseQ3HLz3ve/9swbO6wVluZq5Az1un07el74v90TT7HBd+uiecci8BA7U
+       Rvc31g8fNT3XUxMMDDXwAR4o5b7IgQFMPxsYgG8gOJ6AUmxpzxr3Ks8R+e6x6DwqLXCQzR7h
+       vNaPU13g4mezQ9W55by6HtYXpaHasLyACPScTD/Xqyz0w+dxd44sfwnwDTT+TtCn9P/LGwB+
+       f/aC70G3NHpnTj755EXpy1flnnC5kHwkMzGrASGWGSBp4aHZs1YeHrBUK6J5D7VDajKqw+LH
+       4nA0InYK4Sf4vwiq47O2QMtaR8ntblyes8rKo1QGTVAYx/BZgyD2kXU8PoTviIXi8ZkoKquw
+       E0BzIp1/SIiASKcHehXOZrtZsvsl4htV2ILiRLWFZOmvTxja28R5jVI1c94S4GeWLVsmaHVK
+       bl5Oye9/NmqAj+kfeIDEInIrm0z5VA3OLOnOA/Ozh6jMRtR5F7yaKTdKI3Oy6sAfqQMGgOOi
+       O6gQR1fujN9F6kCvMn8+x+JHDg5nNFSZap5NNf3AoAgKFAWtnIPgFnpEvaGqALceuxlScADf
+       IGD1u+3OniMDU8A4yoyHgYZa6Qm4+3MKEFSXAQL7nNKadjk5HFv1vxtMTwdGKQWZJYuVTpSR
+       cEAtyrZIG+fEa+nWHF3WysOjM7Po6Ab1pnpMG5/h+iy79+Dz/g9w6tcAOu4vY9J34vnVNbX1
+       bMjYRTwSyoLP4/lBY7qlIPibQWOw6LFtpgHNygM7uhHAD2qD8vi53213Iu0AtfF/zx+f9//k
+       Pxw48cQTVzTAzbbkS96j7eYKc90isy2d2D/mXkBZHW3LKIAeCCKyyfnE0YGESuOhs0jB56uB
+       KtM1IAO9Xg+ysJB4Pcojac1aWBmNju93gksGBV8AfQF80VbWPBzOaPEdZgh/975eRWSrzUyC
+       FgmkKQpVVWRwbIBn2c1YrDvAs/hBd3Dw6i6Iud09c19ipqDimA0TQziYZplLG1h4M+wTqYZz
+       qthkJKRZsbK1AfAFrX4+X2BXd6aedRgaNv4M9Cw9Wc/DEpZHB6rABxLOKp7OQQWq6ibOOv4v
+       /102o+P5DOuKIvEDWHuDDSUyENCeOr/3f1QqV+uPxSUCZAYVC26AmXGCXkVejWdBSRGdDWtv
+       AFByWPk4Vzw8avnnrk5Dadw7BsIxokxhMpSXNwF8+syHgH2gCWUDAj1r/xuS+RsqOjfMNeAV
+       J602GjdwRkUxwPOwTeucV2D3fyDw4KKMhxnA4CFFAr3j0Onreeh4Mz8B8AVjWDsgAKIo4ITu
+       xCKQ6gZtseY1R+PnO0ifYM3lBJk9zCxmpHpzrQDOqgN9yJXA72fAD3qD4rkPTTR7VJCld78i
+       CstXSNe9qgngbQllofecBKGaNs5FmYn5jiYXlUbw1rmuklZ19jiQwEHNABBWULakh6YDdoTM
+       vdYBDbA+wzkEUDOG1Uy0/fr3UkqAjMUXlIn9Yf3N+9Egs0K1oKx4QexqYjDoLHmkNphlIp3Z
+       dwedcU4GEItvQJpRYidxSo6BZFZDX9CYsPJmItTGeZoN/N25uX58PCctmN/D0pv1DHgDUfJe
+       8ouuamjh9yxatOjkkQR8LRPziNx6OdGtdJ+Zw32s6qm7ZDwWmJXjyLF4HrSHDPSArnP86vTF
+       QEBNWFkd2GIvV85upxRbMwcH2fQf/oBj+U6fj8bhNBDQKMCPisXRvJcjbZaIfaX8nT8Rdffx
+       f3InihM7icv+NMgMbEA3EF2/DvAGJb/EeXpFb7yGU9qtR+YmR9as4T6ka7vWfmUNQf8SPL6v
+       ch5zDXxettyIJheYALVhrnJ06qC3kIKTyZqxbuiPqd1DZqmipmOUza4fD9gAnvUMOZJVZZUd
+       Mwck1ffh4hoO3q0OTiwk0QDZbGNwUIxYcQ4x+hXOMg2fI8zyG9wA79r97BU4gZ+lj3LdZgAU
+       B7UxKHNy4c0GjINZrJzJrvfaEPAfHsgi77lKUaDo2KE5p859LQd/qFTHw61XImPlFUQFWCnB
+       HjDODeA4qUEQmyAACY5azzEH2khBIHlGHXo9tHgAZtVzz9U51dMQUBrHi+KuHG/BKRTLQFGr
+       3oA1M7Di/AUUhxxKvSF54vcGJorj/bi7zwC8HjzfgA+H1qsBYBaqZmZ26p4lS19SwY1N/LxS
+       5Pj7kirPjE0TQAB8gat0EbsaSlPbh+Hc0tmrQRyOIT6PHrB8QKYGDm6PdrDurBve7WGH89nO
+       2psFSIqxszduD5ysK3Dh2EBqNohAVq8uC7Jeri+Az1qjLAZZDLRQiYCd8mQQozQArXNcXZ+/
+       63FdLHsA3rmhdmY5IPeqR7Q2ftetGJT7hgqVKRtrGjqtAP9P6XMLRp7SdAtcJU72uCYR27JK
+       FWu/bVCAF12tN9YODYj8mZDwgNvPZSJUYdn87CE6t+D39YJIkWsjEgv8IqcsfdTHiW4QsIK9
+       zpkuXqdhJEvHQ5/IowaYGcbv0BvOqmQ2wTHpuq7bbIbiSKgLfo1KRQqx91GWfMYA0AHb31l8
+       A4EaFFbfTNDOSa9aeTp8ojdX9AH4i6W2zGvEdbatTEGm7PxuH1Pc/kHo+HWaEMEejhzKwYH1
+       cGnmYeFYWYBAW9Aa4I/ckdjrScClutSNFQVCFtZgYn1Z+qgdT2FBS/xsYPiuulNc7zEz4eJm
+       I8c2uJw/nwE18zcJb6y8c0BZDDi/B3T/jwxQf3duHFoDG293rWaG008//VAcIRxYADdL+J37
+       Y2BkbLMp4r6uD8CTMu+SBnuR4jLWzagtHZI/anojyk0f+k5JBuZ2abxh4TVAYP2kB1gp5cED
+       gCka0A0Clt4AwOU5cv5W/y5gYH1j9RRAsr5UHAA1ADiX6JTf+16UhL/Q6fwBVosorGtxDIOB
+       dUdtOOAGUuT3cGbNMAaI96MyZjXvde5mKU6l63GddT4fefTuHSWHUQB2oNddZ5dz3r9gwYKr
+       mj5n27je6U53OgEzGGsr3yF49ZamN6Syk2HjReadylRH+jC6QAePXfvCWfPgPVhgZ/FZRdae
+       fInX4/DkONw2rD3FIrbCYeUDgEAfTi3gA71BEBs0mG18v+9tl7sSCWVmCoMJmDmjBqkBgOp0
+       SliTTuH46IvzrtMn2jlQeyWNRpCKpQ/lJnYPd39iF3FUp8393pWAe20fgN+R6NADMIK+ymuP
+       g8VPF/cn/QA/cejNTdbbetjd9o6NrS89VA8Stw3A6x5yJF0BvymdlAcYFByAr9fAxPspQHwE
+       SgnAAzqAA31QnFiOyIL7HfCTPTmbkdk5UykmC+w+A9iO5/+Ox2GWw28AWKElkYzll2oQBaAM
+       aha8njsDwJx2YDfjhBWP0h/ugQFh53DX5OcIMrH8tfu9yeYcfVCarcn3eyhcyNidyBYbX6Ub
+       9IfpQm/pg+7YwrPnps0cr24tpDs8GJ/1EIHDg+W4egUex6HkRIUAgRmcHs1BD9rtvOd95EN0
+       AugjihrUBmgB3+8iiOV3BiDwOg8DoOosGgToixYVhsmnJFDnz4GtBrTC8TWjGLCcbgO4miIM
+       8KROFMqAcZxYNaW7ZoMAyIGeEfB+7zNQgs70w99LC782tsgZqZyaYWVlluD/baWV+6Q767oF
+       stpVG6426gqAiWLiray5B+phR065KZzDitIAg1kA2ACN/s0asvgRdq9GW1lHg0rwyAISVj1S
+       AGJnQa965NWz2hxSzie6gyoBeERAnQ8OHoPAeYq4xhLEKpUzC5gBzCAxG1VrU6JNKI/BZXAb
+       AAa+6w6d3vHNgO6LnCGzgQGie386zs503dv6BPxP0/O/G6Gj0RY5E2Lx/zNO18+NS/yPsrNz
+       pk3Z7U77SlXXtgrWUDQA3QMHsghAATiQyKiMDEuAYTVj/1aWvl101meAh7V3HqoTxOKPoDgx
+       EILr4/5Rno8DDLDOB/gNBEA0wGjgKJAZKmrHcJx9FqWq1sXhKLvGThFhFtx3sPKA7P9mNlxe
+       gA6393+Adx6KWHlv6gd/67d+a0N6fgf6eW7pc+en719c7nQzc1i1cvEJWfNBDVfPVG8ga7+i
+       mrfTrSZ75KqIYqILAMSa4aph5bya1oEbsKLKGYfW780KBhaOHGtm693sASQASbIEekAHRtae
+       YyrQxJn2e+cTUdwAP/kT5WFVWVmvziOKR5ltnC+LzRpXd0bH/SNQBrDOvc7pXUvse+X4VBz+
+       jevWQ5P3N/TGrJD+fn363vX9PKvyeX0xffeRaaaaOWyb6a1cGLA83ZAr+r2ZyQJelxzLqxLf
+       PNgp59z0H7w3KpPFohGWnmXGVWOzNQ8ZnWBp/R/gAAUw0ByANyOw7O24PdCgUORR1hu9AfLY
+       QTwWa0cyGA4O9Dh+VCRjqSPq6jhoW2yrGY6zmQrg+Sny7kmbjoUyuU5g5h/UZyUOa0RwXSvO
+       jkIBuus2+MPSpxlhXxo4V+YW8O0A+L8qq2jMHPbNjSizM5ekm/qVfm+qnh7MhgsuuGBHJ9AD
+       FEvLcaTusIam+AA4iY5VCw4LBCwhjs6iUjgiJThSj2ne7barQYVYWZp8SI2xMZuByfoDviAS
+       0OusPvoTiWQ6mmLwsMrohcGq+V4KEtCz9HyIWHLoFX0yEMxU3lOflaRYmI1cp8+7PgPVwDZT
+       mQHT/bj1qU996vo0S+zu95lID7ZhX/bu3YdTA3xefLoxL2u4Ov52PT3cg8k6ryZTV6d71jUK
+       I6E2IpvAD+SsmlcAAQAKDCvHqvsdcJgFDAx/o/DQ6oEdz25n6Sk8BkxUO2OtY0G3cwFMAzFy
+       46uWP3YKZ9X5BSw+Vcc5AaTPRAlCjrZZyGBwDJFmx/E9vtfAQ8nq9IavYnYzkFw7+gToLH25
+       impH8lu2zMYIWQBSJh5OAZ+RqEa7XTubG37iiSfuOffcc6+Sq1VP3Ipt6tEb1QsiIsnasYoh
+       BQJDOJNRcJQ1pNmzspSViNzOdFihFakJABypCcHjWXwABVY/x64j/m9WkHoQMxN6w9obhKx4
+       0BWzjRkKxYm1tbHW1nWy5NSYeh68c/YZ9Mbg5MwCe3JSdz34wQ/eMEuw65+QRyOtYAr4jES1
+       UsZabEuV2d78ZK32Jito/d1+EUrAYD1RGoD2yrqjMCRAMmFEHwFc0Io1JFtybP0uqgcAPxrD
+       2rYDPS6NnlhCCPBmGK8kxkhAY/VZ90iXiEKtztUAQHcMEE4wOsYHMRiiQgFVh7rkHGOZIWvv
+       uGiV60FZ6iqO2clg9ncDI80iwL5xAGDfnQzWswSbytpIU1DnNg4Pvp8cxRelm3jjbB9Gsvz7
+       kuXekCzofg4hMIcqwcKjMJFlyKJTPACclQRwXB7dEbRhNX3ewCDxCWBVF4xXeT0aFYu/qTlA
+       j7NX044NxOomytVa9Kw+Bzw2ZIgVWqVWXnSANqtwlqMevoFjcLDmzhWHr29775rf+MY37kqD
+       c8sAwI6/XxKbnY1VLvyoqTulrPlA/HAQDyaB/+ZkqTc95znP2S/yanonXcYyQVYxJMooc8fy
+       4/3+j/74vyBSlNMwCNpRHBQo0o0pOOhGlPOIBSZegT42Tei0+zieH4BGjziu8T2svfM0GGLw
+       eDVLmL0MarlEtQ0QdieH/JpB3NNY6ZSOeTT9fQr4AaUnl/2N/UZx2zi8LOTPkpXblKzmLWHR
+       8VqWHmXA4wWpqDmsOkvPieXsGSDeR7MHqHpC10ylrg4+Hos9WHugRz0oOzh7lOSr7mtVb1Gy
+       D+UxCAyYUGSiCrDjB+jRJd/NN+F8l9FY6xRWJQd4/aDAnrpyHr+Blo70Au5xdXINACmo6SZ/
+       foAPDXh2JVCsTDz52kRVbmXlDQA8n1Xn7LLquC+eHiuqgJ2syblEZdqBPlZQkUtZemA3APwc
+       mx7Hxg05GzNQbvgCjmvWiSgwf4PCY4BFaoPZJdGbfWlAr08O7+rZ6OxtLPt16fW/CzahoROT
+       EjxqzdQZlCf1Rw+K8tQGwPUPe9jDVidLfj0nTw9VB/Whj5MAg0vjy/g+S99OumTVY0dAYMTn
+       gT42bwhVB7/PrV8P/I7Dgs+Uac3SIiyYIVWmdks67tVnnHHG2nQ9BwZ5f8rFQB9P9+G4Soxl
+       2uYihaHMvT4yzQAvTw9i+6DBryfasPP+97//6pNOOmldAv32RH0OkAgjP52jawCgQGXlrjsU
+       O+X4xkJs2rsBENZexBTgY01tt8oH9WbmYNkpSAn0N6XZZ0vyUa4UTFq+fPktw7gfSruQkyNp
+       cCTqSh6uCg+rkx7Cp4fxoGsPfW8C9Yr04C9NX786fffPTz755L2oDWfWQhOgb5eTwxpLdwB2
+       0mIsJAF6NMQsEDJmN/Cn2WBXGjibzznnnBWJWl2Svm/VsK87Dehr0j3+g9iFZuJTgcfB6sfD
+       UA0rPaCzhw2CNqDYkIC+8oQTTli5YMGCdcnSKmViYfuOmdsqO+xO/abU96Xz3M9K094vv/zy
+       A8nK7088fG/qe84777xdaVbYmQbD9QnY2y644IJNZ5111pXJt1hR5r5sm+vrKiPkU8s+yla/
+       pD3Lyl1SbpjrATAJnd6eXv9ruo8LDssU4HFsnKvSwVqaHt6bmxadOozBfmGy5k+ls0+d1PEH
+       /8LS4V07BfcdN8GT3Zr6r05pzIRRnzKP+8j0cB+fHvbH0usvDnOw/8ju74m+3DM21phGUifU
+       8leK+y+wTjf1s/pdsjiG/TJlWNL1ngjgocRMXOmNaets/T3scjuXhTbjTUD4W1mCkwR0lcPs
+       GaC2zHHHHXfIok+t+nQGqM4ARycLeKr6PAkYX0v9+jED+RViFsqsxAIOKQIAP7G1ZaZtdm3h
+       woVFPj+eW84CR6TB8LAEnFeUOT+bRoiX36LoaTrXD6SB+pwySHcodhGR02mbtr4GQVhMtAC4
+       Un9saU3faZV/mUu+Z0jWe2s69r+y4JxPizSkA5iVYj+AWGQ/VV6mbeCtakWr1jQsbBog95Fq
+       m35+CnCm3z+vHBwvTb9/VXp9felM/lm5+/XrzCJlgdvT09+fq8ozJ1tSXfrKJeXa4fr3FANy
+       2pq3/w8rz1K9SnluEwAAAABJRU5ErkJggg==
+      </office:binary-data>
+      <text:p/>
+     </draw:image>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="14.111cm" svg:y="27.162cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+   </draw:page>
+   <draw:page draw:name="page2" draw:style-name="dp2" draw:master-page-name="master-page28">
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="17.392cm" svg:height="27.08cm" svg:x="1.799cm" svg:y="-25.914cm" svg:viewBox="0 0 17393 27081" draw:points="0,0 17393,0 17393,27081 0,27081">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="17.392cm" svg:height="27.293cm" svg:x="1.799cm" svg:y="1.166cm" svg:viewBox="0 0 17393 27294" draw:points="0,0 17393,0 17393,27294 0,27294">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="17.392cm" svg:height="27.292cm" svg:x="1.799cm" svg:y="28.459cm" svg:viewBox="0 0 17393 27293" draw:points="0,0 17393,0 17393,27293 0,27293">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.688cm" svg:height="0.742cm" svg:x="3.758cm" svg:y="2.172cm" svg:viewBox="0 0 689 743" draw:points="0,0 689,0 689,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="11.754cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="1.326cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">Well your faith was strong but you needed proof</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="9.105cm" svg:y="2.172cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="3.769cm" svg:y="2.252cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="9.107cm" svg:y="2.252cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.688cm" svg:height="0.742cm" svg:x="3.758cm" svg:y="4.025cm" svg:viewBox="0 0 689 743" draw:points="0,0 689,0 689,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="7.863cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="3.179cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">You saw her bathing on the roof</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="8.761cm" svg:y="4.025cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="3.769cm" svg:y="4.105cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="13.446cm" svg:y="4.025cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="8.774cm" svg:y="4.105cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="16.782cm" svg:y="4.025cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="13.444cm" svg:y="4.105cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="16.781cm" svg:y="4.105cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.688cm" svg:height="0.742cm" svg:x="3.758cm" svg:y="5.878cm" svg:viewBox="0 0 689 743" draw:points="0,0 689,0 689,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="10.924cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="5.032cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">Her beauty and the moonlight overthrew you</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="9.105cm" svg:y="5.878cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="3.769cm" svg:y="5.958cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.005cm" svg:height="0.742cm" svg:x="11.779cm" svg:y="5.878cm" svg:viewBox="0 0 1006 743" draw:points="0,0 1006,0 1006,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="9.107cm" svg:y="5.958cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="11.777cm" svg:y="5.958cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="3.758cm" svg:y="7.705cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="7.927cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="6.885cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">She tied you to her kitchen chair</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.741cm" svg:x="12.44cm" svg:y="7.705cm" svg:viewBox="0 0 663 742" draw:points="0,0 663,0 663,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="3.769cm" svg:y="7.785cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="12.444cm" svg:y="7.785cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="3.758cm" svg:y="9.558cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="10.835cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="8.711cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">She broke your throne and she cut your hair</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="10.111cm" svg:y="9.558cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="3.769cm" svg:y="9.638cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="14.77cm" svg:y="9.558cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.925cm" svg:height="0.624cm" svg:x="10.108cm" svg:y="9.638cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">MI7</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="14.779cm" svg:y="9.638cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="4.102cm" svg:y="12.337cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="10.302cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="10.564cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">And from your lips she drew the hallelujah</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="8.099cm" svg:y="12.337cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="12.417cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.661cm" svg:height="0.742cm" svg:x="12.123cm" svg:y="12.337cm" svg:viewBox="0 0 662 743" draw:points="0,0 662,0 662,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="8.107cm" svg:y="12.417cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="12.11cm" svg:y="12.417cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="4.102cm" svg:y="14.19cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="7.741cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="13.344cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">Hallelujah, hallelujah, hallelujah</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="6.431cm" svg:y="14.19cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="14.27cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="7.781cm" svg:y="14.19cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="2.098cm" svg:height="0.624cm" svg:x="6.438cm" svg:y="14.27cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.741cm" svg:x="2.434cm" svg:y="16.97cm" svg:viewBox="0 0 663 742" draw:points="0,0 663,0 663,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="5.154cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="15.197cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">hallelu-u-u-u---jah ....</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="7.437cm" svg:y="16.97cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="17.05cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="7.439cm" svg:y="17.05cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.741cm" svg:x="4.102cm" svg:y="18.823cm" svg:viewBox="0 0 663 742" draw:points="0,0 663,0 663,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="6.648cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="17.976cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">Baby I&apos;ve been here before</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="12.096cm" svg:y="18.823cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="18.903cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="12.109cm" svg:y="18.903cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="3.096cm" svg:y="20.649cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="10.852cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="19.803cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">I&apos;ve seen this room and I&apos;ve walked this floor</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.98cm" svg:height="0.742cm" svg:x="7.781cm" svg:y="20.649cm" svg:viewBox="0 0 981 743" draw:points="0,0 981,0 981,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="3.102cm" svg:y="20.729cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="12.44cm" svg:y="20.649cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="7.773cm" svg:y="20.729cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.979cm" svg:height="0.742cm" svg:x="15.458cm" svg:y="20.649cm" svg:viewBox="0 0 980 743" draw:points="0,0 980,0 980,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="12.444cm" svg:y="20.729cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="15.447cm" svg:y="20.729cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="4.102cm" svg:y="22.502cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="9.159cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="21.656cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">I used to live alone before I knew you</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.689cm" svg:height="0.742cm" svg:x="11.434cm" svg:y="22.502cm" svg:viewBox="0 0 690 743" draw:points="0,0 690,0 690,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="22.582cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.98cm" svg:height="0.742cm" svg:x="13.79cm" svg:y="22.502cm" svg:viewBox="0 0 981 743" draw:points="0,0 981,0 981,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="11.442cm" svg:y="22.582cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="13.778cm" svg:y="22.582cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="3.758cm" svg:y="24.355cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="9.269cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="23.509cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">I&apos;ve seen your flag on the marble arch</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="8.443cm" svg:y="24.355cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="3.769cm" svg:y="24.435cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="8.44cm" svg:y="24.435cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.005cm" svg:height="0.742cm" svg:x="4.764cm" svg:y="26.208cm" svg:viewBox="0 0 1006 743" draw:points="0,0 1006,0 1006,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="7.402cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="25.362cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">But love is not a victory march</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="10.111cm" svg:y="26.208cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="4.77cm" svg:y="26.288cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="14.108cm" svg:y="26.208cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.925cm" svg:height="0.624cm" svg:x="10.108cm" svg:y="26.288cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">MI7</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="14.111cm" svg:y="26.288cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="9.032cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="27.215cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">It&apos;s a cold and it&apos;s a broken hallelujah</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+   </draw:page>
+   <draw:page draw:name="page3" draw:style-name="dp2" draw:master-page-name="master-page28">
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="17.392cm" svg:height="27.292cm" svg:x="1.799cm" svg:y="-26.126cm" svg:viewBox="0 0 17393 27293" draw:points="0,0 17393,0 17393,27293 0,27293">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="17.392cm" svg:height="27.293cm" svg:x="1.799cm" svg:y="1.166cm" svg:viewBox="0 0 17393 27294" draw:points="0,0 17393,0 17393,27294 0,27294">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="17.392cm" svg:height="19.959cm" svg:x="1.799cm" svg:y="28.459cm" svg:viewBox="0 0 17393 19960" draw:points="0,0 17393,0 17393,19960 0,19960">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="4.102cm" svg:y="2.172cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="8.099cm" svg:y="2.172cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="2.252cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.661cm" svg:height="0.742cm" svg:x="12.123cm" svg:y="2.172cm" svg:viewBox="0 0 662 743" draw:points="0,0 662,0 662,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="8.107cm" svg:y="2.252cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="12.11cm" svg:y="2.252cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="4.102cm" svg:y="4.025cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="7.741cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="3.179cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">Hallelujah, hallelujah, hallelujah</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="6.431cm" svg:y="4.025cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="4.105cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="7.781cm" svg:y="4.025cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="2.098cm" svg:height="0.624cm" svg:x="6.438cm" svg:y="4.105cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.741cm" svg:x="4.102cm" svg:y="6.805cm" svg:viewBox="0 0 663 742" draw:points="0,0 663,0 663,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="5.154cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="5.032cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">hallelu-u-u-u---jah ....</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="12.784cm" svg:y="6.805cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="6.885cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="12.777cm" svg:y="6.885cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.661cm" svg:height="0.742cm" svg:x="4.764cm" svg:y="8.631cm" svg:viewBox="0 0 662 743" draw:points="0,0 662,0 662,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="10.945cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="7.785cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">Well there was a time when you let me know</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="9.105cm" svg:y="8.631cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="4.77cm" svg:y="8.711cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="9.107cm" svg:y="8.711cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.688cm" svg:height="0.742cm" svg:x="3.758cm" svg:y="10.484cm" svg:viewBox="0 0 689 743" draw:points="0,0 689,0 689,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="7.051cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="9.638cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">What&apos;s really going on below</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="8.443cm" svg:y="10.484cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="3.769cm" svg:y="10.564cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="13.79cm" svg:y="10.484cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="8.44cm" svg:y="10.564cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="16.12cm" svg:y="10.484cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="13.778cm" svg:y="10.564cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="16.114cm" svg:y="10.564cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="4.446cm" svg:y="12.337cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="10.484cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="11.491cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">But now you never show that to me do you</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="9.105cm" svg:y="12.337cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="4.436cm" svg:y="12.417cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.979cm" svg:height="0.742cm" svg:x="12.123cm" svg:y="12.337cm" svg:viewBox="0 0 980 743" draw:points="0,0 980,0 980,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="9.107cm" svg:y="12.417cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="12.11cm" svg:y="12.417cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="5.108cm" svg:y="14.19cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="8.757cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="13.344cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">But remember when I moved in you</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.688cm" svg:height="0.742cm" svg:x="9.767cm" svg:y="14.19cm" svg:viewBox="0 0 689 743" draw:points="0,0 689,0 689,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="5.104cm" svg:y="14.27cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="9.775cm" svg:y="14.27cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="3.758cm" svg:y="16.043cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="8.452cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="15.197cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">And the holy dove was moving too</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="9.105cm" svg:y="16.043cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="3.769cm" svg:y="16.123cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.98cm" svg:height="0.742cm" svg:x="13.79cm" svg:y="16.043cm" svg:viewBox="0 0 981 743" draw:points="0,0 981,0 981,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.925cm" svg:height="0.624cm" svg:x="9.107cm" svg:y="16.123cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">MI7</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="13.778cm" svg:y="16.123cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.741cm" svg:x="4.102cm" svg:y="18.823cm" svg:viewBox="0 0 663 742" draw:points="0,0 663,0 663,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="10.094cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="17.05cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">And every breath we drew was hallelujah</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="8.099cm" svg:y="18.823cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="18.903cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.661cm" svg:height="0.741cm" svg:x="12.123cm" svg:y="18.823cm" svg:viewBox="0 0 662 742" draw:points="0,0 662,0 662,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="8.107cm" svg:y="18.903cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="12.11cm" svg:y="18.903cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="4.102cm" svg:y="20.649cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="7.741cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="19.803cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">Hallelujah, hallelujah, hallelujah</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="6.431cm" svg:y="20.649cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="20.729cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="7.781cm" svg:y="20.649cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="2.098cm" svg:height="0.624cm" svg:x="6.438cm" svg:y="20.729cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.741cm" svg:x="4.446cm" svg:y="23.429cm" svg:viewBox="0 0 663 742" draw:points="0,0 663,0 663,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="5.154cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="21.656cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">hallelu-u-u-u---jah ....</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="9.767cm" svg:y="23.429cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="4.436cm" svg:y="23.509cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="9.775cm" svg:y="23.509cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.688cm" svg:height="0.741cm" svg:x="3.758cm" svg:y="25.282cm" svg:viewBox="0 0 689 742" draw:points="0,0 689,0 689,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="8.067cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="24.435cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">Well, maybe there&apos;s a god above</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="8.443cm" svg:y="25.282cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="3.769cm" svg:y="25.362cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="8.44cm" svg:y="25.362cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.688cm" svg:height="0.741cm" svg:x="3.758cm" svg:y="27.135cm" svg:viewBox="0 0 689 742" draw:points="0,0 689,0 689,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="8.215cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="26.288cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">But all I&apos;ve ever learned from love</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.979cm" svg:height="0.741cm" svg:x="9.449cm" svg:y="27.135cm" svg:viewBox="0 0 980 742" draw:points="0,0 980,0 980,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="3.769cm" svg:y="27.215cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.741cm" svg:x="13.446cm" svg:y="27.135cm" svg:viewBox="0 0 663 742" draw:points="0,0 663,0 663,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="9.441cm" svg:y="27.215cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.741cm" svg:x="16.437cm" svg:y="27.135cm" svg:viewBox="0 0 1007 742" draw:points="0,0 1007,0 1007,742 0,742">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="13.444cm" svg:y="27.215cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="16.447cm" svg:y="27.215cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+   </draw:page>
+   <draw:page draw:name="page4" draw:style-name="dp2" draw:master-page-name="master-page28">
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="17.392cm" svg:height="27.292cm" svg:x="1.799cm" svg:y="-26.126cm" svg:viewBox="0 0 17393 27293" draw:points="0,0 17393,0 17393,27293 0,27293">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="17.392cm" svg:height="19.96cm" svg:x="1.799cm" svg:y="1.166cm" svg:viewBox="0 0 17393 19961" draw:points="0,0 17393,0 17393,19961 0,19961">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="17.392cm" svg:height="0.026cm" svg:x="1.799cm" svg:y="14.667cm" svg:viewBox="0 0 17393 27" draw:points="0,0 17393,0 17393,27 0,27">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr7" draw:text-style-name="P8" draw:layer="layout" svg:width="17.392cm" svg:height="0.026cm" svg:x="1.799cm" svg:y="17.235cm" svg:viewBox="0 0 17393 27" draw:points="0,0 17393,0 17393,27 0,27">
+     <text:p/>
+    </draw:polygon>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="4.102cm" svg:y="2.172cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="11.483cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="1.326cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">Was how to shoot somebody who outdrew you</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.689cm" svg:height="0.742cm" svg:x="10.428cm" svg:y="2.172cm" svg:viewBox="0 0 690 743" draw:points="0,0 690,0 690,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="2.252cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="13.102cm" svg:y="2.172cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="10.442cm" svg:y="2.252cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="13.111cm" svg:y="2.252cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="4.102cm" svg:y="4.025cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="8.333cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="3.179cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">It&apos;s not a cry that you hear at night</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.689cm" svg:height="0.742cm" svg:x="10.428cm" svg:y="4.025cm" svg:viewBox="0 0 690 743" draw:points="0,0 690,0 690,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="4.105cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="10.442cm" svg:y="4.105cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.005cm" svg:height="0.742cm" svg:x="4.764cm" svg:y="5.878cm" svg:viewBox="0 0 1006 743" draw:points="0,0 1006,0 1006,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="9.341cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="5.032cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">It&apos;s not somebody who&apos;s seen the light</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="10.111cm" svg:y="5.878cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.111cm" svg:height="0.624cm" svg:x="4.77cm" svg:y="5.958cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="14.108cm" svg:y="5.878cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.925cm" svg:height="0.624cm" svg:x="10.108cm" svg:y="5.958cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">MI7</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="14.111cm" svg:y="5.958cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="4.102cm" svg:y="8.631cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="9.032cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="6.885cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">It&apos;s a cold and it&apos;s a broken hallelujah</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="8.099cm" svg:y="8.631cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="8.711cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.661cm" svg:height="0.742cm" svg:x="12.123cm" svg:y="8.631cm" svg:viewBox="0 0 662 743" draw:points="0,0 662,0 662,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="1.141cm" svg:height="0.624cm" svg:x="8.107cm" svg:y="8.711cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">LAm</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.709cm" svg:height="0.624cm" svg:x="12.11cm" svg:y="8.711cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">FA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="4.102cm" svg:y="10.484cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="7.741cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="9.638cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">Hallelujah, hallelujah, hallelujah</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="1.006cm" svg:height="0.742cm" svg:x="6.431cm" svg:y="10.484cm" svg:viewBox="0 0 1007 743" draw:points="0,0 1007,0 1007,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.836cm" svg:height="0.624cm" svg:x="4.103cm" svg:y="10.564cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:polygon draw:style-name="gr1" draw:text-style-name="P1" draw:layer="layout" svg:width="0.662cm" svg:height="0.742cm" svg:x="7.781cm" svg:y="10.484cm" svg:viewBox="0 0 663 743" draw:points="0,0 663,0 663,743 0,743">
+     <text:p/>
+    </draw:polygon>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="2.098cm" svg:height="0.624cm" svg:x="6.438cm" svg:y="10.564cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">SOL DO</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="5.154cm" svg:height="0.624cm" svg:x="2.435cm" svg:y="11.491cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T3">hallelu-u-u-u---jah ....</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr8" draw:text-style-name="P9" draw:layer="layout" svg:width="2.136cm" svg:height="0.518cm" svg:x="1.799cm" svg:y="14.017cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T4">CREDITS</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="5.188cm" svg:height="0.433cm" svg:x="1.799cm" svg:y="14.906cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5">AUTORE:</text:span><text:span text:style-name="T6"> LEONARD COHEN</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="15.047cm" svg:height="0.433cm" svg:x="1.799cm" svg:y="15.435cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T5">COPYRIGHT:</text:span><text:span text:style-name="T6"> © BAD MONK PUBLISHING, SONY MUSIC PUBLISHING (ITALY) S.R.L.</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr8" draw:text-style-name="P9" draw:layer="layout" svg:width="16.457cm" svg:height="0.518cm" svg:x="1.799cm" svg:y="16.584cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T4">GENERATO SU ACCORDI E SPARTITI - WWW.ACCORDIESPARTITI.IT</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="18.104cm" svg:height="0.433cm" svg:x="1.799cm" svg:y="17.474cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6">TUTTO IL CONTENUTO SI INTENDE ESCLUSIVAMENTE A USO DIDATTICO, DI STUDIO E DI RICERCA.</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="17.397cm" svg:height="0.433cm" svg:x="1.799cm" svg:y="18.003cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6">ESSO NON È TRATTO DA ALCUNA PUBBLICAZIONE, MA È FRUTTO ESCLUSIVAMENTE DI LIBERE</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="5.628cm" svg:height="0.433cm" svg:x="1.799cm" svg:y="18.532cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6">INTERPRETAZIONI PERSONALI.</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="18.239cm" svg:height="0.433cm" svg:x="1.799cm" svg:y="19.062cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6">L&apos;UTILIZZAZIONE DI TALI MATERIALI È CONSENTITA UNICAMENTE A FINI DIDATTICI E NE È VIETATA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="16.504cm" svg:height="0.433cm" svg:x="1.799cm" svg:y="19.591cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6">QUALSIASI UTILIZZAZIONE A SCOPI COMMERCIALI QUALI, A TITOLO ESEMPLIFICATIVO, LA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="15.149cm" svg:height="0.433cm" svg:x="1.799cm" svg:y="20.121cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6">PUBBLICAZIONE A MEZZO STAMPA OPPURE ONLINE OPPURE MEDIANTE PUBBLICA</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr9" draw:text-style-name="P10" draw:layer="layout" svg:width="3.935cm" svg:height="0.433cm" svg:x="1.799cm" svg:y="20.65cm">
+     <draw:text-box>
+      <text:p text:style-name="P3"><text:span text:style-name="T6">RAPPRESENTAZIONE.</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+   </draw:page>
+  </office:drawing>
+ </office:body>
+</office:document>

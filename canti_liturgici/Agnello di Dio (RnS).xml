@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<office:document xmlns:officeooo="http://openoffice.org/2009/office" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xmlns:smil="urn:oasis:names:tc:opendocument:xmlns:smil-compatible:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.graphics">
+ <office:meta><meta:document-statistic meta:object-count="23"/><meta:generator>LibreOffice/7.3.7.2$Linux_X86_64 LibreOffice_project/e114eadc50a9ff8d8c8a0567d6da8f454beeb84f</meta:generator></office:meta>
+ <office:settings>
+  <config:config-item-set config:name="ooo:view-settings">
+   <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
+   <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">14099</config:config-item>
+   <config:config-item config:name="VisibleAreaHeight" config:type="int">9999</config:config-item>
+  </config:config-item-set>
+  <config:config-item-set config:name="ooo:configuration-settings">
+   <config:config-item config:name="ApplyUserData" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="BitmapTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.sob</config:config-item>
+   <config:config-item config:name="CharacterCompressionType" config:type="short">0</config:config-item>
+   <config:config-item config:name="ColorTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.soc</config:config-item>
+   <config:config-item config:name="DashTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.sod</config:config-item>
+   <config:config-item config:name="DefaultTabStop" config:type="int">1270</config:config-item>
+   <config:config-item config:name="EmbedAsianScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedComplexScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="EmbedLatinScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedOnlyUsedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="GradientTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.sog</config:config-item>
+   <config:config-item config:name="HatchTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.soh</config:config-item>
+   <config:config-item config:name="IsKernAsianPunctuation" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintBooklet" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintBookletBack" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsPrintBookletFront" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsPrintDate" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintFitPage" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintHiddenPages" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsPrintPageName" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintTilePage" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsPrintTime" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="LineEndTableURL" config:type="string">$(brandbaseurl)/share/palette%3B$(user)/config/standard.soe</config:config-item>
+   <config:config-item config:name="LoadReadonly" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="MeasureUnit" config:type="short">7</config:config-item>
+   <config:config-item config:name="PageNumberFormat" config:type="int">4</config:config-item>
+   <config:config-item config:name="ParagraphSummation" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintQuality" config:type="int">0</config:config-item>
+   <config:config-item config:name="PrinterIndependentLayout" config:type="string">low-resolution</config:config-item>
+   <config:config-item config:name="PrinterName" config:type="string"/>
+   <config:config-item config:name="PrinterPaperFromSetup" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrinterSetup" config:type="base64Binary"/>
+   <config:config-item config:name="SaveThumbnail" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="SaveVersionOnClose" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="ScaleDenominator" config:type="int">1</config:config-item>
+   <config:config-item config:name="ScaleNumerator" config:type="int">1</config:config-item>
+   <config:config-item config:name="UpdateFromTemplate" config:type="boolean">true</config:config-item>
+  </config:config-item-set>
+ </office:settings>
+ <office:scripts>
+  <office:script script:language="ooo:Basic">
+   <ooo:libraries xmlns:ooo="http://openoffice.org/2004/office" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+  </office:script>
+ </office:scripts>
+ <office:font-face-decls>
+  <style:font-face style:name="DejaVu Sans" svg:font-family="&apos;DejaVu Sans&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="DejaVu Sans1" svg:font-family="&apos;DejaVu Sans&apos;" style:font-pitch="variable"/>
+  <style:font-face style:name="Liberation Sans" svg:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  <style:font-face style:name="Liberation Serif" svg:font-family="&apos;Liberation Serif&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  <style:font-face style:name="Liberation Serif1" svg:font-family="&apos;Liberation Serif&apos;" style:font-pitch="variable"/>
+  <style:font-face style:name="Noto Sans" svg:font-family="&apos;Noto Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  <style:font-face style:name="Noto Sans Devanagari" svg:font-family="&apos;Noto Sans Devanagari&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="TimesNewRoman" svg:font-family="TimesNewRoman"/>
+  <style:font-face style:name="TimesNewRoman1" svg:font-family="TimesNewRoman" style:font-pitch="variable"/>
+ </office:font-face-decls>
+ <office:styles>
+  <draw:gradient draw:name="Filled" draw:style="linear" draw:start-color="#ffffff" draw:end-color="#cccccc" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="30deg" draw:border="0%"/>
+  <draw:gradient draw:name="Filled_20_Blue" draw:display-name="Filled Blue" draw:style="linear" draw:start-color="#729fcf" draw:end-color="#355269" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="30deg" draw:border="0%"/>
+  <draw:gradient draw:name="Filled_20_Green" draw:display-name="Filled Green" draw:style="linear" draw:start-color="#77bc65" draw:end-color="#127622" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="30deg" draw:border="0%"/>
+  <draw:gradient draw:name="Filled_20_Red" draw:display-name="Filled Red" draw:style="linear" draw:start-color="#ff6d6d" draw:end-color="#c9211e" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="30deg" draw:border="0%"/>
+  <draw:gradient draw:name="Filled_20_Yellow" draw:display-name="Filled Yellow" draw:style="linear" draw:start-color="#ffde59" draw:end-color="#b47804" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="30deg" draw:border="0%"/>
+  <draw:gradient draw:name="Shapes" draw:style="rectangular" draw:cx="50%" draw:cy="50%" draw:start-color="#cccccc" draw:end-color="#ffffff" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="0deg" draw:border="0%"/>
+  <draw:marker draw:name="Arrow" svg:viewBox="0 0 20 30" svg:d="M10 0l-10 30h20z"/>
+  <style:default-style style:family="graphic">
+   <style:graphic-properties svg:stroke-color="#3465a4" draw:fill-color="#729fcf" fo:wrap-option="no-wrap"/>
+   <style:paragraph-properties style:text-autospace="ideograph-alpha" style:punctuation-wrap="simple" style:line-break="strict" style:writing-mode="lr-tb" style:font-independent-line-spacing="false">
+    <style:tab-stops/>
+   </style:paragraph-properties>
+   <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:font-name="Liberation Serif" fo:font-size="24pt" fo:language="en" fo:country="US" style:font-name-asian="DejaVu Sans" style:font-size-asian="24pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="DejaVu Sans" style:font-size-complex="24pt" style:language-complex="hi" style:country-complex="IN"/>
+  </style:default-style>
+  <style:style style:name="standard" style:family="graphic"/>
+  <style:style style:name="objectwithoutfill" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:fill="none"/>
+  </style:style>
+  <style:style style:name="Object_20_with_20_no_20_fill_20_and_20_no_20_line" style:display-name="Object with no fill and no line" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none"/>
+  </style:style>
+  <style:style style:name="Text" style:family="graphic">
+   <style:graphic-properties draw:stroke="solid" svg:stroke-color="#cccccc" draw:fill="solid" draw:fill-color="#eeeeee"/>
+   <style:text-properties style:font-name="Noto Sans" fo:font-family="&apos;Noto Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  </style:style>
+  <style:style style:name="A4" style:family="graphic" style:parent-style-name="Text">
+   <style:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="18pt"/>
+  </style:style>
+  <style:style style:name="Title_20_A4" style:display-name="Title A4" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+   <style:text-properties fo:font-size="44pt"/>
+  </style:style>
+  <style:style style:name="Heading_20_A4" style:display-name="Heading A4" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+   <style:text-properties fo:font-size="24pt"/>
+  </style:style>
+  <style:style style:name="Text_20_A4" style:display-name="Text A4" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+  </style:style>
+  <style:style style:name="A4" style:family="graphic" style:parent-style-name="Text">
+   <style:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="18pt"/>
+  </style:style>
+  <style:style style:name="Title_20_A0" style:display-name="Title A0" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+   <style:text-properties fo:font-size="96pt"/>
+  </style:style>
+  <style:style style:name="Heading_20_A0" style:display-name="Heading A0" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+   <style:text-properties fo:font-size="71.9000015258789pt"/>
+  </style:style>
+  <style:style style:name="Text_20_A0" style:display-name="Text A0" style:family="graphic" style:parent-style-name="A4">
+   <style:graphic-properties draw:stroke="none"/>
+  </style:style>
+  <style:style style:name="Graphic" style:family="graphic">
+   <style:graphic-properties draw:fill="solid" draw:fill-color="#ffffff"/>
+   <style:text-properties style:font-name="Liberation Sans" fo:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable" fo:font-size="18pt"/>
+  </style:style>
+  <style:style style:name="Shapes" style:family="graphic" style:parent-style-name="Graphic">
+   <style:graphic-properties draw:stroke="none" draw:fill="gradient" draw:fill-gradient-name="Shapes"/>
+   <style:text-properties fo:font-size="14pt" fo:font-weight="bold"/>
+  </style:style>
+  <style:style style:name="Filled" style:family="graphic" style:parent-style-name="Shapes">
+   <style:graphic-properties draw:fill="gradient" draw:fill-gradient-name="Filled"/>
+  </style:style>
+  <style:style style:name="Filled_20_Blue" style:display-name="Filled Blue" style:family="graphic" style:parent-style-name="Filled">
+   <style:graphic-properties draw:fill-gradient-name="Filled_20_Blue"/>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Filled_20_Green" style:display-name="Filled Green" style:family="graphic" style:parent-style-name="Filled">
+   <style:graphic-properties draw:fill-gradient-name="Filled_20_Green"/>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%" style:font-name="Liberation Sans" fo:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
+  </style:style>
+  <style:style style:name="Filled_20_Red" style:display-name="Filled Red" style:family="graphic" style:parent-style-name="Filled">
+   <style:graphic-properties draw:fill-gradient-name="Filled_20_Red"/>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Filled_20_Yellow" style:display-name="Filled Yellow" style:family="graphic" style:parent-style-name="Filled">
+   <style:graphic-properties draw:fill-gradient-name="Filled_20_Yellow"/>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Outlined" style:family="graphic" style:parent-style-name="Shapes">
+   <style:graphic-properties draw:stroke="solid" svg:stroke-width="0.081cm" svg:stroke-color="#000000" draw:fill="none"/>
+  </style:style>
+  <style:style style:name="Outlined_20_Blue" style:display-name="Outlined Blue" style:family="graphic" style:parent-style-name="Outlined">
+   <style:graphic-properties svg:stroke-color="#355269"/>
+   <style:text-properties fo:color="#355269" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Outlined_20_Green" style:display-name="Outlined Green" style:family="graphic" style:parent-style-name="Outlined">
+   <style:graphic-properties svg:stroke-color="#127622"/>
+   <style:text-properties fo:color="#127622" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Outlined_20_Red" style:display-name="Outlined Red" style:family="graphic" style:parent-style-name="Outlined">
+   <style:graphic-properties svg:stroke-color="#c9211e"/>
+   <style:text-properties fo:color="#c9211e" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Outlined_20_Yellow" style:display-name="Outlined Yellow" style:family="graphic" style:parent-style-name="Outlined">
+   <style:graphic-properties draw:stroke="solid" svg:stroke-color="#b47804"/>
+   <style:text-properties fo:color="#b47804" loext:opacity="100%"/>
+  </style:style>
+  <style:style style:name="Lines" style:family="graphic" style:parent-style-name="Graphic">
+   <style:graphic-properties draw:stroke="solid" svg:stroke-color="#000000" draw:fill="none"/>
+  </style:style>
+  <style:style style:name="Arrow_20_Line" style:display-name="Arrow Line" style:family="graphic" style:parent-style-name="Lines">
+   <style:graphic-properties draw:marker-start="Arrow" draw:marker-start-width="0.2cm" draw:marker-end="Arrow" draw:marker-end-width="0.2cm" draw:show-unit="true"/>
+  </style:style>
+  <style:style style:name="Arrow_20_Dashed" style:display-name="Arrow Dashed" style:family="graphic" style:parent-style-name="Lines">
+   <style:graphic-properties draw:stroke="dash"/>
+  </style:style>
+ </office:styles>
+ <office:automatic-styles>
+  <style:page-layout style:name="PM0">
+   <style:page-layout-properties fo:margin-top="0.7cm" fo:margin-bottom="1cm" fo:margin-left="1cm" fo:margin-right="1cm" fo:page-width="20.99cm" fo:page-height="29.703cm" style:print-orientation="portrait"/>
+  </style:page-layout>
+  <style:style style:name="dp1" style:family="drawing-page">
+   <style:drawing-page-properties draw:background-size="border" draw:fill="none"/>
+  </style:style>
+  <style:style style:name="dp2" style:family="drawing-page"/>
+  <style:style style:name="gr1" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0.705cm" fo:min-width="0.705cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm"/>
+   <style:paragraph-properties style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="gr2" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0.578cm" fo:min-width="0.578cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm"/>
+   <style:paragraph-properties style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="gr3" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="solid" svg:stroke-width="0.035cm" svg:stroke-color="#000000" draw:stroke-linejoin="miter" svg:stroke-linecap="butt" draw:fill="none" fo:padding-top="0.017cm" fo:padding-bottom="0.017cm" fo:padding-left="0.017cm" fo:padding-right="0.017cm"/>
+  </style:style>
+  <style:style style:name="gr4" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0.916cm" fo:min-width="0.916cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm"/>
+   <style:paragraph-properties style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="gr5" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0.514cm" fo:min-width="0.514cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm"/>
+   <style:paragraph-properties style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="gr6" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="solid" svg:stroke-width="0.031cm" svg:stroke-color="#000000" draw:stroke-linejoin="miter" svg:stroke-linecap="butt" draw:fill="none" fo:padding-top="0.015cm" fo:padding-bottom="0.015cm" fo:padding-left="0.015cm" fo:padding-right="0.015cm"/>
+  </style:style>
+  <style:style style:name="gr7" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0.493cm" fo:min-width="0.493cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm"/>
+   <style:paragraph-properties style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="gr8" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0.634cm" fo:min-width="0.634cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm"/>
+   <style:paragraph-properties style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="gr9" style:family="graphic" style:parent-style-name="standard">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:textarea-horizontal-align="left" draw:textarea-vertical-align="top" draw:auto-grow-height="true" draw:auto-grow-width="true" fo:min-height="0cm" fo:min-width="0cm" fo:padding-top="0cm" fo:padding-bottom="0cm" fo:padding-left="0cm" fo:padding-right="0cm" style:mirror="none"/>
+  </style:style>
+  <style:style style:name="P1" style:family="paragraph">
+   <style:paragraph-properties fo:text-align="start" style:writing-mode="lr-tb"/>
+  </style:style>
+  <style:style style:name="P2" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="20pt" style:font-size-asian="20pt" style:font-size-complex="20pt"/>
+  </style:style>
+  <style:style style:name="P3" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="16.3999996185303pt" style:font-size-asian="16.3999996185303pt" style:font-size-complex="16.3999996185303pt"/>
+  </style:style>
+  <style:style style:name="P4" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+  </style:style>
+  <style:style style:name="P5" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="26pt" style:font-size-asian="26pt" style:font-size-complex="26pt"/>
+  </style:style>
+  <style:style style:name="P6" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="14.6000003814697pt" style:font-size-asian="14.6000003814697pt" style:font-size-complex="14.6000003814697pt"/>
+  </style:style>
+  <style:style style:name="P7" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="14pt" style:font-size-asian="14pt" style:font-size-complex="14pt"/>
+  </style:style>
+  <style:style style:name="P8" style:family="paragraph">
+   <loext:graphic-properties draw:fill="none"/>
+   <style:text-properties fo:font-size="18pt" style:font-size-asian="18pt" style:font-size-complex="18pt"/>
+  </style:style>
+  <style:style style:name="T1" style:family="text">
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="TimesNewRoman" fo:font-size="20pt" fo:font-weight="bold" style:font-size-asian="20pt" style:font-weight-asian="bold" style:font-name-complex="TimesNewRoman" style:font-size-complex="20pt" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="T2" style:family="text">
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="TimesNewRoman" fo:font-size="16.3999996185303pt" fo:font-weight="normal" style:font-size-asian="16.3999996185303pt" style:font-weight-asian="normal" style:font-name-complex="TimesNewRoman" style:font-size-complex="16.3999996185303pt" style:font-weight-complex="normal"/>
+  </style:style>
+  <style:style style:name="T3" style:family="text">
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="TimesNewRoman" fo:font-size="26pt" fo:font-weight="bold" style:font-size-asian="26pt" style:font-weight-asian="bold" style:font-name-complex="TimesNewRoman" style:font-size-complex="26pt" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="T4" style:family="text">
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="TimesNewRoman" fo:font-size="14.6000003814697pt" fo:font-weight="normal" style:font-size-asian="14.6000003814697pt" style:font-weight-asian="normal" style:font-name-complex="TimesNewRoman" style:font-size-complex="14.6000003814697pt" style:font-weight-complex="normal"/>
+  </style:style>
+  <style:style style:name="T5" style:family="text">
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="TimesNewRoman" fo:font-size="14pt" fo:font-style="italic" fo:font-weight="normal" style:font-size-asian="14pt" style:font-style-asian="italic" style:font-weight-asian="normal" style:font-name-complex="TimesNewRoman" style:font-size-complex="14pt" style:font-style-complex="italic" style:font-weight-complex="normal"/>
+  </style:style>
+  <style:style style:name="T6" style:family="text">
+   <style:text-properties fo:color="#0000ff" loext:opacity="100%" style:font-name="TimesNewRoman" fo:font-size="18pt" fo:font-weight="normal" style:font-size-asian="18pt" style:font-weight-asian="normal" style:font-name-complex="TimesNewRoman" style:font-size-complex="18pt" style:font-weight-complex="normal"/>
+  </style:style>
+  <style:style style:name="T7" style:family="text">
+   <style:text-properties fo:color="#0000ff" loext:opacity="100%" style:font-name="TimesNewRoman" fo:font-size="18pt" fo:font-style="italic" fo:font-weight="bold" style:font-size-asian="18pt" style:font-style-asian="italic" style:font-weight-asian="bold" style:font-name-complex="TimesNewRoman" style:font-size-complex="18pt" style:font-style-complex="italic" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="T8" style:family="text">
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="TimesNewRoman" fo:font-size="18pt" fo:font-style="italic" fo:font-weight="normal" style:font-size-asian="18pt" style:font-style-asian="italic" style:font-weight-asian="normal" style:font-name-complex="TimesNewRoman" style:font-size-complex="18pt" style:font-style-complex="italic" style:font-weight-complex="normal"/>
+  </style:style>
+  <style:style style:name="T9" style:family="text">
+   <style:text-properties fo:color="#0000ff" loext:opacity="100%" style:font-name="TimesNewRoman" fo:font-size="18pt" fo:font-style="italic" fo:font-weight="normal" style:font-size-asian="18pt" style:font-style-asian="italic" style:font-weight-asian="normal" style:font-name-complex="TimesNewRoman" style:font-size-complex="18pt" style:font-style-complex="italic" style:font-weight-complex="normal"/>
+  </style:style>
+  <text:list-style style:name="L1">
+   <text:list-level-style-bullet text:level="1" text:bullet-char="●">
+    <style:list-level-properties text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="2" text:bullet-char="●">
+    <style:list-level-properties text:space-before="0.6cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="3" text:bullet-char="●">
+    <style:list-level-properties text:space-before="1.2cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="4" text:bullet-char="●">
+    <style:list-level-properties text:space-before="1.8cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="5" text:bullet-char="●">
+    <style:list-level-properties text:space-before="2.4cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="6" text:bullet-char="●">
+    <style:list-level-properties text:space-before="3cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="7" text:bullet-char="●">
+    <style:list-level-properties text:space-before="3.6cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="8" text:bullet-char="●">
+    <style:list-level-properties text:space-before="4.2cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="9" text:bullet-char="●">
+    <style:list-level-properties text:space-before="4.8cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="10" text:bullet-char="●">
+    <style:list-level-properties text:space-before="5.4cm" text:min-label-width="0.6cm"/>
+    <style:text-properties fo:font-family="StarSymbol" style:use-window-font-color="true" fo:font-size="45%"/>
+   </text:list-level-style-bullet>
+  </text:list-style>
+ </office:automatic-styles>
+ <office:master-styles>
+  <draw:layer-set>
+   <draw:layer draw:name="layout"/>
+   <draw:layer draw:name="background"/>
+   <draw:layer draw:name="backgroundobjects"/>
+   <draw:layer draw:name="controls"/>
+   <draw:layer draw:name="measurelines"/>
+  </draw:layer-set>
+  <style:master-page style:name="master-page3" style:page-layout-name="PM0" draw:style-name="dp1"/>
+ </office:master-styles>
+ <office:body>
+  <office:drawing>
+   <draw:page draw:name="page1" draw:style-name="dp2" draw:master-page-name="master-page3">
+    <draw:frame draw:style-name="gr1" draw:text-style-name="P2" draw:layer="layout" svg:width="6.195cm" svg:height="0.784cm" svg:x="1.09cm" svg:y="0.917cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T1">AGNELLO DI DIO </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr2" draw:text-style-name="P3" draw:layer="layout" svg:width="0.578cm" svg:height="0.644cm" svg:x="1.087cm" svg:y="1.03cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T2"><text:s/></text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:line draw:style-name="gr3" draw:text-style-name="P4" draw:layer="layout" svg:x1="1.086cm" svg:y1="1.598cm" svg:x2="7.26cm" svg:y2="1.598cm">
+     <text:p/>
+    </draw:line>
+    <draw:frame draw:style-name="gr2" draw:text-style-name="P3" draw:layer="layout" svg:width="0.578cm" svg:height="0.644cm" svg:x="7.115cm" svg:y="1.03cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T2"><text:s/></text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr4" draw:text-style-name="P5" draw:layer="layout" svg:width="0.916cm" svg:height="1.017cm" svg:x="7.264cm" svg:y="0.728cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T3"><text:s text:c="3"/></text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.514cm" svg:height="0.573cm" svg:x="7.26cm" svg:y="1.086cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T4"><text:s/></text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:line draw:style-name="gr6" draw:text-style-name="P4" draw:layer="layout" svg:x1="7.26cm" svg:y1="1.594cm" svg:x2="7.948cm" svg:y2="1.594cm">
+     <text:p/>
+    </draw:line>
+    <draw:frame draw:style-name="gr5" draw:text-style-name="P6" draw:layer="layout" svg:width="0.514cm" svg:height="0.573cm" svg:x="7.817cm" svg:y="1.086cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T4"><text:s/></text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:line draw:style-name="gr6" draw:text-style-name="P4" draw:layer="layout" svg:x1="7.951cm" svg:y1="1.594cm" svg:x2="19.942cm" svg:y2="1.594cm">
+     <text:p/>
+    </draw:line>
+    <draw:frame draw:style-name="gr7" draw:text-style-name="P7" draw:layer="layout" svg:width="11.936cm" svg:height="0.547cm" svg:x="7.952cm" svg:y="1.105cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T5">(RnS) <text:s text:c="87"/></text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr8" draw:text-style-name="P8" draw:layer="layout" svg:width="11.466cm" svg:height="0.704cm" svg:x="1.09cm" svg:y="3.378cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T6"><text:s text:c="6"/></text:span><text:span text:style-name="T7">Re <text:s text:c="23"/>Si- <text:s text:c="26"/>Sol</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr8" draw:text-style-name="P8" draw:layer="layout" svg:width="11.618cm" svg:height="0.704cm" svg:x="1.09cm" svg:y="4.32cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T8">Agnello di Dio, che togli i peccati del mondo </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr8" draw:text-style-name="P8" draw:layer="layout" svg:width="6.267cm" svg:height="0.704cm" svg:x="1.09cm" svg:y="5.262cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T7">Mi- <text:s text:c="8"/>Sol <text:s text:c="4"/>La4 <text:s text:c="2"/>La</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr8" draw:text-style-name="P8" draw:layer="layout" svg:width="6.035cm" svg:height="0.704cm" svg:x="1.09cm" svg:y="6.204cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T8">Abbi pietà <text:s text:c="2"/>di <text:s text:c="2"/>no <text:s/>– <text:s/>i.</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr8" draw:text-style-name="P8" draw:layer="layout" svg:width="11.144cm" svg:height="0.704cm" svg:x="1.09cm" svg:y="8.088cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T9"><text:s text:c="4"/></text:span><text:span text:style-name="T7">Re <text:s text:c="23"/>Si- <text:s text:c="26"/>Sol</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr8" draw:text-style-name="P8" draw:layer="layout" svg:width="11.618cm" svg:height="0.704cm" svg:x="1.09cm" svg:y="9.03cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T8">Agnello di Dio, che togli i peccati del mondo </text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr8" draw:text-style-name="P8" draw:layer="layout" svg:width="6.644cm" svg:height="0.704cm" svg:x="1.09cm" svg:y="9.972cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T7">Mi- <text:s text:c="8"/>Mi <text:s text:c="7"/>La4 <text:s text:c="2"/>La</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr8" draw:text-style-name="P8" draw:layer="layout" svg:width="6.356cm" svg:height="0.704cm" svg:x="1.09cm" svg:y="10.914cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T8">Abbi <text:s text:c="2"/>pietà <text:s text:c="2"/>di <text:s text:c="2"/>no <text:s/>– <text:s/>i.</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr8" draw:text-style-name="P8" draw:layer="layout" svg:width="11.063cm" svg:height="0.704cm" svg:x="1.09cm" svg:y="12.797cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T7"><text:s text:c="5"/></text:span><text:span text:style-name="T7">Fa#- <text:s text:c="19"/>Si- <text:s text:c="25"/>Sol</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr8" draw:text-style-name="P8" draw:layer="layout" svg:width="11.457cm" svg:height="0.704cm" svg:x="1.09cm" svg:y="13.739cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T8">Agnello di Dio, che togli i peccati del mondo</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr8" draw:text-style-name="P8" draw:layer="layout" svg:width="9.32cm" svg:height="0.704cm" svg:x="1.09cm" svg:y="14.681cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T7">Mi- <text:s text:c="11"/>La4 <text:s/>La <text:s text:c="4"/>Sol <text:s text:c="2"/>Sol- <text:s text:c="2"/>Re</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+    <draw:frame draw:style-name="gr9" draw:text-style-name="P4" draw:layer="layout" svg:width="6.614cm" svg:height="8.811cm" svg:x="7.091cm" svg:y="17.41cm">
+     <draw:image draw:mime-type="image/jpeg">
+      <office:binary-data>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
+       mAKDsh+sqCBILEGJvBs//9k=
+      </office:binary-data>
+      <text:p/>
+     </draw:image>
+    </draw:frame>
+    <draw:frame draw:style-name="gr8" draw:text-style-name="P8" draw:layer="layout" svg:width="9.404cm" svg:height="0.704cm" svg:x="1.09cm" svg:y="15.623cm">
+     <draw:text-box>
+      <text:p text:style-name="P1"><text:span text:style-name="T8">dona <text:s text:c="2"/>a <text:s text:c="2"/>noi <text:s text:c="4"/>la <text:s text:c="5"/>pa <text:s text:c="5"/>– <text:s text:c="6"/>ce.</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+   </draw:page>
+  </office:drawing>
+ </office:body>
+</office:document>
