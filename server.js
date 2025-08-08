@@ -239,12 +239,25 @@ app.get('/diagrams/:filename', async (req, res) => {
         }
 
         // Approccio 2: Analisi per la struttura precedente (se il primo fallisce)
-        if (uniqueNotes.length === 0) {
-            const oldStructureColorRegex = /Brush=".*?Color="#FF0000CC">.*?<Text>(.*?)<\/Text>/g;
-            const oldStructureMatches = [...xmlText.matchAll(oldStructureColorRegex)];
-            const notes = oldStructureMatches.map(match => match[1].trim());
-            // Unisci le note, rimuovi duplicati e filtra gli spazi vuoti
+        if (uniqueNotes.length === 0 && xmlText.includes('<Glyphs')) {
+            const noteRegex = /<Glyphs RenderTransform=".*?" Brush=".*?Color="#FF0000CC">.*?<Text>(.*?)<\/Text>/g;
+            const matches = [...xmlText.matchAll(noteRegex)];
+            const notes = matches.map(match => match[1].trim());
             uniqueNotes = [...new Set(notes.flatMap(n => n.split(/\s+/)).filter(n => n))];
+        }
+
+        // Approccio 3 (nuovo): Analisi per la struttura <text:span> text:style-name="T4"
+        if (uniqueNotes.length === 0 && xmlText.includes('text:style-name="T4"')) {
+            const newRegex = /<text:span text:style-name="T4">(.*?)<\/text:span>/g;
+            const matches = [...xmlText.matchAll(newRegex)];
+
+            const notesFromMatches = matches.map(match => {
+                // Rimuovi i tag <text:s> e gli spazi superflui
+                return match[1].replace(/<text:s.*?>/g, '').replace(/\s+/g, ' ').trim();
+            }).join(' ');
+
+            const notesArray = notesFromMatches.split(' ');
+            uniqueNotes = [...new Set(notesArray.filter(n => n))];
         }
 
         if (uniqueNotes.length > 0) {
