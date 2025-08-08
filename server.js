@@ -228,14 +228,16 @@ app.get('/diagrams/:filename', async (req, res) => {
 
         let uniqueNotes = [];
 
-        // Tentativo di analisi per la struttura più recente (text:span con style-name="T4")
-        const newRegex = /<text:span text:style-name="T4">(.*?)<\/text:span>/g;
+        // Tentativo di analisi per la struttura più recente (<text:span> con style-name="T*")
+        // Questa regex è più precisa e gestisce il pattern che hai identificato.
+        const newRegex = /<text:span text:style-name="T\d+">(.*?)<\/text:span>/g;
         const matches = [...xmlText.matchAll(newRegex)];
 
         if (matches.length > 0) {
             const notesFromMatches = matches.map(match => {
                 // Rimuovi tutti i tag, come <text:s .../>, e mantieni solo il testo
-                return match[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+                const cleanedText = match[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+                return cleanedText;
             }).join(' ');
 
             const notesArray = notesFromMatches.split(' ');
