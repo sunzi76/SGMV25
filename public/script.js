@@ -445,6 +445,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clickedPlaylistPreview.classList.remove('hidden');
     }
 
+    // Funzione per mostrare i diagrammi
     async function showChordDiagrams(filename) {
         diagramsFilename.textContent = filename;
         diagramsContainer.innerHTML = 'Caricamento diagrammi...';
@@ -465,16 +466,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let diagramsHtml = '';
             for (const chord of chords) {
-                // Genera l'URL del diagramma
                 const diagramImage = generateChordDiagram(chord);
-                
-                // Verifica l'estensione del file in base alla nota
-                const hasDiagram = await checkImageExists(diagramImage);
-
                 diagramsHtml += `
                     <div class="chord-diagram-item">
                         <h4>Accordo di ${chord}</h4>
-                        ${hasDiagram ? `<img src="${diagramImage}" alt="Diagramma accordo di ${chord}">` : '<p>Diagramma non disponibile</p>'}
+                        <img src="${diagramImage}" alt="Diagramma accordo di ${chord}" 
+                            onload="this.style.display='block'" 
+                            onerror="this.style.display='none'; this.parentNode.innerHTML += '<p>Diagramma non disponibile</p>';">
                     </div>
                 `;
             }
@@ -497,19 +495,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Funzione per generare l'URL dell'immagine del diagramma
+    // Funzione per generare l'URL dell'immagine del diagramma sgmv25-canti-liturgici eu-north-1
     // Modifica la funzione generateChordDiagram per gestire i nomi dei file in modo più robusto
     function generateChordDiagram(chord) {
-        // Semplifica il nome per trovare il file corrispondente
-        let fileName = chord.replace(/ /g, '');
+        let fileName = chord.replace(/ /g, '').toLowerCase(); // Convertiamo in minuscolo per coerenza
         
-        // Potrebbe essere necessario gestire i nomi degli accordi minori, es. "Si-", in modo specifico
-        if (fileName.includes('-')) {
+        // Gestisce i nomi specifici, ad esempio "Si-" -> "simin"
+        if (fileName.endsWith('-')) {
             fileName = fileName.replace('-', 'min');
         }
 
-        const bucketName = 'sgmv25-canti-liturgici'; 
-        const region = 'eu-north-1';      
+        const bucketName = 'sgmv25-canti-liturgici';
+        const region = 'eu-north-1';
         const imageUrl = `https://${bucketName}.s3.${region}.amazonaws.com/chord-diagrams/${fileName}.jpg`;
         
         return imageUrl;
