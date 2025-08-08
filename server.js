@@ -228,22 +228,21 @@ app.get('/diagrams/:filename', async (req, res) => {
         let uniqueNotes = [];
 
         // Approccio 1: Analisi per la struttura LibreOffice (nuovo file)
-        if (xmlText.includes('<office:document')) {
-            const redColorStyles = [...xmlText.matchAll(/style:name="(T\d+)"[^>]*?fo:color="#ff0000"/g)]
-                                     .map(match => match[1]);
+        const libreOfficeColorRegex = /style:name="(T\d+)"[^>]*?fo:color="#ff0000[^"]*"/g;
+        const redColorStyles = [...xmlText.matchAll(libreOfficeColorRegex)]
+                                 .map(match => match[1]);
 
-            if (redColorStyles.length > 0) {
-                const noteRegex = new RegExp(`<text:span text:style-name="(${redColorStyles.join('|')})">(.*?)<\/text:span>`, 'g');
-                const matches = [...xmlText.matchAll(noteRegex)];
-                uniqueNotes = [...new Set(matches.map(match => match[2].trim()))];
-            }
-        }
-        
-        // Approccio 2: Analisi per la struttura precedente
-        if (uniqueNotes.length === 0 && xmlText.includes('<Glyphs')) {
-            const noteRegex = /<Glyphs RenderTransform=".*?" Brush=".*?Color="#FF0000CC">.*?<Text>(.*?)<\/Text>/g;
+        if (redColorStyles.length > 0) {
+            const noteRegex = new RegExp(`<text:span text:style-name="(${redColorStyles.join('|')})">(.*?)<\/text:span>`, 'g');
             const matches = [...xmlText.matchAll(noteRegex)];
-            const notes = matches.map(match => match[1].trim());
+            uniqueNotes = [...new Set(matches.map(match => match[2].trim()))];
+        }
+
+        // Approccio 2: Analisi per la struttura precedente (se il primo fallisce)
+        if (uniqueNotes.length === 0) {
+            const oldStructureColorRegex = /Brush=".*?Color="#FF0000CC">.*?<Text>(.*?)<\/Text>/g;
+            const oldStructureMatches = [...xmlText.matchAll(oldStructureColorRegex)];
+            const notes = oldStructureMatches.map(match => match[1].trim());
             // Unisci le note, rimuovi duplicati e filtra gli spazi vuoti
             uniqueNotes = [...new Set(notes.flatMap(n => n.split(/\s+/)).filter(n => n))];
         }
