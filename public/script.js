@@ -510,15 +510,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Funzione per generare l'URL dell'immagine del diagramma sgmv25-canti-liturgici eu-north-1
     // Modifica la funzione generateChordDiagram per gestire i nomi dei file in modo più robusto
     function generateChordDiagram(chord) {
-        let fileName = chord.replace(/ /g, '').toLowerCase(); // Convertiamo in minuscolo per coerenza
-        
-        // Gestisce i nomi specifici, ad esempio "Si-" -> "simin"
-        if (fileName.endsWith('-')) {
+        // 1. Rimuove spazi e converte tutto in minuscolo
+        let fileName = chord.replace(/ /g, '').toLowerCase();
+
+        // 2. Mappa le note con trattino a nomi standard, ad esempio Si- diventa simin
+        if (fileName.includes('-')) {
             fileName = fileName.replace('-', 'min');
         }
-
-        const bucketName = 'sgmv25-canti-liturgici';
-        const region = 'eu-north-1';
+        // Aggiungi qui altre mappature se necessario, ad esempio "Mi-" -> "mimin", "Fa#" -> "fasdiesis"
+        
+        // 3. Converte la prima lettera del nome del file in maiuscolo
+        fileName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
+        
+        // Assicurati che questi valori corrispondano a quelli del tuo progetto
+        const bucketName = 'sgmv25-canti-liturgici'; // **SOSTITUISCI CON IL TUO NOME BUCKET**
+        const region = 'eu-north-1';      // **SOSTITUISCI CON LA TUA REGIONE AWS**
+        
+        // Costruisce l'URL dinamico dell'immagine su S3 con l'estensione corretta
         const imageUrl = `https://${bucketName}.s3.${region}.amazonaws.com/chord-diagrams/${fileName}.jpg`;
         
         return imageUrl;
