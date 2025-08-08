@@ -105,7 +105,7 @@ button.add-to-playlist-btn:hover {
 }
 
 input[type="text"], input[type="file"] {
-    width: calc(100% - 110px); /* Adjust width considering button */
+    width: auto; /* Adjust width considering button */
     padding: 10px;
     margin-right: 10px;
     border: 1px solid #ccc;
@@ -120,7 +120,7 @@ input[type="text"], input[type="file"] {
 }
 
 #search-input {
-    width: 100%;
+    width: auto;
     margin-bottom: 15px;
 }
 
@@ -736,7 +736,7 @@ h2 {
 }
 
 #search-input {
-    width: 100%;
+    width: auto;
     box-sizing: border-box;
     padding-right: 30px; /* Spazio per la 'x' */
 }
