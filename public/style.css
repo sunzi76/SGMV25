@@ -119,10 +119,6 @@ input[type="text"], input[type="file"] {
     margin-bottom: 15px;
 }
 
-#search-input {
-    width: auto;
-    margin-bottom: 15px;
-}
 
 #upload-message, #playlist-message {
     text-align: center;
