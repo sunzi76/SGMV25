@@ -60,19 +60,26 @@ app.post('/upload', upload.single('pdfFile'), (req, res) => {
 // Rotta per ottenere la lista dei file PDF da S3
 app.get('/files', async (req, res) => {
     try {
-        const command = new ListObjectsV2Command({ Bucket: bucketName });
-        const result = await s3Client.send(command);
-        const fileList = result.Contents || [];
-        const files = fileList
-            .filter(item => item.Key.startsWith('canti_liturgici/') && item.Key !== 'playlists/playlists.json')
+        const command = new ListObjectsV2Command({ Bucket: bucketName, Prefix: 'canti_liturgici/' });
+        const { Contents } = await s3Client.send(command);
+
+        if (!Contents) {
+            return res.status(404).json({ message: "Nessun file trovato." });
+        }
+
+        // Filtra per mostrare solo i file PDF
+        const pdfFiles = Contents
+            .filter(item => item.Key.endsWith('.pdf'))
             .map(item => ({
-                name: item.Key.substring('canti_liturgici/'.length),
+                key: item.Key,
+                name: item.Key.split('/').pop(),
                 url: `https://${bucketName}.s3.${region}.amazonaws.com/${item.Key}`
             }));
-        res.json(files);
+
+        res.json(pdfFiles);
     } catch (error) {
-        console.error('Errore nel recupero dei file da S3:', error);
-        res.status(500).send('Errore interno del server.');
+        console.error("Errore nel recupero dell'elenco file:", error);
+        res.status(500).json({ message: "Errore nel recupero dell'elenco file." });
     }
 });
 
@@ -211,28 +218,43 @@ app.get('/playlists/:id/download', async (req, res) => {
 // Rotta per la lettura delle note e trasformazione in tablatura per chitarra
 app.get('/diagrams/:filename', async (req, res) => {
     const filename = req.params.filename;
-    // Assicurati che il nome del file sia corretto per l'XML
-    const key = `canti_liturgici/${filename.replace('.pdf', '.xml')}`;
+    const xmlKey = `canti_liturgici/${filename.replace('.pdf', '.xml')}`;
 
     try {
-        const command = new GetObjectCommand({ Bucket: bucketName, Key: key });
+        const command = new GetObjectCommand({ Bucket: bucketName, Key: xmlKey });
         const { Body } = await s3Client.send(command);
         const xmlText = await Body.transformToString();
 
-        // Regex per trovare i tag <Glyphs> con il colore specifico per gli accordi
-        const noteRegex = /<Glyphs RenderTransform=".*?" Brush=".*?Color="#FF0000CC">.*?<Text>(.*?)<\/Text>/g;
-        const matches = [...xmlText.matchAll(noteRegex)];
+        let uniqueNotes = [];
+
+        // Approccio 1: Analisi per la struttura LibreOffice (nuovo file)
+        if (xmlText.includes('<office:document')) {
+            const redColorStyles = [...xmlText.matchAll(/style:name="(T\d+)"[^>]*?fo:color="#ff0000"/g)]
+                                     .map(match => match[1]);
+
+            if (redColorStyles.length > 0) {
+                const noteRegex = new RegExp(`<text:span text:style-name="(${redColorStyles.join('|')})">(.*?)<\/text:span>`, 'g');
+                const matches = [...xmlText.matchAll(noteRegex)];
+                uniqueNotes = [...new Set(matches.map(match => match[2].trim()))];
+            }
+        }
         
-        // Estrai e unisci il testo delle note, eliminando i duplicati
-        const uniqueNotes = [...new Set(matches.map(match => match[1].trim()))];
+        // Approccio 2: Analisi per la struttura precedente
+        if (uniqueNotes.length === 0 && xmlText.includes('<Glyphs')) {
+            const noteRegex = /<Glyphs RenderTransform=".*?" Brush=".*?Color="#FF0000CC">.*?<Text>(.*?)<\/Text>/g;
+            const matches = [...xmlText.matchAll(noteRegex)];
+            const notes = matches.map(match => match[1].trim());
+            // Unisci le note, rimuovi duplicati e filtra gli spazi vuoti
+            uniqueNotes = [...new Set(notes.flatMap(n => n.split(/\s+/)).filter(n => n))];
+        }
 
         if (uniqueNotes.length > 0) {
             res.json({ success: true, notes: uniqueNotes });
         } else {
-            res.status(404).json({ success: false, message: 'Nessuna nota musicale colorata trovata nel file XML.' });
+            res.status(404).json({ success: false, message: 'Nessuna nota musicale colorata trovata in questo file XML.' });
         }
     } catch (error) {
-        console.error(`Errore nel recupero del file XML per i diagrammi: ${key}`, error);
+        console.error(`Errore nel recupero del file XML per i diagrammi: ${xmlKey}`, error);
         res.status(500).json({ success: false, message: 'Errore interno del server.' });
     }
 });
