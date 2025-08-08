@@ -7,6 +7,7 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
+
 const port = process.env.PORT || 3000;
 
 // Configurazione di AWS S3 (V3 SDK)
@@ -227,43 +228,48 @@ app.get('/diagrams/:filename', async (req, res) => {
 
         let uniqueNotes = [];
 
-        // Approccio 1: Analisi per la struttura LibreOffice (nuovo file)
-        const libreOfficeColorRegex = /style:name="(T\d+)"[^>]*?fo:color="#ff0000[^"]*"/g;
-        const redColorStyles = [...xmlText.matchAll(libreOfficeColorRegex)]
-                                 .map(match => match[1]);
+        // Tentativo di analisi per la struttura più recente (text:span con style-name="T4")
+        const newRegex = /<text:span text:style-name="T4">(.*?)<\/text:span>/g;
+        const matches = [...xmlText.matchAll(newRegex)];
 
-        if (redColorStyles.length > 0) {
-            const noteRegex = new RegExp(`<text:span text:style-name="(${redColorStyles.join('|')})">(.*?)<\/text:span>`, 'g');
-            const matches = [...xmlText.matchAll(noteRegex)];
-            uniqueNotes = [...new Set(matches.map(match => match[2].trim()))];
-        }
-
-        // Approccio 2: Analisi per la struttura precedente (se il primo fallisce)
-        if (uniqueNotes.length === 0 && xmlText.includes('<Glyphs')) {
-            const noteRegex = /<Glyphs RenderTransform=".*?" Brush=".*?Color="#FF0000CC">.*?<Text>(.*?)<\/Text>/g;
-            const matches = [...xmlText.matchAll(noteRegex)];
-            const notes = matches.map(match => match[1].trim());
-            uniqueNotes = [...new Set(notes.flatMap(n => n.split(/\s+/)).filter(n => n))];
-        }
-
-        // Approccio 3 (nuovo): Analisi per la struttura <text:span> text:style-name="T4"
-        if (uniqueNotes.length === 0 && xmlText.includes('text:style-name="T4"')) {
-            const newRegex = /<text:span text:style-name="T4">(.*?)<\/text:span>/g;
-            const matches = [...xmlText.matchAll(newRegex)];
-
+        if (matches.length > 0) {
             const notesFromMatches = matches.map(match => {
-                // Rimuovi i tag <text:s> e gli spazi superflui
-                return match[1].replace(/<text:s.*?>/g, '').replace(/\s+/g, ' ').trim();
+                // Rimuovi tutti i tag, come <text:s .../>, e mantieni solo il testo
+                return match[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
             }).join(' ');
 
             const notesArray = notesFromMatches.split(' ');
-            uniqueNotes = [...new Set(notesArray.filter(n => n))];
+            
+            // Filtra solo le stringhe che sembrano accordi (es. "Do", "Re", "Mi-7", ecc.)
+            const chordRegex = /^[A-G](b|#|sus|add|maj|min|m)?[0-9]*(-|)?(7|9|11|13)?$/i;
+            uniqueNotes = [...new Set(notesArray.filter(n => chordRegex.test(n)))];
+        }
+
+        // Se non troviamo nulla con il nuovo approccio, proviamo con le vecchie strutture
+        if (uniqueNotes.length === 0) {
+            // Approccio per la vecchia struttura (LibreOffice)
+            const libreOfficeColorRegex = /style:name="(T\d+)"[^>]*?fo:color="#ff0000[^"]*"/g;
+            const redColorStyles = [...xmlText.matchAll(libreOfficeColorRegex)].map(match => match[1]);
+            
+            if (redColorStyles.length > 0) {
+                const noteRegex = new RegExp(`<text:span text:style-name="(${redColorStyles.join('|')})">(.*?)<\/text:span>`, 'g');
+                const matches = [...xmlText.matchAll(noteRegex)];
+                uniqueNotes = [...new Set(matches.map(match => match[2].trim()))];
+            }
+        }
+        
+        if (uniqueNotes.length === 0) {
+            // Approccio per la struttura precedente (<Glyphs>)
+            const oldStructureColorRegex = /Brush=".*?Color="#FF0000CC">.*?<Text>(.*?)<\/Text>/g;
+            const oldStructureMatches = [...xmlText.matchAll(oldStructureColorRegex)];
+            const notes = oldStructureMatches.map(match => match[1].trim());
+            uniqueNotes = [...new Set(notes.flatMap(n => n.split(/\s+/)).filter(n => n))];
         }
 
         if (uniqueNotes.length > 0) {
             res.json({ success: true, notes: uniqueNotes });
         } else {
-            res.status(404).json({ success: false, message: 'Nessuna nota musicale colorata trovata in questo file XML.' });
+            res.status(404).json({ success: false, message: 'Nessuna nota musicale trovata in questo file XML.' });
         }
     } catch (error) {
         console.error(`Errore nel recupero del file XML per i diagrammi: ${xmlKey}`, error);
