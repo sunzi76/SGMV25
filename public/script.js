@@ -465,31 +465,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let diagramsHtml = '';
             for (const chord of chords) {
+                // Genera l'URL del diagramma
                 const diagramImage = generateChordDiagram(chord);
-                if (diagramImage) {
-                    diagramsHtml += `
-                        <div class="chord-diagram-item">
-                            <h4>Accordo di ${chord}</h4>
-                            <img src="${diagramImage}" alt="Diagramma accordo di ${chord}">
-                        </div>
-                    `;
-                }
+                
+                // Verifica l'estensione del file in base alla nota
+                const hasDiagram = await checkImageExists(diagramImage);
+
+                diagramsHtml += `
+                    <div class="chord-diagram-item">
+                        <h4>Accordo di ${chord}</h4>
+                        ${hasDiagram ? `<img src="${diagramImage}" alt="Diagramma accordo di ${chord}">` : '<p>Diagramma non disponibile</p>'}
+                    </div>
+                `;
             }
             diagramsContainer.innerHTML = diagramsHtml;
+
         } catch (error) {
             console.error('Errore nel recupero dei diagrammi:', error);
             diagramsContainer.innerHTML = `<p>${error.message}</p>`;
         }
     }
 
+    // NUOVA FUNZIONE: Controlla se l'immagine esiste
+    async function checkImageExists(url) {
+        try {
+            const response = await fetch(url, { method: 'HEAD' });
+            return response.ok;
+        } catch (error) {
+            return false;
+        }
+    }
+
+
     // Funzione per generare l'URL dell'immagine del diagramma
+    // Modifica la funzione generateChordDiagram per gestire i nomi dei file in modo più robusto
     function generateChordDiagram(chord) {
-        // Questa funzione genera l'URL dell'immagine su S3
-        const fileName = chord.replace(/ /g, '');
+        // Semplifica il nome per trovare il file corrispondente
+        let fileName = chord.replace(/ /g, '');
+        
+        // Potrebbe essere necessario gestire i nomi degli accordi minori, es. "Si-", in modo specifico
+        if (fileName.includes('-')) {
+            fileName = fileName.replace('-', 'min');
+        }
+
         const bucketName = 'sgmv25-canti-liturgici'; 
         const region = 'eu-north-1';      
         const imageUrl = `https://${bucketName}.s3.${region}.amazonaws.com/chord-diagrams/${fileName}.jpg`;
-
+        
         return imageUrl;
     }
 
