@@ -448,11 +448,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Funzione per mostrare i diagrammi
     async function showChordDiagrams(filename) {
         diagramsFilename.textContent = filename;
-        diagramsContainer.innerHTML = 'Caricamento diagrammi...';
+        diagramsContainer.innerHTML = 'Caricamento note per il debug...';
         diagramsModal.classList.remove('hidden');
 
         try {
-            // Chiama la nuova rotta API che analizza l'XML
             const response = await fetch(`${API_BASE_URL}/diagrams/${filename}`);
             if (!response.ok) {
                 const errorData = await response.json();
@@ -462,39 +461,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const chords = data.notes;
 
             if (chords.length === 0) {
-                diagramsContainer.innerHTML = '<p>Nessuna nota musicale trovata in questo file.</p>';
+                diagramsContainer.innerHTML = '<h4>Note estratte per il debug:</h4><p>Nessuna nota musicale trovata in questo file.</p>';
                 return;
             }
 
-            diagramsContainer.innerHTML = ''; // Svuota il contenitore
+            let notesHtml = '<h4>Note estratte per il debug:</h4><ul>';
+            chords.forEach(note => {
+                notesHtml += `<li>${note}</li>`;
+            });
+            notesHtml += '</ul>';
 
-            for (const chord of chords) {
-                const diagramImage = generateChordDiagram(chord);
-                
-                const diagramItem = document.createElement('div');
-                diagramItem.classList.add('chord-diagram-item');
-                diagramItem.innerHTML = `<h4>Accordo di ${chord}</h4>`;
-
-                const img = new Image();
-                img.src = diagramImage;
-                img.alt = `Diagramma accordo di ${chord}`;
-                
-                img.onload = () => {
-                    diagramItem.appendChild(img);
-                    diagramsContainer.appendChild(diagramItem);
-                };
-
-                img.onerror = () => {
-                    const errorMessage = document.createElement('p');
-                    errorMessage.textContent = 'Diagramma non disponibile';
-                    diagramItem.appendChild(errorMessage);
-                    diagramsContainer.appendChild(diagramItem);
-                };
-            }
+            diagramsContainer.innerHTML = notesHtml;
 
         } catch (error) {
-            console.error('Errore nel recupero dei diagrammi:', error);
-            diagramsContainer.innerHTML = `<p>${error.message}</p>`;
+            console.error('Errore nel recupero delle note per il debug:', error);
+            diagramsContainer.innerHTML = `<h4>Errore durante il debug:</h4><p>${error.message}</p>`;
         }
     }
 
