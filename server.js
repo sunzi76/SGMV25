@@ -228,27 +228,23 @@ app.get('/diagrams/:filename', async (req, res) => {
 
         let uniqueNotes = [];
 
-        // Tentativo di analisi per la struttura più recente (<text:span> con style-name="T*")
+        // Tentativo 1: Analisi per la struttura <text:span> con style-name="T*"
         const newRegex = /<text:span text:style-name="T\d+">(.*?)<\/text:span>/g;
         const matches = [...xmlText.matchAll(newRegex)];
 
         if (matches.length > 0) {
             const notesFromMatches = matches.map(match => {
-                // Rimuovi tutti i tag, come <text:s .../>, e mantieni solo il testo
                 const cleanedText = match[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
                 return cleanedText;
             }).join(' ');
 
             const notesArray = notesFromMatches.split(' ').filter(n => n);
-            
-            // Nuova e più precisa regex per gli accordi
-            const chordRegex = /^(La|Si|Do|Re|Mi|Fa|Sol)(b|#|sus|add|maj|min|m)?(-)?(7|9|11|13)?$/i;
+            const chordRegex = /^(Do|Re|Mi|Fa|Sol|La|Si)(b|#|sus|add|maj|min|m)?[0-9]*(-)?(7|9|11|13)?$/i;
             uniqueNotes = [...new Set(notesArray.filter(n => chordRegex.test(n)))];
         }
 
-        // Se non troviamo nulla con il nuovo approccio, proviamo con le vecchie strutture
+        // Tentativo 2: Fallback per la vecchia struttura (LibreOffice)
         if (uniqueNotes.length === 0) {
-            // Approccio per la vecchia struttura (LibreOffice)
             const libreOfficeColorRegex = /style:name="(T\d+)"[^>]*?fo:color="#ff0000[^"]*"/g;
             const redColorStyles = [...xmlText.matchAll(libreOfficeColorRegex)].map(match => match[1]);
             
@@ -260,8 +256,8 @@ app.get('/diagrams/:filename', async (req, res) => {
             }
         }
         
+        // Tentativo 3: Fallback per la struttura precedente (<Glyphs>)
         if (uniqueNotes.length === 0) {
-            // Approccio per la struttura precedente (<Glyphs>)
             const oldStructureColorRegex = /Brush=".*?Color="#FF0000CC">.*?<Text>(.*?)<\/Text>/g;
             const oldStructureMatches = [...xmlText.matchAll(oldStructureColorRegex)];
             const notes = oldStructureMatches.map(match => match[1].trim());
@@ -274,8 +270,12 @@ app.get('/diagrams/:filename', async (req, res) => {
             res.status(404).json({ success: false, message: 'Nessuna nota musicale trovata in questo file XML.' });
         }
     } catch (error) {
-        console.error(`Errore nel recupero del file XML per i diagrammi: ${xmlKey}`, error);
-        res.status(500).json({ success: false, message: 'Errore interno del server.' });
+        if (error.Code === 'NoSuchKey') {
+            res.status(404).json({ success: false, message: 'Il file XML corrispondente non è stato trovato.' });
+        } else {
+            console.error(`Errore nel recupero del file XML per i diagrammi: ${xmlKey}`, error);
+            res.status(500).json({ success: false, message: 'Errore interno del server.' });
+        }
     }
 });
 
