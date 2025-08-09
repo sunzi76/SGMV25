@@ -447,17 +447,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Funzione per mostrare i diagrammi
     async function showChordDiagrams(filename) {
+        const diagramsModal = document.getElementById('diagrams-modal');
+        const diagramsContainer = document.getElementById('diagrams-container');
+        const diagramsFilename = document.getElementById('diagrams-filename');
+
         diagramsFilename.textContent = filename;
         diagramsContainer.innerHTML = 'Caricamento diagrammi...';
-        diagramsModal.classList.remove('hidden');
+        diagramsModal.classList.add('visible');
 
         try {
             const response = await fetch(`${API_BASE_URL}/diagrams/${filename}`);
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.message || 'Nessuna nota musicale trovata per questo file.');
-            }
             const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Nessuna nota musicale trovata per questo file.');
+            }
+
             const chords = data.notes;
 
             if (chords.length === 0) {
@@ -465,14 +470,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            diagramsContainer.innerHTML = ''; // Svuota il contenitore prima di riempirlo
+            diagramsContainer.innerHTML = '';
 
             for (const chord of chords) {
-                const diagramImage = generateChordDiagram(chord);
+                const chordKey = chord.trim().replace(/#/, '-sharp-').replace(/-/g, 'min').toLowerCase();
+                const diagramImage = `/chord-diagrams/${chordKey}.jpg`; 
                 
                 const diagramItem = document.createElement('div');
                 diagramItem.classList.add('chord-diagram-item');
-                diagramItem.innerHTML = `<h4>Accordo di ${chord}</h4>`;
+                diagramItem.innerHTML = `<h4>${chord}</h4>`;
 
                 const img = new Image();
                 img.src = diagramImage;
