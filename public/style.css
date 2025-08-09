@@ -189,10 +189,11 @@ input[type="text"], input[type="file"] {
     margin-right: 15px;
 }
 
+/* Allineamento dei pulsanti */
 .button-container {
     display: flex;
     gap: 5px;
-    flex-shrink: 0;
+    flex-wrap: wrap; /* Permette ai pulsanti di andare a capo su schermi piccoli */
 }
 
 /* Pop-up Modale */
@@ -338,12 +339,48 @@ input[type="text"], input[type="file"] {
         grid-template-columns: 1fr;
     }
     
+    /* Allineamento dell'input e dei pulsanti della playlist */
     .playlist-actions {
-        flex-direction: column;
-        align-items: stretch;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px;
+        flex-wrap: wrap;
     }
     
     #playlist-name-input, #save-playlist-btn, #clear-playlist-btn {
         width: 100%;
+    }
+
+    /* Colori dei pulsanti per la playlist */
+    #save-playlist-btn {
+        background-color: var(--success-color); /* Verde */
+    }
+
+    #clear-playlist-btn {
+        background-color: var(--danger-color);  /* Rosso */
+    }
+
+    #playlist-name-input {
+        flex-grow: 1; /* L'input si espande per occupare lo spazio */
+    }
+
+    /* Paginazione */
+    #pagination {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* Stili per la sezione di caricamento file */
+    .file-upload h2 {
+        text-align: center;
+        position: relative;
+    }
+
+    .file-upload .return-to-top {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
