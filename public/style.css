@@ -1,12 +1,23 @@
+/* Stili Globali */
+:root {
+    --primary-color: #007bff;
+    --primary-hover-color: #0056b3;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --secondary-color: #6c757d;
+    --light-bg-color: #f4f7f6;
+    --container-bg-color: rgba(255, 255, 255, 0.92);
+    --border-color: #dee2e6;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6; /* Colore di fallback */
+    background-color: var(--light-bg-color);
     color: #333;
     line-height: 1.6;
-
-    /* NUOVE PROPRIETÀ PER LO SFONDO */
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/73/Jean-Marie_Vianney_church_in_Rome.jpg');
     background-repeat: no-repeat;
     background-position: center center;
@@ -18,20 +29,40 @@ body {
     max-width: 900px;
     margin: 30px auto;
     padding: 25px;
-    background-color: rgba(255, 255, 255, 0.92); /* Sfondo semi-trasparente per il contenuto */
+    background-color: var(--container-bg-color);
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3px); /* Effetto sfocatura sullo sfondo dietro il container */
+    backdrop-filter: blur(3px);
 }
 
 h1, h2, h3, h4 {
-    color: #0056b3;
+    color: var(--primary-hover-color);
     text-align: center;
     margin-bottom: 20px;
 }
 
+h2 {
+    position: relative;
+}
 
+.return-to-top {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1.2em;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    line-height: 1;
+}
 
+.return-to-top:hover {
+    background-color: #e9ecef;
+    color: var(--primary-hover-color);
+}
 
 section {
     margin-bottom: 30px;
@@ -44,205 +75,11 @@ section:last-child {
     padding-bottom: 0;
 }
 
-.file-list {
-    list-style: none;
-    padding: 0;
+.hidden {
+    display: none;
 }
 
-.file-list li {
-    background-color: #e9ecef;
-    border: 1px solid #dee2e6;
-    margin-bottom: 8px;
-    padding: 10px 15px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.2s ease;
-}
-
-.file-list li:hover {
-    background-color: #cfe2ff;
-}
-
-.file-list li.draggable {
-    cursor: grab;
-}
-
-.file-list li.dragging {
-    opacity: 0.5;
-}
-
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.2s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-button.remove-btn {
-    background-color: #dc3545;
-}
-
-button.remove-btn:hover {
-    background-color: #c82333;
-}
-
-button.add-to-playlist-btn {
-    background-color: #28a745;
-}
-
-button.add-to-playlist-btn:hover {
-    background-color: #218838;
-}
-
-input[type="text"], input[type="file"] {
-    width: auto; /* Adjust width considering button */
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-#upload-form {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-#search-input {
-    width: auto;
-    margin-bottom: 15px;
-}
-
-#upload-message, #playlist-message {
-    text-align: center;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-/* Nuovi stili per la paginazione */
-.pagination-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    gap: 10px;
-}
-
-.pagination-controls button {
-    padding: 8px 12px;
-    background-color: #6c757d;
-}
-
-.pagination-controls button:hover {
-    background-color: #5a6268;
-}
-
-.pagination-controls button:disabled {
-    background-color: #e9ecef;
-    color: #6c757d;
-    cursor: not-allowed;
-}
-
-.pagination-controls span {
-    font-weight: bold;
-    color: #0056b3;
-}
-/* ... (codice CSS precedente) ... */
-
-button.view-pdf-btn {
-    background-color: #17a2b8; /* Un colore diverso per distinguere */
-    margin-right: 5px; /* Spazio tra i pulsanti */
-}
-
-button.view-pdf-btn:hover {
-    background-color: #138496;
-}
-
-/* Aggiorna il contenitore dei pulsanti per gestirli meglio */
-.file-list li div {
-    display: flex;
-    gap: 5px; /* Aggiunge spazio tra i pulsanti all'interno dell'elemento lista */
-}
-
-/* ... (codice CSS precedente) ... */
-
-.playlist-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-    align-items: center;
-}
-
-#playlist-name-input {
-    flex-grow: 1;
-    width: auto; /* Sovrascrive la larghezza predefinita */
-    margin-right: 0;
-}
-
-#save-playlist-btn {
-    background-color: #ffc107; /* Colore giallo per il salvataggio */
-    color: #343a40;
-}
-
-#save-playlist-btn:hover {
-    background-color: #e0a800;
-}
-
-#playlist-save-message {
-    margin-left: 10px;
-    font-weight: bold;
-}
-
-.saved-playlists {
-    margin-top: 30px;
-}
-
-#saved-playlists-list li {
-    background-color: #e2e6ea;
-    cursor: pointer;
-}
-
-#saved-playlists-list li:hover {
-    background-color: #d1d9e0;
-}
-
-#saved-playlists-list li div { /* Per contenere i pulsanti all'interno dell'elemento lista */
-    display: flex;
-    gap: 5px;
-}
-
-button.load-playlist-btn {
-    background-color: #17a2b8; /* Blu-verde per caricare */
-}
-
-button.load-playlist-btn:hover {
-    background-color: #138496;
-}
-
-button.delete-playlist-btn {
-    background-color: #6c757d; /* Grigio per eliminare */
-}
-
-button.delete-playlist-btn:hover {
-    background-color: #5a6268;
-}
-
-#saved-playlists-message {
-    text-align: center;
-    margin-top: 10px;
-    font-weight: bold;
-}
+/* Navigazione */
 .section-nav {
     margin-bottom: 30px;
     background-color: #e9ecef;
@@ -257,567 +94,256 @@ button.delete-playlist-btn:hover {
     margin: 0;
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap; /* Permette ai link di andare a capo su schermi piccoli */
+    flex-wrap: wrap;
     gap: 10px;
 }
 
 .section-nav li a {
     text-decoration: none;
-    color: #007bff;
+    color: var(--primary-color);
     font-weight: bold;
     padding: 8px 15px;
     border-radius: 5px;
     transition: background-color 0.2s ease, color 0.2s ease;
-    white-space: nowrap; /* Impedisce al testo di andare a capo */
+    white-space: nowrap;
 }
 
 .section-nav li a:hover {
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
 }
-/* ... (codice CSS precedente) ... */
 
-/* Stili per le cartelle Anno/Mese */
-.year-folder, .month-folder {
-    margin-top: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 10px;
-    background-color: #f8f9fa;
-}
-
-.year-folder h3, .month-folder h4 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #0056b3;
-    cursor: pointer; /* Indica che sono cliccabili per espandere/collassare */
-}
-
-.year-folder h3:hover, .month-folder h4:hover {
-    text-decoration: underline;
-}
-
-.folder-content {
-    display: block; /* O flex-direction: column; */
-}
-
-.folder-content.hidden {
-    display: none;
-}
-
-#saved-playlists-list {
-    list-style: none;
-    padding: 0;
-    margin-left: 20px; /* Indentazione per le playlist all'interno delle cartelle */
-}
-/* ... (codice CSS precedente) ... */
-
-/* Stili per le icone "Torna all'inizio" */
-h2 {
-    position: relative; /* Rende l'h2 un contenitore di riferimento per il posizionamento assoluto */
-    text-align: center;
-    margin-bottom: 20px;
-    color: #0056b3;
-}
-
-.return-to-top {
-    position: absolute;
-    right: 0; /* Posiziona a destra del contenitore h2 */
-    top: 50%; /* Allinea verticalmente al centro dell'h2 */
-    transform: translateY(-50%); /* Regola per un allineamento preciso */
-    text-decoration: none;
-    color: #007bff; /* Colore dell'icona */
-    font-size: 1em; /* Dimensione dell'icona, puoi aumentarla se vuoi */
-    padding: 5px; /* Spazio intorno all'icona */
-    border-radius: 50%; /* Rende l'area del click circolare */
-    transition: background-color 0.2s ease, color 0.2s ease;
-    line-height: 1; /* Assicura che l'altezza della linea non influenzi l'icona */
-}
-
-.return-to-top:hover {
-    background-color: #e9ecef; /* Sfondo al passaggio del mouse */
-    color: #0056b3;
-}
-
-/* Regola il padding a destra dell'h2 se i titoli sono molto lunghi
-   e l'icona dovesse sovrapporsi al testo. */
-/* h2 {
-    padding-right: 30px;
-} */
-
-/* ... (codice CSS precedente) ... */
-
-#clear-playlist-btn {
-    background-color: #dc3545; /* Colore rosso per indicare un'azione di cancellazione */
-}
-
-#clear-playlist-btn:hover {
-    background-color: #c82333;
-}
-
-/* ... (codice CSS precedente) ... */
-
-/* Stili per il pulsante Download */
-.download-playlist-btn {
-    background-color: #28a745; /* Verde per il download */
-    margin-left: 5px; /* Spazio tra i pulsanti */
-}
-
-.download-playlist-btn:hover {
-    background-color: #218838;
-}
-
-/* Stili per il pop-up di anteprima */
-.playlist-preview-popup {
-    display: none; /* Nascosto di default */
-    position: fixed; /* O absolute, a seconda di dove vuoi che appaia */
-    z-index: 1000; /* Assicura che sia sopra gli altri elementi */
-    background-color: rgba(0, 0, 0, 0.5); /* Sfondo semi-trasparente */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-.playlist-preview-popup.show {
-    display: flex; /* Mostra il pop-up */
-}
-
-.popup-content {
-    background-color: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 90%;
-    max-height: 80%;
-    overflow-y: auto; /* Scorri se il contenuto è troppo lungo */
-    position: relative;
-}
-
-.popup-content h3 {
-    margin-top: 0;
-    color: #0056b3;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-
-#preview-file-list {
-    list-style: none; /* Rimuove i bullet points di default */
-    padding: 0;
-    margin: 0;
-}
-
-#preview-file-list li {
-    padding: 8px 0;
-    border-bottom: 1px dashed #eee;
-    display: flex; /* Per allineare numero e nome */
-    gap: 10px;
-    align-items: center;
-}
-
-#preview-file-list li:last-child {
-    border-bottom: none;
-}
-
-.file-number {
-    font-weight: bold;
-    color: #555;
-    flex-shrink: 0; /* Impedisce al numero di restringersi */
-    width: 25px; /* Larghezza fissa per i numeri */
-    text-align: right;
-}
-/* ... (codice CSS precedente) ... */
-
-/* Rimuovi gli stili precedenti del pop-up hover se non li vuoi più */
-/* .playlist-preview-popup { ... } */
-/* .playlist-preview-popup.show { ... } */
-/* .popup-content { ... } */
-/* #preview-file-list { ... } */
-/* .file-number { ... } */
-
-/* Stili per la nuova anteprima al click */
-.clicked-playlist-preview {
-    margin-top: 30px;
-    padding: 20px;
-    border: 1px solid #007bff;
-    border-radius: 8px;
-    background-color: #e6f7ff; /* Sfondo chiaro per distinguere */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.clicked-playlist-preview.hidden {
-    display: none; /* Nasconde l'area di anteprima di default */
-}
-
-.clicked-playlist-preview h3 {
-    color: #0056b3;
-    margin-top: 0;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #b3d9ff;
-    padding-bottom: 10px;
-}
-
-#clicked-preview-file-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#clicked-preview-file-list li {
-    padding: 8px 0;
-    border-bottom: 1px dashed #cceeff;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-#clicked-preview-file-list li:last-child {
-    border-bottom: none;
-}
-
-.clicked-playlist-preview .file-number { /* Riusa la classe file-number */
-    font-weight: bold;
-    color: #555;
-    flex-shrink: 0;
-    width: 25px;
-    text-align: right;
-}
-
-#close-preview-btn {
-    margin-top: 20px;
-    background-color: #6c757d; /* Grigio per chiudere */
-}
-
-#close-preview-btn:hover {
-    background-color: #5a6268;
-}
-
-/* Assicurati che il .folder-content per i mesi possa contenere i pulsanti */
-.folder-content li div {
-    display: flex;
-    gap: 5px; /* Spazio tra i pulsanti */
-    margin-left: auto; /* Sposta i pulsanti a destra */
-}
-
-/* ... (codice CSS precedente) ... */
-
-/* Stili per l'icona dell'anteprima */
-.playlist-name-wrapper {
-    display: flex; /* Permette di allineare l'icona e il testo sulla stessa riga */
-    align-items: center; /* Centra verticalmente icona e testo */
-    gap: 8px; /* Spazio tra l'icona e il testo */
-    cursor: pointer; /* Indica che l'elemento è cliccabile */
-    flex-grow: 1; /* Permette allo span di occupare lo spazio disponibile */
-    padding: 5px 0; /* Aggiunge un po' di padding per l'area cliccabile */
-}
-
-.preview-icon {
-    font-size: 1.2em; /* Rende l'icona leggermente più grande del testo */
-    color: #007bff; /* Colore dell'icona (blu, come i link) */
-    line-height: 1; /* Assicura che l'altezza della riga non interferisca */
-}
-
-/* Assicurati che il .folder-content per i mesi possa contenere i pulsanti */
-.folder-content li {
-    display: flex; /* Per allineare il nome/icona e i pulsanti */
-    justify-content: space-between; /* Spinge i pulsanti a destra */
-    align-items: center;
-    padding: 8px 0;
-    border-bottom: 1px dashed #cceeff;
-}
-
-.folder-content li:last-child {
-    border-bottom: none;
-}
-
-.folder-content li div {
-    display: flex;
-    gap: 5px; /* Spazio tra i pulsanti */
-    flex-shrink: 0; /* Impedisce ai pulsanti di restringersi */
-}
-/* Stili per l'icona dell'anteprima */
-.playlist-name-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+/* Pulsanti e Input */
+button, .button-link {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    flex-grow: 1;
-    padding: 5px 0;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
 }
 
-.preview-icon {
-    font-size: 1.2em;
-    color: #007bff;
-    line-height: 1;
+button:hover, .button-link:hover {
+    background-color: var(--primary-hover-color);
 }
 
-.folder-content li {
+input[type="text"], input[type="file"] {
+    width: auto;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Stili specifici dei pulsanti */
+.show-diagrams-btn { background-color: #5cb85c; }
+.show-diagrams-btn:hover { background-color: #4cae4c; }
+.add-to-playlist-btn { background-color: var(--success-color); }
+.add-to-playlist-btn:hover { background-color: #218838; }
+.remove-btn { background-color: var(--danger-color); }
+.remove-btn:hover { background-color: #c82333; }
+.save-playlist-btn { background-color: var(--warning-color); color: #343a40; }
+.save-playlist-btn:hover { background-color: #e0a800; }
+.clear-playlist-btn { background-color: var(--danger-color); }
+.clear-playlist-btn:hover { background-color: #c82333; }
+.download-playlist-btn { background-color: var(--success-color); }
+.download-playlist-btn:hover { background-color: #218838; }
+.load-playlist-btn { background-color: #17a2b8; }
+.load-playlist-btn:hover { background-color: #138496; }
+.delete-playlist-btn { background-color: var(--secondary-color); }
+.delete-playlist-btn:hover { background-color: #5a6268; }
+.close-preview-btn { background-color: var(--secondary-color); }
+.close-preview-btn:hover { background-color: #5a6268; }
+
+
+/* Liste Generiche */
+.file-list {
+    list-style: none;
+    padding: 0;
+}
+
+.file-list li {
+    background-color: #e9ecef;
+    border: 1px solid var(--border-color);
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 0;
-    border-bottom: 1px dashed #cceeff;
+    transition: background-color 0.2s ease;
 }
 
-.folder-content li:last-child {
-    border-bottom: none;
+.file-list li:hover {
+    background-color: #cfe2ff;
 }
 
-.folder-content li div {
+.file-name {
+    flex-grow: 1;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.button-container {
     display: flex;
     gap: 5px;
     flex-shrink: 0;
 }
-/* Stile per i link che devono sembrare pulsanti */
-.button-link,
-.add-to-playlist-btn { /* Applica uno stile simile anche al pulsante "Aggiungi a Playlist" per coerenza */
-    display: inline-block; /* Permette di impostare padding, margin, width/height */
-    padding: 8px 15px; /* Spaziatura interna */
-    margin-left: 10px; /* Spazio tra gli elementi */
-    background-color: #007bff; /* Colore di sfondo blu (o il tuo colore primario) */
-    color: white; /* Colore del testo */
-    text-align: center;
-    text-decoration: none; /* Rimuovi la sottolineatura dei link */
-    border: none; /* Rimuovi il bordo predefinito */
-    border-radius: 5px; /* Bordi leggermente arrotondati */
-    cursor: pointer; /* Cambia il cursore in un puntatore */
-    font-size: 0.9em; /* Dimensione del font leggermente più piccola */
-    transition: background-color 0.3s ease; /* Transizione morbida al passaggio del mouse */
-}
 
-.button-link:hover,
-.add-to-playlist-btn:hover {
-    background-color: #0056b3; /* Colore più scuro al passaggio del mouse */
-}
-
-/* Puoi anche aggiungere un po' di stile agli elementi della lista per allineamento */
-.file-item {
-    display: flex; /* Utilizza flexbox per allineare gli elementi */
-    align-items: center; /* Allinea verticalmente al centro */
-    padding: 8px 0;
-    border-bottom: 1px solid #eee; /* Linea separatrice */
-}
-
-.file-item:last-child {
-    border-bottom: none; /* Rimuovi la linea all'ultimo elemento */
-}
-
-.file-item .file-name {
-    flex-grow: 1; /* Permette al nome del file di occupare lo spazio disponibile */
-    margin-right: 15px;
-    font-weight: bold;
-}
-
-/* Stile per gli elementi della lista nella playlist */
-#playlist li {
-    display: flex;
-    align-items: center; /* Allinea verticalmente gli elementi al centro */
-    justify-content: space-between; /* Spinge gli elementi ai lati opposti */
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-/* Stile base per tutti i pulsanti della playlist */
-.button-link,
-.remove-btn {
-    width: 100px; /* Imposta una larghezza fissa per i pulsanti */
-    text-align: center;
-    padding: 8px 10px;
-    border-radius: 5px;
-    font-size: 0.9em;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    margin-left: 5px; /* Aggiunge un piccolo margine tra i pulsanti */
-}
-
-/* Stile specifico per il pulsante 'Visualizza' */
-.button-link {
-    background-color: #007bff;
-    color: white;
-}
-
-.button-link:hover {
-    background-color: #0056b3;
-}
-
-/* Stile specifico per il pulsante 'Rimuovi' */
-.remove-btn {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-}
-
-.remove-btn:hover {
-    background-color: #c82333;
-}
-
-#playlist li span {
-    flex-grow: 1; /* Permette al nome del file di occupare lo spazio disponibile */
-    margin-right: 10px;
-    font-weight: bold;
-}
-
-/* Nasconde il messaggio di avviso per impostazione predefinita */
-#upload-warning-message {
-    display: none;
-    color: #cc0000;
-    background-color: #fff3f3;
-    border: 1px solid #ffcccc;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    font-size: 0.9em;
-}
-
-/* Mostra il messaggio quando non ha la classe 'hidden' */
-#upload-warning-message.visible {
-    display: block;
-}
-
-/* Contenitore per gli elementi della playlist */
-#playlist li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: grab; /* Indica che l'elemento è trascinabile */
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-/* Stile per i pulsanti 'Visualizza' e 'Rimuovi' */
-.playlist-item-actions {
-    display: flex;
-    gap: 5px; /* Spazio tra i pulsanti */
-}
-
-/* Evita che il nome del file venga selezionato durante il drag */
-#playlist li span {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    flex-grow: 1;
-    font-weight: bold;
-}
-
-#saved-playlists-list h3 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    color: #333;
-}
-
-#saved-playlists-list h4 {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 1em;
-    color: #666;
-    padding-left: 20px;
-}
-
-/* Rendi più evidente che l'elemento sia cliccabile */
-.collapsible {
-    cursor: pointer;
-}
-
-.collapsible:hover {
-    background-color: #ddd;
-}
-
-.search-container {
-    position: relative;
-    width: 100%;
-    max-width: 400px; /* Imposta una larghezza massima per il contenitore */
-    margin: 0 auto;  /* Centra il contenitore, se necessario */
-}
-
-#search-input {
-    width: auto;
-    box-sizing: border-box;
-    padding-right: 30px; /* Spazio per la 'x' */
-}
-
-.clear-search-btn {
-    position: absolute;
-    right: 10px;
-    top: 35%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #aaa;
-    font-size: 20px;
-}
-
-/* Stile per il contenitore di input e pulsante */
-.upload-controls {
-    display: flex;
-    gap: 10px; /* Spazio tra il campo di input e il pulsante */
-    align-items: center; /* Allinea verticalmente gli elementi al centro */
-    margin-bottom: 10px; /* Aggiunge uno spazio sotto il gruppo */
-}
-
-/* Regola lo stile del pulsante per renderlo più leggibile */
-#uploadPdfForm button {
-    white-space: nowrap; /* Impedisce al testo del pulsante di andare a capo */
-}
-
-/* Stile per il nuovo pulsante */
-.show-diagrams-btn {
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-right: 5px;
-}
-.show-diagrams-btn:hover { 
-    background-color: #4cae4c; 
-}
-
+/* Pop-up Modale */
 .modal {
-    display: flex; justify-content: center; align-items: center;
-    position: fixed; z-index: 1000; left: 0; top: 0;
-    width: 100%; height: 100%; overflow: auto;
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-content: center;
 }
+
+.modal.visible {
+    display: flex;
+}
+
 .modal-content {
-    background-color: #fefefe; margin: auto; padding: 20px;
-    border: 1px solid #888; width: 80%; max-width: 600px;
-    border-radius: 10px; position: relative; max-height: 90%;
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 600px;
+    width: 90%;
+    border-radius: 10px;
+    position: relative;
+    max-height: 90%;
     overflow-y: auto;
 }
-.close-btn {
-    color: #aaa; float: right; font-size: 28px;
-    font-weight: bold; cursor: pointer;
-}
-.close-btn:hover, 
 
-.close-btn:focus { 
-    color: black; text-decoration: none; 
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
 }
-.hidden { 
-    display: none; 
+
+.close-btn:hover, .close-btn:focus {
+    color: black;
+    text-decoration: none;
 }
 
 #diagrams-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px; margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
-#diagrams-container img {
-    max-width: 100%; /* L'immagine non sarà mai più larga del suo contenitore */
-    height: auto; /* Mantiene le proporzioni */
+.chord-diagram-item {
+    text-align: center;
+}
+
+.chord-diagram-item img {
+    max-width: 100%;
+    height: auto;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-top: 10px;
 }
 
-.chord-diagram-item {
-    text-align: center;
+/* Playlist e Anteprime */
+#playlist-name-input {
+    flex-grow: 1;
+}
+
+.playlist-actions,
+.file-upload {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Media Queries per Mobile */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Disabilita lo sfondo fisso su mobile */
+    }
+
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    .section-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-nav li a {
+        padding: 12px 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .file-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .file-name {
+        margin-bottom: 10px;
+        margin-right: 0;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        width: 100%;
+    }
+
+    .button-container {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .button-container button, .button-container .button-link {
+        width: 100%;
+    }
+
+    #search-input {
+        width: 100%;
+    }
+
+    .modal-content {
+        margin: 5% auto;
+        padding: 15px;
+        max-width: 95%;
+    }
+
+    #diagrams-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .playlist-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #playlist-name-input, #save-playlist-btn, #clear-playlist-btn {
+        width: 100%;
+    }
 }
