@@ -620,6 +620,71 @@ window.addEventListener('click', (event) => {
         renderFilesAndPagination();
     });
 
+    app.get('/diagrams/:filename', async (req, res) => {
+        const filename = req.params.filename;
+        const xmlKey = `canti_liturgici/${filename.replace('.pdf', '.xml')}`;
+
+        try {
+            const command = new GetObjectCommand({ Bucket: bucketName, Key: xmlKey });
+            const { Body } = await s3Client.send(command);
+            const xmlText = await Body.transformToString();
+
+            let uniqueNotes = [];
+
+            // Tentativo 1: Analisi per la struttura <text:span> con style-name="T*"
+            const newRegex = /<text:span text:style-name="T\d+">(.*?)<\/text:span>/g;
+            const matches = [...xmlText.matchAll(newRegex)];
+
+            if (matches.length > 0) {
+                const notesFromMatches = matches.map(match => {
+                    const cleanedText = match[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+                    return cleanedText;
+                }).join(' ');
+
+                const notesArray = notesFromMatches.split(' ').filter(n => n);
+                const chordRegex = /^(Do|Re|Mi|Fa|Sol|La|Si)(b|#|sus|add|maj|min|m)?[0-9]*(-)?(7|9|11|13)?$/i;
+                uniqueNotes = [...new Set(notesArray.filter(n => chordRegex.test(n)))];
+            }
+
+            // Tentativo 2: Fallback per la vecchia struttura (LibreOffice)
+            if (uniqueNotes.length === 0) {
+                const libreOfficeColorRegex = /style:name="(T\d+)"[^>]*?fo:color="#ff0000[^"]*"/g;
+                const redColorStyles = [...xmlText.matchAll(libreOfficeColorRegex)].map(match => match[1]);
+                
+                if (redColorStyles.length > 0) {
+                    const noteRegex = new RegExp(`<text:span text:style-name="(${redColorStyles.join('|')})">(.*?)<\/text:span>`, 'g');
+                    const matches = [...xmlText.matchAll(noteRegex)];
+                    const notes = matches.map(match => match[2].trim());
+                    uniqueNotes = [...new Set(notes.flatMap(n => n.split(/\s+/)).filter(n => n))];
+                }
+            }
+            
+            // Tentativo 3: Fallback per la struttura precedente (<Glyphs>)
+            if (uniqueNotes.length === 0) {
+                const oldStructureColorRegex = /Brush=".*?Color="#FF0000CC">.*?<Text>(.*?)<\/Text>/g;
+                const oldStructureMatches = [...xmlText.matchAll(oldStructureColorRegex)];
+                const notes = oldStructureMatches.map(match => match[1].trim());
+                uniqueNotes = [...new Set(notes.flatMap(n => n.split(/\s+/)).filter(n => n))];
+            }
+
+            if (uniqueNotes.length > 0) {
+                res.json({ success: true, notes: uniqueNotes });
+            } else {
+                res.status(404).json({ success: false, message: 'Nessuna nota musicale trovata in questo file XML.' });
+            }
+        } catch (error) {
+            if (error.Code === 'NoSuchKey') {
+                // Gestisce specificamente l'errore 404 da S3
+                res.status(404).json({ success: false, message: 'Il file XML corrispondente non è stato trovato.' });
+            } else {
+                console.error(`Errore nel recupero del file XML per i diagrammi: ${xmlKey}`, error);
+                res.status(500).json({ success: false, message: 'Errore interno del server.' });
+            }
+        }
+    });
+
+
+
     renderPlaylist();
     fetchAvailableFiles();
     fetchSavedPlaylists();
