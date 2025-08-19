@@ -433,3 +433,9 @@ input[type="text"], input[type="file"] {
 #clear-search-btn:hover {
     color: var(--primary-hover-color);
 }
+
+ /* Paginazione */
+     #pagination {
+        display: flex;
+        justify-content: center;
+    }
