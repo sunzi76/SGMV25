@@ -1,20 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     const API_BASE_URL = 'https://sgmv25-backend.onrender.com';
-    const fileList = document.getElementById('file-list');
-    const searchInput = document.getElementById('search-input');
-    const clearSearchBtn = document.getElementById('clear-search-btn');
-    const pagination = document.getElementById('pagination');
-    const diagramsModal = document.getElementById('diagrams-modal');
-    const diagramsContainer = document.getElementById('diagrams-container');
-    const diagramsFilename = document.getElementById('diagrams-filename');
-    const closeBtn = document.querySelector('.close-btn');
-
     let allFiles = [];
     let currentPage = 1;
     const filesPerPage = 10;
 
     // Funzione per recuperare i file dal backend
     async function fetchFiles() {
+        // Le variabili sono ora dichiarate qui, all'interno della funzione
+        const fileList = document.getElementById('file-list');
+        const pagination = document.getElementById('pagination');
+        const searchInput = document.getElementById('search-input');
+        const clearSearchBtn = document.getElementById('clear-search-btn');
+        const diagramsModal = document.getElementById('diagrams-modal');
+        const diagramsContainer = document.getElementById('diagrams-container');
+        const diagramsFilename = document.getElementById('diagrams-filename');
+        const closeBtn = document.querySelector('.close-btn');
+
         try {
             const response = await fetch(`${API_BASE_URL}/files`);
             if (!response.ok) {
@@ -22,21 +23,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const data = await response.json();
             
-            // Controllo aggiuntivo per assicurarsi che i dati siano un array
             if (Array.isArray(data)) {
                 allFiles = data;
-                displayFiles(allFiles, currentPage);
+                displayFiles(allFiles, currentPage, fileList, pagination);
             } else {
                 throw new Error('Formato dati non valido ricevuto dal server.');
             }
         } catch (error) {
             console.error('Errore nel recupero dei file:', error);
-            fileList.innerHTML = '<p>Errore nel caricamento dei file. Riprova più tardi.</p>';
+            if (fileList) {
+                fileList.innerHTML = '<p>Errore nel caricamento dei file. Riprova più tardi.</p>';
+            }
         }
     }
 
     // Funzione per visualizzare i file in base alla paginazione
-    function displayFiles(files, page) {
+    function displayFiles(files, page, fileList, pagination) {
+        if (!fileList || !pagination) return;
+        
         fileList.innerHTML = '';
         const start = (page - 1) * filesPerPage;
         const end = start + filesPerPage;
@@ -62,11 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
             fileList.appendChild(li);
         });
 
-        setupPagination(files.length, page);
+        setupPagination(files.length, page, pagination);
     }
 
     // Funzione per impostare la paginazione
-    function setupPagination(totalFiles, currentPage) {
+    function setupPagination(totalFiles, currentPage, pagination) {
+        if (!pagination) return;
+        
         const totalPages = Math.ceil(totalFiles / filesPerPage);
         pagination.innerHTML = '';
 
@@ -80,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 pageBtn.addEventListener('click', () => {
                     currentPage = i;
-                    displayFiles(allFiles, currentPage);
+                    displayFiles(allFiles, currentPage, document.getElementById('file-list'), document.getElementById('pagination'));
                 });
                 pagination.appendChild(pageBtn);
             }
@@ -89,6 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Funzione per mostrare i diagrammi degli accordi
     async function showChordDiagrams(filename) {
+        const diagramsModal = document.getElementById('diagrams-modal');
+        const diagramsContainer = document.getElementById('diagrams-container');
+        const diagramsFilename = document.getElementById('diagrams-filename');
+        if (!diagramsModal || !diagramsContainer || !diagramsFilename) return;
+
         diagramsModal.classList.remove('hidden');
         diagramsModal.classList.add('visible');
         diagramsFilename.textContent = filename;
@@ -139,23 +150,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Gestione della ricerca
-    searchInput.addEventListener('input', () => {
-        const query = searchInput.value.toLowerCase();
-        if (query.length > 0) {
-            clearSearchBtn.classList.add('visible');
-        } else {
-            clearSearchBtn.classList.remove('visible');
-        }
+    document.addEventListener('input', (event) => {
+        if (event.target.id === 'search-input') {
+            const searchInput = event.target;
+            const clearSearchBtn = document.getElementById('clear-search-btn');
+            const query = searchInput.value.toLowerCase();
+            
+            if (query.length > 0) {
+                clearSearchBtn.classList.add('visible');
+            } else {
+                clearSearchBtn.classList.remove('visible');
+            }
 
-        const filteredFiles = allFiles.filter(file => file.toLowerCase().includes(query));
-        currentPage = 1; 
-        displayFiles(filteredFiles, currentPage);
+            const filteredFiles = allFiles.filter(file => typeof file === 'string' && file.toLowerCase().includes(query));
+            currentPage = 1; 
+            const fileList = document.getElementById('file-list');
+            const pagination = document.getElementById('pagination');
+            displayFiles(filteredFiles, currentPage, fileList, pagination);
+        }
     });
 
-    clearSearchBtn.addEventListener('click', () => {
-        searchInput.value = '';
-        clearSearchBtn.classList.remove('visible');
-        displayFiles(allFiles, 1);
+    document.addEventListener('click', (event) => {
+        if (event.target.id === 'clear-search-btn') {
+            const searchInput = document.getElementById('search-input');
+            const clearSearchBtn = event.target;
+            searchInput.value = '';
+            clearSearchBtn.classList.remove('visible');
+            const fileList = document.getElementById('file-list');
+            const pagination = document.getElementById('pagination');
+            displayFiles(allFiles, 1, fileList, pagination);
+        }
     });
 
     // Gestione del pop-up (apertura e chiusura)
@@ -164,11 +188,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const filename = event.target.dataset.filename;
             showChordDiagrams(filename);
         }
-    });
-
-    closeBtn.addEventListener('click', () => {
-        diagramsModal.classList.remove('visible');
-        diagramsModal.classList.add('hidden');
+        if (event.target.classList.contains('close-btn')) {
+            const diagramsModal = document.getElementById('diagrams-modal');
+            if (diagramsModal) {
+                diagramsModal.classList.remove('visible');
+                diagramsModal.classList.add('hidden');
+            }
+        }
     });
 
     // Caricamento iniziale dei file
