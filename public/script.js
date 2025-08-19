@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Funzione per mostrare i diagrammi degli accordi (come precedentemente corretto)
+    // Funzione per mostrare i diagrammi degli accordi
     async function showChordDiagrams(filename) {
         diagramsModal.classList.remove('hidden');
         diagramsModal.classList.add('visible');
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const filteredFiles = allFiles.filter(file => file.toLowerCase().includes(query));
-        currentPage = 1; // Resetta alla prima pagina dopo la ricerca
+        currentPage = 1; 
         displayFiles(filteredFiles, currentPage);
     });
 
