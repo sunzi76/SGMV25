@@ -1,4 +1,4 @@
-/* Stili Globali */
+/* -- Variabili CSS per una facile gestione -- */
 :root {
     --primary-color: #007bff;
     --primary-hover-color: #0056b3;
@@ -11,6 +11,7 @@
     --border-color: #dee2e6;
 }
 
+/* -- Stili Globali -- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -79,7 +80,7 @@ section:last-child {
     display: none;
 }
 
-/* Navigazione */
+/* -- Navigazione -- */
 .section-nav {
     margin-bottom: 30px;
     background-color: #e9ecef;
@@ -113,7 +114,55 @@ section:last-child {
     color: white;
 }
 
-/* Pulsanti e Input */
+/* -- Sezione di Ricerca -- */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+    font-size: 1em;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+#clear-search-btn {
+    position: absolute;
+    right: 15px;
+    font-size: 1.5em;
+    color: var(--secondary-color);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color 0.2s ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#clear-search-btn.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+#clear-search-btn:hover {
+    color: var(--primary-hover-color);
+}
+
+/* -- Liste e Pulsanti Generici -- */
 button, .button-link {
     background-color: var(--primary-color);
     color: white;
@@ -132,36 +181,6 @@ button:hover, .button-link:hover {
     background-color: var(--primary-hover-color);
 }
 
-input[type="text"], input[type="file"] {
-    width: auto;
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-/* Stili specifici dei pulsanti */
-.show-diagrams-btn { background-color: #5cb85c; }
-.show-diagrams-btn:hover { background-color: #4cae4c; }
-.add-to-playlist-btn { background-color: var(--success-color); }
-.add-to-playlist-btn:hover { background-color: #218838; }
-.remove-btn { background-color: var(--danger-color); }
-.remove-btn:hover { background-color: #c82333; }
-.save-playlist-btn { background-color: var(--warning-color); color: #343a40; }
-.save-playlist-btn:hover { background-color: #e0a800; }
-.clear-playlist-btn { background-color: var(--danger-color); }
-.clear-playlist-btn:hover { background-color: #c82333; }
-.download-playlist-btn { background-color: var(--success-color); }
-.download-playlist-btn:hover { background-color: #218838; }
-.load-playlist-btn { background-color: #17a2b8; }
-.load-playlist-btn:hover { background-color: #138496; }
-.delete-playlist-btn { background-color: var(--secondary-color); }
-.delete-playlist-btn:hover { background-color: #5a6268; }
-.close-preview-btn { background-color: var(--secondary-color); }
-.close-preview-btn:hover { background-color: #5a6268; }
-
-
-/* Liste Generiche */
 .file-list {
     list-style: none;
     padding: 0;
@@ -189,16 +208,24 @@ input[type="text"], input[type="file"] {
     margin-right: 15px;
 }
 
-/* Allineamento dei pulsanti */
 .button-container {
     display: flex;
     gap: 5px;
-    flex-wrap: wrap; /* Permette ai pulsanti di andare a capo su schermi piccoli */
+    flex-shrink: 0;
 }
 
-/* Pop-up Modale */
+/* -- Paginazione -- */
+#pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* -- Pop-up Modale -- */
 .modal {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -207,21 +234,15 @@ input[type="text"], input[type="file"] {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
-    align-items: center;
-    justify-content: center;
-}
-
-.modal.visible {
-    display: flex;
 }
 
 .modal-content {
-    background-color: white;
-    margin: 10% auto;
+    background-color: #fefefe;
+    margin: auto;
     padding: 20px;
     border: 1px solid #888;
+    width: 80%;
     max-width: 600px;
-    width: 90%;
     border-radius: 10px;
     position: relative;
     max-height: 90%;
@@ -230,9 +251,7 @@ input[type="text"], input[type="file"] {
 
 .close-btn {
     color: #aaa;
-    position: absolute;
-    top: 10px;
-    right: 20px;
+    float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
@@ -262,23 +281,10 @@ input[type="text"], input[type="file"] {
     margin-top: 10px;
 }
 
-/* Playlist e Anteprime */
-#playlist-name-input {
-    flex-grow: 1;
-}
-
-.playlist-actions,
-.file-upload {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-}
-
-/* Media Queries per Mobile */
+/* -- Media Queries per Mobile -- */
 @media (max-width: 768px) {
     body {
-        background-attachment: scroll; /* Disabilita lo sfondo fisso su mobile */
+        background-attachment: scroll;
     }
 
     .container {
@@ -339,103 +345,17 @@ input[type="text"], input[type="file"] {
         grid-template-columns: 1fr;
     }
     
-    /* Allineamento dell'input e dei pulsanti della playlist */
     .playlist-actions {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-top: 15px;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: stretch;
     }
     
     #playlist-name-input, #save-playlist-btn, #clear-playlist-btn {
         width: 100%;
     }
 
-    /* Colori dei pulsanti per la playlist */
-    #save-playlist-btn {
-        background-color: var(--success-color); /* Verde */
-    }
-
-    #clear-playlist-btn {
-        background-color: var(--danger-color);  /* Rosso */
-    }
-
-    #playlist-name-input {
-        flex-grow: 1; /* L'input si espande per occupare lo spazio */
-    }
-
-    /* Paginazione */
-     #pagination {
+    #pagination {
         display: flex;
         justify-content: center;
     }
-
-    /* Stili per la sezione di caricamento file */
-    .file-upload h2 {
-        text-align: center;
-        position: relative;
-    }
-
-    .file-upload .return-to-top {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-    }
 }
-
-
-/* Stili per la sezione di ricerca */
-.search-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    max-width: 500px; /* Imposta una larghezza massima per mantenere la forma su desktop */
-    margin: 0 auto 20px auto; /* Aggiunge un margine inferiore di 20px */
-}
-
-#search-input {
-    width: 100%;
-    padding: 10px 40px 10px 15px; /* Aggiunge spazio a destra per il pulsante */
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
-    font-size: 1em;
-}
-
-#search-input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-}
-
-#clear-search-btn {
-    position: absolute;
-    right: 15px;
-    font-size: 1.5em;
-    color: var(--secondary-color);
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
-    transition: color 0.2s ease;
-    visibility: hidden; /* Nasconde il pulsante all'inizio */
-    opacity: 0;
-}
-
-#clear-search-btn.visible {
-    visibility: visible;
-    opacity: 1;
-}
-
-#clear-search-btn:hover {
-    color: var(--primary-hover-color);
-}
-
- /* Paginazione */
-     #pagination {
-        display: flex;
-        justify-content: center;
-    }
