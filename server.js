@@ -26,6 +26,9 @@ const s3Client = new S3Client({
     }
 });
 
+// Rotta per servire i diagrammi degli accordi
+app.use('/chord-diagrams', express.static(path.join(__dirname, 'public/chord-diagrams')));
+
 // Configurazione di Multer per l'upload su S3
 const upload = multer({
     storage: multerS3({
@@ -48,6 +51,25 @@ const sortPlaylistsByDate = (playlists) => {
         return new Date(b.creationDate) - new Date(a.creationDate);
     });
 };
+
+// **NUOVA ROTTA PER RECUPERARE LA LISTA DEI FILE**
+app.get('/files', async (req, res) => {
+    try {
+        const command = new ListObjectsV2Command({
+            Bucket: bucketName,
+            Prefix: 'canti_liturgici/',
+            Delimiter: '/'
+        });
+        const response = await s3Client.send(command);
+        const files = response.Contents
+            .filter(obj => obj.Key !== 'canti_liturgici/')
+            .map(obj => path.basename(obj.Key));
+        res.json(files);
+    } catch (error) {
+        console.error('Errore nel recupero della lista dei file da S3:', error);
+        res.status(500).json({ error: 'Errore interno del server.' });
+    }
+});
 
 // Rotta per salvare una playlist
 app.post('/save-playlist', (req, res) => {
@@ -72,12 +94,12 @@ app.post('/save-playlist', (req, res) => {
     res.json({ success: true, message: 'Playlist salvata.', playlist: newPlaylist });
 });
 
-// Nuova rotta: Recupera tutte le playlist salvate
+// Rotta per recuperare tutte le playlist salvate
 app.get('/playlists', (req, res) => {
     res.json(savedPlaylists);
 });
 
-// Nuova rotta: Recupera una singola playlist per l'anteprima
+// Rotta per recuperare una singola playlist per l'anteprima
 app.get('/playlists/:name', (req, res) => {
     const playlistName = req.params.name;
     const playlist = savedPlaylists.find(p => p.name === playlistName);
