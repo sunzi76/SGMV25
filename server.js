@@ -61,26 +61,23 @@ app.post('/upload', upload.single('pdfFile'), (req, res) => {
 // Rotta per ottenere la lista dei file PDF da S3
 app.get('/files', async (req, res) => {
     try {
-        const command = new ListObjectsV2Command({ Bucket: bucketName, Prefix: 'canti_liturgici/' });
+        const { ListObjectsCommand } = require("@aws-sdk/client-s3");
+        const command = new ListObjectsCommand({
+            Bucket: bucketName,
+            Prefix: 'canti_liturgici/'
+        });
         const { Contents } = await s3Client.send(command);
-
-        if (!Contents) {
-            return res.status(404).json({ message: "Nessun file trovato." });
+        if (Contents && Contents.length > 0) {
+            const pdfFiles = Contents.filter(item => item.Key.endsWith('.pdf'))
+                                      .map(item => item.Key.split('/').pop());
+            res.json(pdfFiles);
+        } else {
+            // Restituisce un array vuoto se non ci sono file
+            res.json([]);
         }
-
-        // Filtra per mostrare solo i file PDF
-        const pdfFiles = Contents
-            .filter(item => item.Key.endsWith('.pdf'))
-            .map(item => ({
-                key: item.Key,
-                name: item.Key.split('/').pop(),
-                url: `https://${bucketName}.s3.${region}.amazonaws.com/${item.Key}`
-            }));
-
-        res.json(pdfFiles);
     } catch (error) {
-        console.error("Errore nel recupero dell'elenco file:", error);
-        res.status(500).json({ message: "Errore nel recupero dell'elenco file." });
+        console.error('Errore nel recupero della lista dei file da S3:', error);
+        res.status(500).json({ success: false, message: 'Errore interno del server durante il recupero dei file.' });
     }
 });
 

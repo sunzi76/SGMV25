@@ -20,8 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 throw new Error('Errore nel recupero della lista dei file.');
             }
-            allFiles = await response.json();
-            displayFiles(allFiles, currentPage);
+            const data = await response.json();
+            
+            // Controllo aggiuntivo per assicurarsi che i dati siano un array
+            if (Array.isArray(data)) {
+                allFiles = data;
+                displayFiles(allFiles, currentPage);
+            } else {
+                throw new Error('Formato dati non valido ricevuto dal server.');
+            }
         } catch (error) {
             console.error('Errore nel recupero dei file:', error);
             fileList.innerHTML = '<p>Errore nel caricamento dei file. Riprova più tardi.</p>';
