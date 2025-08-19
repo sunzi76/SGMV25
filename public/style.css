@@ -366,10 +366,9 @@ input[type="text"], input[type="file"] {
     }
 
     /* Paginazione */
-    #pagination {
+     #pagination {
         display: flex;
         justify-content: center;
-        margin-top: 20px; /* Mantieni la distanza che hai aggiunto */
     }
 
     /* Stili per la sezione di caricamento file */
