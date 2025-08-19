@@ -386,13 +386,14 @@ input[type="text"], input[type="file"] {
 }
 
 /* Stili per la sezione di ricerca */
+/* Stili per la sezione di ricerca */
 .search-container {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     max-width: 500px; /* Imposta una larghezza massima per mantenere la forma su desktop */
-    margin: 0 auto;
+    margin: 0 auto 20px auto; /* Aggiunge un margine inferiore di 20px */
 }
 
 #search-input {
