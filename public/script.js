@@ -183,12 +183,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 li.innerHTML = `
                     <span class="playlist-date">${formattedDate}</span>
                     <span class="playlist-name">${playlist.name}</span>
+                    <div class="saved-playlist-actions">
+                        <button class="preview-playlist-btn" data-playlist-name="${playlist.name}">
+                            🔍
+                        </button>
+                        <a href="${API_BASE_URL}/download-playlist/${playlist.name}" class="download-playlist-btn">
+                            ⬇️
+                        </a>
+                        <button class="delete-playlist-btn" data-playlist-id="${playlist.id}">
+                            🗑️
+                        </button>
+                    </div>
                 `;
-                li.dataset.playlistName = playlist.name;
-                li.dataset.playlistId = playlist.id;
                 li.classList.add('saved-playlist-item');
                 savedPlaylistsList.appendChild(li);
             });
+            
         } catch (error) {
             console.error('Errore nel recupero delle playlist:', error);
             savedPlaylistsList.innerHTML = '<p>Impossibile caricare le playlist.</p>';
@@ -263,6 +273,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const pagination = document.getElementById('pagination');
             displayFiles(allFiles, 1, fileList, pagination);
         }
+
+        // Handle delete playlist button
+        if (event.target.classList.contains('delete-playlist-btn')) {
+            const playlistId = event.target.dataset.playlistId;
+            const confirmed = confirm("Sei sicuro di voler eliminare questa playlist?");
+            if (confirmed) {
+                try {
+                    const response = await fetch(`${API_BASE_URL}/playlists/${playlistId}`, {
+                        method: 'DELETE',
+                    });
+                    if (response.ok) {
+                        alert('Playlist eliminata con successo!');
+                        fetchSavedPlaylists(); // Refresh the list
+                    } else {
+                        alert('Errore nell\'eliminazione della playlist.');
+                    }
+                } catch (error) {
+                    console.error('Errore durante l\'eliminazione della playlist:', error);
+                }
+            }
+        }
+
+
     });
 
     // Gestione del pop-up, dell'aggiunta alla playlist e del drag and drop

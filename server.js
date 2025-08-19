@@ -170,6 +170,35 @@ app.get('/canti_liturgici/:filename', async (req, res) => {
     }
 });
 
+// Route to delete a saved playlist
+app.delete('/playlists/:id', async (req, res) => {
+    const playlistId = req.params.id;
+    const key = `playlists/${playlistId}.json`;
+
+    try {
+        const command = new DeleteObjectCommand({
+            Bucket: bucketName,
+            Key: key,
+        });
+        await s3Client.send(command);
+        
+        // Remove from the in-memory array as well
+        savedPlaylists = savedPlaylists.filter(p => p.id !== playlistId);
+
+        res.status(200).json({ success: true, message: 'Playlist eliminata con successo.' });
+    } catch (error) {
+        if (error.Code === 'NoSuchKey') {
+            res.status(404).json({ success: false, message: 'Playlist non trovata.' });
+        } else {
+            console.error('Errore nella cancellazione della playlist da S3:', error);
+            res.status(500).json({ success: false, message: 'Errore del server durante la cancellazione.' });
+        }
+    }
+});
+
+
+
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
     loadPlaylistsFromS3();
