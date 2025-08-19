@@ -95,6 +95,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Gestione del pop-up e dell'aggiunta alla playlist
+    document.addEventListener('click', function(event) {
+        // Gestione dell'apertura del modale dei diagrammi
+        if (event.target.classList.contains('show-diagrams-btn')) {
+            const filename = event.target.dataset.filename;
+            showChordDiagrams(filename);
+        }
+
+        // Gestione dell'aggiunta a playlist
+        if (event.target.classList.contains('add-to-playlist-btn')) {
+            const filename = event.target.dataset.filename;
+            const playlist = document.getElementById('playlist');
+            
+            // Controlla il limite di 15 brani
+            if (playlist.children.length >= 15) {
+                alert('Hai raggiunto il limite massimo di 15 brani per la playlist.');
+                return;
+            }
+
+            // Aggiunge il brano alla playlist
+            const li = document.createElement('li');
+            li.textContent = filename;
+            li.dataset.filename = filename; // Per riferimenti futuri
+
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Rimuovi';
+            removeBtn.classList.add('remove-from-playlist-btn');
+            li.appendChild(removeBtn);
+            
+            playlist.appendChild(li);
+        }
+        
+        // Gestione della rimozione dalla playlist
+        if (event.target.classList.contains('remove-from-playlist-btn')) {
+            const li = event.target.parentElement;
+            li.remove();
+        }
+
+        // Gestione della chiusura del modale dei diagrammi
+        if (event.target.classList.contains('close-btn')) {
+            const diagramsModal = document.getElementById('diagrams-modal');
+            if (diagramsModal) {
+                diagramsModal.classList.remove('visible');
+                diagramsModal.classList.add('hidden');
+            }
+        }
+    });
+
+
+
     // Funzione per mostrare i diagrammi degli accordi
     async function showChordDiagrams(filename) {
         const diagramsModal = document.getElementById('diagrams-modal');
