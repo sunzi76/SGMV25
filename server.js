@@ -7,6 +7,8 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
+app.use(express.json()); // Middleware per leggere i body JSON
+app.use(cors());
 
 const port = process.env.PORT || 3000;
 
@@ -14,7 +16,6 @@ const port = process.env.PORT || 3000;
 const bucketName = process.env.S3_BUCKET_NAME;
 const region = process.env.AWS_REGION;
 
-// Log di debug per verificare che il bucketName sia caricato
 console.log('AWS Bucket Name:', bucketName);
 
 const s3Client = new S3Client({
@@ -38,241 +39,53 @@ const upload = multer({
     })
 });
 
-// CORS Configuration
-app.use(cors({
-    origin: 'https://sgmv25-frontend.onrender.com',
-    methods: ['GET', 'POST', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+// Array fittizio per le playlist salvate (simulazione di un database)
+let savedPlaylists = [];
 
-app.use(express.json());
+// Funzione per ordinare le playlist per data
+const sortPlaylistsByDate = (playlists) => {
+    return playlists.sort((a, b) => {
+        return new Date(b.creationDate) - new Date(a.creationDate);
+    });
+};
 
-// Rotta per il caricamento dei file PDF
-app.post('/upload', upload.single('pdfFile'), (req, res) => {
-    if (!req.file) {
-        return res.status(400).send('Nessun file PDF caricato.');
-    }
-    const fileUrl = req.file.location;
-    const fileName = req.file.originalname;
-    console.log(`File caricato su S3: ${fileUrl}`);
-    res.json({ message: 'File PDF caricato con successo!', url: fileUrl, fileName: fileName });
-});
-
-// Rotta per ottenere la lista dei file PDF da S3
-app.get('/files', async (req, res) => {
-    try {
-        const { ListObjectsCommand } = require("@aws-sdk/client-s3");
-        const command = new ListObjectsCommand({
-            Bucket: bucketName,
-            Prefix: 'canti_liturgici/'
-        });
-        const { Contents } = await s3Client.send(command);
-        if (Contents && Contents.length > 0) {
-            const pdfFiles = Contents.filter(item => item.Key.endsWith('.pdf'))
-                                      .map(item => item.Key.split('/').pop());
-            res.json(pdfFiles);
-        } else {
-            // Restituisce un array vuoto se non ci sono file
-            res.json([]);
-        }
-    } catch (error) {
-        console.error('Errore nel recupero della lista dei file da S3:', error);
-        res.status(500).json({ success: false, message: 'Errore interno del server durante il recupero dei file.' });
-    }
-});
-
-// Rotta per salvare una playlist su S3
-app.post('/playlists', async (req, res) => {
+// Rotta per salvare una playlist
+app.post('/save-playlist', (req, res) => {
     const { name, files } = req.body;
-    try {
-        let existingPlaylists = [];
-        try {
-            const command = new GetObjectCommand({ Bucket: bucketName, Key: 'playlists/playlists.json' });
-            const { Body } = await s3Client.send(command);
-            existingPlaylists = JSON.parse(await Body.transformToString());
-        } catch (error) {
-            if (error.name !== 'NoSuchKey') {
-                throw error;
-            }
-        }
-        const newPlaylist = {
-            id: `playlist-${Date.now()}`,
-            name,
-            files
-        };
-        existingPlaylists.push(newPlaylist);
-        const putCommand = new PutObjectCommand({
-            Bucket: bucketName,
-            Key: 'playlists/playlists.json',
-            Body: JSON.stringify(existingPlaylists, null, 2),
-            ContentType: 'application/json',
-        });
-        await s3Client.send(putCommand);
-        res.status(201).json({ success: true, message: 'Playlist salvata con successo!', playlist: newPlaylist });
-    } catch (error) {
-        console.error('Errore nel salvataggio della playlist su S3:', error);
-        res.status(500).json({ success: false, message: 'Errore interno del server.' });
+    const playlistId = Date.now().toString();
+    const creationDate = new Date().toISOString();
+
+    if (!name || !Array.isArray(files) || files.length === 0) {
+        return res.status(400).json({ success: false, message: 'Dati playlist non validi.' });
     }
+
+    const newPlaylist = {
+        id: playlistId,
+        name: name,
+        files: files,
+        creationDate: creationDate
+    };
+
+    savedPlaylists.push(newPlaylist);
+    savedPlaylists = sortPlaylistsByDate(savedPlaylists);
+
+    res.json({ success: true, message: 'Playlist salvata.', playlist: newPlaylist });
 });
 
-// Rotta per ottenere la lista delle playlist salvate da S3
-app.get('/playlists', async (req, res) => {
-    try {
-        const command = new GetObjectCommand({ Bucket: bucketName, Key: 'playlists/playlists.json' });
-        const { Body } = await s3Client.send(command);
-        const playlists = JSON.parse(await Body.transformToString());
-        res.json({ success: true, playlists });
-    } catch (error) {
-        if (error.name === 'NoSuchKey') {
-            return res.json({ success: true, playlists: [] });
-        }
-        console.error('Errore nel recupero delle playlist da S3:', error);
-        res.status(500).json({ success: false, message: 'Errore interno del server.' });
-    }
+// Nuova rotta: Recupera tutte le playlist salvate
+app.get('/playlists', (req, res) => {
+    res.json(savedPlaylists);
 });
 
-// Rotta per eliminare una playlist da S3
-app.delete('/playlists/:id', async (req, res) => {
-    const playlistId = req.params.id;
-    try {
-        const getCommand = new GetObjectCommand({ Bucket: bucketName, Key: 'playlists/playlists.json' });
-        const { Body } = await s3Client.send(getCommand);
-        let playlists = JSON.parse(await Body.transformToString());
-        const initialLength = playlists.length;
-        playlists = playlists.filter(pl => pl.id !== playlistId);
+// Nuova rotta: Recupera una singola playlist per l'anteprima
+app.get('/playlists/:name', (req, res) => {
+    const playlistName = req.params.name;
+    const playlist = savedPlaylists.find(p => p.name === playlistName);
 
-        if (playlists.length < initialLength) {
-            const putCommand = new PutObjectCommand({
-                Bucket: bucketName,
-                Key: 'playlists/playlists.json',
-                Body: JSON.stringify(playlists, null, 2),
-                ContentType: 'application/json',
-            });
-            await s3Client.send(putCommand);
-            res.json({ success: true, message: 'Playlist eliminata con successo!' });
-        } else {
-            res.status(404).json({ success: false, message: 'Playlist non trovata.' });
-        }
-    } catch (error) {
-        console.error('Errore nell\'eliminazione della playlist da S3:', error);
-        res.status(500).json({ success: false, message: 'Errore interno del server durante l\'eliminazione della playlist.' });
-    }
-});
-
-// Rotta per ottenere i dettagli di una singola playlist da S3
-app.get('/playlists/:id', async (req, res) => {
-    const playlistId = req.params.id;
-    try {
-        const getCommand = new GetObjectCommand({ Bucket: bucketName, Key: 'playlists/playlists.json' });
-        const { Body } = await s3Client.send(getCommand);
-        const playlists = JSON.parse(await Body.transformToString());
-        const playlist = playlists.find(pl => pl.id === playlistId);
-        if (playlist) {
-            res.json({ success: true, playlist: playlist });
-        } else {
-            res.status(404).json({ success: false, message: 'Playlist non trovata.' });
-        }
-    } catch (error) {
-        console.error('Errore nel recupero della playlist da S3:', error);
-        res.status(500).json({ success: false, message: 'Errore interno del server durante il recupero della playlist.' });
-    }
-});
-
-// Rotta per il download di una playlist
-app.get('/playlists/:id/download', async (req, res) => {
-    const playlistId = req.params.id;
-    try {
-        const getCommand = new GetObjectCommand({ Bucket: bucketName, Key: 'playlists/playlists.json' });
-        const { Body } = await s3Client.send(getCommand);
-        const playlists = JSON.parse(await Body.transformToString());
-        const playlist = playlists.find(pl => pl.id === playlistId);
-
-        if (!playlist) {
-            return res.status(404).json({ success: false, message: 'Playlist non trovata.' });
-        }
-        if (!playlist.files || playlist.files.length === 0) {
-            return res.status(400).json({ success: false, message: 'La playlist è vuota, nessun file da scaricare.' });
-        }
-        const archive = archiver('zip', {
-            zlib: { level: 9 }
-        });
-        res.attachment(`${playlist.name}.zip`);
-        archive.pipe(res);
-        for (const file of playlist.files) {
-            const getFileCommand = new GetObjectCommand({
-                Bucket: bucketName,
-                Key: `canti_liturgici/${file.name}`
-            });
-            const fileData = await s3Client.send(getFileCommand);
-            archive.append(fileData.Body, { name: file.name });
-        }
-        await archive.finalize();
-    } catch (error) {
-        console.error('Errore nel download della playlist:', error);
-        res.status(500).json({ success: false, message: 'Errore interno del server durante il download della playlist.' });
-    }
-});
-
-// Rotta per la lettura delle note e trasformazione in tablatura per chitarra
-app.get('/diagrams/:filename', async (req, res) => {
-    const filename = req.params.filename;
-    const xmlKey = `canti_liturgici/${filename.replace('.pdf', '.xml')}`;
-
-    try {
-        const command = new GetObjectCommand({ Bucket: bucketName, Key: xmlKey });
-        const { Body } = await s3Client.send(command);
-        const xmlText = await Body.transformToString();
-
-        let uniqueNotes = [];
-
-        // Tentativo 1: Analisi per la struttura <text:span> con style-name="T*"
-        const newRegex = /<text:span text:style-name="T\d+">(.*?)<\/text:span>/g;
-        const matches = [...xmlText.matchAll(newRegex)];
-
-        if (matches.length > 0) {
-            const notesFromMatches = matches.map(match => {
-                const cleanedText = match[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-                return cleanedText;
-            }).join(' ');
-
-            const notesArray = notesFromMatches.split(' ').filter(n => n);
-            const chordRegex = /^(Do|Re|Mi|Fa|Sol|La|Si)(b|#|sus|add|maj|min|m)?[0-9]*(-)?(7|9|11|13)?$/i;
-            uniqueNotes = [...new Set(notesArray.filter(n => chordRegex.test(n)))];
-        }
-
-        // Tentativo 2: Fallback per la vecchia struttura (LibreOffice)
-        if (uniqueNotes.length === 0) {
-            const libreOfficeColorRegex = /style:name="(T\d+)"[^>]*?fo:color="#ff0000[^"]*"/g;
-            const redColorStyles = [...xmlText.matchAll(libreOfficeColorRegex)].map(match => match[1]);
-            
-            if (redColorStyles.length > 0) {
-                const noteRegex = new RegExp(`<text:span text:style-name="(${redColorStyles.join('|')})">(.*?)<\/text:span>`, 'g');
-                const matches = [...xmlText.matchAll(noteRegex)];
-                const notes = matches.map(match => match[2].trim());
-                uniqueNotes = [...new Set(notes.flatMap(n => n.split(/\s+/)).filter(n => n))];
-            }
-        }
-        
-        // Tentativo 3: Fallback per la struttura precedente (<Glyphs>)
-        if (uniqueNotes.length === 0) {
-            const oldStructureColorRegex = /Brush=".*?Color="#FF0000CC">.*?<Text>(.*?)<\/Text>/g;
-            const oldStructureMatches = [...xmlText.matchAll(oldStructureColorRegex)];
-            const notes = oldStructureMatches.map(match => match[1].trim());
-            uniqueNotes = [...new Set(notes.flatMap(n => n.split(/\s+/)).filter(n => n))];
-        }
-
-        if (uniqueNotes.length > 0) {
-            res.json({ success: true, notes: uniqueNotes });
-        } else {
-            res.status(404).json({ success: false, message: 'Nessuna nota musicale trovata in questo file XML.' });
-        }
-    } catch (error) {
-        if (error.Code === 'NoSuchKey') {
-            res.status(404).json({ success: false, message: 'Il file XML corrispondente non è stato trovato.' });
-        } else {
-            console.error(`Errore nel recupero del file XML per i diagrammi: ${xmlKey}`, error);
-            res.status(500).json({ success: false, message: 'Errore interno del server.' });
-        }
+    if (playlist) {
+        res.json({ success: true, playlist });
+    } else {
+        res.status(404).json({ success: false, message: 'Playlist non trovata.' });
     }
 });
 
@@ -303,25 +116,6 @@ app.get('/canti_liturgici/:filename', async (req, res) => {
     }
 });
 
-// Rotta per salvare una playlist
-app.post('/save-playlist', async (req, res) => {
-    const { name, files } = req.body;
-
-    if (!name || !Array.isArray(files) || files.length === 0) {
-        return res.status(400).json({ success: false, message: 'Dati playlist non validi.' });
-    }
-
-    // Qui la logica per salvare la playlist nel tuo database
-    // Esempio: Inviare i dati ad un servizio come DynamoDB o un database relazionale
-    // ...
-
-    // Risposta di successo fittizia per il momento
-    res.json({ success: true, message: 'Playlist salvata.' });
-});
-
-
-
-
 app.listen(port, () => {
-    console.log(`Server Node.js avviato sulla porta ${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });

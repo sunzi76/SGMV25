@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const diagramsFilename = document.getElementById('diagrams-filename');
         const closeBtn = document.querySelector('.close-btn');
 
-        let data; // La variabile 'data' è ora dichiarata qui, all'inizio della funzione
+        let data;
 
         try {
             const response = await fetch(`${API_BASE_URL}/files`);
@@ -95,8 +95,170 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Funzione per mostrare i diagrammi degli accordi
+    async function showChordDiagrams(filename) {
+        const diagramsModal = document.getElementById('diagrams-modal');
+        const diagramsContainer = document.getElementById('diagrams-container');
+        const diagramsFilename = document.getElementById('diagrams-filename');
+        if (!diagramsModal || !diagramsContainer || !diagramsFilename) return;
+
+        diagramsModal.classList.remove('hidden');
+        diagramsModal.classList.add('visible');
+        diagramsFilename.textContent = filename;
+        diagramsContainer.innerHTML = 'Caricamento diagrammi...';
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/diagrams/${filename}`);
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Nessuna nota musicale trovata per questo file.');
+            }
+
+            const chords = data.notes;
+            diagramsContainer.innerHTML = '';
+
+            if (chords.length === 0) {
+                diagramsContainer.innerHTML = '<p>Nessuna nota musicale trovata in questo file.</p>';
+                return;
+            }
+            
+            for (const chord of chords) {
+                const chordKey = chord.trim().replace(/#/, '-sharp-').replace(/-/g, 'min').toLowerCase();
+                const diagramImage = `/chord-diagrams/${chordKey}.jpg`; 
+                const diagramItem = document.createElement('div');
+                diagramItem.classList.add('chord-diagram-item');
+                diagramItem.innerHTML = `<h4>${chord}</h4>`;
+
+                const img = new Image();
+                img.src = diagramImage;
+                img.alt = `Diagramma accordo di ${chord}`;
+                
+                img.onload = () => {
+                    diagramItem.appendChild(img);
+                    diagramsContainer.appendChild(diagramItem);
+                };
+                img.onerror = () => {
+                    const errorMessage = document.createElement('p');
+                    errorMessage.textContent = 'Diagramma non disponibile';
+                    diagramItem.appendChild(errorMessage);
+                    diagramsContainer.appendChild(diagramItem);
+                };
+            }
+        } catch (error) {
+            console.error('Errore nel recupero dei diagrammi:', error);
+            diagramsContainer.innerHTML = `<p>${error.message}</p>`;
+        }
+    }
+
+    // Funzione per recuperare e visualizzare le playlist salvate
+    async function fetchSavedPlaylists() {
+        const savedPlaylistsList = document.getElementById('saved-playlists-list');
+        if (!savedPlaylistsList) return;
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/playlists`);
+            if (!response.ok) {
+                throw new Error('Errore nel recupero delle playlist salvate.');
+            }
+            const playlists = await response.json();
+            
+            savedPlaylistsList.innerHTML = ''; // Svuota la lista prima di riempirla
+            
+            if (playlists.length === 0) {
+                savedPlaylistsList.innerHTML = '<p>Nessuna playlist salvata.</p>';
+                return;
+            }
+            
+            // Ordina per data (il backend lo fa già, ma questo è un controllo di sicurezza)
+            playlists.sort((a, b) => new Date(b.creationDate) - new Date(a.creationDate));
+
+            playlists.forEach(playlist => {
+                const li = document.createElement('li');
+                li.textContent = playlist.name;
+                li.dataset.playlistName = playlist.name;
+                li.dataset.playlistId = playlist.id;
+                li.classList.add('saved-playlist-item');
+                savedPlaylistsList.appendChild(li);
+            });
+        } catch (error) {
+            console.error('Errore nel recupero delle playlist:', error);
+            savedPlaylistsList.innerHTML = '<p>Impossibile caricare le playlist.</p>';
+        }
+    }
+
+    // Funzione per mostrare l'anteprima di una playlist
+    async function showPlaylistPreview(playlistName) {
+        const previewModal = document.getElementById('clicked-playlist-preview');
+        const previewTitle = document.getElementById('preview-playlist-name');
+        const previewList = document.getElementById('clicked-preview-file-list');
+
+        if (!previewModal || !previewTitle || !previewList) return;
+
+        previewTitle.textContent = playlistName;
+        previewList.innerHTML = 'Caricamento...';
+        previewModal.classList.remove('hidden');
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/playlists/${playlistName}`);
+            const data = await response.json();
+
+            if (data.success && data.playlist) {
+                previewList.innerHTML = '';
+                if (data.playlist.files.length === 0) {
+                    previewList.innerHTML = '<p>La playlist è vuota.</p>';
+                    return;
+                }
+                data.playlist.files.forEach(file => {
+                    const li = document.createElement('li');
+                    li.textContent = file;
+                    previewList.appendChild(li);
+                });
+            } else {
+                previewList.innerHTML = `<p>${data.message || 'Errore nel recupero dei file della playlist.'}</p>`;
+            }
+        } catch (error) {
+            console.error('Errore nel recupero della playlist:', error);
+            previewList.innerHTML = '<p>Errore di rete o del server.</p>';
+        }
+    }
+
+
+    // Gestione della ricerca
+    document.addEventListener('input', (event) => {
+        if (event.target.id === 'search-input') {
+            const searchInput = event.target;
+            const clearSearchBtn = document.getElementById('clear-search-btn');
+            const query = searchInput.value.toLowerCase();
+            
+            if (query.length > 0) {
+                clearSearchBtn.classList.add('visible');
+            } else {
+                clearSearchBtn.classList.remove('visible');
+            }
+
+            const filteredFiles = allFiles.filter(file => typeof file === 'string' && file.toLowerCase().includes(query));
+            currentPage = 1; 
+            const fileList = document.getElementById('file-list');
+            const pagination = document.getElementById('pagination');
+            displayFiles(filteredFiles, currentPage, fileList, pagination);
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        if (event.target.id === 'clear-search-btn') {
+            const searchInput = document.getElementById('search-input');
+            const clearSearchBtn = event.target;
+            searchInput.value = '';
+            clearSearchBtn.classList.remove('visible');
+            const fileList = document.getElementById('file-list');
+            const pagination = document.getElementById('pagination');
+            displayFiles(allFiles, 1, fileList, pagination);
+        }
+    });
+
     // Gestione del pop-up, dell'aggiunta alla playlist e del drag and drop
-    document.addEventListener('click', async function(event) {
+    document.addEventListener('click', function(event) {
         // Gestione dell'apertura del modale dei diagrammi
         if (event.target.classList.contains('show-diagrams-btn')) {
             const filename = event.target.dataset.filename;
@@ -156,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 diagramsModal.classList.add('hidden');
             }
         }
-
+        
         // Gestione del pulsante "Svuota Playlist"
         if (event.target.id === 'clear-playlist-btn') {
             const playlist = document.getElementById('playlist');
@@ -168,13 +330,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Gestione del pulsante "Salva Playlist" *********************************************************
+        // Gestione del pulsante "Salva Playlist"
         if (event.target.id === 'save-playlist-btn') {
             const playlistName = document.getElementById('playlist-name-input').value.trim();
             const playlistItems = document.getElementById('playlist').children;
-            const playlist = [];
+            const files = [];
             for (const item of playlistItems) {
-                playlist.push(item.dataset.filename);
+                files.push(item.dataset.filename);
             }
 
             const messageDiv = document.getElementById('playlist-save-message');
@@ -185,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            if (playlist.length === 0) {
+            if (files.length === 0) {
                 messageDiv.textContent = 'La playlist è vuota, aggiungi dei brani prima di salvare.';
                 messageDiv.style.color = 'red';
                 return;
@@ -193,32 +355,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Qui invii i dati al server per il salvataggio
             // Questo è solo un esempio della chiamata API
-            try {
-                const response = await fetch(`${API_BASE_URL}/save-playlist`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ name: playlistName, files: playlist }),
-                });
-                const result = await response.json();
-                
-                if (result.success) {
-                    messageDiv.textContent = `Playlist "${playlistName}" salvata con successo!`;
-                    messageDiv.style.color = 'green';
-                } else {
-                    messageDiv.textContent = result.message || 'Errore nel salvataggio della playlist.';
+            (async () => {
+                try {
+                    const response = await fetch(`${API_BASE_URL}/save-playlist`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ name: playlistName, files: files }),
+                    });
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        messageDiv.textContent = `Playlist "${playlistName}" salvata con successo!`;
+                        messageDiv.style.color = 'green';
+                        document.getElementById('playlist-name-input').value = '';
+                        document.getElementById('playlist').innerHTML = '';
+                        fetchSavedPlaylists(); // Ricarica la lista delle playlist salvate
+                    } else {
+                        messageDiv.textContent = result.message || 'Errore nel salvataggio della playlist.';
+                        messageDiv.style.color = 'red';
+                    }
+                } catch (error) {
+                    console.error('Errore nel salvataggio della playlist:', error);
+                    messageDiv.textContent = 'Errore di rete o del server.';
                     messageDiv.style.color = 'red';
                 }
-            } catch (error) {
-                console.error('Errore nel salvataggio della playlist:', error);
-                messageDiv.textContent = 'Errore di rete o del server.';
-                messageDiv.style.color = 'red';
-            }
+            })();
         }
 
-
-
+        // Gestione del click per l'anteprima delle playlist salvate
+        if (event.target.classList.contains('saved-playlist-item')) {
+            const playlistName = event.target.dataset.playlistName;
+            showPlaylistPreview(playlistName);
+        }
+        // Gestione della chiusura dell'anteprima
+        if (event.target.id === 'close-preview-btn') {
+            document.getElementById('clicked-playlist-preview').classList.add('hidden');
+        }
 
     });
 
@@ -226,30 +400,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const playlist = document.getElementById('playlist');
     let draggedItem = null;
 
-    playlist.addEventListener('dragstart', (e) => {
-        draggedItem = e.target;
-        setTimeout(() => {
-            draggedItem.classList.add('dragging');
-        }, 0);
-    });
+    if (playlist) {
+        playlist.addEventListener('dragstart', (e) => {
+            draggedItem = e.target;
+            setTimeout(() => {
+                draggedItem.classList.add('dragging');
+            }, 0);
+        });
 
-    playlist.addEventListener('dragend', () => {
-        if (draggedItem) {
-            draggedItem.classList.remove('dragging');
-            draggedItem = null;
-        }
-    });
+        playlist.addEventListener('dragend', () => {
+            if (draggedItem) {
+                draggedItem.classList.remove('dragging');
+                draggedItem = null;
+            }
+        });
 
-    playlist.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        const afterElement = getDragAfterElement(playlist, e.clientY);
-        const draggable = document.querySelector('.dragging');
-        if (afterElement == null) {
-            playlist.appendChild(draggable);
-        } else {
-            playlist.insertBefore(draggable, afterElement);
-        }
-    });
+        playlist.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            const afterElement = getDragAfterElement(playlist, e.clientY);
+            const draggable = document.querySelector('.dragging');
+            if (afterElement == null) {
+                playlist.appendChild(draggable);
+            } else {
+                playlist.insertBefore(draggable, afterElement);
+            }
+        });
+    }
+
 
     function getDragAfterElement(container, y) {
         const draggableElements = [...container.querySelectorAll('li:not(.dragging)')];
@@ -265,112 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { offset: Number.NEGATIVE_INFINITY }).element;
     }
 
-
-
-    // Funzione per mostrare i diagrammi degli accordi
-    async function showChordDiagrams(filename) {
-        const diagramsModal = document.getElementById('diagrams-modal');
-        const diagramsContainer = document.getElementById('diagrams-container');
-        const diagramsFilename = document.getElementById('diagrams-filename');
-        if (!diagramsModal || !diagramsContainer || !diagramsFilename) return;
-
-        diagramsModal.classList.remove('hidden');
-        diagramsModal.classList.add('visible');
-        diagramsFilename.textContent = filename;
-        diagramsContainer.innerHTML = 'Caricamento diagrammi...';
-
-        try {
-            const response = await fetch(`${API_BASE_URL}/diagrams/${filename}`);
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.message || 'Nessuna nota musicale trovata per questo file.');
-            }
-
-            const chords = data.notes;
-            diagramsContainer.innerHTML = '';
-
-            if (chords.length === 0) {
-                diagramsContainer.innerHTML = '<p>Nessuna nota musicale trovata in questo file.</p>';
-                return;
-            }
-            
-            for (const chord of chords) {
-                const chordKey = chord.trim().replace(/#/, '-sharp-').replace(/-/g, 'min').toLowerCase();
-                const diagramImage = `/chord-diagrams/${chordKey}.jpg`; 
-                const diagramItem = document.createElement('div');
-                diagramItem.classList.add('chord-diagram-item');
-                diagramItem.innerHTML = `<h4>${chord}</h4>`;
-
-                const img = new Image();
-                img.src = diagramImage;
-                img.alt = `Diagramma accordo di ${chord}`;
-                
-                img.onload = () => {
-                    diagramItem.appendChild(img);
-                    diagramsContainer.appendChild(diagramItem);
-                };
-                img.onerror = () => {
-                    const errorMessage = document.createElement('p');
-                    errorMessage.textContent = 'Diagramma non disponibile';
-                    diagramItem.appendChild(errorMessage);
-                    diagramsContainer.appendChild(diagramItem);
-                };
-            }
-        } catch (error) {
-            console.error('Errore nel recupero dei diagrammi:', error);
-            diagramsContainer.innerHTML = `<p>${error.message}</p>`;
-        }
-    }
-
-    // Gestione della ricerca
-    document.addEventListener('input', (event) => {
-        if (event.target.id === 'search-input') {
-            const searchInput = event.target;
-            const clearSearchBtn = document.getElementById('clear-search-btn');
-            const query = searchInput.value.toLowerCase();
-            
-            if (query.length > 0) {
-                clearSearchBtn.classList.add('visible');
-            } else {
-                clearSearchBtn.classList.remove('visible');
-            }
-
-            const filteredFiles = allFiles.filter(file => typeof file === 'string' && file.toLowerCase().includes(query));
-            currentPage = 1; 
-            const fileList = document.getElementById('file-list');
-            const pagination = document.getElementById('pagination');
-            displayFiles(filteredFiles, currentPage, fileList, pagination);
-        }
-    });
-
-    document.addEventListener('click', (event) => {
-        if (event.target.id === 'clear-search-btn') {
-            const searchInput = document.getElementById('search-input');
-            const clearSearchBtn = event.target;
-            searchInput.value = '';
-            clearSearchBtn.classList.remove('visible');
-            const fileList = document.getElementById('file-list');
-            const pagination = document.getElementById('pagination');
-            displayFiles(allFiles, 1, fileList, pagination);
-        }
-    });
-
-    // Gestione del pop-up (apertura e chiusura)
-    document.addEventListener('click', function(event) {
-        if (event.target.classList.contains('show-diagrams-btn')) {
-            const filename = event.target.dataset.filename;
-            showChordDiagrams(filename);
-        }
-        if (event.target.classList.contains('close-btn')) {
-            const diagramsModal = document.getElementById('diagrams-modal');
-            if (diagramsModal) {
-                diagramsModal.classList.remove('visible');
-                diagramsModal.classList.add('hidden');
-            }
-        }
-    });
-
     // Caricamento iniziale dei file
     fetchFiles();
+    fetchSavedPlaylists();
 });
