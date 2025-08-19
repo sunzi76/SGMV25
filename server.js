@@ -276,6 +276,32 @@ app.get('/diagrams/:filename', async (req, res) => {
     }
 });
 
+// Rotta per servire i file PDF dal bucket S3
+app.get('/canti_liturgici/:filename', async (req, res) => {
+    const filename = req.params.filename;
+    const key = `canti_liturgici/${filename}`;
+
+    try {
+        const command = new GetObjectCommand({
+            Bucket: bucketName,
+            Key: key,
+        });
+        const response = await s3Client.send(command);
+
+        res.setHeader('Content-Type', response.ContentType);
+        res.setHeader('Content-Length', response.ContentLength);
+        res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
+
+        response.Body.pipe(res);
+    } catch (error) {
+        if (error.Code === 'NoSuchKey') {
+            res.status(404).send('File non trovato.');
+        } else {
+            console.error('Errore nel recupero del file da S3:', error);
+            res.status(500).send('Errore interno del server.');
+        }
+    }
+});
 
 app.listen(port, () => {
     console.log(`Server Node.js avviato sulla porta ${port}`);

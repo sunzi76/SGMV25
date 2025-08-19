@@ -59,9 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="file-name">${file}</span>
                 <div class="button-container">
                     <button class="show-diagrams-btn" data-filename="${file}">Diagrammi Accordi</button>
-                    <a href="${API_BASE_URL}/canti_liturgici/${file}" class="button-link" target="_blank" download>
+                    <a href="${API_BASE_URL}/canti_liturgici/${file}" class="button-link" target="_blank">
                         Apri PDF
                     </a>
+                    <button class="add-to-playlist-btn" data-filename="${file}">Aggiungi a Playlist</button>
                 </div>
             `;
             fileList.appendChild(li);

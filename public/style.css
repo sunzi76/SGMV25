@@ -284,3 +284,82 @@ button:hover, .button-link:hover {
 .modal.hidden {
     display: none;
 }
+
+/* -- Media Queries per Mobile -- */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    .section-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-nav li a {
+        padding: 12px 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .file-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .file-name {
+        margin-bottom: 10px;
+        margin-right: 0;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        width: 100%;
+    }
+
+    .button-container {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .button-container button, .button-container .button-link {
+        width: 100%;
+    }
+
+    #search-input {
+        width: 100%;
+    }
+
+    .modal-content {
+        margin: 5% auto;
+        padding: 15px;
+        max-width: 95%;
+    }
+
+    #diagrams-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .playlist-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #playlist-name-input, #save-playlist-btn, #clear-playlist-btn {
+        width: 100%;
+    }
+
+    #pagination {
+        display: flex;
+        justify-content: center;
+    }
+}
