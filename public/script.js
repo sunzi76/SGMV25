@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Gestione del pop-up e dell'aggiunta alla playlist
+    // Gestione del pop-up, dell'aggiunta alla playlist e del drag and drop
     document.addEventListener('click', function(event) {
         // Gestione dell'apertura del modale dei diagrammi
         if (event.target.classList.contains('show-diagrams-btn')) {
@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const li = document.createElement('li');
             li.textContent = filename;
             li.dataset.filename = filename; // Per riferimenti futuri
+            li.draggable = true; // Rende l'elemento trascinabile
 
             const removeBtn = document.createElement('button');
             removeBtn.textContent = 'Rimuovi';
@@ -142,6 +143,49 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // Logica per il Drag and Drop
+    const playlist = document.getElementById('playlist');
+    let draggedItem = null;
+
+    playlist.addEventListener('dragstart', (e) => {
+        draggedItem = e.target;
+        setTimeout(() => {
+            draggedItem.classList.add('dragging');
+        }, 0);
+    });
+
+    playlist.addEventListener('dragend', () => {
+        if (draggedItem) {
+            draggedItem.classList.remove('dragging');
+            draggedItem = null;
+        }
+    });
+
+    playlist.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        const afterElement = getDragAfterElement(playlist, e.clientY);
+        const draggable = document.querySelector('.dragging');
+        if (afterElement == null) {
+            playlist.appendChild(draggable);
+        } else {
+            playlist.insertBefore(draggable, afterElement);
+        }
+    });
+
+    function getDragAfterElement(container, y) {
+        const draggableElements = [...container.querySelectorAll('li:not(.dragging)')];
+
+        return draggableElements.reduce((closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            if (offset < 0 && offset > closest.offset) {
+                return { offset: offset, element: child };
+            } else {
+                return closest;
+            }
+        }, { offset: Number.NEGATIVE_INFINITY }).element;
+    }
 
 
 
