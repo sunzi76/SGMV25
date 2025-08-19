@@ -57,13 +57,13 @@ app.get('/files', async (req, res) => {
     try {
         const command = new ListObjectsV2Command({
             Bucket: bucketName,
-            Prefix: 'canti_liturgici/',
-            Delimiter: '/'
+            Prefix: 'canti_liturgici/'
         });
         const response = await s3Client.send(command);
         const files = response.Contents
             .filter(obj => obj.Key !== 'canti_liturgici/')
-            .map(obj => path.basename(obj.Key));
+            .map(obj => path.basename(obj.Key))
+            .filter(filename => filename.toLowerCase().endsWith('.pdf')); // <--- QUI IL FILTRO PER I PDF
         res.json(files);
     } catch (error) {
         console.error('Errore nel recupero della lista dei file da S3:', error);

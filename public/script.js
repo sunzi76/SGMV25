@@ -175,7 +175,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             playlists.forEach(playlist => {
                 const li = document.createElement('li');
-                li.textContent = playlist.name;
+                const creationDate = new Date(playlist.creationDate);
+                const year = creationDate.getFullYear();
+                const month = (creationDate.getMonth() + 1).toString().padStart(2, '0');
+                const formattedDate = `${year}-${month}`;
+
+                li.innerHTML = `
+                    <span class="playlist-date">${formattedDate}</span>
+                    <span class="playlist-name">${playlist.name}</span>
+                `;
                 li.dataset.playlistName = playlist.name;
                 li.dataset.playlistId = playlist.id;
                 li.classList.add('saved-playlist-item');

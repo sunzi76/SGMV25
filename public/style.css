@@ -285,6 +285,16 @@ button:hover, .button-link:hover {
     display: none;
 }
 
+.saved-playlist-item .playlist-date {
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #555;
+    margin-right: 10px;
+}
+.saved-playlists-list .playlist-name {
+    font-weight: bold;
+}
+
 /* -- Media Queries per Mobile -- */
 @media (max-width: 768px) {
     body {
