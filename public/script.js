@@ -627,7 +627,13 @@ window.addEventListener('click', (event) => {
     });
 
     
-
+    // Aggiungi un ascoltatore di eventi per il clic sui pulsanti dei diagrammi
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('show-diagrams-btn')) {
+            const filename = event.target.dataset.filename;
+            showChordDiagrams(filename);
+        }
+    });
 
 
     renderPlaylist();
