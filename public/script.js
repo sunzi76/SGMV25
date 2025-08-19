@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    document.addEventListener('click', (event) => {
+    document.addEventListener('click', async (event) => {
         if (event.target.id === 'clear-search-btn') {
             const searchInput = document.getElementById('search-input');
             const clearSearchBtn = event.target;
