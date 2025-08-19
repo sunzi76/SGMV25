@@ -367,8 +367,9 @@ input[type="text"], input[type="file"] {
 
     /* Paginazione */
     #pagination {
-        text-align: center;
-        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px; /* Mantieni la distanza che hai aggiunto */
     }
 
     /* Stili per la sezione di caricamento file */
@@ -383,53 +384,56 @@ input[type="text"], input[type="file"] {
         top: 50%;
         transform: translateY(-50%);
     }
+
+    /* Stili per la sezione di ricerca */
+    .search-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        max-width: 500px; /* Imposta una larghezza massima per mantenere la forma su desktop */
+        margin: 0 auto 20px auto; /* Aggiunge un margine inferiore di 20px */
+    }
+
+    #search-input {
+        width: 100%;
+        padding: 10px 40px 10px 15px; /* Aggiunge spazio a destra per il pulsante */
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+        font-size: 1em;
+    }
+
+    #search-input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    }
+
+    #clear-search-btn {
+        position: absolute;
+        right: 15px;
+        font-size: 1.5em;
+        color: var(--secondary-color);
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        transition: color 0.2s ease;
+        visibility: hidden; /* Nasconde il pulsante all'inizio */
+        opacity: 0;
+    }
+
+    #clear-search-btn.visible {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #clear-search-btn:hover {
+        color: var(--primary-hover-color);
+    }
+
+
 }
 
-/* Stili per la sezione di ricerca */
-/* Stili per la sezione di ricerca */
-.search-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    max-width: 500px; /* Imposta una larghezza massima per mantenere la forma su desktop */
-    margin: 0 auto 20px auto; /* Aggiunge un margine inferiore di 20px */
-}
 
-#search-input {
-    width: 100%;
-    padding: 10px 40px 10px 15px; /* Aggiunge spazio a destra per il pulsante */
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
-    font-size: 1em;
-}
-
-#search-input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-}
-
-#clear-search-btn {
-    position: absolute;
-    right: 15px;
-    font-size: 1.5em;
-    color: var(--secondary-color);
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
-    transition: color 0.2s ease;
-    visibility: hidden; /* Nasconde il pulsante all'inizio */
-    opacity: 0;
-}
-
-#clear-search-btn.visible {
-    visibility: visible;
-    opacity: 1;
-}
-
-#clear-search-btn:hover {
-    color: var(--primary-hover-color);
-}
