@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Funzione per recuperare i file dal backend
     async function fetchFiles() {
         // Le variabili sono ora dichiarate qui, all'interno della funzione
+        console.log('Avvio la richiesta per i file...');
         const fileList = document.getElementById('file-list');
         const pagination = document.getElementById('pagination');
         const searchInput = document.getElementById('search-input');
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 throw new Error('Errore nel recupero della lista dei file.');
             }
+            console.log('Dati ricevuti dal server:', data);
             const data = await response.json();
             
             if (Array.isArray(data)) {
