@@ -22,9 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Gestione diagrammi Tablatura */
     const diagramsModal = document.getElementById('diagrams-modal');
-    const closeDiagramsBtn = diagramsModal.querySelector('.close-btn');
+    const closeBtn = document.querySelector('.close-btn');
     const diagramsFilename = document.getElementById('diagrams-filename');
     const diagramsContainer = document.getElementById('diagrams-container');
+
+    closeBtn.addEventListener('click', () => {
+        diagramsModal.classList.add('hidden');
+        diagramsModal.classList.remove('visible');
+    });
+
 
 
     const MAX_PLAYLIST_ITEMS = 15;
@@ -451,9 +457,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const diagramsContainer = document.getElementById('diagrams-container');
         const diagramsFilename = document.getElementById('diagrams-filename');
 
+        // Mostra il popup immediatamente
+        diagramsModal.classList.remove('hidden'); 
+        diagramsModal.classList.add('visible'); // Mostra subito il popup
+
         diagramsFilename.textContent = filename;
         diagramsContainer.innerHTML = 'Caricamento diagrammi...';
-        diagramsModal.classList.add('visible');
 
         try {
             const response = await fetch(`${API_BASE_URL}/diagrams/${filename}`);
@@ -470,7 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            diagramsContainer.innerHTML = '';
+            diagramsContainer.innerHTML = ''; 
 
             for (const chord of chords) {
                 const chordKey = chord.trim().replace(/#/, '-sharp-').replace(/-/g, 'min').toLowerCase();

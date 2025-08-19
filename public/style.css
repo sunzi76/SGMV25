@@ -281,6 +281,10 @@ button:hover, .button-link:hover {
     margin-top: 10px;
 }
 
+.modal.hidden {
+    display: none;
+}
+
 /* -- Media Queries per Mobile -- */
 @media (max-width: 768px) {
     body {
