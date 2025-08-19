@@ -5,14 +5,14 @@ const { S3Client, GetObjectCommand, PutObjectCommand, ListObjectsV2Command, Dele
 const archiver = require('archiver');
 const cors = require('cors');
 const path = require('path');
+const { Readable } = require('stream');
 
 const app = express();
-app.use(express.json()); // Middleware per leggere i body JSON
+app.use(express.json());
 app.use(cors());
 
 const port = process.env.PORT || 3000;
 
-// Configurazione di AWS S3 (V3 SDK)
 const bucketName = process.env.S3_BUCKET_NAME;
 const region = process.env.AWS_REGION;
 
@@ -26,24 +26,36 @@ const s3Client = new S3Client({
     }
 });
 
-// Rotta per servire i diagrammi degli accordi
-app.use('/chord-diagrams', express.static(path.join(__dirname, 'public/chord-diagrams')));
-
-// Configurazione di Multer per l'upload su S3
-const upload = multer({
-    storage: multerS3({
-        s3: s3Client,
-        bucket: bucketName,
-        acl: 'public-read',
-        contentType: multerS3.AUTO_CONTENT_TYPE,
-        key: function (req, file, cb) {
-            cb(null, 'canti_liturgici/' + file.originalname);
-        }
-    })
-});
-
-// Array fittizio per le playlist salvate (simulazione di un database)
+// Array in memoria per le playlist caricate da S3
 let savedPlaylists = [];
+
+// Funzione per caricare le playlist da S3 all'avvio
+const loadPlaylistsFromS3 = async () => {
+    console.log('Caricamento delle playlist da S3...');
+    try {
+        const command = new ListObjectsV2Command({
+            Bucket: bucketName,
+            Prefix: 'playlists/',
+        });
+        const response = await s3Client.send(command);
+        const playlistFiles = response.Contents.filter(obj => obj.Key.endsWith('.json'));
+
+        const playlists = await Promise.all(playlistFiles.map(async (file) => {
+            const getCommand = new GetObjectCommand({
+                Bucket: bucketName,
+                Key: file.Key,
+            });
+            const s3Response = await s3Client.send(getCommand);
+            const data = await s3Response.Body.transformToString();
+            return JSON.parse(data);
+        }));
+
+        savedPlaylists = playlists;
+        console.log(`Caricate ${savedPlaylists.length} playlist da S3.`);
+    } catch (error) {
+        console.error('Errore nel caricamento delle playlist da S3:', error);
+    }
+};
 
 // Funzione per ordinare le playlist per data
 const sortPlaylistsByDate = (playlists) => {
@@ -52,7 +64,10 @@ const sortPlaylistsByDate = (playlists) => {
     });
 };
 
-// **NUOVA ROTTA PER RECUPERARE LA LISTA DEI FILE**
+// Rotta per servire i diagrammi degli accordi
+app.use('/chord-diagrams', express.static(path.join(__dirname, 'public/chord-diagrams')));
+
+// Rotta per recuperare la lista dei file
 app.get('/files', async (req, res) => {
     try {
         const command = new ListObjectsV2Command({
@@ -63,7 +78,7 @@ app.get('/files', async (req, res) => {
         const files = response.Contents
             .filter(obj => obj.Key !== 'canti_liturgici/')
             .map(obj => path.basename(obj.Key))
-            .filter(filename => filename.toLowerCase().endsWith('.pdf')); // <--- QUI IL FILTRO PER I PDF
+            .filter(filename => filename.toLowerCase().endsWith('.pdf'));
         res.json(files);
     } catch (error) {
         console.error('Errore nel recupero della lista dei file da S3:', error);
@@ -71,8 +86,8 @@ app.get('/files', async (req, res) => {
     }
 });
 
-// Rotta per salvare una playlist
-app.post('/save-playlist', (req, res) => {
+// Rotta per salvare una playlist su S3
+app.post('/save-playlist', async (req, res) => {
     const { name, files } = req.body;
     const playlistId = Date.now().toString();
     const creationDate = new Date().toISOString();
@@ -88,10 +103,27 @@ app.post('/save-playlist', (req, res) => {
         creationDate: creationDate
     };
 
-    savedPlaylists.push(newPlaylist);
-    savedPlaylists = sortPlaylistsByDate(savedPlaylists);
+    const key = `playlists/${playlistId}.json`;
+    const body = JSON.stringify(newPlaylist);
 
-    res.json({ success: true, message: 'Playlist salvata.', playlist: newPlaylist });
+    try {
+        const command = new PutObjectCommand({
+            Bucket: bucketName,
+            Key: key,
+            Body: body,
+            ContentType: 'application/json',
+            ACL: 'public-read'
+        });
+        await s3Client.send(command);
+
+        savedPlaylists.push(newPlaylist);
+        savedPlaylists = sortPlaylistsByDate(savedPlaylists);
+
+        res.json({ success: true, message: 'Playlist salvata.', playlist: newPlaylist });
+    } catch (error) {
+        console.error('Errore nel salvataggio della playlist su S3:', error);
+        res.status(500).json({ success: false, message: 'Errore interno del server durante il salvataggio.' });
+    }
 });
 
 // Rotta per recuperare tutte le playlist salvate
@@ -140,4 +172,5 @@ app.get('/canti_liturgici/:filename', async (req, res) => {
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
+    loadPlaylistsFromS3();
 });
