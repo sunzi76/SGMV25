@@ -107,6 +107,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target.classList.contains('add-to-playlist-btn')) {
             const filename = event.target.dataset.filename;
             const playlist = document.getElementById('playlist');
+
+            // Controllo per evitare duplicati
+            let isDuplicate = false;
+            for (const item of playlist.children) {
+                if (item.dataset.filename === filename) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+
+            if (isDuplicate) {
+                alert('Questo brano è già presente nella playlist.');
+                return;
+            }
             
             // Controlla il limite di 15 brani
             if (playlist.children.length >= 15) {
