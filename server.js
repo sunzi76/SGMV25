@@ -303,6 +303,25 @@ app.get('/canti_liturgici/:filename', async (req, res) => {
     }
 });
 
+// Rotta per salvare una playlist
+app.post('/save-playlist', async (req, res) => {
+    const { name, files } = req.body;
+
+    if (!name || !Array.isArray(files) || files.length === 0) {
+        return res.status(400).json({ success: false, message: 'Dati playlist non validi.' });
+    }
+
+    // Qui la logica per salvare la playlist nel tuo database
+    // Esempio: Inviare i dati ad un servizio come DynamoDB o un database relazionale
+    // ...
+
+    // Risposta di successo fittizia per il momento
+    res.json({ success: true, message: 'Playlist salvata.' });
+});
+
+
+
+
 app.listen(port, () => {
     console.log(`Server Node.js avviato sulla porta ${port}`);
 });

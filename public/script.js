@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Gestione del pop-up, dell'aggiunta alla playlist e del drag and drop
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', async function(event) {
         // Gestione dell'apertura del modale dei diagrammi
         if (event.target.classList.contains('show-diagrams-btn')) {
             const filename = event.target.dataset.filename;
@@ -156,6 +156,70 @@ document.addEventListener('DOMContentLoaded', () => {
                 diagramsModal.classList.add('hidden');
             }
         }
+
+        // Gestione del pulsante "Svuota Playlist"
+        if (event.target.id === 'clear-playlist-btn') {
+            const playlist = document.getElementById('playlist');
+            if (playlist.children.length > 0) {
+                const confirmed = confirm("Sei sicuro di voler svuotare la playlist?");
+                if (confirmed) {
+                    playlist.innerHTML = '';
+                }
+            }
+        }
+
+        // Gestione del pulsante "Salva Playlist" *********************************************************
+        if (event.target.id === 'save-playlist-btn') {
+            const playlistName = document.getElementById('playlist-name-input').value.trim();
+            const playlistItems = document.getElementById('playlist').children;
+            const playlist = [];
+            for (const item of playlistItems) {
+                playlist.push(item.dataset.filename);
+            }
+
+            const messageDiv = document.getElementById('playlist-save-message');
+            
+            if (!playlistName) {
+                messageDiv.textContent = 'Per favore, inserisci un nome per la playlist.';
+                messageDiv.style.color = 'red';
+                return;
+            }
+
+            if (playlist.length === 0) {
+                messageDiv.textContent = 'La playlist è vuota, aggiungi dei brani prima di salvare.';
+                messageDiv.style.color = 'red';
+                return;
+            }
+
+            // Qui invii i dati al server per il salvataggio
+            // Questo è solo un esempio della chiamata API
+            try {
+                const response = await fetch(`${API_BASE_URL}/save-playlist`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name: playlistName, files: playlist }),
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    messageDiv.textContent = `Playlist "${playlistName}" salvata con successo!`;
+                    messageDiv.style.color = 'green';
+                } else {
+                    messageDiv.textContent = result.message || 'Errore nel salvataggio della playlist.';
+                    messageDiv.style.color = 'red';
+                }
+            } catch (error) {
+                console.error('Errore nel salvataggio della playlist:', error);
+                messageDiv.textContent = 'Errore di rete o del server.';
+                messageDiv.style.color = 'red';
+            }
+        }
+
+
+
+
     });
 
     // Logica per il Drag and Drop
