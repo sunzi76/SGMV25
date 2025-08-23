@@ -311,7 +311,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 messageDiv.style.color = 'green';
                 document.getElementById('playlist-name-input').value = '';
                 document.getElementById('playlist').innerHTML = '';
-                fetchSavedPlaylists();
             } else {
                 messageDiv.textContent = result.message || 'Errore nel salvataggio della playlist.';
                 messageDiv.style.color = 'red';
@@ -339,7 +338,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                     if (response.ok) {
                         alert('Playlist eliminata con successo!');
-                        fetchSavedPlaylists();
                     } else {
                         alert('Errore nell\'eliminazione della playlist.');
                     }
@@ -355,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('clicked-playlist-preview').classList.add('hidden');
     });
 
-    // Logica per il Drag and Drop
+    // Funzione per il drag and drop
     const playlist = document.getElementById('playlist');
     let draggedItem = null;
     if (playlist) {
@@ -395,8 +393,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, { offset: Number.NEGATIVE_INFINITY }).element;
     }
+    
+    // Ricarica la lista playlist solo quando l'utente naviga alla sezione
+    document.querySelector('a[href="#saved-playlists-section"]').addEventListener('click', (event) => {
+        event.preventDefault(); // Previeni il comportamento di default del link
+        fetchSavedPlaylists();
+        const targetSection = document.getElementById('saved-playlists-section');
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+    });
 
-    // Caricamento iniziale dei file e delle playlist
+    // Caricamento iniziale dei file
     fetchFiles();
-    fetchSavedPlaylists();
 });
