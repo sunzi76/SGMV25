@@ -311,7 +311,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 messageDiv.style.color = 'green';
                 document.getElementById('playlist-name-input').value = '';
                 document.getElementById('playlist').innerHTML = '';
-                fetchSavedPlaylists(); // <-- QUESTA RIGA È LA SOLUZIONE!
             } else {
                 messageDiv.textContent = result.message || 'Errore nel salvataggio della playlist.';
                 messageDiv.style.color = 'red';
@@ -323,13 +322,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Gestione del click per l'anteprima delle playlist salvate
+    // Gestione del click per l'anteprima delle playlist salvate e cancellazione
     document.getElementById('saved-playlists-list').addEventListener('click', async function(event) {
         if (event.target.classList.contains('preview-playlist-btn')) {
             const playlistName = event.target.dataset.playlistName;
             showPlaylistPreview(playlistName);
-        }
-        if (event.target.classList.contains('delete-playlist-btn')) {
+        } else if (event.target.classList.contains('delete-playlist-btn')) {
             const playlistId = event.target.dataset.playlistId;
             const confirmed = confirm("Sei sicuro di voler eliminare questa playlist?");
             if (confirmed) {
@@ -339,6 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                     if (response.ok) {
                         alert('Playlist eliminata con successo!');
+                        fetchSavedPlaylists();
                     } else {
                         alert('Errore nell\'eliminazione della playlist.');
                     }
@@ -395,9 +394,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { offset: Number.NEGATIVE_INFINITY }).element;
     }
     
-    // Ricarica la lista playlist solo quando l'utente naviga alla sezione
     document.querySelector('a[href="#saved-playlists-section"]').addEventListener('click', (event) => {
-        event.preventDefault(); // Previeni il comportamento di default del link
+        event.preventDefault();
         fetchSavedPlaylists();
         const targetSection = document.getElementById('saved-playlists-section');
         targetSection.scrollIntoView({ behavior: 'smooth' });
@@ -405,4 +403,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Caricamento iniziale dei file
     fetchFiles();
+    fetchSavedPlaylists();
 });
