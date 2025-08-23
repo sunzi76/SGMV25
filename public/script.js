@@ -311,6 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 messageDiv.style.color = 'green';
                 document.getElementById('playlist-name-input').value = '';
                 document.getElementById('playlist').innerHTML = '';
+                fetchSavedPlaylists(); // <-- QUESTA RIGA È LA SOLUZIONE!
             } else {
                 messageDiv.textContent = result.message || 'Errore nel salvataggio della playlist.';
                 messageDiv.style.color = 'red';
