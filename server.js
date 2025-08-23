@@ -26,10 +26,8 @@ const s3Client = new S3Client({
     }
 });
 
-// Array in memoria per le playlist caricate da S3
 let savedPlaylists = [];
 
-// Funzione per caricare le playlist da S3 all'avvio
 const loadPlaylistsFromS3 = async () => {
     console.log('Caricamento delle playlist da S3...');
     try {
@@ -39,7 +37,6 @@ const loadPlaylistsFromS3 = async () => {
         });
         const response = await s3Client.send(command);
         const playlistFiles = response.Contents.filter(obj => obj.Key.endsWith('.json'));
-
         const playlists = await Promise.all(playlistFiles.map(async (file) => {
             const getCommand = new GetObjectCommand({
                 Bucket: bucketName,
@@ -49,7 +46,6 @@ const loadPlaylistsFromS3 = async () => {
             const data = await s3Response.Body.transformToString();
             return JSON.parse(data);
         }));
-
         savedPlaylists = playlists;
         console.log(`Caricate ${savedPlaylists.length} playlist da S3.`);
     } catch (error) {
@@ -57,17 +53,14 @@ const loadPlaylistsFromS3 = async () => {
     }
 };
 
-// Funzione per ordinare le playlist per data
 const sortPlaylistsByDate = (playlists) => {
     return playlists.sort((a, b) => {
         return new Date(b.creationDate) - new Date(a.creationDate);
     });
 };
 
-// Rotta per servire i diagrammi degli accordi
 app.use('/chord-diagrams', express.static(path.join(__dirname, 'public/chord-diagrams')));
 
-// Rotta per recuperare la lista dei file
 app.get('/files', async (req, res) => {
     try {
         const command = new ListObjectsV2Command({
@@ -86,7 +79,6 @@ app.get('/files', async (req, res) => {
     }
 });
 
-// Rotta per salvare una playlist su S3
 app.post('/save-playlist', async (req, res) => {
     const { name, files } = req.body;
     const playlistId = Date.now().toString();
@@ -115,7 +107,7 @@ app.post('/save-playlist', async (req, res) => {
             ACL: 'public-read'
         });
         await s3Client.send(command);
-
+        
         savedPlaylists.push(newPlaylist);
         savedPlaylists = sortPlaylistsByDate(savedPlaylists);
 
@@ -126,12 +118,10 @@ app.post('/save-playlist', async (req, res) => {
     }
 });
 
-// Rotta per recuperare tutte le playlist salvate
 app.get('/playlists', (req, res) => {
     res.json(savedPlaylists);
 });
 
-// Rotta per recuperare una singola playlist per l'anteprima
 app.get('/playlists/:name', (req, res) => {
     const playlistName = req.params.name;
     const playlist = savedPlaylists.find(p => p.name === playlistName);
@@ -143,34 +133,6 @@ app.get('/playlists/:name', (req, res) => {
     }
 });
 
-// Rotta per servire i file PDF dal bucket S3
-app.get('/canti_liturgici/:filename', async (req, res) => {
-    const filename = req.params.filename;
-    const key = `canti_liturgici/${filename}`;
-
-    try {
-        const command = new GetObjectCommand({
-            Bucket: bucketName,
-            Key: key,
-        });
-        const response = await s3Client.send(command);
-
-        res.setHeader('Content-Type', response.ContentType);
-        res.setHeader('Content-Length', response.ContentLength);
-        res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
-
-        response.Body.pipe(res);
-    } catch (error) {
-        if (error.Code === 'NoSuchKey') {
-            res.status(404).send('File non trovato.');
-        } else {
-            console.error('Errore nel recupero del file da S3:', error);
-            res.status(500).send('Errore interno del server.');
-        }
-    }
-});
-
-// Route to delete a saved playlist
 app.delete('/playlists/:id', async (req, res) => {
     const playlistId = req.params.id;
     const key = `playlists/${playlistId}.json`;
@@ -181,8 +143,6 @@ app.delete('/playlists/:id', async (req, res) => {
             Key: key,
         });
         await s3Client.send(command);
-        
-        // Remove from the in-memory array as well
         savedPlaylists = savedPlaylists.filter(p => p.id !== playlistId);
 
         res.status(200).json({ success: true, message: 'Playlist eliminata con successo.' });
@@ -195,9 +155,6 @@ app.delete('/playlists/:id', async (req, res) => {
         }
     }
 });
-
-
-
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
