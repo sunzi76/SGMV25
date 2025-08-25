@@ -1,8 +1,11 @@
 const express = require('express');
 const { S3Client, GetObjectCommand, PutObjectCommand, ListObjectsV2Command, DeleteObjectCommand } = require('@aws-sdk/client-s3');
+const { Upload } = require("@aws-sdk/lib-storage");
 const archiver = require('archiver');
 const cors = require('cors');
 const path = require('path');
+const multer = require('multer');
+const multerS3 = require('multer-s3');
 
 const app = express();
 app.use(express.json());
@@ -61,6 +64,27 @@ const sortPlaylistsByDate = (playlists) => {
         return new Date(b.creationDate) - new Date(a.creationDate);
     });
 };
+
+// Configurazione di Multer per l'upload su S3
+const upload = multer({
+    storage: multerS3({
+        s3: s3Client,
+        bucket: bucketName,
+        contentType: multerS3.AUTO_CONTENT_TYPE,
+        key: function (req, file, cb) {
+            const filename = path.basename(file.originalname);
+            cb(null, `canti_liturgici/${filename}`);
+        }
+    })
+});
+
+// Nuova rotta per l'upload di un singolo file PDF
+app.post('/upload', upload.single('pdfFile'), (req, res) => {
+    if (!req.file) {
+        return res.status(400).json({ success: false, message: 'Nessun file caricato.' });
+    }
+    res.json({ success: true, message: `File "${req.file.originalname}" caricato con successo!` });
+});
 
 app.get('/files', async (req, res) => {
     try {
