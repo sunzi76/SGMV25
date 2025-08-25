@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentPage === 1) prevBtn.disabled = true;
             prevBtn.addEventListener('click', () => {
                 currentPage--;
-                displayFiles(allFiles, currentPage, document.getElementById('file-list'), document.getElementById('pagination'));
+                displayFiles(allFiles, currentPage, document.getElementById('search-results'), document.getElementById('search-pagination'));
             });
             pagination.appendChild(prevBtn);
 
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentPage === totalPages) nextBtn.disabled = true;
             nextBtn.addEventListener('click', () => {
                 currentPage++;
-                displayFiles(allFiles, currentPage, document.getElementById('file-list'), document.getElementById('pagination'));
+                displayFiles(allFiles, currentPage, document.getElementById('search-results'), document.getElementById('search-pagination'));
             });
             pagination.appendChild(nextBtn);
         }
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const playlists = await response.json();
             savedPlaylistsList.innerHTML = '';
-            if (!playlists || playlists.length === 0) {
+            if (playlists.length === 0) {
                 savedPlaylistsList.innerHTML = '<p>Nessuna playlist salvata.</p>';
                 return;
             }
@@ -211,6 +211,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Gestione Caricamento File
+    document.getElementById('uploadPdfForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const fileInput = document.getElementById('pdfFileInput');
+        const uploadMessage = document.getElementById('upload-message');
+        const uploadWarning = document.getElementById('upload-warning-message');
+
+        const file = fileInput.files[0];
+        if (!file) {
+            uploadMessage.textContent = 'Per favore, seleziona un file da caricare.';
+            uploadMessage.style.color = 'red';
+            return;
+        }
+
+        if (file.type !== 'application/pdf') {
+            uploadMessage.textContent = '⚠️ Errore: Puoi caricare solo file in formato PDF.';
+            uploadMessage.style.color = 'red';
+            uploadWarning.classList.add('hidden');
+            return;
+        }
+
+        uploadMessage.textContent = 'Caricamento in corso...';
+        uploadMessage.style.color = 'black';
+        uploadWarning.classList.add('hidden');
+
+        const formData = new FormData();
+        formData.append('pdfFile', file);
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/upload`, {
+                method: 'POST',
+                body: formData,
+            });
+            const result = await response.json();
+            if (response.ok) {
+                uploadMessage.textContent = `File "${file.name}" caricato con successo!`;
+                uploadMessage.style.color = 'green';
+                fetchFiles();
+            } else {
+                uploadMessage.textContent = result.message || 'Errore durante il caricamento del file.';
+                uploadMessage.style.color = 'red';
+            }
+        } catch (error) {
+            console.error('Errore di rete o del server:', error);
+            uploadMessage.textContent = 'Errore di rete o del server.';
+            uploadMessage.style.color = 'red';
+        }
+    });
+
     document.getElementById('search-input').addEventListener('input', (event) => {
         const searchInput = event.target;
         const clearSearchBtn = document.getElementById('clear-search-btn');
@@ -222,8 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const filteredFiles = allFiles.filter(file => typeof file === 'string' && file.toLowerCase().includes(query));
         currentPage = 1; 
-        const fileList = document.getElementById('file-list');
-        const pagination = document.getElementById('pagination');
+        const fileList = document.getElementById('search-results');
+        const pagination = document.getElementById('search-pagination');
         displayFiles(filteredFiles, currentPage, fileList, pagination);
     });
 
@@ -232,8 +281,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const clearSearchBtn = event.target;
         searchInput.value = '';
         clearSearchBtn.style.display = 'none';
-        const fileList = document.getElementById('file-list');
-        const pagination = document.getElementById('pagination');
+        const fileList = document.getElementById('search-results');
+        const pagination = document.getElementById('search-pagination');
         displayFiles(allFiles, 1, fileList, pagination);
     });
 
@@ -406,5 +455,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     fetchFiles();
-    fetchSavedPlaylists();
 });
