@@ -3,7 +3,6 @@ const { S3Client, GetObjectCommand, PutObjectCommand, ListObjectsV2Command, Dele
 const archiver = require('archiver');
 const cors = require('cors');
 const path = require('path');
-const { Readable } = require('stream');
 
 const app = express();
 app.use(express.json());
@@ -50,7 +49,6 @@ const loadPlaylistsFromS3 = async () => {
         console.log(`Caricate ${savedPlaylists.length} playlist da S3.`);
     } catch (error) {
         console.error('Errore nel caricamento delle playlist da S3:', error);
-        // Se la cartella non esiste o è vuota, l'errore è normale
         if (error.Code === 'NoSuchKey' || error.Code === 'NotFound') {
             savedPlaylists = [];
             console.log('Nessuna playlist trovata su S3. L\'array in memoria è stato resettato.');
@@ -63,8 +61,6 @@ const sortPlaylistsByDate = (playlists) => {
         return new Date(b.creationDate) - new Date(a.creationDate);
     });
 };
-
-app.use('/chord-diagrams', express.static(path.join(__dirname, 'public/chord-diagrams')));
 
 app.get('/files', async (req, res) => {
     try {
@@ -112,7 +108,6 @@ app.post('/save-playlist', async (req, res) => {
         });
         await s3Client.send(command);
         
-        // Sincronizza l'array in memoria
         savedPlaylists.push(newPlaylist);
         savedPlaylists = sortPlaylistsByDate(savedPlaylists);
 
@@ -142,7 +137,6 @@ app.delete('/playlists/:id', async (req, res) => {
     const playlistId = req.params.id;
     const key = `playlists/${playlistId}.json`;
     
-    // Controlla che la chiave non sia 'undefined' per evitare cancellazioni involontarie
     if (playlistId === 'undefined' || !playlistId) {
         return res.status(400).json({ success: false, message: 'ID playlist non valido.' });
     }
@@ -154,13 +148,11 @@ app.delete('/playlists/:id', async (req, res) => {
         });
         await s3Client.send(command);
         
-        // Sincronizza l'array in memoria
         savedPlaylists = savedPlaylists.filter(p => p.id !== playlistId);
 
         res.status(200).json({ success: true, message: 'Playlist eliminata con successo.' });
     } catch (error) {
         if (error.Code === 'NoSuchKey') {
-            // Se il file non esiste, è comunque una cancellazione di successo
             savedPlaylists = savedPlaylists.filter(p => p.id !== playlistId);
             res.status(200).json({ success: true, message: 'Playlist non trovata su S3 ma rimossa dalla lista.' });
         } else {
@@ -168,6 +160,39 @@ app.delete('/playlists/:id', async (req, res) => {
             res.status(500).json({ success: false, message: 'Errore del server durante la cancellazione.' });
         }
     }
+});
+
+// Nuova rotta per il download della playlist
+app.get('/download-playlist/:name', async (req, res) => {
+    const playlistName = req.params.name;
+    const playlist = savedPlaylists.find(p => p.name === playlistName);
+
+    if (!playlist) {
+        return res.status(404).send('Playlist non trovata.');
+    }
+
+    const archive = archiver('zip', {
+        zlib: { level: 9 }
+    });
+
+    res.attachment(`${playlistName}.zip`);
+    archive.pipe(res);
+
+    for (const filename of playlist.files) {
+        const key = `canti_liturgici/${filename}`;
+        try {
+            const getCommand = new GetObjectCommand({
+                Bucket: bucketName,
+                Key: key,
+            });
+            const s3Response = await s3Client.send(getCommand);
+            archive.append(s3Response.Body, { name: filename });
+        } catch (error) {
+            console.error(`File non trovato su S3: ${key}`, error);
+        }
+    }
+
+    archive.finalize();
 });
 
 app.listen(port, () => {
