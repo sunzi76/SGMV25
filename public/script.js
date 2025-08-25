@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const playlists = await response.json();
             savedPlaylistsList.innerHTML = '';
-            if (playlists.length === 0) {
+            if (!playlists || playlists.length === 0) {
                 savedPlaylistsList.innerHTML = '<p>Nessuna playlist salvata.</p>';
                 return;
             }
@@ -406,4 +406,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     fetchFiles();
+    fetchSavedPlaylists();
 });
