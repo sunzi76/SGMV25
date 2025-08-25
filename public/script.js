@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const API_BASE_URL = 'https://sgmv25-backend.onrender.com';
     let allFiles = [];
     let currentPage = 1;
-    const filesPerPage = 8; // Modificato da 10 a 8
+    const filesPerPage = 8; 
 
     async function fetchFiles() {
         const fileList = document.getElementById('file-list');
@@ -56,13 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
         setupPagination(files.length, page, pagination);
     }
 
-    // Nuova funzione per la paginazione
     function setupPagination(totalFiles, currentPage, pagination) {
         if (!pagination) return;
         const totalPages = Math.ceil(totalFiles / filesPerPage);
         pagination.innerHTML = '';
         if (totalPages > 1) {
-            // Pulsante "Precedente"
             const prevBtn = document.createElement('button');
             prevBtn.textContent = 'Precedente';
             prevBtn.classList.add('page-btn');
@@ -73,13 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             pagination.appendChild(prevBtn);
 
-            // Conteggio delle pagine
             const pageInfo = document.createElement('span');
             pageInfo.textContent = `Pagina ${currentPage} di ${totalPages}`;
             pageInfo.classList.add('page-info');
             pagination.appendChild(pageInfo);
 
-            // Pulsante "Successivo"
             const nextBtn = document.createElement('button');
             nextBtn.textContent = 'Successivo';
             nextBtn.classList.add('page-btn');
@@ -215,7 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Gestione della ricerca
     document.getElementById('search-input').addEventListener('input', (event) => {
         const searchInput = event.target;
         const clearSearchBtn = document.getElementById('clear-search-btn');
@@ -242,7 +237,6 @@ document.addEventListener('DOMContentLoaded', () => {
         displayFiles(allFiles, 1, fileList, pagination);
     });
 
-    // Gestione dell'aggiunta alla playlist
     document.addEventListener('click', function(event) {
         if (event.target.classList.contains('add-to-playlist-btn')) {
             const filename = event.target.dataset.filename;
@@ -274,7 +268,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Gestione della rimozione dalla playlist
     document.getElementById('playlist').addEventListener('click', function(event) {
         if (event.target.classList.contains('remove-from-playlist-btn')) {
             const li = event.target.parentElement;
@@ -282,7 +275,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Gestione del pulsante "Svuota Playlist"
     document.getElementById('clear-playlist-btn').addEventListener('click', function() {
         const playlist = document.getElementById('playlist');
         if (playlist.children.length > 0) {
@@ -293,7 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Gestione del pulsante "Salva Playlist"
     document.getElementById('save-playlist-btn').addEventListener('click', async function() {
         const playlistName = document.getElementById('playlist-name-input').value.trim();
         const playlistItems = document.getElementById('playlist').children;
@@ -326,6 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 messageDiv.style.color = 'green';
                 document.getElementById('playlist-name-input').value = '';
                 document.getElementById('playlist').innerHTML = '';
+                fetchSavedPlaylists(); // Riaggiunto qui per aggiornare la lista
             } else {
                 messageDiv.textContent = result.message || 'Errore nel salvataggio della playlist.';
                 messageDiv.style.color = 'red';
@@ -337,7 +329,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Gestione del click per l'anteprima delle playlist salvate e cancellazione
     document.getElementById('saved-playlists-list').addEventListener('click', async function(event) {
         if (event.target.classList.contains('preview-playlist-btn')) {
             const playlistName = event.target.dataset.playlistName;
@@ -363,12 +354,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Gestione della chiusura dell'anteprima
     document.getElementById('close-preview-btn').addEventListener('click', function() {
         document.getElementById('clicked-playlist-preview').classList.add('hidden');
     });
 
-    // Funzione per il drag and drop
     const playlist = document.getElementById('playlist');
     let draggedItem = null;
     if (playlist) {
@@ -416,6 +405,5 @@ document.addEventListener('DOMContentLoaded', () => {
         targetSection.scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Caricamento iniziale dei file
     fetchFiles();
 });
