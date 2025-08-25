@@ -199,3 +199,10 @@ app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
     loadPlaylistsFromS3();
 });
+
+// Aggiungi questa nuova rotta per servire i file PDF da S3
+app.get('/canti_liturgici/:filename', (req, res) => {
+    const filename = req.params.filename;
+    const s3Url = `https://${bucketName}.s3.${region}.amazonaws.com/canti_liturgici/${filename}`;
+    res.redirect(s3Url);
+});

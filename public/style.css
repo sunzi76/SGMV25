@@ -341,9 +341,47 @@ button:hover, .button-link:hover {
         gap: 8px;
     }
 
-    .button-container button, .button-container .button-link {
-        width: 100%;
-    }
+    /* Stili per i pulsanti nella sezione di ricerca */
+.button-container button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--secondary-color);
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #5a6268;
+}
+
+.add-to-playlist-btn {
+    background-color: var(--success-color);
+}
+
+.add-to-playlist-btn:hover {
+    background-color: #218838;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #5a6268;
+}
 
     #search-input {
         width: 100%;
