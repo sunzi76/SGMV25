@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const API_BASE_URL = 'https://sgmv25-backend.onrender.com';
     let allFiles = [];
     let currentPage = 1;
-    const filesPerPage = 10;
+    const filesPerPage = 8; // Modificato da 10 a 8
 
     async function fetchFiles() {
         const fileList = document.getElementById('file-list');
@@ -56,24 +56,39 @@ document.addEventListener('DOMContentLoaded', () => {
         setupPagination(files.length, page, pagination);
     }
 
+    // Nuova funzione per la paginazione
     function setupPagination(totalFiles, currentPage, pagination) {
         if (!pagination) return;
         const totalPages = Math.ceil(totalFiles / filesPerPage);
         pagination.innerHTML = '';
         if (totalPages > 1) {
-            for (let i = 1; i <= totalPages; i++) {
-                const pageBtn = document.createElement('span');
-                pageBtn.textContent = i;
-                pageBtn.classList.add('page-number');
-                if (i === currentPage) {
-                    pageBtn.classList.add('active');
-                }
-                pageBtn.addEventListener('click', () => {
-                    currentPage = i;
-                    displayFiles(allFiles, currentPage, document.getElementById('file-list'), document.getElementById('pagination'));
-                });
-                pagination.appendChild(pageBtn);
-            }
+            // Pulsante "Precedente"
+            const prevBtn = document.createElement('button');
+            prevBtn.textContent = 'Precedente';
+            prevBtn.classList.add('page-btn');
+            if (currentPage === 1) prevBtn.disabled = true;
+            prevBtn.addEventListener('click', () => {
+                currentPage--;
+                displayFiles(allFiles, currentPage, document.getElementById('file-list'), document.getElementById('pagination'));
+            });
+            pagination.appendChild(prevBtn);
+
+            // Conteggio delle pagine
+            const pageInfo = document.createElement('span');
+            pageInfo.textContent = `Pagina ${currentPage} di ${totalPages}`;
+            pageInfo.classList.add('page-info');
+            pagination.appendChild(pageInfo);
+
+            // Pulsante "Successivo"
+            const nextBtn = document.createElement('button');
+            nextBtn.textContent = 'Successivo';
+            nextBtn.classList.add('page-btn');
+            if (currentPage === totalPages) nextBtn.disabled = true;
+            nextBtn.addEventListener('click', () => {
+                currentPage++;
+                displayFiles(allFiles, currentPage, document.getElementById('file-list'), document.getElementById('pagination'));
+            });
+            pagination.appendChild(nextBtn);
         }
     }
 
@@ -403,5 +418,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Caricamento iniziale dei file
     fetchFiles();
-    fetchSavedPlaylists();
 });
