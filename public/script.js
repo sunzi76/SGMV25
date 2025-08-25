@@ -2,9 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const API_BASE_URL = 'https://sgmv25-backend.onrender.com';
     let allFiles = [];
     let currentPage = 1;
-    const filesPerPage = 10;
+    const filesPerPage = 8; 
 
-    // Funzione per recuperare i file dal backend
     async function fetchFiles() {
         const fileList = document.getElementById('file-list');
         const pagination = document.getElementById('pagination');
@@ -29,28 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Funzione per visualizzare i file in base alla paginazione
     function displayFiles(files, page, fileList, pagination) {
         if (!fileList || !pagination) return;
-        
         fileList.innerHTML = '';
         const start = (page - 1) * filesPerPage;
         const end = start + filesPerPage;
         const paginatedFiles = files.slice(start, end);
-
         if (paginatedFiles.length === 0) {
             fileList.innerHTML = '<p>Nessun file trovato.</p>';
             pagination.innerHTML = '';
             return;
         }
-
         paginatedFiles.forEach(file => {
             const li = document.createElement('li');
             li.innerHTML = `
                 <span class="file-name">${file}</span>
                 <div class="button-container">
                     <button class="show-diagrams-btn" data-filename="${file}">Diagrammi Accordi</button>
-                    <a href="${API_BASE_URL}/canti_liturgici/${file}" class="button-link" target="_blank" download>
+                    <a href="${API_BASE_URL}/canti_liturgici/${file}" class="button-link" target="_blank">
                         Apri PDF
                     </a>
                     <button class="add-to-playlist-btn" data-filename="${file}">Aggiungi a Playlist</button>
@@ -58,73 +53,71 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             fileList.appendChild(li);
         });
-
         setupPagination(files.length, page, pagination);
     }
 
-    // Funzione per impostare la paginazione
     function setupPagination(totalFiles, currentPage, pagination) {
         if (!pagination) return;
-        
         const totalPages = Math.ceil(totalFiles / filesPerPage);
         pagination.innerHTML = '';
-
         if (totalPages > 1) {
-            for (let i = 1; i <= totalPages; i++) {
-                const pageBtn = document.createElement('span');
-                pageBtn.textContent = i;
-                pageBtn.classList.add('page-number');
-                if (i === currentPage) {
-                    pageBtn.classList.add('active');
-                }
-                pageBtn.addEventListener('click', () => {
-                    currentPage = i;
-                    displayFiles(allFiles, currentPage, document.getElementById('file-list'), document.getElementById('pagination'));
-                });
-                pagination.appendChild(pageBtn);
-            }
+            const prevBtn = document.createElement('button');
+            prevBtn.textContent = 'Precedente';
+            prevBtn.classList.add('page-btn');
+            if (currentPage === 1) prevBtn.disabled = true;
+            prevBtn.addEventListener('click', () => {
+                currentPage--;
+                displayFiles(allFiles, currentPage, document.getElementById('file-list'), document.getElementById('pagination'));
+            });
+            pagination.appendChild(prevBtn);
+
+            const pageInfo = document.createElement('span');
+            pageInfo.textContent = `Pagina ${currentPage} di ${totalPages}`;
+            pageInfo.classList.add('page-info');
+            pagination.appendChild(pageInfo);
+
+            const nextBtn = document.createElement('button');
+            nextBtn.textContent = 'Successivo';
+            nextBtn.classList.add('page-btn');
+            if (currentPage === totalPages) nextBtn.disabled = true;
+            nextBtn.addEventListener('click', () => {
+                currentPage++;
+                displayFiles(allFiles, currentPage, document.getElementById('file-list'), document.getElementById('pagination'));
+            });
+            pagination.appendChild(nextBtn);
         }
     }
 
-    // Funzione per mostrare i diagrammi degli accordi
     async function showChordDiagrams(filename) {
         const diagramsModal = document.getElementById('diagrams-modal');
         const diagramsContainer = document.getElementById('diagrams-container');
         const diagramsFilename = document.getElementById('diagrams-filename');
         if (!diagramsModal || !diagramsContainer || !diagramsFilename) return;
-
         diagramsModal.classList.remove('hidden');
         diagramsModal.classList.add('visible');
         diagramsFilename.textContent = filename;
         diagramsContainer.innerHTML = 'Caricamento diagrammi...';
-
         try {
             const response = await fetch(`${API_BASE_URL}/diagrams/${filename}`);
             const data = await response.json();
-
             if (!response.ok) {
                 throw new Error(data.message || 'Nessuna nota musicale trovata per questo file.');
             }
-
             const chords = data.notes;
             diagramsContainer.innerHTML = '';
-
             if (chords.length === 0) {
                 diagramsContainer.innerHTML = '<p>Nessuna nota musicale trovata in questo file.</p>';
                 return;
             }
-            
             for (const chord of chords) {
                 const chordKey = chord.trim().replace(/#/, '-sharp-').replace(/-/g, 'min').toLowerCase();
                 const diagramImage = `/chord-diagrams/${chordKey}.jpg`; 
                 const diagramItem = document.createElement('div');
                 diagramItem.classList.add('chord-diagram-item');
                 diagramItem.innerHTML = `<h4>${chord}</h4>`;
-
                 const img = new Image();
                 img.src = diagramImage;
                 img.alt = `Diagramma accordo di ${chord}`;
-                
                 img.onload = () => {
                     diagramItem.appendChild(img);
                     diagramsContainer.appendChild(diagramItem);
@@ -142,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Funzione per recuperare e visualizzare le playlist salvate
     async function fetchSavedPlaylists() {
         const savedPlaylistsList = document.getElementById('saved-playlists-list');
         if (!savedPlaylistsList) return;
@@ -151,23 +143,27 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 throw new Error('Errore nel recupero delle playlist salvate.');
             }
-            const data = await response.json();
-            const playlists = data.playlists; // Ho corretto qui!
-            
+            const playlists = await response.json();
             savedPlaylistsList.innerHTML = '';
-            if (!playlists || playlists.length === 0) {
+            if (playlists.length === 0) {
                 savedPlaylistsList.innerHTML = '<p>Nessuna playlist salvata.</p>';
                 return;
             }
+            playlists.sort((a, b) => new Date(b.creationDate) - new Date(a.creationDate));
             playlists.forEach(playlist => {
                 const li = document.createElement('li');
+                const creationDate = new Date(playlist.creationDate);
+                const year = creationDate.getFullYear();
+                const month = (creationDate.getMonth() + 1).toString().padStart(2, '0');
+                const formattedDate = `${year}-${month}`;
                 li.innerHTML = `
+                    <span class="playlist-date">${formattedDate}</span>
                     <span class="playlist-name">${playlist.name}</span>
                     <div class="saved-playlist-actions">
-                        <button class="preview-playlist-btn" data-playlist-id="${playlist.id}">
+                        <button class="preview-playlist-btn" data-playlist-name="${playlist.name}">
                             🔍
                         </button>
-                        <a href="${API_BASE_URL}/playlists/${playlist.id}/download" class="download-playlist-btn" target="_blank">
+                        <a href="${API_BASE_URL}/download-playlist/${playlist.name}" class="download-playlist-btn" target="_blank">
                             ⬇️
                         </a>
                         <button class="delete-playlist-btn" data-playlist-id="${playlist.id}">
@@ -184,20 +180,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Funzione per mostrare l'anteprima della playlist
-    async function showPlaylistPreview(playlistId) {
+    async function showPlaylistPreview(playlistName) {
         const previewModal = document.getElementById('clicked-playlist-preview');
         const previewTitle = document.getElementById('preview-playlist-name');
         const previewList = document.getElementById('clicked-preview-file-list');
         if (!previewModal || !previewTitle || !previewList) return;
+        previewTitle.textContent = playlistName;
         previewList.innerHTML = 'Caricamento...';
         previewModal.classList.remove('hidden');
-
         try {
-            const response = await fetch(`${API_BASE_URL}/playlists/${playlistId}`);
+            const response = await fetch(`${API_BASE_URL}/playlists/${playlistName}`);
             const data = await response.json();
             if (data.success && data.playlist) {
-                previewTitle.textContent = data.playlist.name;
                 previewList.innerHTML = '';
                 if (data.playlist.files.length === 0) {
                     previewList.innerHTML = '<p>La playlist è vuota.</p>';
@@ -217,40 +211,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Gestione della ricerca
-    document.addEventListener('input', (event) => {
-        if (event.target.id === 'search-input') {
-            const searchInput = event.target;
-            const clearSearchBtn = document.getElementById('clear-search-btn');
-            const query = searchInput.value.toLowerCase();
-            
-            if (query.length > 0) {
-                clearSearchBtn.classList.add('visible');
-            } else {
-                clearSearchBtn.classList.remove('visible');
-            }
-
-            const filteredFiles = allFiles.filter(file => typeof file === 'string' && file.toLowerCase().includes(query));
-            currentPage = 1; 
-            const fileList = document.getElementById('file-list');
-            const pagination = document.getElementById('pagination');
-            displayFiles(filteredFiles, currentPage, fileList, pagination);
+    document.getElementById('search-input').addEventListener('input', (event) => {
+        const searchInput = event.target;
+        const clearSearchBtn = document.getElementById('clear-search-btn');
+        const query = searchInput.value.toLowerCase();
+        if (query.length > 0) {
+            clearSearchBtn.style.display = 'block';
+        } else {
+            clearSearchBtn.style.display = 'none';
         }
+        const filteredFiles = allFiles.filter(file => typeof file === 'string' && file.toLowerCase().includes(query));
+        currentPage = 1; 
+        const fileList = document.getElementById('file-list');
+        const pagination = document.getElementById('pagination');
+        displayFiles(filteredFiles, currentPage, fileList, pagination);
     });
 
-    document.addEventListener('click', (event) => {
-        if (event.target.id === 'clear-search-btn') {
-            const searchInput = document.getElementById('search-input');
-            const clearSearchBtn = event.target;
-            searchInput.value = '';
-            clearSearchBtn.classList.remove('visible');
-            const fileList = document.getElementById('file-list');
-            const pagination = document.getElementById('pagination');
-            displayFiles(allFiles, 1, fileList, pagination);
-        }
+    document.getElementById('clear-search-btn').addEventListener('click', (event) => {
+        const searchInput = document.getElementById('search-input');
+        const clearSearchBtn = event.target;
+        searchInput.value = '';
+        clearSearchBtn.style.display = 'none';
+        const fileList = document.getElementById('file-list');
+        const pagination = document.getElementById('pagination');
+        displayFiles(allFiles, 1, fileList, pagination);
     });
 
-    // Gestione dell'aggiunta alla playlist
     document.addEventListener('click', function(event) {
         if (event.target.classList.contains('add-to-playlist-btn')) {
             const filename = event.target.dataset.filename;
@@ -282,7 +268,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Gestione della rimozione dalla playlist
     document.getElementById('playlist').addEventListener('click', function(event) {
         if (event.target.classList.contains('remove-from-playlist-btn')) {
             const li = event.target.parentElement;
@@ -290,7 +275,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Gestione del pulsante "Svuota Playlist"
     document.getElementById('clear-playlist-btn').addEventListener('click', function() {
         const playlist = document.getElementById('playlist');
         if (playlist.children.length > 0) {
@@ -301,7 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Gestione del pulsante "Salva Playlist"
     document.getElementById('save-playlist-btn').addEventListener('click', async function() {
         const playlistName = document.getElementById('playlist-name-input').value.trim();
         const playlistItems = document.getElementById('playlist').children;
@@ -321,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         try {
-            const response = await fetch(`${API_BASE_URL}/playlists`, { // Ho corretto qui l'endpoint!
+            const response = await fetch(`${API_BASE_URL}/save-playlist`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -346,11 +329,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Gestione del click per l'anteprima delle playlist salvate e cancellazione
     document.getElementById('saved-playlists-list').addEventListener('click', async function(event) {
         if (event.target.classList.contains('preview-playlist-btn')) {
-            const playlistId = event.target.dataset.playlistId;
-            showPlaylistPreview(playlistId);
+            const playlistName = event.target.dataset.playlistName;
+            showPlaylistPreview(playlistName);
         } else if (event.target.classList.contains('delete-playlist-btn')) {
             const playlistId = event.target.dataset.playlistId;
             const confirmed = confirm("Sei sicuro di voler eliminare questa playlist?");
@@ -372,12 +354,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Gestione della chiusura dell'anteprima
     document.getElementById('close-preview-btn').addEventListener('click', function() {
         document.getElementById('clicked-playlist-preview').classList.add('hidden');
     });
 
-    // Funzione per il drag and drop
     const playlist = document.getElementById('playlist');
     let draggedItem = null;
     if (playlist) {
@@ -425,7 +405,5 @@ document.addEventListener('DOMContentLoaded', () => {
         targetSection.scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Caricamento iniziale dei file
     fetchFiles();
-    fetchSavedPlaylists();
 });
