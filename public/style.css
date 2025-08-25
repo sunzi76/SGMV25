@@ -163,15 +163,17 @@ section:last-child {
 }
 
 /* -- Liste e Pulsanti Generici -- */
+/* Stile di base per tutti i pulsanti */
 button, .button-link {
-    background-color: var(--primary-color);
-    color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.2s ease;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--primary-color);
+    transition: background-color 0.3s ease;
     text-decoration: none;
     display: inline-block;
     white-space: nowrap;
@@ -214,11 +216,74 @@ button:hover, .button-link:hover {
     flex-shrink: 0;
 }
 
+/* -- Stili Specifici per i Pulsanti -- */
+.show-diagrams-btn {
+    background-color: var(--secondary-color);
+}
+
+.show-diagrams-btn:hover {
+    background-color: #5a6268;
+}
+
+.add-to-playlist-btn {
+    background-color: var(--success-color);
+}
+
+.add-to-playlist-btn:hover {
+    background-color: #218838;
+}
+
+.button-link.button-link { /* Aumento la specificità per l'Apri PDF */
+    background-color: var(--secondary-color);
+}
+
+.button-link.button-link:hover {
+    background-color: #5a6268;
+}
+
+/* Stili per la sezione di salvataggio playlist */
+#save-playlist-btn {
+    background-color: var(--primary-color);
+}
+
+#save-playlist-btn:hover {
+    background-color: var(--primary-hover-color);
+}
+
+#clear-playlist-btn {
+    background-color: var(--secondary-color);
+}
+
+#clear-playlist-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Stili per le icone di gestione playlist salvate */
+.saved-playlist-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 0 5px;
+    color: var(--primary-color);
+}
+.saved-playlist-actions button:hover {
+    color: var(--primary-hover-color);
+}
+
 /* -- Paginazione -- */
 #pagination {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+}
+.page-btn {
+    background-color: var(--secondary-color) !important;
+}
+
+.page-btn:hover {
+    background-color: #5a6268 !important;
 }
 
 /* -- Pop-up Modale -- */
@@ -295,264 +360,11 @@ button:hover, .button-link:hover {
     font-weight: bold;
 }
 
-/* -- Media Queries per Mobile -- */
-@media (max-width: 768px) {
-    body {
-        background-attachment: scroll;
-    }
-
-    .container {
-        margin: 10px;
-        padding: 15px;
-    }
-
-    h1, h2 {
-        font-size: 1.5em;
-    }
-
-    .section-nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .section-nav li a {
-        padding: 12px 20px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .file-list li {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .file-name {
-        margin-bottom: 10px;
-        margin-right: 0;
-        white-space: normal;
-        overflow: visible;
-        text-overflow: clip;
-        width: 100%;
-    }
-
-    .button-container {
-        flex-direction: column;
-        width: 100%;
-        gap: 8px;
-    }
-
-    /* Stili per i pulsanti nella sezione di ricerca */
-.button-container button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: white;
-    background-color: var(--secondary-color);
-    transition: background-color 0.3s ease;
-}
-
-.button-container button:hover {
-    background-color: #5a6268;
-}
-
-.add-to-playlist-btn {
-    background-color: var(--success-color);
-}
-
-.add-to-playlist-btn:hover {
-    background-color: #218838;
-}
-
-.button-link {
-    display: inline-block;
-    padding: 8px 12px;
-    background-color: var(--secondary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.button-link:hover {
-    background-color: #5a6268;
-}
-
-    #search-input {
-        width: 100%;
-    }
-
-    .modal-content {
-        margin: 5% auto;
-        padding: 15px;
-        max-width: 95%;
-    }
-
-    #diagrams-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .playlist-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    #playlist-name-input, #save-playlist-btn, #clear-playlist-btn {
-        width: 100%;
-    }
-
-    #pagination {
-        display: flex;
-        justify-content: center;
-    }
-}
-
-.saved-playlist-actions button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    padding: 0;
-    margin: 0 5px;
-    color: var(--primary-color);
-}
-.saved-playlist-actions button:hover {
-    color: var(--primary-hover-color);
-}
-
-/* -- Stili per la sezione di salvataggio playlist -- */
-#playlist-save-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 15px;
-    background-color: var(--light-bg-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
-#playlist-save-container input[type="text"] {
-    flex: 1;
-    min-width: 200px;
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    font-size: 1rem;
-}
-
-#playlist-save-container button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    background-color: var(--primary-color);
-    transition: background-color 0.3s ease;
-}
-
-#playlist-save-container button:hover {
-    background-color: var(--primary-hover-color);
-}
-
-/* Stili per i pulsanti */
-.button-container button,
-.file-search button,
-#playlist-save-container button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    background-color: var(--primary-color);
-    transition: background-color 0.3s ease;
-}
-
-.button-container button:hover,
-.file-search button:hover,
-#playlist-save-container button:hover {
-    background-color: var(--primary-hover-color);
-}
-
-.button-link {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.button-link:hover {
-    background-color: var(--primary-hover-color);
-}
-
-/* Nuovi stili per i pulsanti specifici */
-.add-to-playlist-btn {
-    background-color: var(--success-color);
-}
-
-.add-to-playlist-btn:hover {
-    background-color: #218838;
-}
-
-.remove-from-playlist-btn {
-    background-color: var(--danger-color);
-}
-
-.remove-from-playlist-btn:hover {
-    background-color: #c82333;
-}
-
-#clear-playlist-btn {
-    background-color: var(--secondary-color);
-}
-
-#clear-playlist-btn:hover {
-    background-color: #5a6268;
-}
-
-.page-btn {
-    background-color: var(--secondary-color) !important;
-}
-
-.page-btn:hover {
-    background-color: #5a6268 !important;
-}
-
-/* Stili per le icone di gestione playlist salvate */
-.saved-playlist-actions button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    padding: 0;
-    margin: 0 5px;
-    color: var(--primary-color);
-}
-.saved-playlist-actions button:hover {
-    color: var(--primary-hover-color);
-}
-
 /* -- Anteprima Playlist Salvata -- */
 .clicked-playlist-preview {
-    background-color: #e9ecef; /* Sfondo più tenue */
-    border: 1px solid #ced4da; /* Cornice più chiara */
-    border-radius: 10px; /* Bordi arrotondati */
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
     padding: 20px;
     margin-top: 20px;
 }
@@ -570,7 +382,7 @@ button:hover, .button-link:hover {
 }
 
 .clicked-playlist-preview li {
-    background-color: #f8f9fa; /* Sfondo chiaro per gli elementi della lista */
+    background-color: #f8f9fa;
     padding: 8px 12px;
     margin-bottom: 5px;
     border-radius: 5px;
@@ -580,4 +392,63 @@ button:hover, .button-link:hover {
     margin-top: 15px;
     background-color: var(--secondary-color);
     color: white;
+}
+
+/* -- Media Queries per Mobile -- */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+    h1, h2 {
+        font-size: 1.5em;
+    }
+    .section-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .section-nav li a {
+        padding: 12px 20px;
+        width: 100%;
+        text-align: center;
+    }
+    .file-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .file-name {
+        margin-bottom: 10px;
+        margin-right: 0;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        width: 100%;
+    }
+    .button-container {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+    .modal-content {
+        margin: 5% auto;
+        padding: 15px;
+        max-width: 95%;
+    }
+    #diagrams-container {
+        grid-template-columns: 1fr;
+    }
+    .playlist-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #playlist-name-input, #save-playlist-btn, #clear-playlist-btn {
+        width: 100%;
+    }
+    #pagination {
+        display: flex;
+        justify-content: center;
+    }
 }
