@@ -413,6 +413,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('playlist-name-input').value = '';
                 document.getElementById('playlist').innerHTML = '';
                 fetchSavedPlaylists();
+                const savedPlaylistsSection = document.getElementById('saved-playlists-section');
+                savedPlaylistsSection.scrollIntoView({ behavior: 'smooth' });
             } else {
                 messageDiv.textContent = result.message || 'Errore nel salvataggio della playlist.';
                 messageDiv.style.color = 'red';
