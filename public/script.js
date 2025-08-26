@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const monthNames = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
 
     async function fetchFiles() {
-        const fileList = document.getElementById('file-list');
-        const pagination = document.getElementById('pagination');
+        const fileList = document.getElementById('search-results');
+        const pagination = document.getElementById('search-pagination');
         let data;
         try {
             const response = await fetch(`${API_BASE_URL}/files`);
@@ -68,7 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentPage === 1) prevBtn.disabled = true;
             prevBtn.addEventListener('click', () => {
                 currentPage--;
-                displayFiles(allFiles, currentPage, document.getElementById('search-results'), document.getElementById('search-pagination'));
+                const currentFiles = document.getElementById('search-input').value.trim() !== '' ? 
+                                     allFiles.filter(file => typeof file === 'string' && file.toLowerCase().includes(document.getElementById('search-input').value.toLowerCase())) :
+                                     allFiles;
+                displayFiles(currentFiles, currentPage, document.getElementById('search-results'), document.getElementById('search-pagination'));
             });
             pagination.appendChild(prevBtn);
 
@@ -83,7 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentPage === totalPages) nextBtn.disabled = true;
             nextBtn.addEventListener('click', () => {
                 currentPage++;
-                displayFiles(allFiles, currentPage, document.getElementById('search-results'), document.getElementById('search-pagination'));
+                const currentFiles = document.getElementById('search-input').value.trim() !== '' ? 
+                                     allFiles.filter(file => typeof file === 'string' && file.toLowerCase().includes(document.getElementById('search-input').value.toLowerCase())) :
+                                     allFiles;
+                displayFiles(currentFiles, currentPage, document.getElementById('search-results'), document.getElementById('search-pagination'));
             });
             pagination.appendChild(nextBtn);
         }
@@ -150,8 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 savedPlaylistsList.innerHTML = '<p>Nessuna playlist salvata.</p>';
                 return;
             }
-
-            // Raggruppa le playlist per anno e poi per mese
             const playlistsByYear = playlists.reduce((acc, playlist) => {
                 const date = new Date(playlist.creationDate);
                 const year = date.getFullYear().toString();
@@ -165,26 +169,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 acc[year][month].push(playlist);
                 return acc;
             }, {});
-
             const sortedYears = Object.keys(playlistsByYear).sort((a, b) => b - a);
-
             sortedYears.forEach(year => {
                 const yearItem = document.createElement('li');
                 yearItem.classList.add('year-item');
                 yearItem.innerHTML = `<span class="year-header"><span class="toggle-icon">▶</span> Anno ${year}</span>`;
-
                 const monthsList = document.createElement('ul');
                 monthsList.classList.add('months-list', 'hidden');
-
                 const sortedMonths = Object.keys(playlistsByYear[year]).sort((a, b) => b - a);
                 sortedMonths.forEach(month => {
                     const monthItem = document.createElement('li');
                     monthItem.classList.add('month-item');
                     monthItem.innerHTML = `<span class="month-header"><span class="toggle-icon">▶</span> ${monthNames[month]}</span>`;
-
                     const playlistsList = document.createElement('ul');
                     playlistsList.classList.add('playlists-list', 'hidden');
-
                     playlistsByYear[year][month].sort((a, b) => b.creationDate.localeCompare(a.creationDate)).forEach(playlist => {
                         const playlistLi = document.createElement('li');
                         playlistLi.classList.add('saved-playlist-item');
@@ -211,8 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 yearItem.appendChild(monthsList);
                 savedPlaylistsList.appendChild(yearItem);
             });
-
-            // Aggiungi event listener per i toggle
             savedPlaylistsList.addEventListener('click', (event) => {
                 const yearHeader = event.target.closest('.year-header');
                 const monthHeader = event.target.closest('.month-header');
@@ -230,7 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             });
-
         } catch (error) {
             console.error('Errore nel recupero delle playlist:', error);
             savedPlaylistsList.innerHTML = '<p>Impossibile caricare le playlist.</p>';
@@ -327,9 +322,9 @@ document.addEventListener('DOMContentLoaded', () => {
         displayFiles(filteredFiles, currentPage, fileList, pagination);
     });
 
-    document.getElementById('clear-search-btn').addEventListener('click', (event) => {
+    document.getElementById('clear-search-btn').addEventListener('click', () => {
         const searchInput = document.getElementById('search-input');
-        const clearSearchBtn = event.target;
+        const clearSearchBtn = document.getElementById('clear-search-btn');
         searchInput.value = '';
         clearSearchBtn.style.display = 'none';
         const fileList = document.getElementById('search-results');
