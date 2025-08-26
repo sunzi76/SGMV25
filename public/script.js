@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 messageDiv.style.color = 'green';
                 document.getElementById('playlist-name-input').value = '';
                 document.getElementById('playlist').innerHTML = '';
-                fetchSavedPlaylists(); // Riaggiunto qui per aggiornare la lista
+                fetchSavedPlaylists();
             } else {
                 messageDiv.textContent = result.message || 'Errore nel salvataggio della playlist.';
                 messageDiv.style.color = 'red';
@@ -455,4 +455,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     fetchFiles();
+    fetchSavedPlaylists();
 });
