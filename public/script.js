@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const monthNames = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
 
     async function fetchFiles() {
-        const fileList = document.getElementById('search-results');
-        const pagination = document.getElementById('search-pagination');
+        const fileList = document.getElementById('file-list');
+        const pagination = document.getElementById('pagination');
         let data;
         try {
             const response = await fetch(`${API_BASE_URL}/files`);
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const currentFiles = document.getElementById('search-input').value.trim() !== '' ? 
                                      allFiles.filter(file => typeof file === 'string' && file.toLowerCase().includes(document.getElementById('search-input').value.toLowerCase())) :
                                      allFiles;
-                displayFiles(currentFiles, currentPage, document.getElementById('search-results'), document.getElementById('search-pagination'));
+                displayFiles(currentFiles, currentPage, document.getElementById('file-list'), document.getElementById('pagination'));
             });
             pagination.appendChild(prevBtn);
 
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const currentFiles = document.getElementById('search-input').value.trim() !== '' ? 
                                      allFiles.filter(file => typeof file === 'string' && file.toLowerCase().includes(document.getElementById('search-input').value.toLowerCase())) :
                                      allFiles;
-                displayFiles(currentFiles, currentPage, document.getElementById('search-results'), document.getElementById('search-pagination'));
+                displayFiles(currentFiles, currentPage, document.getElementById('file-list'), document.getElementById('pagination'));
             });
             pagination.appendChild(nextBtn);
         }
@@ -317,8 +317,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const filteredFiles = allFiles.filter(file => typeof file === 'string' && file.toLowerCase().includes(query));
         currentPage = 1; 
-        const fileList = document.getElementById('search-results');
-        const pagination = document.getElementById('search-pagination');
+        const fileList = document.getElementById('file-list');
+        const pagination = document.getElementById('pagination');
         displayFiles(filteredFiles, currentPage, fileList, pagination);
     });
 
@@ -327,8 +327,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const clearSearchBtn = document.getElementById('clear-search-btn');
         searchInput.value = '';
         clearSearchBtn.style.display = 'none';
-        const fileList = document.getElementById('search-results');
-        const pagination = document.getElementById('search-pagination');
+        const fileList = document.getElementById('file-list');
+        const pagination = document.getElementById('pagination');
         displayFiles(allFiles, 1, fileList, pagination);
     });
 
