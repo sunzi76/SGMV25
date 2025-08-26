@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const API_BASE_URL = 'https://sgmv25-backend.onrender.com';
     let allFiles = [];
     let currentPage = 1;
-    const filesPerPage = 8; 
+    const filesPerPage = 8;
+    const monthNames = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
 
     async function fetchFiles() {
         const fileList = document.getElementById('file-list');
@@ -149,31 +150,87 @@ document.addEventListener('DOMContentLoaded', () => {
                 savedPlaylistsList.innerHTML = '<p>Nessuna playlist salvata.</p>';
                 return;
             }
-            playlists.sort((a, b) => new Date(b.creationDate) - new Date(a.creationDate));
-            playlists.forEach(playlist => {
-                const li = document.createElement('li');
-                const creationDate = new Date(playlist.creationDate);
-                const year = creationDate.getFullYear();
-                const month = (creationDate.getMonth() + 1).toString().padStart(2, '0');
-                const formattedDate = `${year}-${month}`;
-                li.innerHTML = `
-                    <span class="playlist-date">${formattedDate}</span>
-                    <span class="playlist-name">${playlist.name}</span>
-                    <div class="saved-playlist-actions">
-                        <button class="preview-playlist-btn" data-playlist-name="${playlist.name}">
-                            🔍
-                        </button>
-                        <a href="${API_BASE_URL}/download-playlist/${playlist.name}" class="download-playlist-btn" target="_blank">
-                            ⬇️
-                        </a>
-                        <button class="delete-playlist-btn" data-playlist-id="${playlist.id}">
-                            🗑️
-                        </button>
-                    </div>
-                `;
-                li.classList.add('saved-playlist-item');
-                savedPlaylistsList.appendChild(li);
+
+            // Raggruppa le playlist per anno e poi per mese
+            const playlistsByYear = playlists.reduce((acc, playlist) => {
+                const date = new Date(playlist.creationDate);
+                const year = date.getFullYear().toString();
+                const month = date.getMonth();
+                if (!acc[year]) {
+                    acc[year] = {};
+                }
+                if (!acc[year][month]) {
+                    acc[year][month] = [];
+                }
+                acc[year][month].push(playlist);
+                return acc;
+            }, {});
+
+            const sortedYears = Object.keys(playlistsByYear).sort((a, b) => b - a);
+
+            sortedYears.forEach(year => {
+                const yearItem = document.createElement('li');
+                yearItem.classList.add('year-item');
+                yearItem.innerHTML = `<span class="year-header"><span class="toggle-icon">▶</span> Anno ${year}</span>`;
+
+                const monthsList = document.createElement('ul');
+                monthsList.classList.add('months-list', 'hidden');
+
+                const sortedMonths = Object.keys(playlistsByYear[year]).sort((a, b) => b - a);
+                sortedMonths.forEach(month => {
+                    const monthItem = document.createElement('li');
+                    monthItem.classList.add('month-item');
+                    monthItem.innerHTML = `<span class="month-header"><span class="toggle-icon">▶</span> ${monthNames[month]}</span>`;
+
+                    const playlistsList = document.createElement('ul');
+                    playlistsList.classList.add('playlists-list', 'hidden');
+
+                    playlistsByYear[year][month].sort((a, b) => b.creationDate.localeCompare(a.creationDate)).forEach(playlist => {
+                        const playlistLi = document.createElement('li');
+                        playlistLi.classList.add('saved-playlist-item');
+                        playlistLi.innerHTML = `
+                            <span class="playlist-date">${new Date(playlist.creationDate).toLocaleDateString('it-IT')}</span>
+                            <span class="playlist-name">${playlist.name}</span>
+                            <div class="saved-playlist-actions">
+                                <button class="preview-playlist-btn" data-playlist-name="${playlist.name}">
+                                    🔍
+                                </button>
+                                <a href="${API_BASE_URL}/download-playlist/${playlist.name}" class="download-playlist-btn" target="_blank">
+                                    ⬇️
+                                </a>
+                                <button class="delete-playlist-btn" data-playlist-id="${playlist.id}">
+                                    🗑️
+                                </button>
+                            </div>
+                        `;
+                        playlistsList.appendChild(playlistLi);
+                    });
+                    monthItem.appendChild(playlistsList);
+                    monthsList.appendChild(monthItem);
+                });
+                yearItem.appendChild(monthsList);
+                savedPlaylistsList.appendChild(yearItem);
             });
+
+            // Aggiungi event listener per i toggle
+            savedPlaylistsList.addEventListener('click', (event) => {
+                const yearHeader = event.target.closest('.year-header');
+                const monthHeader = event.target.closest('.month-header');
+                if (yearHeader) {
+                    const monthsList = yearHeader.nextElementSibling;
+                    if (monthsList) {
+                        monthsList.classList.toggle('hidden');
+                        yearHeader.querySelector('.toggle-icon').textContent = monthsList.classList.contains('hidden') ? '▶' : '▼';
+                    }
+                } else if (monthHeader) {
+                    const playlistsList = monthHeader.nextElementSibling;
+                    if (playlistsList) {
+                        playlistsList.classList.toggle('hidden');
+                        monthHeader.querySelector('.toggle-icon').textContent = playlistsList.classList.contains('hidden') ? '▶' : '▼';
+                    }
+                }
+            });
+
         } catch (error) {
             console.error('Errore nel recupero delle playlist:', error);
             savedPlaylistsList.innerHTML = '<p>Impossibile caricare le playlist.</p>';
@@ -211,34 +268,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Gestione Caricamento File
     document.getElementById('uploadPdfForm').addEventListener('submit', async (event) => {
         event.preventDefault();
         const fileInput = document.getElementById('pdfFileInput');
         const uploadMessage = document.getElementById('upload-message');
         const uploadWarning = document.getElementById('upload-warning-message');
-
         const file = fileInput.files[0];
         if (!file) {
             uploadMessage.textContent = 'Per favore, seleziona un file da caricare.';
             uploadMessage.style.color = 'red';
             return;
         }
-
         if (file.type !== 'application/pdf') {
             uploadMessage.textContent = '⚠️ Errore: Puoi caricare solo file in formato PDF.';
             uploadMessage.style.color = 'red';
             uploadWarning.classList.add('hidden');
             return;
         }
-
         uploadMessage.textContent = 'Caricamento in corso...';
         uploadMessage.style.color = 'black';
         uploadWarning.classList.add('hidden');
-
         const formData = new FormData();
         formData.append('pdfFile', file);
-
         try {
             const response = await fetch(`${API_BASE_URL}/upload`, {
                 method: 'POST',

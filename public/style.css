@@ -218,11 +218,11 @@ button:hover, .button-link:hover {
 
 /* -- Stili Specifici per i Pulsanti -- */
 .show-diagrams-btn {
-    background-color: #ffa600; /* Colore richiesto per Diagrammi Accordi */
+    background-color: #ffa600;
 }
 
 .show-diagrams-btn:hover {
-    background-color: #cc8400; /* Tonalità più scura per l'hover */
+    background-color: #cc8400;
 }
 
 .add-to-playlist-btn {
@@ -234,14 +234,13 @@ button:hover, .button-link:hover {
 }
 
 .button-link {
-    background-color: #dc3545; /* Colore richiesto per Apri PDF */
+    background-color: #dc3545;
 }
 
 .button-link:hover {
     background-color: #c82333;
 }
 
-/* Stili per la sezione di salvataggio playlist */
 #save-playlist-btn {
     background-color: var(--primary-color);
 }
@@ -251,14 +250,13 @@ button:hover, .button-link:hover {
 }
 
 #clear-playlist-btn {
-    background-color: #dc3545; /* Colore richiesto per Svuota Playlist */
+    background-color: #dc3545;
 }
 
 #clear-playlist-btn:hover {
     background-color: #c82333;
 }
 
-/* Stili per le icone di gestione playlist salvate */
 .saved-playlist-actions button {
     background: none;
     border: none;
@@ -277,10 +275,10 @@ button:hover, .button-link:hover {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    gap: 10px; /* Aggiunto spazio tra i pulsanti */
+    gap: 10px;
 }
 .page-btn {
-    background-color: var(--primary-color); /* Colore richiesto per Precedente/Successivo */
+    background-color: var(--primary-color);
 }
 
 .page-btn:hover {
@@ -414,11 +412,64 @@ button:hover, .button-link:hover {
     min-width: 200px;
     padding: 10px;
     border: 1px solid var(--border-color);
-    border-radius: 20px; /* Spigoli arrotondati */
+    border-radius: 20px;
     font-size: 1rem;
 }
 
-/* -- Media Queries per Mobile -- */
+/* Nuovi stili per la visualizzazione ad albero delle playlist salvate */
+.year-item, .month-item {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.year-header, .month-header {
+    cursor: pointer;
+    background-color: #e9ecef;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: var(--primary-hover-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.year-header:hover, .month-header:hover {
+    background-color: #d7e6ff;
+}
+
+.year-header .toggle-icon, .month-header .toggle-icon {
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+.playlists-list, .months-list {
+    list-style: none;
+    padding-left: 20px;
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+.playlists-list.hidden, .months-list.hidden {
+    max-height: 0;
+    opacity: 0;
+}
+
+.playlists-list.visible, .months-list.visible {
+    max-height: 1000px; /* Valore grande per l'animazione */
+    opacity: 1;
+}
+
+.playlists-list .saved-playlist-item {
+    border-left: 2px solid var(--border-color);
+    margin-top: 5px;
+    padding-left: 10px;
+}
+
+/* Media Queries per Mobile */
 @media (max-width: 768px) {
     body {
         background-attachment: scroll;
